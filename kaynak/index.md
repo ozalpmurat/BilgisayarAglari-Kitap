@@ -14,5 +14,5 @@ cihaz kotrol...
 ...
 # Bir ana başlık daha
 XXX
-{!2022-01-08-web-sitemi-guncelleme.md!}
+{!import-edilen-dosya.md!}
 XXX
