@@ -32,6 +32,12 @@ jobs:
         with:
           src: kaynak
           dst: generated
+          title: Bilgisayar Ağları ders notları
+          language: tr
+          icon: lan
+          primary-color: indigo
+          secondary-color: indigo
+          hide-repository: false
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
