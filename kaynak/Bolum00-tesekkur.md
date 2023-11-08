@@ -8,6 +8,7 @@ amacını taşımaktadır.
 **Katkıda bulunanlar:**
 
 ![](images/github.png | width=100)
+![](images/github.png){:height="30%" width="30%"}
 
 ...
 
