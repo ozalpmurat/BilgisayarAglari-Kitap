@@ -5,7 +5,8 @@ Bu çalışma, 2022 yılında BŞEÜ Bilgisayar Mühendisliği 4. sınıf
 eski kalmış olan ders notlarının kolay güncellenmesi ve güncel tutulması
 amacını taşımaktadır.
 
-**Katkıda bulunanlar:**
+## Katkıda bulunanlar
+
 -   [<img src="images/github.png" width="20">](https://github.com/ikhalilatteib)
     [<img src="images/linkedin.png" width="20">](https://www.linkedin.com/in/ikhalilatteib/)
     Ibrahim Khalil Atteib Yacoub
