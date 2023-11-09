@@ -1,4 +1,4 @@
-# OSI MODELİ (OSI KATMANLARI)
+# 03. OSI MODELİ (OSI KATMANLARI)
 
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
 ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile
