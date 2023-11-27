@@ -3,7 +3,7 @@
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
 ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile
 tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi
-sırasında hangi işlemlerden gectiğini kavramak için kullanılan
+sırasında hangi işlemlerden geçtiğini kavramak için kullanılan
 rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için
 önemlidir.
