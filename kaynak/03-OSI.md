@@ -233,29 +233,3 @@ portlarını tarar.
 Örnek
 
 </div>
-
-### Aktarım Verimliliği
-
-<img src="images/transmission_example" style="width:17cm" alt="image" />
-
-1.  Veri bloğu ne kadar büyürse, verim o kadar artar.
-
-**<span style="color: red">MTU[^4]</span>**: Maksimum veri miktarını
-belirler. Ethernet bağlarında MTU değeri varsayılan olarak **1500
-bayt/kapsül**
-
-**<span style="color: red">PPL[^5]</span>**: Paketlerin Ağda sonsuz
-kadar dolaşmaması için geçen süredir.  
-PPL değeri genellikle **128**’dir.
-
-! Paket noktalar arasında her aktarıldığında **PPL değeri azalır**.
-
-[^1]: IP =\> Internet Protocol
-
-[^2]: TCP =\> Transmission Control Protocol
-
-[^3]: UDP =\> User Datagram Protocol
-
-[^4]: MTU =\> Maximum Transmission Unit
-
-[^5]: PPL =\> Time to Live (Yaşam süresi)

@@ -1,0 +1,180 @@
+{
+  "main": {
+    "id": "7d6dcb10b74e36b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a1b66d719e6bb89",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1c0bd8ccd0fa64c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kaynak/02-Topolojiler.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "84fa03bdf2e17fa6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "kaynak/bolum6.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7cb3ddebbf38c35c",
+    "type": "split",
+    "children": [
+      {
+        "id": "665d1db893dcb525",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b07ca2f7b3b3dac3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6fd7094f06ad1a9c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f4ccdb479339fa2b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e896c9c58739e913",
+    "type": "split",
+    "children": [
+      {
+        "id": "1af6fd511dacd38a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "82e6d1795f58c84d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "kaynak/bolum6.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e952b2dcdccbbf0c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "kaynak/bolum6.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b4b6735ccf6108b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9b108d9b7ccc79c3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "kaynak/bolum6.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "84fa03bdf2e17fa6",
+  "lastOpenFiles": [
+    "kaynak/07-IP_Yonlendirme.md",
+    "kaynak/bolum5.md",
+    "kaynak/06-Yerel_Aglar.md",
+    "kaynak/bolum6.md",
+    "kaynak/01-Giris.md",
+    "kaynak/02-Topolojiler.md",
+    "kaynak/03-OSI.md",
+    "kaynak/04-Kavramlar.md",
+    "kaynak/05-iletim_ortamlari.md",
+    "kaynak/index.md",
+    "kaynak/import-edilen-dosya.md",
+    "kaynak/Bolum99-kaynaklar.md",
+    "kaynak/Bolum99-ekler.md",
+    "05-iletim_ortamlari.md",
+    "kaynak/bolum2.md"
+  ]
+}

@@ -8,13 +8,9 @@ sağlamıştır. Yönlendirme işlemini "Yönlendirici(Router)" yapar.
 **Yönlendirme Tablosunda**
 
 1.  Kaynak
-
 2.  Hedef(Ip ve Maske)
-
 3.  Ağ Geçidi
-
 4.  Ara Birim(Interface)
-
 5.  Ölçüt(Metrik)
 
 <figure>
