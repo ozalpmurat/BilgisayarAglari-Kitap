@@ -1,4 +1,4 @@
-# 03. OSI MODELİ (OSI KATMANLARI)
+# 03. OSI MODELİ KATMANLARI
 
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
 ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile
@@ -8,30 +8,18 @@ rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için
 önemlidir.
 
-## Katmanlar
-
-1.  [ Fiziksel (Physical)](#subsubsec:fiziksel_katmanlar)
-
-2.  [Veri Bağı (Data link)](#subsubsec:veri_bagi_katmani)
-
+1.  [Fiziksel (Physical)](#fiziksel-katman)
+2.  [Veri Bağı (Data link)](#veri-bag-katman)
 3.  [Ağ (IP)](#subsubsec:ag_katmani)
-
 4.  [Taşıma (Transport)](#subsubsec:tasima_katmani)
-
 5.  Oturum (Session)
-
 6.  Sunum (Presentation)
-
 7.  [Uygulama (Application)](#subsubsec:tasima_katmani)
 
 ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png)
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
-| ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png) | 
-|:--:| 
-| Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/ |
-
-### Fiziksel Katman
+## Fiziksel Katman
 
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
 katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
@@ -47,7 +35,7 @@ donanımları:
 
 4.  Kablosuz iletişimde kullanılan hava
 
-### Veri Bağı Katmanı
+## Veri Bağı Katmanı
 
 Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
 katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
@@ -95,7 +83,7 @@ style="width:17cm" alt="Ethernet Çerçevesi Başlığı" />
 **Yerel ağda (LAN)** : Ethernet  
 **Uzak ağlarda (WAN)** : AIM, PPP, Frame, Relay, Metroethernet
 
-## Anahtarlama
+### Anahtarlama
 
 1.  **Devre Anahtarlama**: Veri aktarımı, fiziksel değişiklikle yapılır.
 
@@ -111,7 +99,7 @@ olan cihazların MAC adreslerini bilmek zorundadır (otomatik öğrenir). Bu
 şekilde iki farklı portu arasındaki trafiği diğer cihazlar görmeden
 aktarabilirler. **HUB’lardan en önemli farkı budur**.
 
-### Ağ Katmanı (IP)
+## Ağ Katmanı (IP)
 
 İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
 katman budur. Kaynak ve hedef olarak IP[^1] adresi kullanılır. IP
@@ -141,7 +129,7 @@ label="fig:exemple_for_ip_communication"></span>
 
 1.  **En küçük birimine paketleme denir.**
 
-### Taşıma Katmanı
+## Taşıma Katmanı
 
 İnternette IP üzerinde kullanılan 2 tane 4. katman protokolü vardır.
 Bunlar <span style="color: red">**TCP**</span> ve <span
@@ -198,7 +186,7 @@ TCP vs UDP
 
 </div>
 
-### Uygulama Seviyesi Katmanlar
+## Uygulama Seviyesi Katmanları
 
 Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
 kullanılmadığından ve farklı uygulamalar arasında standart olmadığından
