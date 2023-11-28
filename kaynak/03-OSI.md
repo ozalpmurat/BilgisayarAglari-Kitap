@@ -1,3 +1,47 @@
+```css
+#button {
+ border: none;
+}
+```
+
+~~~~
+This is a
+piece of code
+in a block
+~~~~
+```
+This too
+```
+  ddd
+  Begin each line with
+  two spaces or more to
+  make text look
+  e x a c t l y
+  like you type i
+  t.
+
+1. Item
+1. Item
+
+I have more [^1] to say up here.
+
+......
+
+......
+
+[^1]: To say down here.
+
+Smaller logo: ![Alt][1]
+[1]: /wp-smaller.png "Title"
+
+WordPress
+: A semantic personal publishing platform
+Markdown
+: Text-to-HTML conversion tool
+
+Markdown converts text to HTML.
+*[HTML]: HyperText Markup Language
+
 # 03. OSI MODELİ KATMANLARI
 
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
