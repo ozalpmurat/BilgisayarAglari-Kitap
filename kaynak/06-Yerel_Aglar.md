@@ -195,9 +195,13 @@ adreslerine göre ya da kullanıcı kimlik doğrulama yöntemine göre
 Vlan anahtarlar kullanıldığında birden fazla sanal ağı oluşturursa bu
 alt ağlar arasında trafiğin yönlendirilmesi gerekmektedr.Bu yönlendirme
 işlemi anhtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak
-mümkündür.  
+mümkündür.
+
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
-bir anahtar kullanılmalıdır.  
+bir anahtar kullanılmalıdır.
+![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)
+*image_caption*
+
 trunk: Anahtarın herhangi bir portundan birden fazla VLAN taşınması
 gerekiyorsa o port trunk olarak yapılandırılmalı.Bu bağlantıya da
 "trunk" denir.
