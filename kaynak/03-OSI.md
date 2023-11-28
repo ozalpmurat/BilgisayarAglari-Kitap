@@ -19,7 +19,7 @@ rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png)
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
-## Fiziksel Katman
+## 1: Fiziksel Katman
 
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
 katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
@@ -35,7 +35,7 @@ donanımları:
 
 4.  Kablosuz iletişimde kullanılan hava
 
-## Veri Bağı Katmanı
+## 2: Veri Bağı Katmanı
 
 Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
 katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
@@ -99,7 +99,7 @@ olan cihazların MAC adreslerini bilmek zorundadır (otomatik öğrenir). Bu
 şekilde iki farklı portu arasındaki trafiği diğer cihazlar görmeden
 aktarabilirler. **HUB’lardan en önemli farkı budur**.
 
-## Ağ Katmanı (IP)
+## 3: Ağ Katmanı (IP)
 
 İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
 katman budur. Kaynak ve hedef olarak IP[^1] adresi kullanılır. IP
@@ -129,7 +129,7 @@ label="fig:exemple_for_ip_communication"></span>
 
 1.  **En küçük birimine paketleme denir.**
 
-## Taşıma Katmanı
+## 4: Taşıma Katmanı
 
 İnternette IP üzerinde kullanılan 2 tane 4. katman protokolü vardır.
 Bunlar <span style="color: red">**TCP**</span> ve <span
@@ -186,7 +186,7 @@ TCP vs UDP
 
 </div>
 
-## Uygulama Seviyesi Katmanları
+## 5-7: Uygulama Seviyesi Katmanları
 
 Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
 kullanılmadığından ve farklı uygulamalar arasında standart olmadığından
