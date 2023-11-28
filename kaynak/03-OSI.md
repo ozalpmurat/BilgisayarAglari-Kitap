@@ -1,21 +1,7 @@
-```css
-#button {
- border: none;
-}
-```
-
-I have more [^1] to say up here.
-[^1]: To say down here.
-
-Smaller logo: ![Alt][1]
-[1]: /wp-smaller.png "Title"
-
-Markdown converts text to HTML.
-*[HTML]: HyperText Markup Language
+*[OSI]: Open Systems Interconnection
+*[IP]: Internet Protocol
 
 # 03. OSI MODELİ KATMANLARI
- HTML denemesi.
-
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
 ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile
 tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi
@@ -126,6 +112,7 @@ interface) sahip olan yönlendirici(router) adı verilen cihazlar
 tarafından yapılır. IP internetin temel protokolüdür. Yani bir PC
 internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
 üçüncü katmanda da çalışabilmektedir.
+[^1]: IP Adresi
 
 <figure>
 <img src="images/ip_katman" id="fig:exemple_for_network_model"
