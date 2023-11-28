@@ -1,7 +1,8 @@
-*[OSI]: Open Systems Interconnection
+*[bps]: bit per second (saniyedeki bit sayısı)
 *[IP]: Internet Protocol
+[^1]: [https://tr.wikipedia.org/wiki/OSI_modeli](Open Systems Interconnection modeli ISO tarafından geliştirilmiştir.)
 
-# 03. OSI MODELİ KATMANLARI
+# 03. OSI[^1] MODELİ KATMANLARI
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
 ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile
 tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi
@@ -26,7 +27,7 @@ rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
 katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
 sorumludur. Sayısal haberleşmede en küçük birim bit olduğundan bu
-katmanın hızı **(bps) (b/s) bit/saniye** cinsindendir. Birinci katman
+katmanın hızı **bps, b/s (bit/saniye)** cinsindendir. Birinci katman
 donanımları:
 
 1.  Bakır ve fiber optik kablolar
@@ -104,7 +105,7 @@ aktarabilirler. **HUB’lardan en önemli farkı budur**.
 ## 3: Ağ Katmanı (IP)
 
 İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
-katman budur. Kaynak ve hedef olarak IP[^1] adresi kullanılır. IP
+katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
 yönlendirilebilir bir protokol olduğundan her türlü veri aağı üzerinden
 haberleşmeye olarak sağlanır. Bu katman en önemli görevi yönlendirme
 işlemidir. Yönlendirme işlemi birden fazla ağ arayüzüne (network
@@ -112,7 +113,6 @@ interface) sahip olan yönlendirici(router) adı verilen cihazlar
 tarafından yapılır. IP internetin temel protokolüdür. Yani bir PC
 internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
 üçüncü katmanda da çalışabilmektedir.
-[^1]: IP Adresi
 
 <figure>
 <img src="images/ip_katman" id="fig:exemple_for_network_model"
