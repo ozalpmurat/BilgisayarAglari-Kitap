@@ -29,7 +29,7 @@ rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 
 | ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png) | 
 |:--:| 
-| *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/ |
+| Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/ |
 
 ### Fiziksel Katman
 
