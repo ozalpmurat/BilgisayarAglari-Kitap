@@ -200,7 +200,7 @@ mümkündür.
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
 bir anahtar kullanılmalıdır.
 ![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)
-*image_caption*
+*Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
 trunk: Anahtarın herhangi bir portundan birden fazla VLAN taşınması
 gerekiyorsa o port trunk olarak yapılandırılmalı.Bu bağlantıya da

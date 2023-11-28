@@ -24,13 +24,12 @@ rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 
 7.  [Uygulama (Application)](#subsubsec:tasima_katmani)
 
-<figure>
-<img src="images/b01-OSI_ve_TCPIP.jpg" id="fig:b01-OSI_ve_TCPIP"
-style="width:17cm"
-alt="OSI ve TCP/IP modelleri - https://twitter.com/sysxplore/status/1719834540913365455" />
-<figcaption aria-hidden="true">OSI ve TCP/IP modelleri -
-https://twitter.com/sysxplore/status/1719834540913365455</figcaption>
-</figure>
+![OSI ve TCP/IP modeli katmanları ](images/B03-OSI_Katmanlar.png)
+*Görsel kaynağı: *https://planetechusa.com/layer-2-vs-layer-3-switches/*
+
+| ![space-1.jpg](images/B03-OSI_Katmanlar.png) | 
+|:--:| 
+| *Görsel kaynağı: *https://planetechusa.com/layer-2-vs-layer-3-switches/* |
 
 ### Fiziksel Katman
 
