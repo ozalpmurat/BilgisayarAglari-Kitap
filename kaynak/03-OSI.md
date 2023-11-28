@@ -1,6 +1,7 @@
 *[bps]: bit per second (saniyedeki bit sayısı)
+*[RF]: Yüksek frekanslı dalgaya radyo frekans denilir. Bu dalga RF kısaltmasıyla gösterilir.
 *[IP]: Internet Protocol
-[^1]: [https://tr.wikipedia.org/wiki/OSI_modeli](Open Systems Interconnection modeli ISO tarafından geliştirilmiştir.)
+[^1]: [Open Systems Interconnection modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
 
 # 03. OSI[^1] MODELİ KATMANLARI
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
