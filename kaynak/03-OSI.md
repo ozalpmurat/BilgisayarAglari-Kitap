@@ -2,14 +2,8 @@
 *[RF]: Yüksek frekanslı dalgaya radyo frekans denilir. Bu dalga RF kısaltmasıyla gösterilir
 [^1]: [OSI (Open Systems Interconnection) modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
 
-# 03. OSI[^1] MODELİ KATMANLARI
-Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl
-ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile
-tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi
-sırasında hangi işlemlerden geçtiğini kavramak için kullanılan
-rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
-üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için
-önemlidir.
+# 03. OSI MODELİ KATMANLARI
+Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI[^1] Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
 
 1.  [Fiziksel (Physical)](#fiziksel-katman)
 2.  [Veri Bağı (Data link)](#veri-bag-katman)
