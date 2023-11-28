@@ -20,9 +20,9 @@ rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ
 7.  [Uygulama (Application)](#subsubsec:tasima_katmani)
 
 ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png)
-_Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/_
+*Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
-## 1: Fiziksel Katman
+## 1: Fiziksel Katan
 
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
 katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
