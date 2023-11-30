@@ -3,5 +3,8 @@
 
 İsterseniz, yukarıdaki linkten PDF biçiminde de indirebilirsiniz.
 
-Markdown Docs kullanımı için belge linki:
-https://github.com/marketplace/actions/markdown-docs
+---
+
+**Markdown Docs** (_Github Action_) kullanımı için linkler:
+- https://github.com/marketplace/actions/markdown-docs
+- https://github.com/ldeluigi/markdown-docs
