@@ -1,4 +1,4 @@
-# 01. GİRİŞ ve TEŞEKKÜR
+# 01. Giriş ve Teşekkür
 
 Bu çalışma, 2022 yılında BŞEÜ Bilgisayar Mühendisliği 4. sınıf
 öğrencilerinin önerisi üzerine başlatılmıştır. El yazısı ile yazılmış ve

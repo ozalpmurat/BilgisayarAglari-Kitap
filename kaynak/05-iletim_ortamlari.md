@@ -1,4 +1,4 @@
-# İLETİM ORTAMLARI
+# İletim Ortamları
 
 Temelde atmosfer ve kablo olmak üzere iki farklı iletim ortamı
 mevcuttur. Atmosferde RF (radyo frekans) dalgalarını kullanarak iletişim

@@ -1,4 +1,4 @@
-# BİLGİSAYAR AĞLARI MODELLEME
+# Bilgisayar Ağları Modelleme
 
 Bu başlıkta simülatör ve emülatör kavramları açıklanmaya çalışılıp örnek
 uygulamalar verilecektir.

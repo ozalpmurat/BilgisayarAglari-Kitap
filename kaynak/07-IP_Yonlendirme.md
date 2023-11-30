@@ -1,4 +1,4 @@
-# IP YÖNLENDİRME
+# IP Yönlendirme
 
 IP’nin yönlendirilebilir olması protokolün en güçlü özelliğidir. Çok
 sayıda iletişim protokolü mevcut olmasına rağmen IP’nin
