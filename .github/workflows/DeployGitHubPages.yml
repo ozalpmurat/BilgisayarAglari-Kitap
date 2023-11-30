@@ -35,6 +35,7 @@ jobs:
           title: Bilgisayar Ağları ders notları
           language: tr
           icon: lan
+          theme: nature
           primary-color: indigo
           secondary-color: indigo
           hide-repository: false
