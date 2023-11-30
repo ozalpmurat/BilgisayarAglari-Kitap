@@ -2,9 +2,9 @@
 
 ### Aktarım Verimliliği
 
-<img src="images/transmission_example" style="width:17cm" alt="image" />
+$$ Aktarım Verimliliği = {Veri \over (Veri + TCP/UDP header + IP header + Ethernet header)} $$
 
-1.  Veri bloğu ne kadar büyürse, verim o kadar artar.
+Bu denkleme göre; bir seferde gönderilen veri bloğu ne kadar büyürse, verim o kadar artar.
 
 **<span style="color: red">MTU[^4]</span>**: Maksimum veri miktarını
 belirler. Ethernet bağlarında MTU değeri varsayılan olarak **1500
@@ -17,13 +17,9 @@ PPL değeri genellikle **128**’dir.
 ! Paket noktalar arasında her aktarıldığında **PPL değeri azalır**.
 
 [^1]: IP =\> Internet Protocol
-
 [^2]: TCP =\> Transmission Control Protocol
-
 [^3]: UDP =\> User Datagram Protocol
-
 [^4]: MTU =\> Maximum Transmission Unit
-
 [^5]: PPL =\> Time to Live (Yaşam süresi)
 
 
