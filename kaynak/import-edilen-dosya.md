@@ -7,3 +7,17 @@
 ::end-uml::
 ## İkinci seviye başka başlık
 ...
+
+@startuml
+Bob -> Alice : Can you solve: <math>ax^2+bx+c=0</math>
+Alice --> Bob: <math>x = (-b+-sqrt(b^2-4ac))/(2a)</math>
+@enduml
+
+---
+
+::uml::
+Bob -> Alice : Can you solve: <math>ax^2+bx+c=0</math>
+Alice --> Bob: <math>x = (-b+-sqrt(b^2-4ac))/(2a)</math>
+::end-uml::
+
+---
