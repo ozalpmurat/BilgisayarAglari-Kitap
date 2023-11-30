@@ -1,4 +1,4 @@
-# MAC ADRESİ VE ADRES ÇÖZÜMLEME
+# Yerel Ağlar - LAN/VLAN
 
 Yerel ağlarda haberleşmeyi sağlayan ethernet çerçevesinde(frame) 48
 bitlik adres kullanılır. MAC adresi 16’lık sayı sisteminde 12 tane
@@ -199,41 +199,47 @@ mümkündür.
 
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
 bir anahtar kullanılmalıdır.
-![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)
+![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)  
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
 trunk: Anahtarın herhangi bir portundan birden fazla VLAN taşınması
 gerekiyorsa o port trunk olarak yapılandırılmalı.Bu bağlantıya da
 "trunk" denir.
+![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.jpg)  
+*Görsel kaynağı: https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html*
 
 # ANAHTAR KULLANIM MİMARİSİ
 
-<figure>
-<img src="images/anahtarkullanımmimarisi"
-id="fig:anahtar_kullanım_mimarisi" style="width:8cm;height:6cm"
-alt="Anahtar-Kullanım-Mimarisi" />
-<figcaption aria-hidden="true">Anahtar-Kullanım-Mimarisi</figcaption>
-</figure>
+![Anahtar Mimarisi](images/B06-AnahtarMimarisi.png)  
+*Görsel kaynağı: https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/*
 
-1)OMURGA(CORE)  
+1. **OMURGA(CORE)**  
 Üçüncü katman veya daha üstü anahtar kullanılır.Genellikle tüm Vlanlar
 burda oluşturulur.Ağın tüm yönlendirme yükü bunun üzerindedir.Bu nedenle
-genellikle yedekli kullanıır.Performansı çok fazladır.Binalar arası
+genellikle yedekli kullanır.Performansı çok fazladır.Binalar arası
 bağlantıyı sağlamak için kullanılır.Bu nedenle çok sayıda fiberoptik
 port sergilerler.Modüler yapıdadırlar,yani port sayıları ve türleri
 modüler halinde takılıp çıkartılabilir.Modülerin takıldığı yere "şase"
 denir.Fiziksel olarak çok yer kaplarlar ve pahalıdırlar.  
-2)Dağıtım(Distrubution)Katmanı  
+
+2. **Dağıtım(Distrubution)Katmanı**  
 Omurga anahtarında bağlı olan ve binaların içerisinde küçük bir omurga
 gibi düşünebileceğimiz anahtarlardır.Omurga anahtarına göre daha
 ucuzdur.L2 veya L3 olabilir.  
-3)KENAR Son kullanıcı cihazlarının bağlandığı anahtarlardır.Bu nedenle
+
+3. **KENAR**  
+Son kullanıcı cihazlarının bağlandığı anahtarlardır.Bu nedenle
 özel görevleri olabilir.  
 İhtiyaca göre :  
 802.1x(Kimlik Doğrulama)  
 PoE(802.3aaf) Enerji göndermek için kullanılır.  
-Captive Portal  
-Örnek:20 portlu bir VLAN anahtar 4 portlu bir ağ geçidine
+Captive Portal
+
+![Anahtar türleri karşılaştırması](images/B06-Core_Dist_Access.png)  
+*Görsel kaynağı: https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/*
+
+**Örnek:**  
+20 portlu bir VLAN anahtar 4 portlu bir ağ geçidine
 bağlanabiliyorAşağıdaki durumları yorumlayınız.  
 1)Her portun port sayısı 5’er tanedir.  
 Böyle bir zorunluluk yoktu.̊  
