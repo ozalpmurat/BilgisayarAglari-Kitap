@@ -1,2 +1,8 @@
-not_in_nav: |
-  /08-IP_hesap.md
+docs_dir: kaynak
+site_name: 'Bilgisayar Ağları Ders Notları'
+lang: tr
+site_author: 'Murat Özalp'
+nav:
+  - Foo: foo.md
+  - Bar: bar.md
+theme: material
