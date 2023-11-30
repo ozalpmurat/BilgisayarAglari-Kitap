@@ -5,4 +5,4 @@ site_author: 'Murat Özalp'
 #nav:
 #  - Foo: foo.md
 #  - Bar: bar.md
-
+theme: nature
