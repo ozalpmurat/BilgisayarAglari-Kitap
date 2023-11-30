@@ -1,4 +1,4 @@
-# IP ADRESİ VE HESAPLAMALARI
+# IP Adresi ve Hesaplamaları
 
 32 bit uzunluğa sahip olan IP adresi 2 temel bileşene sahiptir.
 

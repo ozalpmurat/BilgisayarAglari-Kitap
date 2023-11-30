@@ -1,4 +1,4 @@
-# AĞ TOPOLOJİLERİ 
+# Ağ Topolojileri 
 
 <figure>
 <img src="images/62_ağ_topolojisi" id="fig:topolojiler"

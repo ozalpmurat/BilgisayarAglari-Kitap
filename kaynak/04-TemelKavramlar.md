@@ -1,4 +1,4 @@
-# TEMEL KAVRAMLAR
+# Temel Kavramlar
 
 ### Aktarım Verimliliği
 
