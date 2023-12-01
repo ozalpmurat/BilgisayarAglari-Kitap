@@ -2,27 +2,21 @@
 
 ### Aktarım Verimliliği
 
-$$ Aktarım Verimliliği = {Veri \over (Veri + TCP/UDP header + IP header + Ethernet header)} $$
+$$ \mathtt{Aktarım \ Verimliliği = {Veri \over (Veri + TCP/UDP \ baslığı + IP \ baslığı + Ethernet \ baslığı)}} $$
 
 Bu denkleme göre; bir seferde gönderilen veri bloğu ne kadar büyürse, verim o kadar artar.
 
-**<span style="color: red">MTU[^4]</span>**: Maksimum veri miktarını
-belirler. Ethernet bağlarında MTU değeri varsayılan olarak **1500
+**MTU:** _Maximum Transmission Unit_. Bir seferde gönderilebilecek maksimum veri miktarını belirler. Ethernet ağlarında MTU değeri varsayılan olarak **1500
 bayt/kapsül**
 
-**<span style="color: red">PPL[^5]</span>**: Paketlerin Ağda sonsuz
-kadar dolaşmaması için geçen süredir.  
-PPL değeri genellikle **128**’dir.
+**TTL:** _Time to Live_. Paketlerin Ağda sonsuz kadar dolaşmaması için kullanılan yaşam ömrü süresidir. Başlangıç TTL değeri sistemden sisteme değişir. 256, 128 veya 64 olabilmektedir.
+![TTL değeri](images/B04-TTL.png)
+*Görsel kaynağı: https://ipwithease.com/what-is-time-to-live-ttl-in-networking/*
 
-! Paket noktalar arasında her aktarıldığında **PPL değeri azalır**.
+Bir paket, **hop noktaları** arasında her aktarıldığında **TTL değeri 1 azalır**.
 
-[^1]: IP =\> Internet Protocol
-[^2]: TCP =\> Transmission Control Protocol
-[^3]: UDP =\> User Datagram Protocol
-[^4]: MTU =\> Maximum Transmission Unit
-[^5]: PPL =\> Time to Live (Yaşam süresi)
-
-
+![Zamana Karşı filmindeki insanların TTL değeri](images/B04-Film_ZamanaKarsi.jpg)
+*Zamana Karşı filmindeki insanların TTL değeri*
 ## Band Genişliği (Bandwidth)
 
 Haberleşme kanalının veya iletim ortamının kapasitesini ifade etmek için
