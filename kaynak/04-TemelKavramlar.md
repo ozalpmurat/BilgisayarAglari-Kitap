@@ -10,12 +10,12 @@ Bu denkleme göre; bir seferde gönderilen veri bloğu ne kadar büyürse, verim
 bayt/kapsül**
 
 **TTL:** _Time to Live_. Paketlerin Ağda sonsuz kadar dolaşmaması için kullanılan yaşam ömrü süresidir. Başlangıç TTL değeri sistemden sisteme değişir. 256, 128 veya 64 olabilmektedir.
-![TTL değeri](images/B04-TTL.png)
+![TTL değeri](images/B04-TTL.png)  
 *Görsel kaynağı: https://ipwithease.com/what-is-time-to-live-ttl-in-networking/*
 
 Bir paket, **hop noktaları** arasında her aktarıldığında **TTL değeri 1 azalır**.
 
-![Zamana Karşı filmindeki insanların TTL değeri](images/B04-Film_ZamanaKarsi.jpg)
+![Zamana Karşı filmindeki insanların TTL değeri](images/B04-Film_ZamanaKarsi.jpg)  
 *Zamana Karşı filmindeki insanların TTL değeri*
 ## Band Genişliği (Bandwidth)
 
