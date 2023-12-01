@@ -21,6 +21,9 @@ concurrency:
 jobs:
   # Build job
   build:
+    env:
+      # https://medium.com/insiderengineering/timezone-issues-with-testing-spark-applications-on-github-actions-23b5782c6709
+      TZ: "Europe/Istanbul"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,7 +41,6 @@ jobs:
           primary-color: teal
           secondary-color: indigo
           hide-repository: false
-          timezone: Europe/Istanbul
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
