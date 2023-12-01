@@ -6,6 +6,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  # https://medium.com/insiderengineering/timezone-issues-with-testing-spark-applications-on-github-actions-23b5782c6709
+  TZ: "Europe/Istanbul"
+  timezone: Europe/Istanbul
+  locale: tr
+      
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -21,11 +27,6 @@ concurrency:
 jobs:
   # Build job
   build:
-    env:
-      # https://medium.com/insiderengineering/timezone-issues-with-testing-spark-applications-on-github-actions-23b5782c6709
-      TZ: "Europe/Istanbul"
-      timezone: Europe/Istanbul
-      locale: tr
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
