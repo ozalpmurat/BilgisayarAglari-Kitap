@@ -38,6 +38,7 @@ jobs:
           primary-color: teal
           secondary-color: indigo
           hide-repository: false
+          timezone: Europe/Istanbul
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
