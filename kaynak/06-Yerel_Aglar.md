@@ -182,12 +182,12 @@ style="width:8cm;height:6cm" alt="LAN-VLAN" />
 Üzerinde sanal ağlar tanımlanabilen anahtarlardır.Sıradan anahtarlarda
 üstün olmasının en önemli sebebi ayarlanabilir olmasıdır. Bu nedenle
 yönetilebilir anahtarlar da denmektedir.Vlan anahtarın üzerindeki
-portlar gruplandırılarak birden çok sanal ağ oluşturulabilir.Her bir
-sanal anahtar ayrı bir ağ gibi çalıştırılabilir.Bu sanal ağlara "VLAN"
-denir.Her bir vlan’ın kendine özel Vlan Id isminde bir tanımlayıcı
-numarası olur. Anahtarları fizikse portları Vlan ID’leri ile
-eşleştirilerek ağlar düzenlenir.Aynı vlan numrasına sahip portlar aynı
-sanal ağa aittir.  
+portlar gruplandırılarak birden çok sanal ağ oluşturulabilir.
+![VLAN Anahtar](images/B06-VLAN_Anahtar.png)  
+*Görsel kaynağı: https://www.practicalnetworking.net/stand-alone/routing-between-vlans/*
+
+Her bir sanal anahtar ayrı bir ağ gibi çalıştırılabilir.Bu sanal ağlara "VLAN" denir.Her bir vlan’ın kendine özel Vlan Id isminde bir tanımlayıcı numarası olur. Anahtarları fizikse portları Vlan ID’leri ile eşleştirilerek ağlar düzenlenir.Aynı vlan numrasına sahip portlar aynı sanal ağa aittir.  
+
 Bazı durumlarda VLAN yapılandırılması portlardan ve fiziksel
 bağlantılardan bağımsız olarak yapılabilir.Örneğin pc’nin MAC
 adreslerine göre ya da kullanıcı kimlik doğrulama yöntemine göre
@@ -199,12 +199,14 @@ mümkündür.
 
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
 bir anahtar kullanılmalıdır.
+
 ![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)  
-*Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
+*Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches
 
 trunk: Anahtarın herhangi bir portundan birden fazla VLAN taşınması
 gerekiyorsa o port trunk olarak yapılandırılmalı.Bu bağlantıya da
 "trunk" denir.
+
 ![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.jpg)  
 *Görsel kaynağı: https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html*
 
@@ -221,6 +223,8 @@ bağlantıyı sağlamak için kullanılır.Bu nedenle çok sayıda fiberoptik
 port sergilerler.Modüler yapıdadırlar,yani port sayıları ve türleri
 modüler halinde takılıp çıkartılabilir.Modülerin takıldığı yere "şase"
 denir.Fiziksel olarak çok yer kaplarlar ve pahalıdırlar.  
+![Alt text](images/B06-AnahtarOmurga.png)  
+*Görsel kaynağı: https://thenetworkinstallers.com/blog/fiber-optic-installation-process/*
 
 2. **Dağıtım(Distrubution)Katmanı**  
 Omurga anahtarında bağlı olan ve binaların içerisinde küçük bir omurga
@@ -240,7 +244,8 @@ Captive Portal
 
 **Örnek:**  
 20 portlu bir VLAN anahtar 4 portlu bir ağ geçidine
-bağlanabiliyorAşağıdaki durumları yorumlayınız.  
+bağlanabiliyorAşağıdaki durumları yorumlayınız. 
+
 1)Her portun port sayısı 5’er tanedir.  
 Böyle bir zorunluluk yoktu.̊  
 2)Bir valan anahtar üzerine doğrudan bağlanacak PC sayısı 16’dır  
