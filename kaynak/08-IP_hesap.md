@@ -5,6 +5,7 @@
 IPv4 adresleri tükendiği için, artık IPv6 adresleri dağıtılmaktadır. Uzunca bir süre daha ikisini birlikte kullanmak zorundayız.
 
 IPv4 adresleme sisteminde $2^{32}$ IP adresi kullanılabilirken, IPv6 adreslemesinde $2^{128}$ adet IP adresi kullanılabilmektedir. Aşağıda bu iki sayı açık olarak yazılmıştır:
+
 - **IPv4 adres sayısı**: $4.294.967.296$ (yaklaşık 4,3 milyar)
 - **IPv6 adres sayısı**: $340.282.366.920.938.463.463.374.607.431.768.211.456$
 
