@@ -111,6 +111,14 @@ daha kapasiteli olur. Anahtarları birbirinden ayıran bir diğer özellikte
 miktarına "switchfabric" ya da "through put"denir.
 
 ### AĞ GEÇİTLERİ(GATEWAY)
+Ağ geçidi tanımı yönlendirme,protokol çevirme veya güvenlik
+uygulaması gibi işlemleri yapan tüm cihazları kapsar.Sıradan bir PC
+,3.katman(L3) anahtar,yönlendirici veya özel üretilmiş donanım
+olabilir.
+Ağ geçitleri üzerindeki ağ arayüzüne(interface) bağlı olarak
+ethernet,Frame Relay,ATM,PPPoE gibi protokollerin hepsinin
+kullanılabilme özelliğine sahip olduğundan bazı kaynaklardan
+protokol çevirici olarak adlandırılır.
 
 Önceden bahsedildği gibi anahtarlar çarpışma alanına geçemezler.Bu
 nedenle kablolara göre daha fazla tercih edilir. Ancak anahtarlar da
@@ -146,30 +154,18 @@ Geleneksel yapıda ağları birbirinden ayrılması için ağ geçidi
 kullanılır  
 Bir anahtarda çok sayıda ağ(VLAN) kullanabiliyoruz.
 
-## SANAL AĞ(VLAN)KULLANMANIN AVANTAJLARI
-
-1.  **Ağları Bölerek**: Her bir ağdaki pc sayısını azaltarak yayın
-    alanını daraltmak ve performansı azaltmak
-
-2.  **Esneklik**: Farklı coğrafyadaki bilgisayarlar aynı vlanda oabilir
-    ya da aynı anahtar üzerinde birden fazla farklı vlan olabilir.
-
-3.  **Güvenlik**: Birbirine erişimi kısıtlamaması gereken ağlar arasında
-    erişim denetim listeleri(Access Control List(ACL)) oluşturularak
+## Ağları bölmenin faydaları
+1. **İşletme Kolaylığı**: Ağlar küçük olduğunda sorunu çözmek
+    kolaylaşır. Ağ isimleri, IP grupları ve kullanım yerleri eşleştirilerek hiyerarşik sistemler oluşturulabilir. 
+2. **PC sayısını azaltmak**: Her bir ağdaki pc sayısını azaltarak yayın
+    alanını daraltmak, fazlalık yayın mesajlarını azaltmak ve performansı arttırmak
+3. **Güvenlik**: Birbirine erişimi kısıtlamaması gereken ağlar arasında
+    erişim denetim listeleri (Access Control List ~ ACL) oluşturularak
     erişim kısıtlanabilir.
+---
 
-4.  **İşletme Kolaylığı**: Ağlar küçük olduğunda sorunu çözmek
-    kolaylaşır.Yani ağ eklemek ve mevcut ağları düzenlemek kolaylaşır.Ağ
-    isimleri,IP grupları ve kullanım yerleri eşleştirilerek hiyerarşik
-    sistemler oluşturulabilir.  
-    Ağ geçidi tanımı yönlendirme,prptokol çevirme veya güvenlik
-    uygulaması gibi işlemleri yapan tüm cihazları kapsar.Sıradan bir PC
-    ,3.katman(L3) anahtar,yönlendirici veya özel üretilmiş donanım
-    olabilir.  
-    Ağ geçitleri üzerindeki ağ arayüzüne(interface) bağlı olarak
-    ethernet,Frame Relay,ATM,PPPoE gibi protokollerin hepsinin
-    kullanılabilme özelliğine sahip olduğundan bazı kaynaklardan
-    protokol çevirici olarak adlandırılır.
+**Esneklik**: Eğer ağı VLAN ile bölersek; farklı coğrafyadaki bilgisayarlar aynı VLAN'da olabilir ya da aynı anahtar üzerinde birden fazla farklı VLAN olabilir.
+
 
 <figure>
 <img src="images/Vlanlar" id="fig:lan_vlan_sorusu"
@@ -193,22 +189,29 @@ bağlantılardan bağımsız olarak yapılabilir.Örneğin pc’nin MAC
 adreslerine göre ya da kullanıcı kimlik doğrulama yöntemine göre
 (parola,parmak izi ) Vlan ataması yapılabilir.  
 Vlan anahtarlar kullanıldığında birden fazla sanal ağı oluşturursa bu
-alt ağlar arasında trafiğin yönlendirilmesi gerekmektedr.Bu yönlendirme
-işlemi anhtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak
+alt ağlar arasında trafiğin yönlendirilmesi gerekmektedir. Bu yönlendirme
+işlemi anahtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak
 mümkündür.
+![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.jpg)  
+*Görsel kaynağı: https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html*
 
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
 bir anahtar kullanılmalıdır.
-
 ![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)  
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches
 
-trunk: Anahtarın herhangi bir portundan birden fazla VLAN taşınması
-gerekiyorsa o port trunk olarak yapılandırılmalı.Bu bağlantıya da
-"trunk" denir.
+## IEEE 8021.q VLAN protokolü
+**Dot1q** olarak ta bilinir. Ethernet protokolü ilk tasarlandığında VLAN ihtiyacı yoktu. 1998 yılında yayınlanan 802.1q protokolü ile Ethernet protokolü VLAN farkındalığı kazandı.
+![IEEE 802.1q](images/B06-Dot1q_frame.png)  
+*Görsel kaynağı: https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/*
 
-![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.jpg)  
-*Görsel kaynağı: https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html*
+**trunk (tagged) port:** Anahtarın herhangi bir portundan birden fazla VLAN taşınması gerekiyorsa o port trunk olarak yapılandırılmalıdır. Aynı zamanda bu bağlantıya da "trunk" denir. Genellikle iki anahtar arasında kullanılır ancak ihtiyaca göre 1 bilgisayara bile trunk bağlantı verilebilir. Anahtarlar, bu portta gelen-giden trafiklere bakarak başlık bilgisindeki trafiğin ilgili VLAN'a gitmesini sağlar.
+
+**acces (untagged) port:** Bu portta VLAN etiketleri olmaz. Anahtar üzerinde config yapılarak, bu porttan gelen-giden tüm trafiğin belirli bir VLAN'a gitmesi sağlanır.
+![Trunk ve Access portlar](images/B06-trunk_access.png)  
+*Görsel kaynağı: https://networklessons.com/switching/802-1q-encapsulation-explained*
+
+Cisco firması `trunk/access` sözcüklerini kullanırken diğer üreticiler genellikle `tagged/untagged` sözcüklerini tercih etmektedir.
 
 # ANAHTAR KULLANIM MİMARİSİ
 
