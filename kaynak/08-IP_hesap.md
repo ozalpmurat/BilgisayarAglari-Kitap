@@ -167,12 +167,12 @@ tamamına yetmemektedir. Bu nedenle günümüzde kurumların iç ağlarında
 XXX -------------------------------------- IMAGE
 ----------------------------------- XXX\
 
-## Ağ Maskesi(Netmask)
+## Ağ Maskesi (Netmask)
 
-IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz.
-Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi
-kullanılır. Ağ maskesi herhangi bir IP adresi ile ikilik sistemde
-çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir.
+IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır.
+
+## Ağ adresi
+Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir.
 
 **ÖRNEK :**
 
@@ -187,6 +187,9 @@ kullanılır. Ağ maskesi herhangi bir IP adresi ile ikilik sistemde
 -   11000000.10101000.00000001.00000000
 
 -   Ağ adresi 192.168.1.0
+
+## Yayın adresi
+Ip adresinin kaçıncı bitten bölündüğünü bulalım. IP adresinin bu bitten sonraki kısmı 1 yapılırsa, **yayın adresi** bulunur.
 
 ## CIDR Notasyonu
 
