@@ -48,7 +48,7 @@ jobs:
           CONFIG_FILE: /mkdocs.yml
           EXTRA_PACKAGES: build-base
           REQUIREMENTS: /requirements.txt
-          ICON: lan
+          #ICON: lan
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
