@@ -168,16 +168,25 @@ XXX -------------------------------------- IMAGE
 ----------------------------------- XXX\
 
 ## Ağ Maskesi (Netmask)
+
+Ağ maskesinin iki temel görevi vardır:
+1. Ağın büyüklüğünü belirtmek
+2. Ağın nerede başladığını hesabında kullanmak
+
 ![Maskeleme](images/B08-maskeleme.png)  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
 IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır. IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
+![Ağ büyüklüğü](images/B08-maske_ag_boyutu.png)
 
 ![Windows IP yapılandırması](images/B08-IP_config.png)  
 *Windows'ta iki farklı yerden IP yapılandırması yapılabiliyor. Görsel kaynağı: https://pureinfotech.com/set-static-ip-address-windows-10/*
 
+![Farklı alt ağ maskelerinin etkisi](images/B08-maske-tablo.png)  
+*Görsel kaynağı: https://www.trance-cat.com/electrical-circuit-calculators/en/subnet-mask-calculator.php*
+
 ## Ağ adresi
-Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir.
+Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir. Bu sayede, ağın nerede başladığı bulunmuş olur.
 
 **ÖRNEK :**
 
