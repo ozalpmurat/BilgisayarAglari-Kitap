@@ -1,6 +1,6 @@
 docs_dir: kaynak
 site_name: 'Bilgisayar Ağları Ders Notları'
-lang: tr
+#lang: tr
 site_author: 'Murat Özalp'
 theme: material
-icon: lan-connect
+#icon: lan-connect
