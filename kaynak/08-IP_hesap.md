@@ -177,6 +177,7 @@ Ağ maskesinin iki temel görevi vardır:
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
 IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır. IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
+
 ![Ağ büyüklüğü](images/B08-maske_ag_boyutu.png)
 
 ![Windows IP yapılandırması](images/B08-IP_config.png)  
