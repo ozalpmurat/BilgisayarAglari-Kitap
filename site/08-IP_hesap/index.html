@@ -1,0 +1,847 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Murat Özalp">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>08 IP hesap - Bilgisayar Ağları Ders Notları</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ipv4-ve-ipv6" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bilgisayar Ağları Ders Notları" class="md-header__button md-logo" aria-label="Bilgisayar Ağları Ders Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bilgisayar Ağları Ders Notları
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              08 IP hesap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bilgisayar Ağları Ders Notları" class="md-nav__button md-logo" aria-label="Bilgisayar Ağları Ders Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Bilgisayar Ağları Ders Notları
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Kaynak
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-Giris/" class="md-nav__link">
+        01. Giriş ve Teşekkür
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Topolojiler/" class="md-nav__link">
+        Ağ Topolojileri
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-OSI/" class="md-nav__link">
+        03 OSI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-TemelKavramlar/" class="md-nav__link">
+        Temel Kavramlar
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-iletim_ortamlari/" class="md-nav__link">
+        İletim Ortamları
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-Yerel_Aglar/" class="md-nav__link">
+        Yerel Ağlar - LAN/VLAN
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-IP_Yonlendirme/" class="md-nav__link">
+        IP Yönlendirme
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        08 IP hesap
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-Benzetim/" class="md-nav__link">
+        Bilgisayar Ağları Modelleme
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-edilen-dosya/" class="md-nav__link">
+        Üst seviye başlık: import edilen dosya
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p>*[RIR]: Regional Internet Registry</p>
+<h1 id="ipv4-ve-ipv6">IPv4 ve IPv6</h1>
+<p>IPv4 adresleri tükendiği için, artık IPv6 adresleri dağıtılmaktadır. Uzunca bir süre daha ikisini birlikte kullanmak zorundayız.</p>
+<p>IPv4 adresleme sisteminde $2^{32}$ IP adresi kullanılabilirken, IPv6 adreslemesinde $2^{128}$ adet IP adresi kullanılabilmektedir. Aşağıda bu iki sayı açık olarak yazılmıştır:</p>
+<ul>
+<li><strong>IPv4 adres sayısı</strong>: $4.294.967.296$ (yaklaşık 4,3 milyar)</li>
+<li><strong>IPv6 adres sayısı</strong>: $340.282.366.920.938.463.463.374.607.431.768.211.456$</li>
+</ul>
+<p><strong>Bu ders içerisinde IP ifadesi her kullanıldığında, IPv4 anlaşılmalıdır.</strong> Bu ders açısından ikisi arasındaki en önemli fark; birisinin 32, diğerinin ise 128 bit olmasıdır. IP hesaplamaları tamamen aynıdır. Hesap mantığını anlamak için v4 hesapları -<em>kısa olduğu için</em>- daha iyi olacaktır. Sonrasında aynı hesapları v6'da da yapabilirsiniz.</p>
+<h1 id="ip-adresi-ve-hesaplamalar">IP Adresi ve Hesaplamaları</h1>
+<p>32 bit uzunluğa sahip olan IP adresi 2 temel bileşene sahiptir:
+1.  Ağ tanımlayıcı
+2.  Host tanımlayıcı</p>
+<p><img alt="IP bileşenleri" src="../images/B08-IP2.png" /><br />
+<em>IP bileşenleri</em></p>
+<p><strong>host:</strong> Bir ağ içerisinde IP atanabilen ve kendisinin ağa bağlanma
+ihtiyacı olan bilgisayar, yönlendirici, güvenlik duvarı, akıllı saat, cep telefonu, vb. cihazların tümüne <strong>host</strong> denir.</p>
+<p>IP adresinin bu iki bileşeni hesaplanırken alt ağ maskesine ihtiyaç
+duyulur. Temel olarak alt ağ maskesi IP adresinin sınıfına göre
+belirlenir. IP adresleri 32 bitin sekizerli olarak gruplandırılması ve
+decimal olarak gösterilmesi şeklinde olur. Bu 8 bitlik grupların her
+birine oktet denir. Her oktet birbirinden nokta ile ayrılır.</p>
+<p><img alt="IP adresi" src="../images/B08-IP1.png" /><br />
+<em>Görsel kaynağı: https://www.cloudns.net/blog/what-is-ipv4-everything-you-need-to-know/</em></p>
+<p>Bir IP adresinin bağlı olduğu <strong>sınıf</strong> ilk oktetinden anlaşılır.
+<img alt="Ip Sınıfları" src="../images/B08-IP3.jpg" /><br />
+<em>IP sınıfları</em></p>
+<p><strong>ÖRNEK :</strong> 16 tane IP adresini bölüyoruz. (${2^4}$ bit )\
+\
+XXX -------------------------------------- IMAGE
+----------------------------------- XXX\
+\
+<strong>NOT :</strong> Ağlardaki bilgisayar sayıları(kullanılabilecek ip sayıları)
+belirlenirken maksimum kapasite 2'nin kuvveti ${2^n}$ alınarak
+belirlenir.</p>
+<p><strong>ÖRNEK :</strong> Bir şirketin iki farklı şubesinde 120 ve 280 adet bilgisayar
+kullanılmaktadır. Bu şirketler için optimal ağ büyüklüklerini
+hesaplayınız.</p>
+<ul>
+<li>
+<p>$120 =&gt; 2^n = 2^7 =&gt; 128$</p>
+</li>
+<li>
+<p>$280 =&gt; 2^n = 2^9 =&gt; 512$</p>
+</li>
+</ul>
+<p><strong>NOT :</strong> Host tanımlayıcısı kısmında belirtilen bitlerde elde
+edilebilecek en büyük sayı o ağda kullanılabilecek IP adresi sayısıdır.
+Her ağın ilk IP adresi [\"ağ adresi\"]{.underline} ve son IP adresi
+[\"yayın adresi\"]{.underline} olarak kullanıldığından her ağda
+kullanılabilecek host sayısı IP sayısından 2 eksiktir.</p>
+<ul>
+<li>
+<p>Host bitleri : n tane</p>
+</li>
+<li>
+<p>Ağdaki IP adresi : $2^n$ tane</p>
+</li>
+<li>
+<p>Ağda kullanılabilecek host sayısı $2^n-2$</p>
+</li>
+</ul>
+<p><strong>ÖRNEK :</strong> 10.9.8.0 IP adresinin 30. bitten sonrasının bulunduğunu
+varsayalım. Alt ağ IP adresinin kullanım amacına göre yazalım.</p>
+<hr />
+<p>.....   .....
+  30 bit   2bit</p>
+<hr />
+<p>IP sayısı $2^2=4$ tane Host sayısı $2^2-2=2$ tane</p>
+<hr />
+<p>1.IP adresi 10.9.8.0                       -&gt;   Ağ adresi
+  2. ve 3. IP adresi 10.9.8.1 ve 10.9.8.2   -&gt;   Hostlar için kullanılabilir
+  4. IP adresi 10.9.8.3                     -&gt;   Yayın adresi</p>
+<hr />
+<p><strong>NOT :</strong></p>
+<p>Ağ sayısı   Host sayısı   Toplam host sayısı</p>
+<hr />
+<p>1           16            14
+  2           8             $2(8-2) =12$
+  4           4             $4(4-2) = 8$</p>
+<h2 id="iana-ip-dagtan-kurulus">IANA: IP Dağıtan Kuruluş</h2>
+<p>https://www.iana.org/ web sitesinde faaliyetleri hakkında bilgi alınabilir.</p>
+<p><img alt="IANA" src="../images/B08-IANA1.png" /><br />
+<em>IANA tarafından yetkilendirilen bölgesel internet kayıtçıları (RIR)</em></p>
+<p>IANA, IP adreslerini /8 şeklinde RIR'lara dağıttı.
+<img alt="/8 IP adresleri" src="../images/B08-IANA2.png" /><br />
+<em>Görsel kaynağı: https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml</em></p>
+<p>IANA elindeki tüm IPv4 adresleri 2011'de bitti.
+<img alt="IPv4 bitmesi" src="../images/B08-IPv4-bitmesi.png" /><br />
+<em>Görsel kaynağı: https://en.wikipedia.org/wiki/IPv4_address_exhaustion</em></p>
+<h2 id="ip-snflar">IP Sınıfları</h2>
+<p>IP'nin ilk tasarlandığı sıralarda ortaya çıkmış bir kavramdır.
+Kurumlarda IP adresleri tahsis edilirken ihtiyaca göre optimal sayıda
+verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıfı, en küçük IP
+sınıfı C sınıfıdır.</p>
+<p><img alt="Ip Sınıfları" src="../images/B08-IP_Sinif1.png" /><br />
+<em>Görsel kaynağı: https://medium.com/networks-security/tricks-to-remember-five-classes-of-ipv4-484c191678fb</em></p>
+<ul>
+<li><strong>A sınıfı:</strong> İlk biti 0'dır. İlk oktet <strong>0-127</strong> arasında olur. Varsayılan ağ maskesi <strong>255.0.0.0</strong>'dır. A sınıfı bir IP adresinde $2^{24}$ tane IP oluşturulabilir.</li>
+<li><strong>B sınıfı:</strong> İlk iki biti 10 şeklindedir. Ondalık formda ilk
+okteti <strong>128-191</strong> şeklindedir. Varsayılan alt ağ maskesi
+<strong>255.255.0.0</strong>'dır. B sınıfı bir IP adresinde $2^{16}$ tane IP
+oluşturulabilir.</li>
+<li><strong>C sınıfı:</strong> İlk üç biti 110 şeklindedir. Ondalık formda ilk
+okteti <strong>192-223</strong> arasındaki adreslerdir. Varsayılan alt ağ maskesi
+<strong>255.255.255.0</strong>'dır. B sınıfı bir IP adresinde $2^{8}$ tane IP
+oluşturulabilir.</li>
+<li><strong>D sınıfı:</strong> İlk dört biti 1110'dır. Ondalık formda ilk
+okteti <strong>224-239</strong> arasındadır. <strong>Multicast</strong> (Çoklu yayın) olarak
+bilinir. Normalde hostlarda kullanılmaz.</li>
+<li><strong>E sınıfı:</strong> İlk okteti, <strong>240-248</strong> ile başlar. Deneysel amaçlar için rezerve
+edilmiştir. Normalde hostlarda ve ağlarda kullanılmaz.</li>
+</ul>
+<p><img alt="IP sınıfları" src="../images/B08-IP_Sinif2.png" /><br />
+<em>Görsel kaynağı: https://www.routerfreak.com/definitive-guide-ip-address-classes/</em></p>
+<h3 id="peki-neden-boyle-bir-snflandrma-yapld">Peki neden böyle bir sınıflandırma yapıldı?</h3>
+<pre><code>  Ağ biti   Host bitleri    Her ağdaki IP sayısı
+  --------- --------------- ----------------------
+  8         24-\&gt;A sınıfı   $2^{24}$ tane IP
+  16        16-\&gt;B sınıfı   $2^{16}$ tane IP
+  24        8-\&gt;C sınıfı    $2^8$ tane IP
+</code></pre>
+<p><strong>ÖRNEK :</strong> 132.x.x.x IP adresi B sınıfıdır. 132.45.x.x IP adresinin ilk
+iki okteti ağ tanımlayıcısı son iki oktet host tanımlayıcısıdır. $2^16$
+tane IP alabilir.</p>
+<p>112.x.x.x IP adresi A sınıfıdır. $2^{24}$ tane IP alabilir.</p>
+<p>193.140.253.x IP adresi C sınıfıdır. $2^8$ tane IP alabilir.</p>
+<h2 id="ozel-ip-adresleriprivate-ip-blocks">Özel IP Adresleri(Private IP Blocks)</h2>
+<p>İnternette kullanılmayan IP adresleridir. İnternet üzerinde hiçbir
+yönlendirici tarafından yönlendirilmeyen IP adresleridir. Bu adreslerin
+kullanım amacı test uygulamaları ve NAT uygulamaları gibi durumlardır.
+IP adresleri tükendiğinden kurumlarda kullanılan bilgisayarların
+tamamına yetmemektedir. Bu nedenle günümüzde kurumların iç ağlarında
+özel IP adresleri istenilen sayıda kullanılabilir.</p>
+<ul>
+<li>
+<p>10.0.0.0/8 -&gt;$2^{24}$ IP adresi</p>
+</li>
+<li>
+<p>172.16.0.0 -&gt;$2^{20}$ IP adresi</p>
+</li>
+<li>
+<p>192.168.0.0 -&gt;$2^{16}$ IP adresi</p>
+</li>
+</ul>
+<p><strong>NAT(Network Address Translation)</strong></p>
+<p>XXX -------------------------------------- IMAGE
+----------------------------------- XXX\</p>
+<h2 id="ag-maskesi-netmask">Ağ Maskesi (Netmask)</h2>
+<p>Ağ maskesinin iki temel görevi vardır:
+1. Ağın büyüklüğünü belirtmek
+2. Ağın nerede başladığını hesabında kullanmak</p>
+<p><img alt="Maskeleme" src="../images/B08-maskeleme.png" /><br />
+<em>Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/</em></p>
+<p>IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır. IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.</p>
+<p><img alt="Ağ büyüklüğü" src="../images/B08-maske_ag_boyutu.png" /></p>
+<p><img alt="Windows IP yapılandırması" src="../images/B08-IP_config.png" /><br />
+<em>Windows'ta iki farklı yerden IP yapılandırması yapılabiliyor. Görsel kaynağı: https://pureinfotech.com/set-static-ip-address-windows-10/</em></p>
+<p><img alt="Farklı alt ağ maskelerinin etkisi" src="../images/B08-maske-tablo.png" /><br />
+<em>Görsel kaynağı: https://www.trance-cat.com/electrical-circuit-calculators/en/subnet-mask-calculator.php</em></p>
+<h2 id="ag-adresi">Ağ adresi</h2>
+<p>Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir. Bu sayede, ağın nerede başladığı bulunmuş olur.</p>
+<p><strong>ÖRNEK :</strong></p>
+<ul>
+<li>
+<p>IP : 192.168.1.75</p>
+</li>
+<li>
+<p>Ağ maskesi : 255.255.255.0</p>
+</li>
+<li>
+<p>11000000.10101000.00000001.01001011</p>
+</li>
+<li>
+<p>11111111.11111111.11111111.00000000</p>
+</li>
+<li>
+<p>11000000.10101000.00000001.00000000</p>
+</li>
+<li>
+<p>Ağ adresi 192.168.1.0</p>
+</li>
+</ul>
+<h2 id="ag-adresi-ve-yayn-adresinin-pratik-hesab">Ağ adresi ve yayın adresinin pratik hesabı</h2>
+<p>IP adresinin bölündüğü biti biliyorsak; <strong>IP adresinde</strong> bu bitten sonrası <code>1</code> yapılırsa, <code>yayın adresi</code>ni buluruz. Aynı bitleri <code>0</code> yaptığımızda ise <code>ağ adresi</code>ni buluruz.</p>
+<h2 id="cidr-notasyonu">CIDR Notasyonu</h2>
+<p>Elimizde sadece IP adresleri olduğunda ağla ilgili yeterli bilgiye
+ulaşamadığımızı, ilave olarak IP adresinin hangi bitten bölündüğünü
+bilmemiz gerektiğini biliyoruz. Bunun için ağ maskesine alternatif
+olarak CIDR Notasyonu kullanılmaktadır. Bu gösterim şeklinde IP
+adresinin sağına \"/\" işareti konulup bölünen bit numarası yazılır.</p>
+<p><strong>ÖRNEK :</strong></p>
+<ul>
+<li>
+<p>192.168.1.75 IP adresli ve 255.255.255.0 ağ maskesine sahip bir
+    cihazın CIDR notasyonu 192.168.1.75/24 şeklindedir.</p>
+</li>
+<li>
+<p>10.1.0.0 ve 255.0.0.0 ise 10.1.0.0/8 olarak gösterilir.</p>
+</li>
+<li>
+<p>10.9.8.0 ve 255.255.255.128 ise 10.9.8.0/25 şeklinde gösterilir.
+    (128 ikilik tabanda 10000000 şeklinde gösterildiğinden soldan 25
+    tane 0 vardır.)</p>
+</li>
+</ul>
+<h2 id="alt-aga-bolme">Alt Ağa Bölme</h2>
+<p>IP adresi ve ağı temsil eden bit sayısı belirli olan bir ağ birden fazla
+küçük ağlara bölünebilir. Alt ağa bölme işlemi alt ağ maskesinde bir bit
+kaydırılarak yapılır. Bu şekilde $2^n$ tane alt ağ bölme işlemi
+yapılabilir.</p>
+<p><strong>ÖRNEK :</strong></p>
+<p><strong>a)</strong> 10.0.0.0/24 ağını iki ayrı ağa bölünüz.</p>
+<p><strong>b)</strong>Yeni oluşturulan ağlar için 10.0.0.100 ve 10.0.0.150 IP
+adreslerinin aynı ağda olup olmadıklarını hesaplayın. (İpucu : Ağ adresi
+= IP x Ağ maskesi)</p>
+<p><strong>c)</strong>128 IP'li ağların her birini ikiye bölünüz.</p>
+<p>[Çözüm :]{.underline}</p>
+<p><strong>a)</strong></p>
+<ul>
+<li>
+<p>Ağ : 10.0.0.0/24</p>
+</li>
+<li>
+<p>Ağ maskesi : 255.255.255.0 (24 tane 1, 8 tane 0 var. $2^8$ tane IP
+    var)</p>
+</li>
+<li>
+<p>Ağ maskesi : 11111111.11111111.11111111.00000000 ağ maskesinde 1 bit
+    sağa kaydırdığımızda 25 tane 1, 7 tane 0 olacaktır. $2^7=128$ tane
+    IP elde edilir.</p>
+</li>
+</ul>
+<p>1 bit kayarsa $2^1=2$ alt ağ, 2 bit kayarsa $2^2=4$ alt ağ, .... ,n bit
+kayarsa $2^n$ alt ağ elde edilebilir.</p>
+<p>10.0.0.0/25 notasyonuna sahip bir ağda 1.alt ağ 10.0.0.0 IP adresiyle
+başlar. 128 adet IP tanımlanır. Son IP 10.0.0.127 olur. 2. alt ağ ise
+10.0.0.128 IP adresinden 10.0.0.255 IP adresine kadar 128 adet IP
+alabilir.</p>
+<pre><code>     Ağ adresi       Yayın adresi   Ağ maskesi        IP sayısı   Host sayısı
+</code></pre>
+<hr />
+<p>1.ağ   10.0.0.0/25     10.0.0.127     255.255.255.128   128         126
+  2.ağ   10.0.0.128/25   10.0.0.255     255.255.255.128   128         126</p>
+<p><strong>b)</strong></p>
+<hr />
+<pre><code>            00001001.00000000.00000000.01100100   =   10.0.0.100
+</code></pre>
+<p>ağ maskesi:   11111111.11111111.11111111.00000000   =   10.0.0.128
+                00001001.00000000.00000000.10010110   =   10.0.0.150</p>
+<hr />
+<p>Son oktetleri farklı olacağından aynı ağda değillerdir.</p>
+<p><strong>c)</strong></p>
+<pre><code>  1.ağ           2.ağ
+</code></pre>
+<hr />
+<p>10.0.0.0/25   10.0.0.128/25</p>
+<p>Ağ maskesi 255.255.255.128</p>
+<p>1111111.11111111.11111111.10000000</p>
+<p>Yeni oluşan ağ maskesi 255.255.255.192\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+<strong>SORU :</strong> 10.9.6.0/25 ağını 4 ayrı ağa bölünüz.</p>
+<p>Ağ maskesi 255.255.255.0 11111111.11111111.11111111.0</p>
+<hr />
+<p>Yeni ağ maskesi   :   11111111.11111111.11111111.11100000 ($2^5=32$ IP var.)
+                    :   255.255.255.224</p>
+<hr />
+<p>\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+<strong>ÖRNEK :</strong> 10.0.0.0/22'yi 4 alt ağa bölünüz.</p>
+<p>11111111.11111111.11111100.00000000 $2^{10}=1024$ tane IP var.</p>
+<p>Ağ maskesi : 255.255.252.0</p>
+<p>Yeni alt ağ maskesi : 255.255.255.0(2 bit kaydı.$2^{8}=256$ IP var.) d
+Yeni CIDR gösterimi -&gt; 10.0.0.0/24 olmalıdır.</p>
+<p>10.0.0.0 -&gt; 10.0.0.255</p>
+<p>10.0.1.0 -&gt; 10.0.1.255</p>
+<p>10.0.2.0 -&gt; 10.0.2.255</p>
+<p>10.0.3.0 -&gt; 10.0.3.255</p>
+<p><strong>ÖRNEK :</strong> /17 şeklinde gösterilen ağın maskesi nedir?</p>
+<p>11111111.11111111.10000000.00000000 = 255.255.128.0 şeklindedir.</p>
+<p><strong>ÖRNEK :</strong> 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç host olabilir?</p>
+<p>$2^{16}-2$ adet host olabilir.</p>
+<p><strong>NOT :</strong> Özel IP ile ??? 127 ile başlayan IP ler kullanılamazlar.
+Localhost : 127.0.0.1 bilgisayarın kendisini temsil eder.</p>
+<p>169.254.0.0 Windows işletim sisteminin IP alınamadığında kendi IP
+bloğundan otomatik olarak verdiği IP adresidir.</p>
+<p><strong>ÖRNEK :</strong> Bir şirkete 192.168.100.0/24 şeklinde IP aralığı tahsis
+edilmiştir. Şekilde sistem yöneticisi ağdaki aşırı yayın trafiğinin
+sorun çıkardığını düşünerek ağı alt ağlara bölmek istiyor. Birimlerin PC
+sayısı aşağıdaki gibidir. Teknik birim=70, Pazarlama=40, Muhasebe=20,
+İdari birim=25\
+\
+XXX -------------------------------------- IMAGE
+----------------------------------- XXX\
+\
+\</p>
+<h2 id="ag-gecidi-ip-adresleri">Ağ Geçidi IP Adresleri</h2>
+<p>Her ağ için ilk IP adresi ağ adresi, son IP adresi yayın adresi olduğunu
+biliyoruz. Kural olmamakla birlikte genel teamüllere göre ağ adresinden
+sonraki ilk IP adresi(kullanılabilecek ilk host adresi) ağ geçidi olarak
+belirlenir. Herhangi bir host adresi ağ geçidi olarak belirlensede
+hiçbir problem olmaz.</p>
+<p><strong>NOT :</strong> IP adresinin ve ağın son IP adresi değiştirilemez.</p>
+<p><strong>NOT :</strong> Ağ geçidi IP adresi herbir ağın doğrudan bağlı olduğu
+yönlendirici arayüzünde(interface, ara birim, ethernet kartı,
+NIC(Network Interface Card)) tanımlı olan IP adresi olmak zorundadır.</p>
+<p>Günümüzde kullanılışı :\
+\
+\
+XXX -------------------------------------- IMAGE
+----------------------------------- XXX\
+\
+\
+[Soruya gelirsek : ]{.underline}\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+Ağ adresi : 192.168.0.0</p>
+<p>Yayın adresi : 192.168.100.127\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+\
+\
+XXX --------------------- TABLO ------------------------ XXX\
+\
+Alt ağ maskesi ise teknik:255.255.255.0,</p>
+<p>pazarlama:255.255.255.192,</p>
+<p>muhasebe:255.255.255.224,</p>
+<p>idari:255.255.255.255 ??? şeklindedir.</p>
+<p><strong>ÖRNEK :</strong> 10.50.100.200/25 şeklinde IP adresi tahsis edilmiş bir
+bilgisayarın ağ adresi ve yayın adresi nedir?</p>
+<p>32-25=7 olduğundan $2^7 =128$ tane IP var.</p>
+<hr />
+<pre><code>  10.50.100.200
+</code></pre>
+<p>x   255.255.255.128 <br />
+      10.50.100.128     ağ adresi
+      10.50.100.255     yayın adresi</p>
+<hr />
+<p><strong>ÖRNEK :</strong> Aşağıdaki bilgisayarlardan hangileri ağ geçidine ihtiyaç
+duymadan haberleşirler.</p>
+<p>::: center</p>
+<hr />
+<pre><code>                      [Ağ adresi]{.underline} 
+a\) 10.0.0.120/25                    10.0.0.0 -128
+b\) 10.0.0.121/24                    10.0.0.0 -256
+c\) 10.0.0.254/24                    10.0.0.0 -256
+d\) 10.0.0.1/24                      10.0.0.0 -256
+e\) 10.0.0.253/25                    10.0.0.0 -128
+</code></pre>
+<hr />
+<p>:::</p>
+<p><strong>NOT :</strong> X'in Y ile aynı ağda olup olmadığını anlamak için X
+bilgisayarı Y nin IP adresiyle kendi ağ maskesini çarpar. Kendi ağ
+adresiyle karşılaştırır.</p>
+<p>A'nın B ile haberleşmesi :</p>
+<hr />
+<p>B'nin IP adresi        10.0.0.121    <br />
+  A'nın ağ maskesi   x   10.0.0.128    <br />
+                         10.0.0.0        </p>
+<hr />
+<p>Çıkan sonuç A'nın ağ adresiyle aynı olduğundan haberleşirler.</p>
+<p>A'nın C ile haberleşmesi :</p>
+<hr />
+<p>C'nin IP adresi        10.0.0.254    <br />
+  A'nın ağ maskesi   x   10.0.0.128    <br />
+                         10.0.0.128      </p>
+<hr />
+<p>Çıkan sonuç A'nın ağ adresiyle aynı olmadığından haberleşemezler.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../07-IP_Yonlendirme/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IP Yönlendirme" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              IP Yönlendirme
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../09-Benzetim/" class="md-footer__link md-footer__link--next" aria-label="Next: Bilgisayar Ağları Modelleme" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Bilgisayar Ağları Modelleme
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.bd0b6b67.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

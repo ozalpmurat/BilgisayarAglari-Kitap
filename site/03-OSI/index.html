@@ -1,0 +1,797 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Murat Özalp">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>03 OSI - Bilgisayar Ağları Ders Notları</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#03-osi-modeli-katmanlari" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bilgisayar Ağları Ders Notları" class="md-header__button md-logo" aria-label="Bilgisayar Ağları Ders Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bilgisayar Ağları Ders Notları
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03 OSI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bilgisayar Ağları Ders Notları" class="md-nav__button md-logo" aria-label="Bilgisayar Ağları Ders Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Bilgisayar Ağları Ders Notları
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Kaynak
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-Giris/" class="md-nav__link">
+        01. Giriş ve Teşekkür
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Topolojiler/" class="md-nav__link">
+        Ağ Topolojileri
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          03 OSI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        03 OSI
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-fiziksel-katan" class="md-nav__link">
+    1: Fiziksel Katan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-veri-bag-katman" class="md-nav__link">
+    2: Veri Bağı Katmanı
+  </a>
+  
+    <nav class="md-nav" aria-label="2: Veri Bağı Katmanı">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gunumuzde-en-yaygn-ikinci-katman-protokolleri" class="md-nav__link">
+    Günümüzde en yaygın ikinci katman protokolleri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anahtarlama" class="md-nav__link">
+    Anahtarlama
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ag-katman-ip" class="md-nav__link">
+    3: Ağ Katmanı (IP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tasma-katman" class="md-nav__link">
+    4: Taşıma Katmanı
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-7-uygulama-seviyesi-katmanlar" class="md-nav__link">
+    5-7: Uygulama Seviyesi Katmanları
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-TemelKavramlar/" class="md-nav__link">
+        Temel Kavramlar
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-iletim_ortamlari/" class="md-nav__link">
+        İletim Ortamları
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-Yerel_Aglar/" class="md-nav__link">
+        Yerel Ağlar - LAN/VLAN
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-IP_Yonlendirme/" class="md-nav__link">
+        IP Yönlendirme
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-IP_hesap/" class="md-nav__link">
+        08 IP hesap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-Benzetim/" class="md-nav__link">
+        Bilgisayar Ağları Modelleme
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-edilen-dosya/" class="md-nav__link">
+        Üst seviye başlık: import edilen dosya
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-fiziksel-katan" class="md-nav__link">
+    1: Fiziksel Katan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-veri-bag-katman" class="md-nav__link">
+    2: Veri Bağı Katmanı
+  </a>
+  
+    <nav class="md-nav" aria-label="2: Veri Bağı Katmanı">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gunumuzde-en-yaygn-ikinci-katman-protokolleri" class="md-nav__link">
+    Günümüzde en yaygın ikinci katman protokolleri
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anahtarlama" class="md-nav__link">
+    Anahtarlama
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ag-katman-ip" class="md-nav__link">
+    3: Ağ Katmanı (IP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tasma-katman" class="md-nav__link">
+    4: Taşıma Katmanı
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-7-uygulama-seviyesi-katmanlar" class="md-nav__link">
+    5-7: Uygulama Seviyesi Katmanları
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><em>[bps]: bit per second (saniyedeki bit sayısı)
+</em>[RF]: Yüksek frekanslı dalgaya radyo frekans denilir. Bu dalga RF kısaltmasıyla gösterilir</p>
+<h1 id="03-osi-modeli-katmanlari">03. OSI MODELİ KATMANLARI</h1>
+<p>Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI<a href="[OSI" title="Open Systems Interconnection) modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli">^1</a> Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.</p>
+<ol>
+<li><a href="#fiziksel-katman">Fiziksel (Physical)</a></li>
+<li><a href="#veri-bag-katman">Veri Bağı (Data link)</a></li>
+<li><a href="#subsubsec:ag_katmani">Ağ (IP)</a></li>
+<li><a href="#subsubsec:tasima_katmani">Taşıma (Transport)</a></li>
+<li>Oturum (Session)</li>
+<li>Sunum (Presentation)</li>
+<li><a href="#subsubsec:tasima_katmani">Uygulama (Application)</a></li>
+</ol>
+<p><img alt="OSI ve TCP/IP modeli katmanları" src="../images/B03-OSI_Katmanlar.png" />
+<em>Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/</em></p>
+<h2 id="1-fiziksel-katan">1: Fiziksel Katan</h2>
+<p>Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
+katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
+sorumludur. Sayısal haberleşmede en küçük birim bit olduğundan bu
+katmanın hızı <strong>bps, b/s (bit/saniye)</strong> cinsindendir. Birinci katman
+donanımları:</p>
+<ol>
+<li>
+<p>Bakır ve fiber optik kablolar</p>
+</li>
+<li>
+<p>RF (Antenler)</p>
+</li>
+<li>
+<p>Sinyali(işareti) elektrik olarak yükselten ve çoklayan HUB cihazları</p>
+</li>
+<li>
+<p>Kablosuz iletişimde kullanılan hava</p>
+</li>
+</ol>
+<h2 id="2-veri-bag-katman">2: Veri Bağı Katmanı</h2>
+<p>Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
+katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
+aynı olup olmadığını sınayan sistemler kullanılır. En çok kullanılan
+hata bulma algoritmaları <strong>eşlik biti (parity check)</strong> ve <strong>CRC
+algoritmasıdır</strong>. Verinin doğru olup olmadığına bakmaz, sadece
+sağlamlığını kontrol eder. Bu katmanda üst katmandan gelen veriler
+çerçeve (frame) adı verilen paketleme işlemini tabi tutulur. Kapsülleme
+de denir. Birbirine doğrudan bağlı ağ cihazlarının aynı kapsülleme
+yöntemini (ikinci katman protokolünü) kullanması gerekir.</p>
+<div id="tab:table_kapsulleme">
+
+| Kaynak | Veri | Hata Denetimi |
+|:------:|:----:|:-------------:|
+
+Kapsülleme
+
+</div>
+
+<figure>
+<img src="images/b01-Kapsulleme.jpg" id="fig:b01-Kapsulleme"
+style="width:15cm" alt="Kapsülleme" />
+<figcaption aria-hidden="true">Kapsülleme</figcaption>
+</figure>
+
+<p>https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking/</p>
+<figure>
+<img src="images/b01-Kapsulleme2.jpg" id="fig:b01-Kapsulleme2"
+style="width:15cm"
+alt="Kapsülleme (katmanlar) - https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking/" />
+<figcaption aria-hidden="true">Kapsülleme (katmanlar) -
+https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking/</figcaption>
+</figure>
+
+<figure>
+<img src="images/b01-Ethernet_Header.png" id="fig:b01-EthernetHeader"
+style="width:17cm" alt="Ethernet Çerçevesi Başlığı" />
+<figcaption aria-hidden="true">Ethernet Çerçevesi Başlığı</figcaption>
+</figure>
+
+<h3 id="gunumuzde-en-yaygn-ikinci-katman-protokolleri">Günümüzde en yaygın ikinci katman protokolleri</h3>
+<p><strong>Yerel ağda (LAN)</strong> : Ethernet<br />
+<strong>Uzak ağlarda (WAN)</strong> : AIM, PPP, Frame, Relay, Metroethernet</p>
+<h3 id="anahtarlama">Anahtarlama</h3>
+<ol>
+<li>
+<p><strong>Devre Anahtarlama</strong>: Veri aktarımı, fiziksel değişiklikle yapılır.</p>
+</li>
+<li>
+<p><strong>Paket Anahtarlama</strong>: Veri aktarımı, her bir veri paketi için
+    hesaplanarak, yazılımsal olarak yapılır.</p>
+</li>
+</ol>
+<p>Ethernet protokolünde kaynak ve hedef adresleri olarak MAC adresi
+(fiziksel adresi) kullanılır. Çakışmaları engellemek için aynı ağda iki
+MAC adresi olmamalıdır.</p>
+<p>Anahtarlar (switch) bu katmanda çalışır. Anahtarlar portlarına bağlı
+olan cihazların MAC adreslerini bilmek zorundadır (otomatik öğrenir). Bu
+şekilde iki farklı portu arasındaki trafiği diğer cihazlar görmeden
+aktarabilirler. <strong>HUB’lardan en önemli farkı budur</strong>.</p>
+<h2 id="3-ag-katman-ip">3: Ağ Katmanı (IP)</h2>
+<p>İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
+katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
+yönlendirilebilir bir protokol olduğundan her türlü veri aağı üzerinden
+haberleşmeye olarak sağlanır. Bu katman en önemli görevi yönlendirme
+işlemidir. Yönlendirme işlemi birden fazla ağ arayüzüne (network
+interface) sahip olan yönlendirici(router) adı verilen cihazlar
+tarafından yapılır. IP internetin temel protokolüdür. Yani bir PC
+internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
+üçüncü katmanda da çalışabilmektedir.</p>
+<figure>
+<img src="images/ip_katman" id="fig:exemple_for_network_model"
+style="width:15cm" alt="AĞ Katmanı" />
+<figcaption aria-hidden="true">AĞ Katmanı</figcaption>
+</figure>
+
+<ol>
+<li>
+<p><strong>A,B,C</strong> aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir
+    (2. katman).</p>
+</li>
+<li>
+<p><strong>X,Y,Z</strong> aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir
+    (2. katman).</p>
+</li>
+</ol>
+<p><img src="images/ip_communication" style="width:10cm" alt="image" />
+<span id="fig:exemple_for_ip_communication"
+label="fig:exemple_for_ip_communication"></span></p>
+<ol>
+<li><strong>En küçük birimine paketleme denir.</strong></li>
+</ol>
+<h2 id="4-tasma-katman">4: Taşıma Katmanı</h2>
+<p>İnternette IP üzerinde kullanılan 2 tane 4. katman protokolü vardır.
+Bunlar <span style="color: red"><strong>TCP</strong></span> ve <span
+style="color: red"><strong>UDP</strong></span> dir. Bu katman uygulama programları
+için seri iletişim kanalları kuran katmandır. Bu kanallar port adı
+verilen servis numaralarıyla kurulur.</p>
+<p><strong>TCP</strong>[^2]: Bağlantı temelli bir protokoldür. Trafik başlamadan önce
+karşıdaki uca müsait olup olmadığı sorulur. Bu yönüyle telefon
+görüşmesine benzer.</p>
+<p><strong>UDP</strong>[^3]: Bağlantı temelli değildir. Trafik doğrudan başlatıldığı
+için paketlerin iletimi garanti edilmez. SMS gönderimine benzetilebilir.
+Özellikle gerçek zamanlı görüntü ve ses taşıma uygulamalarında
+elverişlidir. <strong>TCP</strong>’ye göre daha <strong>hızlıdır</strong>.</p>
+<p><strong>Örnek</strong>: 3 way handshaking - 3 aşamalı el sıkışma</p>
+<figure>
+<img src="images/tcp_example" id="fig:tcp_example" style="width:10cm"
+alt="TCP Protokolü" />
+<figcaption aria-hidden="true">TCP Protokolü</figcaption>
+</figure>
+
+<p>Oturum açıldıktan sonra ilk olacak - Veri kaç parçada gönderilecek<br />
+1GB filmi<br />
+80 segmentte ⇒ (1180 2180 .... 80/80) bunlar paketlenir.</p>
+<p><strong>TCP</strong>’de sadece yavaşlama olacak görürüz. En önemli avantajı budur.</p>
+<figure>
+<img src="images/upd_example" id="fig:upd_example" style="width:10cm"
+alt="UDP Protokolü" />
+<figcaption aria-hidden="true">UDP Protokolü</figcaption>
+</figure>
+
+<p><strong>UDP</strong>’nin avantajı hızlı <strong>TCP</strong>’ye göre. Dezavantajı ise güvensiz.</p>
+<p><strong>Örneğin</strong>: İnternetten radyo dinleyeceğiz bunu <strong>UDP</strong> ile dinlemek
+zorundayız, çünkü GB belli değil. <strong>TCP</strong>’de önemlidir.</p>
+<p>Dördüncü katmanın bir başka görevi de üst katmanlardan gelen veriyi
+bölümleyerek daha küçük parçalara ayırmaktır. Bu parçalara <strong>segment</strong>
+denir.</p>
+<div id="tab:tcp_vs_upd">
+
+|            TCP             |    UDP     |     |
+|:--------------------------:|:----------:|:---:|
+| Güvenli ( oturum temelli ) | Oturum yok |     |
+|           Yavaş            |   Hızlı    |     |
+
+TCP vs UDP
+
+</div>
+
+<h2 id="5-7-uygulama-seviyesi-katmanlar">5-7: Uygulama Seviyesi Katmanları</h2>
+<p>Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
+kullanılmadığından ve farklı uygulamalar arasında standart olmadığından
+bu derste üçüncu tek başlkta inceliyoruz.</p>
+<p><img src="images/osi_example" style="width:17cm" alt="image" /></p>
+<p>Uygulama programları genellikle 7. katmanda ulaşmakta ve genellikle
+doğruden 4. katman ile iletişime geçmektedir.</p>
+<p><strong><span style="color: blue">TELNET</span></strong>: Ağlarda yönetim ve kontrol
+amaclı kullanılır. Ağ cihazlarının genellikle tamamı <strong>telnet</strong> ile
+yönetimi destekler. 2 cihaz arasında 4. katmanda bağlantı
+(erişebilirlik) kontrolü yapmak için <strong>telnet</strong> kullanılır.</p>
+<p>** <strong>Port tarama uygulamaları</strong><br />
+4. katmanda açık olan <strong><span style="color: red">TCP/UDP</span></strong>
+portlarını tarar.</p>
+<p><strong><span style="color: blue">nmap</span></strong>: <strong>TCP</strong> yada <strong>UDP</strong>’ye kadar
+<strong>0-65536</strong>’ye kadar port taraması yapar.</p>
+<div id="tab:table">
+
+| **OBS**               | **Uzak masaüstu**       | **nmap -\> OS dedikten** |
+|:----------------------|:------------------------|:-------------------------|
+| Port tarama           | TCP 3389                | obs.bilecik.edu.tr       |
+| 79.123.244.212 -\> IP | 79.123.244.212 start IP | cevaplar                 |
+| TCP 80 open           | 79.123.244.212 end IP   | tahmin                   |
+
+Örnek
+
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../02-Topolojiler/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ağ Topolojileri" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Ağ Topolojileri
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../04-TemelKavramlar/" class="md-footer__link md-footer__link--next" aria-label="Next: Temel Kavramlar" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Temel Kavramlar
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.bd0b6b67.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

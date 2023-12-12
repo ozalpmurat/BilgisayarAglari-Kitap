@@ -2,3 +2,4 @@ docs_dir: kaynak
 site_name: 'Bilgisayar Ağları Ders Notları'
 lang: tr
 site_author: 'Murat Özalp'
+theme: material
