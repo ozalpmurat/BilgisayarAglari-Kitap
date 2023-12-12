@@ -193,8 +193,8 @@ Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi)
 
 -   Ağ adresi 192.168.1.0
 
-## Yayın adresi
-IP adresinin kaçıncı bitten bölündüğünü bulalım. IP adresinin bu bitten sonraki kısmı 1 yapılırsa, **yayın adresi** bulunur.
+## Ağ adresi ve yayın adresinin pratik hesabı
+IP adresinin bölündüğü biti biliyorsak; **IP adresinde** bu bitten sonrası `1` yapılırsa, `yayın adresi`ni buluruz. Aynı bitleri `0` yaptığımızda ise `ağ adresi`ni buluruz.
 
 ## CIDR Notasyonu
 
