@@ -35,7 +35,7 @@ jobs:
     # This environment is required!
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.pages_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
