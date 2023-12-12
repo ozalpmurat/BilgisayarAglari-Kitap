@@ -40,7 +40,7 @@ jobs:
           dst: generated
           title: Bilgisayar Ağları ders notları
           language: tr
-          #icon: lan
+          #icon: lan # Bu da calisiyor, alttaki de
           primary-color: teal
           secondary-color: indigo
           hide-repository: false
@@ -48,7 +48,7 @@ jobs:
           CONFIG_FILE: /mkdocs.yml
           EXTRA_PACKAGES: build-base
           REQUIREMENTS: /requirements.txt
-          #ICON: lan
+          ICON: lan  Bu da calisiyor, ustteki de
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
