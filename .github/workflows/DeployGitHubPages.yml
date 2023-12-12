@@ -44,6 +44,10 @@ jobs:
           primary-color: teal
           secondary-color: indigo
           hide-repository: false
+        env:
+          CONFIG_FILE: /mkdocs.yml
+          EXTRA_PACKAGES: build-base
+          REQUIREMENTS: /requirements.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
