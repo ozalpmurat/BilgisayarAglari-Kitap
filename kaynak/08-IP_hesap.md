@@ -168,8 +168,13 @@ XXX -------------------------------------- IMAGE
 ----------------------------------- XXX\
 
 ## Ağ Maskesi (Netmask)
+![Maskeleme](images/B08-maskeleme.png)  
+*Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
-IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır.
+IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır. IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
+
+![Windows IP yapılandırması](images/B08-IP_config.png)  
+*Windows'ta iki farklı yerden IP yapılandırması yapılabiliyor. Görsel kaynağı: https://pureinfotech.com/set-static-ip-address-windows-10/*
 
 ## Ağ adresi
 Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir.
@@ -189,7 +194,7 @@ Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi)
 -   Ağ adresi 192.168.1.0
 
 ## Yayın adresi
-Ip adresinin kaçıncı bitten bölündüğünü bulalım. IP adresinin bu bitten sonraki kısmı 1 yapılırsa, **yayın adresi** bulunur.
+IP adresinin kaçıncı bitten bölündüğünü bulalım. IP adresinin bu bitten sonraki kısmı 1 yapılırsa, **yayın adresi** bulunur.
 
 ## CIDR Notasyonu
 
