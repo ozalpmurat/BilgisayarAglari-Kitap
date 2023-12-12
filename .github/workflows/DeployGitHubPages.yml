@@ -1,13 +1,14 @@
+# https://github.com/mkdocs/mkdocs/discussions/3432#discussioncomment-7320345
 name: Build and deploy
 
 on:
-  workflow_dispatch: # Allow manual triggers
   push:
     tags-ignore:
       - '**' # Ignore any tags here
     branches:
       - main
       - master
+  workflow_dispatch: # Allow manual triggers
     #
     # Trigger when either files in the docs folder,
     # the requirements.txt file or the mkdocs.yml file
