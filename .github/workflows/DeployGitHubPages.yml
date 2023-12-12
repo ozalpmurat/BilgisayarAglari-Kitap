@@ -42,7 +42,7 @@ jobs:
       - name: Setup Python 3.x
         uses: actions/setup-python@v4
         with:
-          python_version: '3.x' # Uses latest 3.x version.
+          python-version: '3.x' # Uses latest 3.x version.
       - name: Install dependencies
         # Alternatively: pip install mkdocs
         run: pip install -r requirements.txt
