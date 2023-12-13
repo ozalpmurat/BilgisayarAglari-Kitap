@@ -6,4 +6,4 @@ plantuml
 mkdocs-mermaid2-plugin
 mkdocs_pymdownx_material_extras
 markdown-callouts
-
+mkdocs-print-site-plugin
