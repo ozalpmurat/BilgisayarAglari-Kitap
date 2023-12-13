@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+mkdocs_pymdownx_material_extras = mkdocs_pymdownx_material_extras:PymdownxMaterialExtras

@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+plantuml-colocator = mkdocsplantuml:PlantumlCoLocatedPlugin
+

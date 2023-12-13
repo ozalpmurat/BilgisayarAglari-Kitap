@@ -1,0 +1,127 @@
+Metadata-Version: 2.1
+Name: seqdiag
+Version: 3.0.0
+Summary: seqdiag generates sequence-diagram image from text
+Home-page: http://blockdiag.com/
+Author: Takeshi Komiya
+Author-email: i.tkomiya@gmail.com
+License: Apache License 2.0
+Download-URL: http://pypi.python.org/pypi/seqdiag
+Project-URL: Code, https://github.com/blockdiag/nwdiag
+Project-URL: Issue tracker, https://github.com/blockdiag/nwdiag/issues
+Keywords: diagram,generator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Text Processing :: Markup
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: blockdiag (>=3.0.0)
+Provides-Extra: testing
+Requires-Dist: nose ; extra == 'testing'
+Requires-Dist: flake8 ; extra == 'testing'
+Requires-Dist: flake8-coding ; extra == 'testing'
+Requires-Dist: flake8-copyright ; extra == 'testing'
+Requires-Dist: flake8-isort ; extra == 'testing'
+Requires-Dist: reportlab ; extra == 'testing'
+Requires-Dist: docutils ; extra == 'testing'
+
+`seqdiag` generate sequence-diagram image file from spec-text file.
+
+.. image:: https://drone.io/bitbucket.org/blockdiag/seqdiag/status.png
+   :target: https://drone.io/bitbucket.org/blockdiag/seqdiag
+   :alt: drone.io CI build status
+
+.. image:: https://pypip.in/v/seqdiag/badge.png
+   :target: https://pypi.python.org/pypi/seqdiag/
+   :alt: Latest PyPI version
+
+.. image:: https://pypip.in/d/seqdiag/badge.png
+   :target: https://pypi.python.org/pypi/seqdiag/
+   :alt: Number of PyPI downloads
+
+
+Features
+========
+
+* Generate sequence-diagram from dot like text (basic feature).
+* Multilingualization for node-label (utf-8 only).
+
+You can get some examples and generated images on 
+`blockdiag.com <http://blockdiag.com/en/seqdiag/index.html>`__ .
+
+Setup
+=====
+
+Use easy_install or pip::
+
+   $ sudo easy_install seqdiag
+
+   Or
+
+   $ sudo pip seqdiag
+
+
+Copy and modify ini file. example::
+
+   $ cp <seqdiag installed path>/blockdiag/examples/simple.diag .
+   $ vi simple.diag
+
+Please refer to `spec-text setting sample`_ section for the format of the
+`simpla.diag` configuration file.
+
+spec-text setting sample
+========================
+
+Few examples are available.
+You can get more examples at
+`blockdiag.com <http://blockdiag.com/en/seqdiag/index.html>`__ .
+
+simple.diag
+------------
+
+simple.diag is simply define nodes and transitions by dot-like text format::
+
+    diagram {
+      browser  -> webserver [label = "GET /index.html"];
+      browser <-- webserver;
+      browser  -> webserver [label = "POST /blog/comment"];
+                  webserver  -> database [label = "INSERT comment"];
+                  webserver <-- database;
+      browser <-- webserver;
+    }
+
+
+Usage
+=====
+
+Execute seqdiag command::
+
+   $ seqdiag simple.diag
+   $ ls simple.png
+   simple.png
+
+
+Requirements
+============
+* Python 3.7 or later
+* blockdiag 1.5.0 or later
+* funcparserlib 0.3.6 or later
+* reportlab (optional)
+* wand and imagemagick (optional)
+* setuptools
+
+
+License
+=======
+Apache License 2.0
+
+

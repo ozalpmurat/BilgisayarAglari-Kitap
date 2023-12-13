@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: markdown-inline-graphviz-extension
+Version: 1.1.2
+Summary: Render inline graphs with Markdown and Graphviz (python3 version)
+Home-page: https://github.com/cesaremorel/markdown-inline-graphviz
+Author: Cesar Morel
+Author-email: cesaremoreln@gmail.com
+License: MIT
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Documentation
+Classifier: Topic :: Text Processing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Markdown (>=2.3.1)
+
+This is just a continuation of the great job of Steffen Prince (sprin/markdown-inline-graphviz) in order to get it work with pip3. If you use python 2, please use the original extension instead.

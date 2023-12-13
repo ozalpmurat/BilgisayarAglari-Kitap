@@ -1,0 +1,3 @@
+[markdown.extensions]
+callouts=markdown_callouts:CalloutsExtension
+
