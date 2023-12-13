@@ -21,7 +21,7 @@ env:
   ENABLE_PDF_EXPORT: 1
 # These permissions are required for it to work
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
