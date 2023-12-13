@@ -63,8 +63,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/release/BilgisayarAglari-MuratÖzalp.pdf
-          asset_name: BilgisayarAglari-MuratÖzalp.pdf
+          file: BilgisayarAglari-MuratÖzalp.pdf
+          #asset_name: BilgisayarAglari-MuratÖzalp.pdf
           tag: ${{ github.ref }}
           overwrite: true
           body: "Güncel sürüm PDF oluşturuldu"
