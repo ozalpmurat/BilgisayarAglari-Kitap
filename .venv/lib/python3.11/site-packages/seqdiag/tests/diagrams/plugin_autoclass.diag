@@ -1,6 +1,0 @@
-{
-  plugin autoclass;
-  class emphasis [color = red];
-
-  A_emphasis => B_emphasis;
-}
