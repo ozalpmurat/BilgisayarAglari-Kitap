@@ -31,7 +31,7 @@ plugins:
       cover_subtitle: "Bilecik Şeyh Edebali Üniversitesi"
       toc_title: İÇİNDEKİLER
       output_path: BilgisayarAglari-MuratÖzalp.pdf
-      enabled_if_env: ENABLE_PDF_EXPORT
+      #enabled_if_env: ENABLE_PDF_EXPORT
       show_anchors: false
       verbose: false
 
