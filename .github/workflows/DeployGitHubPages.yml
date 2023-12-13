@@ -14,10 +14,11 @@ on:
     # the requirements.txt file or the mkdocs.yml file
     # are edited and commited.
     paths:
-      - 'kaynak/**'
+      - 'docs/**'
       - 'requirements.txt'
       - 'mkdocs.yml'
-
+env:
+  ENABLE_PDF_EXPORT: True
 # These permissions are required for it to work
 permissions:
   contents: read
