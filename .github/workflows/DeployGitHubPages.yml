@@ -59,12 +59,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment # This is required for environment
         uses: actions/deploy-pages@v2
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: site/BilgisayarAglari-MuratÖzalp.pdf
-          #asset_name: BilgisayarAglari-MuratÖzalp.pdf
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "Güncel sürüm PDF oluşturuldu"
+        # Asagisi, PDF halini release ediyort ama kendi release'inin uzerine yazamiyor. Iptal ettim.
+        # Bunun yerine dogrudan pdf linkini ekledim README.MD dosyasına.
+      - #name: Upload binaries to release
+        #uses: svenstaro/upload-release-action@v2
+        #with:
+        #  repo_token: ${{ secrets.GITHUB_TOKEN }}
+        #  file: site/BilgisayarAglari-MuratÖzalp.pdf
+        #  #asset_name: BilgisayarAglari-MuratÖzalp.pdf
+        #  tag: ${{ github.ref }}
+        #  overwrite: true
+        #  body: "Güncel sürüm PDF oluşturuldu"
