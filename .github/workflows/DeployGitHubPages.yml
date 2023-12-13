@@ -18,7 +18,7 @@ on:
       - 'requirements.txt'
       - 'mkdocs.yml'
 env:
-  ENABLE_PDF_EXPORT: True
+  ENABLE_PDF_EXPORT: 1
 # These permissions are required for it to work
 permissions:
   contents: read
