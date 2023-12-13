@@ -6,19 +6,18 @@ eski kalmış olan ders notlarının kolay güncellenmesi ve güncel tutulması
 amacını taşımaktadır.
 
 ## Katkıda bulunanlar
-
--   [<img src="images/github.png" width="20">](https://github.com/ikhalilatteib)
-    [<img src="images/linkedin.png" width="20">](https://www.linkedin.com/in/ikhalilatteib/)
+-   [<img src="../images/github.png" width="20">](https://github.com/ikhalilatteib)
+    [<img src="../images/linkedin.png" width="20">](https://www.linkedin.com/in/ikhalilatteib/)
     Ibrahim Khalil Atteib Yacoub
 
--   [<img src="images/github.png" width="20">](https://github.com/Aleyna06)
-    [<img src="images/linkedin.png" width="20">](https://www.linkedin.com/in/aleyna-çelik/)
+-   [<img src="../images/github.png" width="20">](https://github.com/Aleyna06)
+    [<img src="../images/linkedin.png" width="20">](https://www.linkedin.com/in/aleyna-çelik/)
     Aleyna Çelik
 
--   [<img src="images/github.png" width="20">](https://github.com/bhoslan)
-    [<img src="images/linkedin.png" width="20">](https://www.linkedin.com/in/bhoslan/)
+-   [<img src="../images/github.png" width="20">](https://github.com/bhoslan)
+    [<img src="../images/linkedin.png" width="20">](https://www.linkedin.com/in/bhoslan/)
     Burhan Hoşlan
 
--   [<img src="images/github.png" width="20">](https://github.com/MahamatKabir)
-    [<img src="images/linkedin.png" width="20">](https://www.linkedin.com/in/mahamat-kabir-souleymane-891b72174/)
+-   [<img src="../images/github.png" width="20">](https://github.com/MahamatKabir)
+    [<img src="../images/linkedin.png" width="20">](https://www.linkedin.com/in/mahamat-kabir-souleymane-891b72174/)
     Mahamat kabir Souleymane
