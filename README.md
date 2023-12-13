@@ -1,7 +1,7 @@
 # Bilgisayar Ağları Ders Notları
 İçeriğin okunabilir hali için buraya bakabilirsiniz: https://ozalpmurat.github.io/BilgisayarAglari-Kitap/
 
-İsterseniz, yukarıdaki linkten PDF biçiminde de indirebilirsiniz.
+İsterseniz, sağ tarafta [**Releases**](https://github.com/ozalpmurat/BilgisayarAglari-Kitap/releases) kısmından PDF biçiminde de indirebilirsiniz.
 
 ---
 
