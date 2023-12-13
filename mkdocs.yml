@@ -1,6 +1,85 @@
-docs_dir: kaynak
+docs_dir: docs
 site_name: 'Bilgisayar Ağları Ders Notları'
-#lang: tr
+copyright: 'Kaynak gösterilmek kaydıyla içerikler özgürce kullanılabilir.'
 site_author: 'Murat Özalp'
-theme: material
 #icon: lan-connect
+repo_url: https://github.com/ozalpmurat/BilgisayarAglari-Kitap
+site_url: https://ozalpmurat.github.io/BilgisayarAglari-Kitap/
+
+markdown_extensions:
+  - callouts
+  - toc:
+      permalink: true
+#  - markdown_blockdiag:
+#      format: svg
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+
+plugins:
+  - search:
+      lang: tr
+  - plantuml-colocator
+  - mermaid2
+  - mkdocs_pymdownx_material_extras
+  - with-pdf:
+      author: Murat Özalp
+      copyright: Kaynak belirtmek kaydıyla istenildiği gibi kullanılabilir (Murat Özalp)
+      cover_title: "Bilgisayar Ağları Ders Notları"
+      cover_subtitle: "Bilecik Şeyh Edebali Üniversitesi"
+      toc_title: İÇİNDEKİLER
+      output_path: BilgisayarAglari-MuratÖzalp.pdf
+      enabled_if_env: ENABLE_PDF_EXPORT
+      show_anchors: false
+      verbose: false
+
+    #
+    #cover: false
+    #back_cover: true
+    #cover_title: TITLE TEXT
+    #cover_subtitle: SUBTITLE TEXT
+    #custom_template_path: TEMPLATES PATH
+    #
+    #heading_shift: false
+    #toc_level: 3
+    #ordered_chapter_level: 2
+    #excludes_children:
+    #    - 'release-notes/:upgrading'
+    #    - 'release-notes/:changelog'
+    #
+    #exclude_pages:
+    #    - 'bugs/'
+    #    - 'appendix/contribute/'
+    #convert_iframe:
+    #    - src: IFRAME SRC
+    #      img: POSTER IMAGE URL
+    #      text: ALTERNATE TEXT
+    #    - src: ...
+    #two_columns_level: 3
+    #
+    #render_js: true
+    #headless_chrome_path: headless-chromium
+    #
+    #
+    #debug_html: true
+  - print-site:
+
+theme:
+  # The available installed themes are: material, bootstrap, nature, mkdocs, readthedocs
+  name: material
+  locale: tr
+  #custom_dir: my_theme_customizations/
+  static_templates:
+    - sitemap.html
+  include_sidebar: false
+
+#extra_css:
+#  - css/extra.css
+ 
+#nav:
+#  - Introduction: 'index.md'
+#  - 'about.md'
+#  - 'Issue Tracker': 'https://example.com/'
+
