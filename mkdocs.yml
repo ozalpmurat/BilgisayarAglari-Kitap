@@ -10,8 +10,9 @@ markdown_extensions:
   - callouts
   - toc:
       permalink: true
-#  - markdown_blockdiag:
-#      format: svg
+  - pymdownx.arithmatex:
+      generic: true
+      block_tag: 'pre'
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -31,7 +32,7 @@ plugins:
       cover_subtitle: "Bilecik Şeyh Edebali Üniversitesi"
       toc_title: İÇİNDEKİLER
       output_path: BilgisayarAglari-MuratÖzalp.pdf
-      #enabled_if_env: ENABLE_PDF_EXPORT
+      enabled_if_env: ENABLE_PDF_EXPORT
       show_anchors: false
       verbose: false
 

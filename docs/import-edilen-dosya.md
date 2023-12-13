@@ -31,6 +31,10 @@ graph LR
 ## Diğer Mermaid
 https://pypi.org/project/mkdocs-pymdownx-material-extras/
 ```diagram
+graph LR
+    hello --> world
+    world --> again
+    again --> hello
 ...
 ```
 
