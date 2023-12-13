@@ -3,16 +3,9 @@
 https://github.com/ldeluigi/markdown-docs
 
 # Test amaçlı olarak yapılmış bir sayfadır.
-Fazla kaale almayın
+Fazla kaale almayın. Çok fazla eksik ve hata var.
 
-## Alt başlık bile var
-cihaz kotrol...
-
-## diğer başlık
+# Bir ana başlık daha
 ...
-### 3. seviye başlık
-...
-# Bir ana başlık daha mı?
-XXX
 {!import-edilen-dosya.md!}
-XXX
+...
