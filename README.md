@@ -4,7 +4,7 @@
  
 İçeriğin okunabilir hali için buraya bakabilirsiniz: https://ozalpmurat.github.io/BilgisayarAglari-Kitap/
 
-İsterseniz, sağ tarafta [**Releases**](https://github.com/ozalpmurat/BilgisayarAglari-Kitap/releases) kısmından ya da [buradan](https://ozalpmurat.github.io/BilgisayarAglari-Kitap/BilgisayarAglari-Murat%C3%96zalp.pdf) PDF biçiminde de indirebilirsiniz.
+İsterseniz, [buradan](https://ozalpmurat.github.io/BilgisayarAglari-Kitap/BilgisayarAglari-Murat%C3%96zalp.pdf) PDF biçiminde de indirebilirsiniz.
 
 ---
 
