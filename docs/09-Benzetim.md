@@ -149,6 +149,44 @@ alt="CORE ekran görüntüsü" />
 -   **OPNET (Ücretli):**
     <http://www.riverbed.com/products/performance-management-control/opnet.html>
 
+## CORE İle Uygulama
+
+### Genel Bilgiler
+1. Linux’ta çalışyor. Konteyner kullanıyor.
+2. As an emulator, CORE builds a representation of a real computer network that runs in real time, as opposed to simulation.
+3. The live-running emulation can be connected to physical networks and routers.
+4. It provides an environment for running real applications and protocols, taking advantage of tools provided by the Linux operating system.
+
+**Kullanım alanları:**
+1. network and protocol research
+2. demonstrations
+3. application and platform testing
+4. evaluating networking scenarios
+5. security studies
+6. and increasing the size of physical test networks.
+
+**Mimari**  
+Çok sayıda bileşenden oluşuyor. Hepsini ayrı ayrı kurmaya gerek yok, otomasyon betiği kendisi kuruyor.
+
+### Kurulum
+1. https://coreemu.github.io/core/install.html
+2. Emülasyonda kullanılacak cihaz sayısına göre CPU ve bellek ihtiyacı var.
+3. Ubuntu ve Centos destekleniyor ama diğer Linux’lara da kurulabilir. Centos 8 üzerine kurdum. Ubuntuda hatırlamadığım sorunlar yaşadım. Çok ta uğraşmadım.
+
+### Arayüz tanıtımı
+1. Save/open
+2. Canvas size, Wallpaper
+3. View/show
+
+### Uygulamalar
+1. ping
+2. ifconfig
+3. traceroute
+4. nmap
+5. netstat
+6. tcpdump
+7. iperf3
+
 # Kaynaklar
 
 1.  <http://www.brianlinkletter.com/open-source-network-simulators/>
