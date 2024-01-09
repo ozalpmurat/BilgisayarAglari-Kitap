@@ -226,19 +226,20 @@ adresinin sağına \"/\" işareti konulup bölünen bit numarası yazılır.
     tane 0 vardır.)
 
 ## IP hesaplarında formüller ve özet
-1. IP (v4) adresleri $32$ bitten oluşur. Bu $32$ bitin soldan itibaren $M$ tanesi ağı tanımlar. geri kalan $N$ tanesi de ($ N=32-M $) hostları tanımlar. Bu iki bileşeni birbirinden ayırmanın iki yolu vardır:
-   * **CIDR** gösteriminde bölü işareti ( "/" ) kullanılır. örnek: $10.5.0.100/16$
-   * **Maske** ile gösteriminde M tane 1, N tane 0 olacak şekilde bitler ifade edilir. Sonra 10'luk sisteme çevrilerek Ip adresinin yanına yazılır. Örnek: $10.5.0.100 - 255.255.0.0$
-1. Bir **ağda kaç IP** olduğunu bulmak için, bölü işaretinden sonraki bitlerin sayısına bakılır. $N$ tane bit varsa, $ 2^N $ formülü ile ağdaki IP sayısı hesaplanır.
+1. **IP (v4) adresleri $32$ bitten oluşur**. Bu bitler sekizer gruplu (oktet) olarak yazılır ve okunur. Örnek: 10.170.265.44. IP adresinin her oktetinde 8 bit bulunduğundan, hiç bir oktet 255'ten büyük olamaz. Yani az önce verdiğim IP adresi, bozuk bir IP adresidir.
+1. IP adresindeki $32$ bitin soldan itibaren $M$ tanesi ağı tanımlar. geri kalan $N$ tanesi de ($N=32-M$) hostları tanımlar. Bu iki bileşeni birbirinden ayırmanın iki yolu vardır:
+    * **CIDR** gösteriminde bölü işareti ( "/" ) kullanılır. örnek: $10.5.0.100/16$
+    * **Maske** ile gösteriminde M tane 1, N tane 0 olacak şekilde bitler ifade edilir. Sonra 10'luk sisteme çevrilerek IP adresinin yanına yazılır. Örnek: $10.5.0.100 - 255.255.0.0$
+1. Bir **ağda kaç IP** olduğunu bulmak için, bölü işaretinden sonraki bitlerin sayısına bakılır. $N$ tane bit varsa, $2^N$ formülü ile ağdaki IP sayısı hesaplanır.
 1. Ağları alt ağlara bölmeye başlamadan önce mutlaka mevcut ağı tanımla. Nerede başlar? Nerede biter? Maskesi nedir? CIDR gösterimi nedir? Bu ağda kaç IP vardır?
 1. Bir ağın **alt ağ maskesi**ni bulmak için;
-   * IP adresinde, bölü'den önceki bitlerin tamamı 1 yapılır.
-   * IP adresinde, bölü'den sonraki bitlerin tamamı 0 yapılır.
-   * Sonra 10'luk sisteme çevrilir.
+    * IP adresinde, bölü'den önceki bitlerin tamamı 1 yapılır.
+    * IP adresinde, bölü'den sonraki bitlerin tamamı 0 yapılır.
+    * Sonra 10'luk sisteme çevrilir.
 1. Bir ağın **ağ adresi**ni bulmak için;
-   * IP adresinde bölü'den sonraki bitlerin tamamı 0 yapılır. Sonra 10'luk sisteme çevrilir.
+    * IP adresinde bölü'den sonraki bitlerin tamamı 0 yapılır. Sonra 10'luk sisteme çevrilir.
 1. Bir ağın **yayın adresi**ni bulmak için;
-   * IP adresinde bölü'den sonraki bitlerin tamamı 1 yapılır. Sonra 10'luk sisteme çevrilir.
+    * IP adresinde bölü'den sonraki bitlerin tamamı 1 yapılır. Sonra 10'luk sisteme çevrilir.
 1. **/N** şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar **/(N-1)** olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, /20 şeklinde bir ağı ikiye bölersek iki tane /21 ağ oluşur. Benzer şekilde, **/N** şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani /20 şeklindeki ağ dörde bölünürse elimizde 4 tane /22 ağ oluşur.
 
 
