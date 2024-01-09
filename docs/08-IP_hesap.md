@@ -382,12 +382,12 @@ XXX -------------------------------------- IMAGE
 Her ağ için ilk IP adresi ağ adresi, son IP adresi yayın adresi olduğunu
 biliyoruz. Kural olmamakla birlikte genel teamüllere göre ağ adresinden
 sonraki ilk IP adresi(kullanılabilecek ilk host adresi) ağ geçidi olarak
-belirlenir. Herhangi bir host adresi ağ geçidi olarak belirlensede
+belirlenir. Herhangi bir host adresi ağ geçidi olarak belirlense de
 hiçbir problem olmaz.
 
 **NOT :** IP adresinin ve ağın son IP adresi değiştirilemez.
 
-**NOT :** Ağ geçidi IP adresi herbir ağın doğrudan bağlı olduğu
+**NOT :** Ağ geçidi IP adresi her bir ağın doğrudan bağlı olduğu
 yönlendirici arayüzünde(interface, ara birim, ethernet kartı,
 NIC(Network Interface Card)) tanımlı olan IP adresi olmak zorundadır.
 
