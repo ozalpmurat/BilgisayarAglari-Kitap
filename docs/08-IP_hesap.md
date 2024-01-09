@@ -225,6 +225,24 @@ adresinin sağına \"/\" işareti konulup bölünen bit numarası yazılır.
     (128 ikilik tabanda 10000000 şeklinde gösterildiğinden soldan 25
     tane 0 vardır.)
 
+## IP hesaplarında formüller ve özet
+1. IP (v4) adresleri $32$ bitten oluşur. Bu $32$ bitin soldan itibaren $M$ tanesi ağı tanımlar. geri kalan $N$ tanesi de ($ N=32-M $) hostları tanımlar. Bu iki bileşeni birbirinden ayırmanın iki yolu vardır:
+  - **CIDR** gösteriminde bölü işareti ( "/" ) kullanılır. örnek: $10.5.0.100/16$
+  - **Maske** ile gösteriminde M tane 1, N tane 0 olacak şekilde bitler ifade edilir. Sonra 10'luk sisteme çevrilerek Ip adresinin yanına yazılır. Örnek: $10.5.0.100 - 255.255.0.0$
+1. Bir **ağda kaç IP** olduğunu bulmak için, bölü işaretinden sonraki bitlerin sayısına bakılır. $N$ tane bit varsa, $ 2^N $ formülü ile ağdaki IP sayısı hesaplanır.
+1. Ağları alt ağlara bölmeye başlamadan önce mutlaka mevcut ağı tanımla. Nerede başlar? Nerede biter? Maskesi nedir? CIDR gösterimi nedir? Bu ağda kaç IP vardır?
+1. Bir ağın **alt ağ maskesi**ni bulmak için;
+  - Bölü'den önceki bitlerin tamamı 1 yapılır.
+  - Bölü'den sonraki bitlerin tamamı 0 yapılır.
+  - Sonra 10'luk sisteme çevrilir.
+1. Bir ağın **ağ adresi**ni bulmak için;
+  - Bölü'den sonraki bitlerin tamamı 0 yapılır. Sonra 10'luk sisteme çevrilir.
+1. Bir ağın **yayın adresi**ni bulmak için;
+  - Bölü'den sonraki bitlerin tamamı 1 yapılır. Sonra 10'luk sisteme çevrilir.
+1. **/N** şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar **/(N-1)** olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur.
+
+
+
 ## Alt Ağa Bölme
 
 IP adresi ve ağı temsil eden bit sayısı belirli olan bir ağ birden fazla
