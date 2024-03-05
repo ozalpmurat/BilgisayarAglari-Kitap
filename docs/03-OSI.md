@@ -57,7 +57,12 @@ Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
 katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
 aynı olup olmadığını sınayan sistemler kullanılır. En çok kullanılan
 hata bulma algoritmaları **eşlik biti (parity check)** ve **CRC
-algoritmasıdır**. Verinin doğru olup olmadığına bakmaz, sadece
+algoritmasıdır**.
+![Eşlik biti](images/B03-Eslik-Biti.png)  
+*Görsel kaynağı: https://www.hbmacit.com/2020/06/12/c-ile-parite-biti-hesaplama/*
+
+
+Verinin doğru olup olmadığına bakmaz, sadece
 sağlamlığını kontrol eder. Bu katmanda üst katmandan gelen veriler
 çerçeve (frame) adı verilen paketleme işlemini tabi tutulur. Kapsülleme
 de denir. Birbirine doğrudan bağlı ağ cihazlarının aynı kapsülleme
@@ -79,16 +84,16 @@ yöntemini (ikinci katman protokolünü) kullanması gerekir.
 ![PPPoE](images/B03-Modem-PPPoE.png)  
 *Görsel kaynağı: https://www.alfanett.com.tr/modem.html*
 
-!!! info "LAN ve WAN nedir?"
-
-    **LAN**: Local Area Network (yerel alan ağı). Kendi arazisi (binası) içerisinde, kimseden izin almaya gerek kalmadan kablolama yapılan ağlara LAN denir. Örneğin üniversite kampüsü ya da aynı binanın birkaç katını kullanan şirketler gibi.
-    **WAN**: Wide Area Network (geniş alan ağı). Kurumların kendi arazisinin (binasının) dışında olan bir yer ile kurulan ağlardır. Sokağın karşısındaki binaya kablo çekemeyiz. Eğer karşılıklı iki binada iletişim kurulması gerekiyorsa, ISP (Internet Service Provider ~ internet servis sağlayıcı) firmadan hizmet satın almak gerekir.
-    **LAN/WAN**: LAN'da istediğimiz kablolama türü ve istediğimiz protokolü kullanabiliriz. Hiç bir kısıtlama olmadan ağa bağlanabiliriz. WAN'da ise servis sağlayıcının sunduğu hizmetlerden ve onun kurallarına uyarak bağlanabiliriz.
+## LAN ve WAN nedir?
+- **LAN**: Local Area Network (yerel alan ağı). Kendi arazisi (binası) içerisinde, kimseden izin almaya gerek kalmadan kablolama yapılan ağlara LAN denir. Örneğin üniversite kampüsü ya da aynı binanın birkaç katını kullanan şirketler gibi.
+- **WAN**: Wide Area Network (geniş alan ağı). Kurumların kendi arazisinin (binasının) dışında olan bir yer ile kurulan ağlardır. Sokağın karşısındaki binaya kablo çekemeyiz. Eğer karşılıklı iki binada iletişim kurulması gerekiyorsa, ISP (Internet Service Provider ~ internet servis sağlayıcı) firmadan hizmet satın almak gerekir.
+- **Fark ne?**: LAN'da istediğimiz kablolama türü ve istediğimiz protokolü kullanabiliriz. Hiç bir kısıtlama olmadan ağa bağlanabiliriz. WAN'da ise servis sağlayıcının sunduğu hizmetlerden ve onun kurallarına uyarak bağlanabiliriz.
 
 ### Anahtarlama Türleri
 - **Devre Anahtarlama**: Veri aktarımı, fiziksel değişiklikle yapılır.
 - **Paket Anahtarlama**: Veri aktarımı, her bir veri paketi için
     hesaplanarak, yazılımsal olarak yapılır.
+
 ![Windows MAC tablosu](images/B03-Anahtarlama-paket-devre.png)  
 *Görsel kaynağı: https://www.scaler.com/topics/computer-network/circuit-switching-and-packet-switching/*
 
