@@ -2,6 +2,25 @@
 *[RF]: Yüksek frekanslı dalgaya radyo frekans denilir. Bu dalga RF kısaltmasıyla gösterilir
 [^1]: [OSI -Open Systems Interconnection- modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
 
+# İnternet'in Kısa Tarihçesi
+![ARPANET 1970](images/B03-ARPAnet-1970.png)  
+*ARPANET 1970*
+
+ARPANET, "Advanced Research Projects Agency Network" (Gelişmiş Araştırma Projeleri Ajansı Ağı) kısaltmasıdır. ARPANET, ABD Savunma Bakanlığı'nın (DARPA) finanse ettiği ve 1960'ların sonlarında ve 1970'lerin başlarında geliştirildi. İnternet'in dedesidir.
+
+TCP/IP modeli 1989'da 1122 ve 1123 numaralı RFC'ler ile yayınlanmıştır. OSI modeli ise 1978'de taslak olarak yayınlanmış, 1984'te ise standart halini almıştır.
+
+1980'lerin sonlarında bu teknolojiler, sivil ve ticari kullanıma açılarak İnternet'i başlattı.
+
+# OSI ve TCP/IP modelleri
+Bilgisayar ağlarının nasıl çalıştığını anlamak için kullanılır. Geliştirilen donanımlar ve yazılımlar bu modellere uygun olursa İnternet üzerinde sorunsuzca iletişim kurabilirler.
+
+![OSI ve TCP/IP modelleri](images/B03-OSI_ve_TCPIP.jpg)  
+*Görsel kaynağı: https://community.fs.com/article/tcpip-vs-osi-whats-the-difference-between-the-two-models.html*
+
+![OSI ve TCP/IP modeli karşılaştırma](images/B03-OSI_ve_TCPIP-2.webp)  
+*Görsel kaynağı: https://instrumentationtools.com/difference-tcpip-model-osi-model/*
+
 # 03. OSI MODELİ KATMANLARI
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI[^1] Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
 
@@ -16,24 +35,24 @@ Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığ�
 ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png)
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
-## 1: Fiziksel Katan
 
+![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar-2.png)  
+*Görsel kaynağı: https://community.fs.com/article/tcpip-vs-osi-whats-the-difference-between-the-two-models.html*
+
+## 1: Fiziksel Katman
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
 katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
 sorumludur. Sayısal haberleşmede en küçük birim bit olduğundan bu
 katmanın hızı **bps, b/s (bit/saniye)** cinsindendir. Birinci katman
 donanımları:
 
-1.  Bakır ve fiber optik kablolar
-
-2.  RF (Antenler)
-
-3.  Sinyali(işareti) elektrik olarak yükselten ve çoklayan HUB cihazları
-
-4.  Kablosuz iletişimde kullanılan hava
+1. Bakır ve fiber optik kablolar
+2. RF (Antenler)
+3. Sinyali (işareti) elektrik olarak yükselten ve çoklayan HUB cihazları
+4. Tekrarlayıcılar (repeater)
+4. Kablosuz iletişimde kullanılan hava
 
 ## 2: Veri Bağı Katmanı
-
 Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
 katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
 aynı olup olmadığını sınayan sistemler kullanılır. En çok kullanılan
@@ -44,57 +63,58 @@ sağlamlığını kontrol eder. Bu katmanda üst katmandan gelen veriler
 de denir. Birbirine doğrudan bağlı ağ cihazlarının aynı kapsülleme
 yöntemini (ikinci katman protokolünü) kullanması gerekir.
 
-<div id="tab:table_kapsulleme">
+![Kapsülleme](images/B03-Encapsulation.png)  
+*Görsel kaynağı: https://www.computernetworkingnotes.com/ccna-study-guide/data-encapsulation-and-de-encapsulation-explained.html*
 
-| Kaynak | Veri | Hata Denetimi |
-|:------:|:----:|:-------------:|
+![Ethernet Çerçevesi Başlığı](images/B03-EthernetFrame.png)  
+*Görsel kaynağı: https://en.wikipedia.org/wiki/Ethernet_frame*
 
-Kapsülleme
-
-</div>
-
-<figure>
-<img src="images/b01-Kapsulleme.jpg" id="fig:b01-Kapsulleme"
-style="width:15cm" alt="Kapsülleme" />
-<figcaption aria-hidden="true">Kapsülleme</figcaption>
-</figure>
-
-https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking/
-
-<figure>
-<img src="images/b01-Kapsulleme2.jpg" id="fig:b01-Kapsulleme2"
-style="width:15cm"
-alt="Kapsülleme (katmanlar) - https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking/" />
-<figcaption aria-hidden="true">Kapsülleme (katmanlar) -
-https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking/</figcaption>
-</figure>
-
-<figure>
-<img src="images/b01-Ethernet_Header.png" id="fig:b01-EthernetHeader"
-style="width:17cm" alt="Ethernet Çerçevesi Başlığı" />
-<figcaption aria-hidden="true">Ethernet Çerçevesi Başlığı</figcaption>
-</figure>
+![Veriye eklenen başlıklar](images/B03-CercevePaketSegment.gif)  
+*Görsel kaynağı: http://som.csudh.edu/cis/471/hout/netech/encapsulation.htm*
 
 ### Günümüzde en yaygın ikinci katman protokolleri
+- **Yerel ağda (LAN)** : Ethernet  
+- **Uzak ağlarda (WAN)** : Metroethernet. Eskiden ATM, PPP, Frame-Relay gibi protokoller vardı ama günümüzde kullanımı azaldı. Eskiden çevirmeli ağlarda kullanılan PPP yerine günümüzde PPPoE kullanılıyor artık.
 
-**Yerel ağda (LAN)** : Ethernet  
-**Uzak ağlarda (WAN)** : AIM, PPP, Frame, Relay, Metroethernet
+![PPPoE](images/B03-Modem-PPPoE.png)  
+*Görsel kaynağı: https://www.alfanett.com.tr/modem.html*
 
-### Anahtarlama
+!!! info "LAN ve WAN nedir?"
 
-1.  **Devre Anahtarlama**: Veri aktarımı, fiziksel değişiklikle yapılır.
+    **LAN**: Local Area Network (yerel alan ağı). Kendi arazisi (binası) içerisinde, kimseden izin almaya gerek kalmadan kablolama yapılan ağlara LAN denir. Örneğin üniversite kampüsü ya da aynı binanın birkaç katını kullanan şirketler gibi.
+    **WAN**: Wide Area Network (geniş alan ağı). Kurumların kendi arazisinin (binasının) dışında olan bir yer ile kurulan ağlardır. Sokağın karşısındaki binaya kablo çekemeyiz. Eğer karşılıklı iki binada iletişim kurulması gerekiyorsa, ISP (Internet Service Provider ~ internet servis sağlayıcı) firmadan hizmet satın almak gerekir.
+    **LAN/WAN**: LAN'da istediğimiz kablolama türü ve istediğimiz protokolü kullanabiliriz. Hiç bir kısıtlama olmadan ağa bağlanabiliriz. WAN'da ise servis sağlayıcının sunduğu hizmetlerden ve onun kurallarına uyarak bağlanabiliriz.
 
-2.  **Paket Anahtarlama**: Veri aktarımı, her bir veri paketi için
+### Anahtarlama Türleri
+- **Devre Anahtarlama**: Veri aktarımı, fiziksel değişiklikle yapılır.
+- **Paket Anahtarlama**: Veri aktarımı, her bir veri paketi için
     hesaplanarak, yazılımsal olarak yapılır.
+![Windows MAC tablosu](images/B03-Anahtarlama-paket-devre.png)  
+*Görsel kaynağı: https://www.scaler.com/topics/computer-network/circuit-switching-and-packet-switching/*
 
-Ethernet protokolünde kaynak ve hedef adresleri olarak MAC adresi
-(fiziksel adresi) kullanılır. Çakışmaları engellemek için aynı ağda iki
+
+### Ethernet Protokolünde Anahtarlama
+Ethernet protokolünde kaynak ve hedef adresleri olarak **MAC** adresi
+(fiziksel adres) kullanılır. Çakışmaları engellemek için aynı ağda iki
 MAC adresi olmamalıdır.
 
-Anahtarlar (switch) bu katmanda çalışır. Anahtarlar portlarına bağlı
+![Windows MAC tablosu](images/B03-Windows-MAC-Adresi.png)  
+*Windows'ta MAC adresi (fiziksel adres)*
+
+### MAC Adres Tablosu
+![Anahtar MAC tablosu](images/B03-MAC_Tablosu_Anahtar.png)  
+*Görsel kaynağı: https://community.spiceworks.com/t/how-to-find-ip-mac-addresses-on-cisco-ios-devices/1012165*
+
+![Windows MAC tablosu](images/B03-MAC_Tablosu_Windows.png)  
+*Görsel kaynağı: https://www.geeksforgeeks.org/what-is-mac-address-table/*
+
+Anahtarlar (switch) ikinci katmanda çalışır. Anahtarlar portlarına bağlı
 olan cihazların MAC adreslerini bilmek zorundadır (otomatik öğrenir). Bu
-şekilde iki farklı portu arasındaki trafiği diğer cihazlar görmeden
+şekilde iki farklı portu arasındaki trafiği, diğer cihazlar görmeden
 aktarabilirler. **HUB’lardan en önemli farkı budur**.
+
+![Ethernet Çerçevesi Başlığı](images/B03-HUB_Switch.gif)  
+*Görsel kaynağı: https://www.pcmag.com/encyclopedia/term/ethernet-hub*
 
 ## 3: Ağ Katmanı (IP)
 
