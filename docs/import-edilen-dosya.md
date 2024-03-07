@@ -29,43 +29,13 @@ graph LR
     world --> again
     again --> hello
 ```
-## Diğer Mermaid
-https://pypi.org/project/mkdocs-pymdownx-material-extras/
-```diagram
-graph LR
-    hello --> world
-    world --> again
-    again --> hello
-...
-```
-
-## Markdown-Blockdiag
-blockdiag {
-    A -> B -> C -> D;
-    A -> E -> F -> G;
-}
 
 ## Formül denemesi
 math kütüphanesi
 ### Satır içi formül
 When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
 
-### satır arası formül
+### Satır arası formül
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
-## İkinci seviye başka başlık
 ...
-```plantuml
-@startuml
-Bob -> Alice : Can you solve: <math>ax^2+bx+c=0</math>
-Alice --> Bob: <math>x = (-b+-sqrt(b^2-4ac))/(2a)</math>
-@enduml
-```
----
-
-::uml::
-Bob -> Alice : Can you solve: <math>ax^2+bx+c=0</math>
-Alice --> Bob: <math>x = (-b+-sqrt(b^2-4ac))/(2a)</math>
-::end-uml::
-
----

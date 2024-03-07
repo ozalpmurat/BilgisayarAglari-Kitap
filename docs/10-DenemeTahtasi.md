@@ -1,9 +1,13 @@
+# Material for MkDocs
+[https://squidfunk.github.io/mkdocs-material/reference/](https://squidfunk.github.io/mkdocs-material/reference/)  
+
+
 # Dipnot ve sözlük kullanımı
 *[bps]: bit per second (saniyedeki bit sayısı)
 *[RF]: Yüksek frekanslı dalgaya radyo frekans denilir. Bu dalga RF kısaltmasıyla gösterilir
 [^1]: [OSI -Open Systems Interconnection- modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
 
-bps,  RF ve OSI[^1] gibi ifadeler sözlük şeklinde kullanılabilir.
+IP, bps,  RF ve OSI[^1] gibi ifadeler sözlük şeklinde kullanılabilir. BSEU MF.
 
 
 # Görsel kullanımı
@@ -22,3 +26,13 @@ Boyut kullanılabiliyor. Başlık ta kullanılabiliyor ama VSCode'da görünmüy
 # Açıklamalar
 !!! warning "CAT-1, CAT-2, CAT-3"
     Telefon hatlarında kullanılır, ağlarda kullanılmaz.  
+
+# Mermaid diyagram
+``` mermaid
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
+```

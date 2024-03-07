@@ -6,22 +6,34 @@ site_author: 'Murat Özalp'
 repo_url: https://github.com/ozalpmurat/BilgisayarAglari-Kitap
 site_url: https://ozalpmurat.github.io/BilgisayarAglari-Kitap/
 
+watch:
+  - includes
+
 markdown_extensions:
   - callouts
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.arithmatex:
+      generic: true
+      block_tag: 'pre'
+  - pymdownx.superfences:
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
   - footnotes
   - abbr
   - attr_list
-  - pymdownx.snippets
   - attr_list
   - md_in_html
   - toc:
       permalink: true
-  - pymdownx.arithmatex:
-      generic: true
-      block_tag: 'pre'
+      toc_depth: 4
+      title: SAYFA İÇİ BAŞLIKLAR
+      permalink_title: Bu başlığa link vermek için kullanabilirsiniz.
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -87,6 +99,12 @@ theme:
   features:
     - content.footnote.tooltips
     - content.tooltips
+    #- navigation.sections
+    - navigation.tracking
+    - navigation.path
+    - navigation.prune
+    - search.suggest
+    - search.highlight
 
 #extra_css:
 #  - css/extra.css
