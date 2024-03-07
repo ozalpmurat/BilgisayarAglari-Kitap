@@ -8,6 +8,15 @@ site_url: https://ozalpmurat.github.io/BilgisayarAglari-Kitap/
 
 markdown_extensions:
   - callouts
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - footnotes
+  - abbr
+  - attr_list
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -75,6 +84,9 @@ theme:
   static_templates:
     - sitemap.html
   include_sidebar: false
+  features:
+    - content.footnote.tooltips
+    - content.tooltips
 
 #extra_css:
 #  - css/extra.css

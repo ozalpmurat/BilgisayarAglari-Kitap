@@ -1,27 +1,12 @@
 # Ağ Topolojileri 
+![Topolojiler](images/B02-Topolojiler.jpg)  
+*Görsel kaynağı: https://www.dnsstuff.com/what-is-network-topology
 
-<figure>
-<img src="images/62_ağ_topolojisi" id="fig:topolojiler"
-style="width:14cm" alt="Topolojiler" />
-<figcaption aria-hidden="true">Topolojiler</figcaption>
-</figure>
-
-Ağ topolojileri nedir sorusunun en net cevabı, "bir ağı oluşturan
-cihazların fiziksel ve mantıksal yerleşimidir". Network Topology (Ağ
-Topolojisi) Yerel Ağ Alanı (LAN) içerisinde bulunan bilgisayarların
-fiziksel ve mantıksal yerleşimini ifade eder. Fiziksel Topoloji ağ
-içerisinde bulunan tüm cihazların birbirlerine nasıl bağlanacağını ve
-bağlantı için ne tür kablo kullanacağını belirtirken Mantıksal Topoloji
-bu cihazların nasıl haberleşeceğini belirtir ve bu cihazları ortak bir
-protokol altında birleştirir. Kullanılmak istenen Ağ Teknolojisine göre
-farklı ağ topolojileri kullanılmaktadır. Fiziksel Topolojinin 6 farklı
-çeşidi vardır. Bunlar Bus(Yol), Ring(Halka), Yıldız(Star), Ext
-Star(Gelişmiş Yıldız), Mesh(Örgü) ve Tree(Ağaç) topolojileridir.
+Ağ topolojileri "bir ağı oluşturan cihazların fiziksel ve mantıksal yerleşimidir". Network Topology (Ağ Topolojisi) Yerel Ağ Alanı (LAN) içerisinde bulunan bilgisayarların fiziksel ve mantıksal yerleşimini ifade eder. Fiziksel Topoloji ağ içerisinde bulunan tüm cihazların birbirlerine nasıl bağlanacağını ve bağlantı için ne tür kablo kullanacağını belirtirken Mantıksal Topoloji bu cihazların nasıl haberleşeceğini belirtir ve bu cihazları ortak bir protokol altında birleştirir. Kullanılmak istenen Ağ Teknolojisine göre farklı ağ topolojileri kullanılmaktadır. Fiziksel Topolojinin 6 farklı çeşidi vardır. Bunlar Bus(Yol), Ring(Halka), Yıldız(Star), Ext Star(Gelişmiş Yıldız), Mesh(Örgü) ve Tree(Ağaç) topolojileridir.
 Broadcast(Yayın) ve Token Passing(İz) mantıksal topolojilere birer
 örnektir.
 
-## DOĞRUSAL (BUS) TOPOLOJİ
-
+## Doğrusal (Bus) Topoloji
 Doğrusal bir hat üzerinde bilgisayarların T konnektörlerle bağlanması
 şeklinde kurulur. Hattın her iki ucunda sonlandırıcı kullanmak
 zorunludur. Koaksiyel kablo kullanılır. Ağın herhangi bir noktasında
@@ -29,14 +14,10 @@ arıza olması durumunda ağın tamamı çöker. Ağdaki veri trafiği tüm uçl
 gider. Herkes herkesin trafiğini görebilir. Bu yüzden çok fazla
 **çakışma (collision)** olur.
 
-<figure>
-<img src="images/bus-topolojisi" id="fig:bustopolojisi"
-style="width:8cm" alt="Bus Topolojisi" />
-<figcaption aria-hidden="true">Bus Topolojisi</figcaption>
-</figure>
+![Doğrusal Topoloji](images/B02-DogrusalTopoloji.png)  
+*Görsel kaynağı: https://www.lunarcomputercollege.com/computer-network-topologies/*
 
-## HALKA (RING) TOPOLOJİ
-
+## Halka (Ring) Topoloji
 Doğrusal topolojiye benzer. Sonlandırıcı kullanılmaz. Hattın iki ucu
 birleşiktir. Hatta sanal bir jeton dolaşır(token).Jeton sırası gelen
 bilgisayar, jeton boş ise göndereceği veriyi hatta yerleştirir.
@@ -44,15 +25,10 @@ Bilgisayarlar sırayla veri gönderdiklerinden çakışma daha
 azdır.Günümüzde hiç kullanılmamaktadır. Herkes herkesin verisini
 kullanabilmektedir.
 
-<figure>
-<img src="images/ring-topology-removebg-preview"
-id="fig:halka_topolojisi" style="width:8cm"
-alt="Halka-Ring Topolojisi" />
-<figcaption aria-hidden="true">Halka-Ring Topolojisi</figcaption>
-</figure>
+![Halka Topoloji](images/B02-HalkaTopoloji.png)  
+*Görsel kaynağı: https://www.cse.iitk.ac.in/users/dheeraj/cs425/lec07.html*
 
-## YILDIZ (STAR) TOPOLOJİ
-
+## Yıldız (Star) Topoloji
 Merkezde dağıtıcı bir cihaz olur. Buradan tüm bilgisayarlara birer kablo
 gider. Ağın bir noktasındaki arıza sadece ilgili bilgisayarın ağ
 bağlantısına zarar verir. Genellikle **(**bükümlü çift (twisted
@@ -60,77 +36,49 @@ pair,xtp)) kullanılır. Trafiğin herkese mi gönderileceği ya da sadece
 ilgili uca mı gideceği dağıtıcıya bağlıdır. Dağıtıcının performansı ve
 kabiliyeti ağı doğrudan etkiler. Günümüzde en yaygın topolojidir.
 
-<figure>
-<img src="images/star-Topology-1024x512-removebg-preview"
-id="fig:yildiz_topolojisi" style="width:8cm"
-alt="Yıldız-StarTopolojisi" />
-<figcaption aria-hidden="true">Yıldız-StarTopolojisi</figcaption>
-</figure>
+![Yıldız Topoloji](images/B02-YildizTopoloji.png)  
+*Görsel kaynağı: https://www.researchgate.net/publication/327897159_Hotel_Reservation_System_Based_Local_Area_Network_at_Samarinda*
 
-## ÖRGÜ (MESH)TOPOLOJİ
+## Örgü (Mesh) Topoloji
 
-<figure>
-<img src="images/mesh-topology-1-1024x512-removebg-preview"
-id="fig:Orgu_mesh_topolojisi" style="width:12cm"
-alt="Örgü-Mesh Topolojisi" />
-<figcaption aria-hidden="true">Örgü-Mesh Topolojisi</figcaption>
-</figure>
+![Örgü Topoloji](images/B02-OrguTopoloji.png)  
+*Görsel kaynağı: https://www.nakivo.com/blog/types-of-network-topology-explained/*
 
 Uçları arasında birden fazla rota üzerinde haberleşme imkanı olan
 yapılardır. Günümüzde genellikle farklı yıldız ağlar arasında yedekleme
-amacı olarak kullanılır.
+amacı olarak kullanılır. Bunun dışında kablosuz ağlarda da yaygın olarak kullanılmaktadır.
+![Örgü Topoloji](images/B02-WifiOrguTopoloji.png)  
+*Görsel kaynağı: https://www.researchgate.net/publication/234015211_FastM_Design_and_Evaluation_of_a_Fast_Mobility_Mechanism_for_Wireless_Mesh_Networks*
 
-## BÜKÜMLÜ ÇİFT KABLO
+# Kablolar
 
-İçerisinde 4 çift bakır kablo bulunur.Kabloların birbirleri üzerindeki
-direnç elektromanyetik etkisini azaltmak için ikişerli olarak sarılı
-durumundadırlar. Örneğin: UTP,CAT5,Ethernet Kablosu
+## Bükümlü Çift Kablo (Twisted Pair Cable)
+İçerisinde bükülmüş çiftler halinde bakır tel bulunur. Kabloların birbirleri üzerindeki direnç elektromanyetik etkisini azaltmak için ikişerli olarak sarılı durumundadırlar. 
+![Bükümlü Çift Kablo](images/B02-BukumluCiftKablo.png)  
+*Bükümlü çift kablo*
 
-<figure>
-<img src="images/bukumlukablo" id="fig:Bukumlu_cift_kablo"
-style="width:6cm" alt="Bükümlü çift kablodan bir kesit" />
-<figcaption aria-hidden="true">Bükümlü çift kablodan bir
-kesit</figcaption>
-</figure>
+![Bükümlü Çift Kablolar](images/B02-BukumluCiftKablolar.png)  
+*Görsel kaynağı: https://www.linx-com.com/copper-construction/*
 
-### UTP (UNSHILDED TWISTED PAIR) Korumasız Bükümlü Çift
-
-8 iletkenin her biri ince bir yalıtkan ile kaplanmıştır. En dışında
-tamamını kaplayan bir yalıtkan vardır.
-
-### STP(SHİLDED TWİSTED PAİR)
-
-Her çiftin altında koruma (topraklama ) vardır.
-
-### FTP(FOILED TWISTED PAİR )
-
-4 çiftin tamamının etrafında folyo koruma vardır.
-
-### S/FTP 
-
-İkisinin de özelliğini taşımaktadır.
+- U: Unshilded (Korumasız)
+- F: Foiled (Folyolu)
+- S: Shielded (Korumalı)
 
 ## FREKANSLARINA GÖRE BÜKÜMLÜ ÇİFT KABLO
+![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-1.png)  
+*Görsel kaynağı: https://dc.mynetworkinsights.com/categories-of-copper-twisted-pair-cables/*
 
-<figure>
-<img src="images/Bolum03_BukumluKablolar.png"
-id="fig:Bolum03_BukumluKablolar" style="width:17cm"
-alt="Bükümlü çift kablo kategorileri.https://telecom.samm.com/history-of-ethernet-lan-cables-categories" />
-<figcaption aria-hidden="true">Bükümlü çift kablo
-kategorileri.https://telecom.samm.com/history-of-ethernet-lan-cables-categories</figcaption>
+![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-2.png){width="800"}
+*Görsel kaynağı: https://telecom.samm.com/history-of-ethernet-lan-cables-categories*
+
+!!! warning "CAT-1, CAT-2, CAT-3"
+    Telefon hatlarında kullanılır, ağlarda kullanılmaz.  
+
+<figure markdown="span">
+  ![RJ-45 konnektör](images/B02-RJ45-Konnektor.png){ width="800" }
+  <figcaption>Görsel kaynağı: https://www.electricalvolt.com/how-to-crimp-rj45-connector/</figcaption>
 </figure>
 
-**KABLO KATEGORİLERİ**  
-**CAT1-CAT3**  
-Telefon hatlarında bulunur.  
-**CAT5**  
-En yaygın kullanılan ağ kablosudur. Azami 100m mesafe ve 10Mb/s
-destekler.  
-**CAT6**  
-100 m mesafede 1G b/s destekler.  
-*10 BASE T* Ethernet(Eth)  
-*100 BASE T* Fast Ethernet(Fa,Fe)  
-*1000 BASE T* Gigabit Ethernet(G,GE)  
 Bükümlü çift CAT5 VE CAT6 Kabloları sonlandırmak için RJ-45 adı verilen
 konnektörler kullanılır. Bu kablolar iki farklı iki şekilde
 sonlandırılabilir.**568-A,568-B**  
