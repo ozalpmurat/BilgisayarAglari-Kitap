@@ -127,7 +127,6 @@ aktarabilirler. **HUB’lardan en önemli farkı budur**.
 *Görsel kaynağı: https://www.pcmag.com/encyclopedia/term/ethernet-hub*
 
 ### 3: Ağ Katmanı (IP)
-
 İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
 katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
 yönlendirilebilir bir protokol olduğundan her türlü veri aağı üzerinden
@@ -137,81 +136,63 @@ interface) sahip olan yönlendirici(router) adı verilen cihazlar
 tarafından yapılır. IP internetin temel protokolüdür. Yani bir PC
 internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
 üçüncü katmanda da çalışabilmektedir.
+!!! note
+    3\. katmanda aktarılan verinin en küçük anlamlı birimine `paket` denir.
 
-<figure>
-<img src="images/ip_katman" id="fig:exemple_for_network_model"
-style="width:15cm" alt="AĞ Katmanı" />
-<figcaption aria-hidden="true">AĞ Katmanı</figcaption>
-</figure>
+![Ağlar arası bağlantı](images/B03-AglarArasiBaglanti.png)  
+*Ağlar arası bağlantı*
 
-1.  **A,B,C** aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir
-    (2. katman).
+- **A,B,C** aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir (2. katman).
+- **X,Y,Z** aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir (2. katman).
+- **Söğüt** ve **Mühendislik Fakültesi** arasındaki bilgisayarlar farklı ağlarda olduklarından birbirleriyle MAC adresleriyle haberleşemez, IP adresi ile yönlendirme yapılarak haberleşebilirler. (3. katman).
 
-2.  **X,Y,Z** aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir
-    (2. katman).
+![IP Paket Başlıkları](images/B03-IP_Baslik.jpg)  
+*Görsel Kaynağı: https://www.researchgate.net/publication/269810379_IPv4IPv6_Transition*
 
-<img src="images/ip_communication" style="width:10cm" alt="image" />
-<span id="fig:exemple_for_ip_communication"
-label="fig:exemple_for_ip_communication"></span>
-
-1.  **En küçük birimine paketleme denir.**
+![TCP, IP ve Eth Başlıkları](images/B03-TCP_IP_Eth-Basliklari.png)  
+*Görsel Kaynağı: https://infosys.beckhoff.com/english.php?content=../content/1033/bc9191/2792604555.html&id=*
 
 ### 4: Taşıma Katmanı
-
 İnternette IP üzerinde kullanılan 2 tane 4. katman protokolü vardır.
-Bunlar <span style="color: red">**TCP**</span> ve <span
-style="color: red">**UDP**</span> dir. Bu katman uygulama programları
+Bunlar `TCP` ve `UDP`'dir. Bu katman uygulama programları
 için seri iletişim kanalları kuran katmandır. Bu kanallar port adı
 verilen servis numaralarıyla kurulur.
 
-**TCP**[^2]: Bağlantı temelli bir protokoldür. Trafik başlamadan önce
+![TCP ve UDP akışları](images/B03-TCPveUDP_Akislar.png)  
+*Görsel Kaynağı: https://www.karel.com.tr/bilgi/tcp-ve-udp-arasindaki-farklar-nedir*
+
+- **TCP**: Bağlantı temelli bir protokoldür. Trafik başlamadan önce
 karşıdaki uca müsait olup olmadığı sorulur. Bu yönüyle telefon
 görüşmesine benzer.
-
-**UDP**[^3]: Bağlantı temelli değildir. Trafik doğrudan başlatıldığı
+- **UDP**: Bağlantı temelli değildir. Trafik doğrudan başlatıldığı
 için paketlerin iletimi garanti edilmez. SMS gönderimine benzetilebilir.
 Özellikle gerçek zamanlı görüntü ve ses taşıma uygulamalarında
-elverişlidir. **TCP**’ye göre daha **hızlıdır**.
+elverişlidir. TCP’ye göre daha hızlıdır.
+![TCP ve UDP](images/B03-TCPveUDP.png)  
+*Görsel Kaynağı: https://medium.com/@mehmet.topac/tcp-nedi%CC%87r-udp-nedi%CC%87r-farklari-nelerdi%CC%87r-6ff6a29573b7*
 
-**Örnek**: 3 way handshaking - 3 aşamalı el sıkışma
+#### 3 way handshaking - 3 aşamalı el sıkışma
+![TCP oturumu](images/B03-TCP_Oturumu.png)  
+*Görsel Kaynağı: https://toschprod.wordpress.com/2012/01/30/osi-model-layer-4-transport/*
 
-<figure>
-<img src="images/tcp_example" id="fig:tcp_example" style="width:10cm"
-alt="TCP Protokolü" />
-<figcaption aria-hidden="true">TCP Protokolü</figcaption>
-</figure>
+![TCP ve UDP komik](images/B03-TCPveUDP-Komik.png)  
+*Görsel Kaynağı: https://www.reddit.com/r/ProgrammerHumor/comments/18hkwj0/acknowledge/*
 
 Oturum açıldıktan sonra ilk olacak - Veri kaç parçada gönderilecek  
 1GB filmi  
 80 segmentte ⇒ (1180 2180 .... 80/80) bunlar paketlenir.
 
-**TCP**’de sadece yavaşlama olacak görürüz. En önemli avantajı budur.
-
-<figure>
-<img src="images/upd_example" id="fig:upd_example" style="width:10cm"
-alt="UDP Protokolü" />
-<figcaption aria-hidden="true">UDP Protokolü</figcaption>
-</figure>
-
-**UDP**’nin avantajı hızlı **TCP**’ye göre. Dezavantajı ise güvensiz.
 
 **Örneğin**: İnternetten radyo dinleyeceğiz bunu **UDP** ile dinlemek
 zorundayız, çünkü GB belli değil. **TCP**’de önemlidir.
 
-Dördüncü katmanın bir başka görevi de üst katmanlardan gelen veriyi
-bölümleyerek daha küçük parçalara ayırmaktır. Bu parçalara **segment**
-denir.
+!!! note
+    Dördüncü katmanın bir başka görevi de üst katmanlardan gelen veriyi
+    bölümleyerek daha küçük parçalara ayırmaktır. Bu parçalara `segment`
+    denir.
 
-<div id="tab:tcp_vs_upd">
-
-|            TCP             |    UDP     |     |
-|:--------------------------:|:----------:|:---:|
-| Güvenli ( oturum temelli ) | Oturum yok |     |
-|           Yavaş            |   Hızlı    |     |
-
-TCP vs UDP
-
-</div>
+![İletişim Komikleri](images/B03-iletisim_komik.jpg)  
+*Görsel kaynağı: https://www.pinterest.com/pin/808536939357862630/*
 
 ### 5-7: Uygulama Seviyesi Katmanları
 
