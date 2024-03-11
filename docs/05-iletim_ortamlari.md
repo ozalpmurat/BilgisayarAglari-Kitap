@@ -37,57 +37,33 @@ alt="Koaksiyel Kablo" />
 <figcaption aria-hidden="true">Koaksiyel Kablo</figcaption>
 </figure>
 
-## BÜKÜMLÜ ÇİFT KABLO
+## Bükümlü Çift Kablo (Twisted Pair Cable)
+İçerisinde bükülmüş çiftler halinde bakır tel bulunur. Kabloların birbirleri üzerindeki direnç elektromanyetik etkisini azaltmak için ikişerli olarak sarılı durumundadırlar. 
+![Bükümlü Çift Kablo](images/B02-BukumluCiftKablo.png)  
+*Bükümlü çift kablo*
 
-İçerisinde 4 çift bakır kablo bulunur.Kabloların birbirleri üzerindeki
-direnç elektromanyetik etkisini azaltmak için ikişerli olarak sarılı
-durumundadırlar. Örneğin: UTP,CAT5,Ethernet Kablosu
+![Bükümlü Çift Kablolar](images/B02-BukumluCiftKablolar.png)  
+*Görsel kaynağı: https://www.linx-com.com/copper-construction/*
 
-<figure>
-<img src="images/bukumlukablo" id="fig:Bukumlu_cift_kablo"
-style="width:6cm" alt="Bükümlü çift kablodan bir kesit" />
-<figcaption aria-hidden="true">Bükümlü çift kablodan bir
-kesit</figcaption>
-</figure>
-
-### UTP (UNSHILDED TWISTED PAIR) Korumasız Bükümlü Çift
-
-8 iletkenin her biri ince bir yalıtkan ile kaplanmıştır. En dışında
-tamamını kaplayan bir yalıtkan vardır.
-
-### STP(SHİLDED TWİSTED PAİR)
-
-Her çiftin altında koruma (topraklama ) vardır.
-
-### FTP(FOILED TWISTED PAİR )
-
-4 çiftin tamamının etrafında folyo koruma vardır.
-
-### S/FTP 
-
-İkisinin de özelliğini taşımaktadır.
+- U: Unshilded (Korumasız)
+- F: Foiled (Folyolu)
+- S: Shielded (Korumalı)
 
 ## FREKANSLARINA GÖRE BÜKÜMLÜ ÇİFT KABLO
+![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-1.png)  
+*Görsel kaynağı: https://dc.mynetworkinsights.com/categories-of-copper-twisted-pair-cables/*
 
-<figure>
-<img src="images/Bolum03_BukumluKablolar.png"
-id="fig:Bolum03_BukumluKablolar" style="width:17cm"
-alt="Bükümlü çift kablo kategorileri.https://telecom.samm.com/history-of-ethernet-lan-cables-categories" />
-<figcaption aria-hidden="true">Bükümlü çift kablo
-kategorileri.https://telecom.samm.com/history-of-ethernet-lan-cables-categories</figcaption>
+![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-2.png){width="800"}
+*Görsel kaynağı: https://telecom.samm.com/history-of-ethernet-lan-cables-categories*
+
+!!! warning "CAT-1, CAT-2, CAT-3"
+    Telefon hatlarında kullanılır, ağlarda kullanılmaz.  
+
+<figure markdown="span">
+  ![RJ-45 konnektör](images/B02-RJ45-Konnektor.png){ width="800" }
+  <figcaption>Görsel kaynağı: https://www.electricalvolt.com/how-to-crimp-rj45-connector/</figcaption>
 </figure>
 
-**KABLO KATEGORİLERİ**  
-**CAT1-CAT3**  
-Telefon hatlarında bulunur.  
-**CAT5**  
-En yaygın kullanılan ağ kablosudur. Azami 100m mesafe ve 10Mb/s
-destekler.  
-**CAT6**  
-100 m mesafede 1G b/s destekler.  
-*10 BASE T* Ethernet(Eth)  
-*100 BASE T* Fast Ethernet(Fa,Fe)  
-*1000 BASE T* Gigabit Ethernet(G,GE)  
 Bükümlü çift CAT5 VE CAT6 Kabloları sonlandırmak için RJ-45 adı verilen
 konnektörler kullanılır. Bu kablolar iki farklı iki şekilde
 sonlandırılabilir.**568-A,568-B**  

@@ -1,6 +1,13 @@
+---
+title: OSI Modeli
+summary: OSI modeli ve TCP/IP modeli yapıları
+---
+
 [^1]: [OSI -Open Systems Interconnection- modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
 
-# İnternet'in Kısa Tarihçesi
+# OSI Modeli
+
+## İnternet'in Kısa Tarihçesi
 ![ARPANET 1970](images/B03-ARPAnet-1970.png)  
 *ARPANET 1970*
 
@@ -10,7 +17,7 @@ TCP/IP modeli 1989'da 1122 ve 1123 numaralı RFC'ler ile yayınlanmıştır. OSI
 
 1980'lerin sonlarında bu teknolojiler, sivil ve ticari kullanıma açılarak İnternet'i başlattı.
 
-# OSI ve TCP/IP modelleri
+## OSI ve TCP/IP modelleri
 Bilgisayar ağlarının nasıl çalıştığını anlamak için kullanılır. Geliştirilen donanımlar ve yazılımlar bu modellere uygun olursa İnternet üzerinde sorunsuzca iletişim kurabilirler.
 
 ![OSI ve TCP/IP modelleri](images/B03-OSI_ve_TCPIP.jpg)  
@@ -19,7 +26,7 @@ Bilgisayar ağlarının nasıl çalıştığını anlamak için kullanılır. Ge
 ![OSI ve TCP/IP modeli karşılaştırma](images/B03-OSI_ve_TCPIP-2.webp)  
 *Görsel kaynağı: https://instrumentationtools.com/difference-tcpip-model-osi-model/*
 
-# 03. OSI MODELİ KATMANLARI
+## OSI MODELİ KATMANLARI
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI[^1] Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
 
 1.  [Fiziksel (Physical)](#fiziksel-katman)
@@ -37,7 +44,7 @@ Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığ�
 ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar-2.png)  
 *Görsel kaynağı: https://community.fs.com/article/tcpip-vs-osi-whats-the-difference-between-the-two-models.html*
 
-## 1: Fiziksel Katman
+### 1: Fiziksel Katman
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
 katmandır. Bir uçtan gönderilen sinyalin karşı uca iletilmesinden
 sorumludur. Sayısal haberleşmede en küçük birim bit olduğundan bu
@@ -50,7 +57,7 @@ donanımları:
 4. Tekrarlayıcılar (repeater)
 4. Kablosuz iletişimde kullanılan hava
 
-## 2: Veri Bağı Katmanı
+### 2: Veri Bağı Katmanı
 Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
 katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
 aynı olup olmadığını sınayan sistemler kullanılır. En çok kullanılan
@@ -75,14 +82,14 @@ yöntemini (ikinci katman protokolünü) kullanması gerekir.
 ![Veriye eklenen başlıklar](images/B03-CercevePaketSegment.gif)  
 *Görsel kaynağı: http://som.csudh.edu/cis/471/hout/netech/encapsulation.htm*
 
-### Günümüzde en yaygın ikinci katman protokolleri
+**Günümüzde en yaygın ikinci katman protokolleri**
 - **Yerel ağda (LAN)** : Ethernet  
 - **Uzak ağlarda (WAN)** : Metroethernet. Eskiden ATM, PPP, Frame-Relay gibi protokoller vardı ama günümüzde kullanımı azaldı. Eskiden çevirmeli ağlarda kullanılan PPP yerine günümüzde PPPoE kullanılıyor artık.
 
 ![PPPoE](images/B03-Modem-PPPoE.png)  
 *Görsel kaynağı: https://www.alfanett.com.tr/modem.html*
 
-## LAN ve WAN nedir?
+### LAN ve WAN nedir?
 - **LAN**: Local Area Network (yerel alan ağı). Kendi arazisi (binası) içerisinde, kimseden izin almaya gerek kalmadan kablolama yapılan ağlara LAN denir. Örneğin üniversite kampüsü ya da aynı binanın birkaç katını kullanan şirketler gibi.
 - **WAN**: Wide Area Network (geniş alan ağı). Kurumların kendi arazisinin (binasının) dışında olan bir yer ile kurulan ağlardır. Sokağın karşısındaki binaya kablo çekemeyiz. Eğer karşılıklı iki binada iletişim kurulması gerekiyorsa, ISP (Internet Service Provider ~ internet servis sağlayıcı) firmadan hizmet satın almak gerekir.
 - **Fark ne?**: LAN'da istediğimiz kablolama türü ve istediğimiz protokolü kullanabiliriz. Hiç bir kısıtlama olmadan ağa bağlanabiliriz. WAN'da ise servis sağlayıcının sunduğu hizmetlerden ve onun kurallarına uyarak bağlanabiliriz.
@@ -119,7 +126,7 @@ aktarabilirler. **HUB’lardan en önemli farkı budur**.
 ![Ethernet Çerçevesi Başlığı](images/B03-HUB_Switch.gif)  
 *Görsel kaynağı: https://www.pcmag.com/encyclopedia/term/ethernet-hub*
 
-## 3: Ağ Katmanı (IP)
+### 3: Ağ Katmanı (IP)
 
 İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
 katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
@@ -149,7 +156,7 @@ label="fig:exemple_for_ip_communication"></span>
 
 1.  **En küçük birimine paketleme denir.**
 
-## 4: Taşıma Katmanı
+### 4: Taşıma Katmanı
 
 İnternette IP üzerinde kullanılan 2 tane 4. katman protokolü vardır.
 Bunlar <span style="color: red">**TCP**</span> ve <span
@@ -206,7 +213,7 @@ TCP vs UDP
 
 </div>
 
-## 5-7: Uygulama Seviyesi Katmanları
+### 5-7: Uygulama Seviyesi Katmanları
 
 Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
 kullanılmadığından ve farklı uygulamalar arasında standart olmadığından
