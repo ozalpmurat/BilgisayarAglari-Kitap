@@ -1,6 +1,6 @@
 # Ağ Topolojileri 
 ![Topolojiler](images/B02-Topolojiler.jpg)  
-*Görsel kaynağı: https://www.dnsstuff.com/what-is-network-topology
+*Görsel kaynağı: https://www.dnsstuff.com/what-is-network-topology*
 
 Ağ topolojileri "bir ağı oluşturan cihazların fiziksel ve mantıksal yerleşimidir". Network Topology (Ağ Topolojisi) Yerel Ağ Alanı (LAN) içerisinde bulunan bilgisayarların fiziksel ve mantıksal yerleşimini ifade eder. Fiziksel Topoloji ağ içerisinde bulunan tüm cihazların birbirlerine nasıl bağlanacağını ve bağlantı için ne tür kablo kullanacağını belirtirken Mantıksal Topoloji bu cihazların nasıl haberleşeceğini belirtir ve bu cihazları ortak bir protokol altında birleştirir. Kullanılmak istenen Ağ Teknolojisine göre farklı ağ topolojileri kullanılmaktadır. Fiziksel Topolojinin 6 farklı çeşidi vardır. Bunlar Bus(Yol), Ring(Halka), Yıldız(Star), Ext Star(Gelişmiş Yıldız), Mesh(Örgü) ve Tree(Ağaç) topolojileridir.
 Broadcast(Yayın) ve Token Passing(İz) mantıksal topolojilere birer
@@ -20,10 +20,7 @@ gider. Herkes herkesin trafiğini görebilir. Bu yüzden çok fazla
 ## Halka (Ring) Topoloji
 Doğrusal topolojiye benzer. Sonlandırıcı kullanılmaz. Hattın iki ucu
 birleşiktir. Hatta sanal bir jeton dolaşır(token).Jeton sırası gelen
-bilgisayar, jeton boş ise göndereceği veriyi hatta yerleştirir.
-Bilgisayarlar sırayla veri gönderdiklerinden çakışma daha
-azdır.Günümüzde hiç kullanılmamaktadır. Herkes herkesin verisini
-kullanabilmektedir.
+bilgisayar, jeton boş ise göndereceği veriyi hatta yerleştirir. Bilgisayarlar sırayla veri gönderdiklerinden çakışma daha azdır. Günümüzde hiç kullanılmamaktadır. Herkes herkesin verisini kullanabilmektedir.
 
 ![Halka Topoloji](images/B02-HalkaTopoloji.png)  
 *Görsel kaynağı: https://www.cse.iitk.ac.in/users/dheeraj/cs425/lec07.html*

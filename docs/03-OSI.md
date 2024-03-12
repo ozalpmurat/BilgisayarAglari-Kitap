@@ -4,8 +4,6 @@ summary: OSI modeli ve TCP/IP modeli yapıları
 # hide: toc
 ---
 
-[^1]: [OSI -Open Systems Interconnection- modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
-
 # OSI Modeli
 
 ## İnternet'in Kısa Tarihçesi
@@ -28,7 +26,7 @@ Bilgisayar ağlarının nasıl çalıştığını anlamak için kullanılır. Ge
 *Görsel kaynağı: https://instrumentationtools.com/difference-tcpip-model-osi-model/*
 
 ## OSI MODELİ KATMANLARI
-Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI[^1] Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
+Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
 
 
 - 7-Uygulama (Application)
@@ -201,6 +199,9 @@ TCP'de el sıkışmadan sonra, ilk olarak veri boyutu ve toplam kaç parçada g�
 ![İletişim Komikleri](images/B03-iletisim_komik.jpg)  
 *Görsel kaynağı: https://www.pinterest.com/pin/808536939357862630/*
 
+![TCP ve UDP başlıkları](images/B03-TCPveUDP-Baslik.png)  
+*Görsel kaynağı: https://www.softwaretestinghelp.com/tcp-vs-udp/*
+
 ### 5-7: Uygulama Seviyesi Katmanları
 
 Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
@@ -232,3 +233,12 @@ Bilgisayar ağları kapsamında **Servis** (hizmet) kavramı, ağ üzerinde beli
 - **nmap** (zenmap): TCP ve UDP port taraması yapar. 0-65536 arası tüm portlar ya da belirli portlar taranabilir.
 - **wireshark (tcpdump)**
 - **TCPView (Microsoft)**
+
+## Wireshark ile trafik analizi
+
+Örnek uygulamalar:
+
+- DHCP trafiği
+- TCP 3-way handshake
+- HTTP/Telnet vb. parola görüntüleme
+- DNS ve HTTP trafikleri arka arkaya

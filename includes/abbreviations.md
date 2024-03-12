@@ -4,3 +4,4 @@
 *[BSEU]: Bilecik Şeyh Edebali Üniversitesi
 *[HTML]: Hyper Text Markup Language
 *[W3C]: World Wide Web Consortium
+*[OSI]: OSI (Open Systems Interconnection) modeli ISO tarafından geliştirilmiştir
