@@ -1,22 +1,27 @@
 # Temel Kavramlar
 
-### Aktarım Verimliliği
+## Aktarım Verimliliği
 
 $$ \small{\mathtt{Aktarım \ Verimliliği = {Veri \over (Veri + TCP/UDP \ baslığı + IP \ baslığı + Ethernet \ baslığı)}}} $$
 
 Bu denkleme göre; bir seferde gönderilen veri bloğu ne kadar büyürse, verim o kadar artar.
 
-**MTU:** _Maximum Transmission Unit_. Bir seferde gönderilebilecek maksimum veri miktarını belirler. Ethernet ağlarında MTU değeri varsayılan olarak **1500
+## MTU
+ _Maximum Transmission Unit_. Bir seferde gönderilebilecek maksimum veri miktarını belirler. Ethernet ağlarında MTU değeri varsayılan olarak **1500
 bayt/kapsül**
 
-**TTL:** _Time to Live_. Paketlerin Ağda sonsuz kadar dolaşmaması için kullanılan yaşam ömrü süresidir. Başlangıç TTL değeri sistemden sisteme değişir. 256, 128 veya 64 olabilmektedir.
+## RTT
+_Round Trip Time_. Paketlerin karşı tarafa gidip geri gelmesi için geçen süre.
+
+## TTL
+ _Time to Live_. Paketlerin Ağda sonsuz kadar dolaşmaması için kullanılan yaşam ömrü süresidir. Başlangıç TTL değeri sistemden sisteme değişir. 256, 128 veya 64 olabilmektedir. Bir paket, **hop noktaları** arasında her aktarıldığında **TTL değeri 1 azalır**.
+
 ![TTL değeri](images/B04-TTL.png)  
 *Görsel kaynağı: https://ipwithease.com/what-is-time-to-live-ttl-in-networking/*
 
-Bir paket, **hop noktaları** arasında her aktarıldığında **TTL değeri 1 azalır**.
-
 ![Zamana Karşı filmindeki insanların TTL değeri](images/B04-Film_ZamanaKarsi.jpg)  
 *Zamana Karşı filmindeki insanların TTL değeri*
+
 ## Band Genişliği (Bandwidth)
 
 Haberleşme kanalının veya iletim ortamının kapasitesini ifade etmek için
@@ -50,14 +55,12 @@ Bw=?
 
 2.  Değişim olmaz...
 
-## Temel Band (Base Band)
+## Temel Bant ve Geniş Bant 
 
-İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak
-iletim ortamının tüm kapasitesi tek bir kanal için kullanılır.  
-**Örneğin**: Ethernette bu band kullanır.
+**Temel bant**
+_Base Band and Broad Band_. İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. **Örneğin**: Ethernette bu band kullanır.
 
-## Geniş Band (Brood Band)
-
+**Geniş Bant**
 İletim ortamında birden fazla frekans bandı kullanılır. bulunur. Basit
 bir frekans band filtresi sayesinde kanallar ayrıştırılabilir. Telefon
 hattından aynı anda ses verinin taşınması buna örnektir.
@@ -74,16 +77,14 @@ tercihi hem de kullanılan topoloji gibi ektenler bu konuda etkilidir.
 
 ## Haberleşme Kanalı Modlari
 
-1.  **<span style="color: blue"> Simplex Kanal</span>**: Televizyon ve
-    radyo gibi yayının tek taraflı olarak yapıldığı kanallardır.
+1.  **Simplex Kanal**: Televizyon ve radyo gibi yayının tek taraflı olarak yapıldığı kanallardır.
 
-2.  **<span style="color: blue"> Half-dubleks Kanal</span>**: Çıft yönlu
+2.  **Half-dubleks Kanal**: Çıft yönlu
     iletişim vardır. Ancak aynı anda sadece bir taraf veri gönderebilir.
-    Örnek olarak **<span style="color: red">telsiz</span>**.
+    Örnek olarak **telsiz**.
 
-3.  **<span style="color: blue"> Full-dubleks Kanal</span>**: İki uc
+3.  **Full-dupleks Kanal**: İki uc
     arasında iki tane simplex kanal vardır. Böylece aynı anda iki taraf
     veri gönderebilir ve alabilir. Örnek telefon görüşmeleri.
 
-4.  Günümüzde tüm bilgisayar ağları **<span
-    style="color: red">Full-dubleks</span>**’dir.
+Günümüzde tüm bilgisayar ağları **Full-dupleks**’tir.

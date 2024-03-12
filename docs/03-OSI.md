@@ -1,6 +1,7 @@
 ---
 title: OSI Modeli
 summary: OSI modeli ve TCP/IP modeli yapıları
+# hide: toc
 ---
 
 [^1]: [OSI -Open Systems Interconnection- modeli ISO tarafından geliştirilmiştir.](https://tr.wikipedia.org/wiki/OSI_modeli)
@@ -29,15 +30,19 @@ Bilgisayar ağlarının nasıl çalıştığını anlamak için kullanılır. Ge
 ## OSI MODELİ KATMANLARI
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI[^1] Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
 
-1.  [Fiziksel (Physical)](#fiziksel-katman)
-2.  [Veri Bağı (Data link)](#veri-bag-katman)
-3.  [Ağ (IP)](#subsubsec:ag_katmani)
-4.  [Taşıma (Transport)](#subsubsec:tasima_katmani)
-5.  Oturum (Session)
-6.  Sunum (Presentation)
-7.  [Uygulama (Application)](#subsubsec:tasima_katmani)
 
-![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png)
+- 7-Uygulama (Application)
+- 6-Sunum (Presentation)
+- 5-Oturum (Session)
+- 4-Taşıma (Transport)
+- 3-Ağ (IP)
+- 2-Veri Bağlantı (Data link)
+- 1-Fiziksel (Physical)
+
+![OSI modeli katmanlarında paketleme](images/B03-OSI-paketleme-animasyon.gif)  
+*Görsel kaynağı: https://www.practicalnetworking.net/series/packet-traveling/osi-model/*
+
+![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar.png)  
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches/*
 
 
@@ -57,12 +62,13 @@ donanımları:
 4. Tekrarlayıcılar (repeater)
 4. Kablosuz iletişimde kullanılan hava
 
-### 2: Veri Bağı Katmanı
+### 2: Veri Bağlantı Katmanı
 Verinin fiziksel ortamdan güvenli bir şekilde taşınmasından sorumlu olan
 katmandır. Kaynaktan çıkan verilerin(bitler) hedefe ulaşan verilerle
 aynı olup olmadığını sınayan sistemler kullanılır. En çok kullanılan
 hata bulma algoritmaları **eşlik biti (parity check)** ve **CRC
 algoritmasıdır**.
+
 ![Eşlik biti](images/B03-Eslik-Biti.png)  
 *Görsel kaynağı: https://www.hbmacit.com/2020/06/12/c-ile-parite-biti-hesaplama/*
 
@@ -82,9 +88,9 @@ yöntemini (ikinci katman protokolünü) kullanması gerekir.
 ![Veriye eklenen başlıklar](images/B03-CercevePaketSegment.gif)  
 *Görsel kaynağı: http://som.csudh.edu/cis/471/hout/netech/encapsulation.htm*
 
-**Günümüzde en yaygın ikinci katman protokolleri**
-- **Yerel ağda (LAN)** : Ethernet  
-- **Uzak ağlarda (WAN)** : Metroethernet. Eskiden ATM, PPP, Frame-Relay gibi protokoller vardı ama günümüzde kullanımı azaldı. Eskiden çevirmeli ağlarda kullanılan PPP yerine günümüzde PPPoE kullanılıyor artık.
+!!! note "Günümüzde en yaygın ikinci katman protokolleri"
+    - Yerel ağda (LAN): **Ethernet**  
+    - Uzak ağlarda (WAN) : **Metroethernet**. Eskiden ATM, PPP, Frame-Relay gibi protokoller vardı ama günümüzde kullanımı azaldı. Eskiden çevirmeli ağlarda kullanılan PPP yerine günümüzde PPPoE kullanılıyor artık.
 
 ![PPPoE](images/B03-Modem-PPPoE.png)  
 *Görsel kaynağı: https://www.alfanett.com.tr/modem.html*
@@ -168,6 +174,7 @@ görüşmesine benzer.
 için paketlerin iletimi garanti edilmez. SMS gönderimine benzetilebilir.
 Özellikle gerçek zamanlı görüntü ve ses taşıma uygulamalarında
 elverişlidir. TCP’ye göre daha hızlıdır.
+
 ![TCP ve UDP](images/B03-TCPveUDP.png)  
 *Görsel Kaynağı: https://medium.com/@mehmet.topac/tcp-nedi%CC%87r-udp-nedi%CC%87r-farklari-nelerdi%CC%87r-6ff6a29573b7*
 
@@ -175,21 +182,21 @@ elverişlidir. TCP’ye göre daha hızlıdır.
 ![TCP oturumu](images/B03-TCP_Oturumu.png)  
 *Görsel Kaynağı: https://toschprod.wordpress.com/2012/01/30/osi-model-layer-4-transport/*
 
-![TCP ve UDP komik](images/B03-TCPveUDP-Komik.png)  
+![TCP ve UDP komik](images/B03-TCPveUDP-Komik.png){width="400"}  
 *Görsel Kaynağı: https://www.reddit.com/r/ProgrammerHumor/comments/18hkwj0/acknowledge/*
-
-Oturum açıldıktan sonra ilk olacak - Veri kaç parçada gönderilecek  
-1GB filmi  
-80 segmentte ⇒ (1180 2180 .... 80/80) bunlar paketlenir.
-
-
-**Örneğin**: İnternetten radyo dinleyeceğiz bunu **UDP** ile dinlemek
-zorundayız, çünkü GB belli değil. **TCP**’de önemlidir.
 
 !!! note
     Dördüncü katmanın bir başka görevi de üst katmanlardan gelen veriyi
     bölümleyerek daha küçük parçalara ayırmaktır. Bu parçalara `segment`
     denir.
+
+TCP'de el sıkışmadan sonra, ilk olarak veri boyutu ve toplam kaç parçada gönderileceği karşı tarafa söylenir. Sonra segmentler halinde veri gönderilir.
+
+**Örnek senaryolar**
+
+- HTTP üzerinden 1GB'lık program indireceksek ve 80 segment halinde karşıya gönderilecekse, `1/80, 2/80, ..., 80/80` şeklinde parçalanarak ve her bir segmente numara eklenerek karşıya iletilir.
+
+- İnternetten radyo dinleyeceksek genelde **UDP** ile dinleriz. Çünkü gelecek olan verinin boyutu (kaç GB?) belli değil. Segmentasyon yapma şansı yok.
 
 ![İletişim Komikleri](images/B03-iletisim_komik.jpg)  
 *Görsel kaynağı: https://www.pinterest.com/pin/808536939357862630/*
@@ -198,33 +205,30 @@ zorundayız, çünkü GB belli değil. **TCP**’de önemlidir.
 
 Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
 kullanılmadığından ve farklı uygulamalar arasında standart olmadığından
-bu derste üçüncu tek başlkta inceliyoruz.
-
-<img src="images/osi_example" style="width:17cm" alt="image" />
+bu derste üçünü tek başlıkta inceliyoruz.
 
 Uygulama programları genellikle 7. katmanda ulaşmakta ve genellikle
-doğruden 4. katman ile iletişime geçmektedir.
+doğruden 4. katman ile iletişime geçmektedir. Oturum ve sunum gibi işlemler yapılacaksa da genellikle uygulama içerisinde yapılıp 4. katmana aktarılmaktadır.
 
-**<span style="color: blue">TELNET</span>**: Ağlarda yönetim ve kontrol
-amaclı kullanılır. Ağ cihazlarının genellikle tamamı **telnet** ile
-yönetimi destekler. 2 cihaz arasında 4. katmanda bağlantı
-(erişebilirlik) kontrolü yapmak için **telnet** kullanılır.
+#### Yaygın kullanılan bazı servisler
+Bilgisayar ağları kapsamında **Servis** (hizmet) kavramı, ağ üzerinde belirli bir portu dinleyen uygulama anlamındadır. Örneğin, WEB portunu (TCP 80) web sunucusu dinler. Web sunucusu uygulamasına servis denir bu durumda.
 
-\*\* **Port tarama uygulamaları**  
-4. katmanda açık olan **<span style="color: red">TCP/UDP</span>**
-portlarını tarar.
+- DHCP (UDP 67 & 68)
+- DNS (UDP 53)
+- HTTP (TCP 80)
+- HTTPS (TCP 443)
+- SMTP (TCP 25)
+- SSH (TCP 22)
+- RDP (TCP 3389)
+- MS-SQL (TCP 1433)
+- MySQL (TCP 3306)
 
-**<span style="color: blue">nmap</span>**: **TCP** yada **UDP**’ye kadar
-**0-65536**’ye kadar port taraması yapar.
+## OSI modelini anlamak için kullanılabilecek uygulamalar
 
-<div id="tab:table">
-
-| **OBS**               | **Uzak masaüstu**       | **nmap -\> OS dedikten** |
-|:----------------------|:------------------------|:-------------------------|
-| Port tarama           | TCP 3389                | obs.bilecik.edu.tr       |
-| 79.123.244.212 -\> IP | 79.123.244.212 start IP | cevaplar                 |
-| TCP 80 open           | 79.123.244.212 end IP   | tahmin                   |
-
-Örnek
-
-</div>
+- **ping** (hping): Karşı uç ile aramızda 3. katmanda bağlantı var mı? Paketler kaç milisaniyede gidip geliyor? Büyük paketler ve küçük paketler ağdan aynı şekilde gidebiliyor mu?
+- **traceroute (tracert)**:
+- **Telnet**: Ağlarda yönetim ve kontrol amaçlı kullanılır. Ağ cihazlarının genellikle tamamı telnet ile yönetimi destekler. Bunun dışında, 2 cihaz arasında 4. katmanda bağlantı (erişebilirlik) kontrolü yapmak için de kullanılır. Örneğin SMTP veya HTTP gibi protokoller, Telnet ile çalıştırılabilir.
+- **netstat**
+- **nmap** (zenmap): TCP ve UDP port taraması yapar. 0-65536 arası tüm portlar ya da belirli portlar taranabilir.
+- **wireshark (tcpdump)**
+- **TCPView (Microsoft)**

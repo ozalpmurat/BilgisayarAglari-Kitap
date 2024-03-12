@@ -91,7 +91,8 @@ plugins:
 theme:
   # The available installed themes are: material, bootstrap, nature, mkdocs, readthedocs
   name: material
-  locale: tr
+  #locale: tr   # bu satır aktif olunca tr bişeysi bulunamadı diye log düşüyor
+  language: tr
   #custom_dir: my_theme_customizations/
   static_templates:
     - sitemap.html
