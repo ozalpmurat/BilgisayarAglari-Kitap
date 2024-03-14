@@ -146,9 +146,11 @@ internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
 ![Ağlar arası bağlantı](images/B03-AglarArasiBaglanti.png)  
 *Ağlar arası bağlantı*
 
-- **A,B,C** aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir (2. katman).
-- **X,Y,Z** aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir (2. katman).
-- **Söğüt** ve **Mühendislik Fakültesi** arasındaki bilgisayarlar farklı ağlarda olduklarından birbirleriyle MAC adresleriyle haberleşemez, IP adresi ile yönlendirme yapılarak haberleşebilirler. (3. katman).
+Farklı ağların birbiri ile görüşmesi için mutlaka yönlendirme yapılması gerekir. Yukarıdaki şekilde iki farklı ağ yönlendirme yapılarak bağlanmıştır.
+
+- **Kütüphane** tarafındaki bilgisayarlar aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir (2. katman).
+- **Rektörlük** tarafındaki bilgisayarlar aynı ağdadır. Birbirleriyle MAC adresleriyle haberleşir (2. katman).
+- **Kütüphane** ve **Rektörlük** bilgisayarları farklı ağlarda olduklarından birbirleriyle MAC adresleriyle haberleşemez, IP adresi ile yönlendirme yapılarak haberleşebilirler. (3. katman).
 
 ![IP Paket Başlıkları](images/B03-IP_Baslik.jpg)  
 *Görsel Kaynağı: https://www.researchgate.net/publication/269810379_IPv4IPv6_Transition*
@@ -196,7 +198,7 @@ TCP'de el sıkışmadan sonra, ilk olarak veri boyutu ve toplam kaç parçada g�
 
 - İnternetten radyo dinleyeceksek genelde **UDP** ile dinleriz. Çünkü gelecek olan verinin boyutu (kaç GB?) belli değil. Segmentasyon yapma şansı yok.
 
-![İletişim Komikleri](images/B03-iletisim_komik.jpg)  
+![İletişim Komikleri](images/B03-iletisim_komik.png)  
 *Görsel kaynağı: https://www.pinterest.com/pin/808536939357862630/*
 
 ![TCP ve UDP başlıkları](images/B03-TCPveUDP-Baslik.png)  
@@ -227,12 +229,12 @@ Bilgisayar ağları kapsamında **Servis** (hizmet) kavramı, ağ üzerinde beli
 ## OSI modelini anlamak için kullanılabilecek uygulamalar
 
 - **ping** (hping): Karşı uç ile aramızda 3. katmanda bağlantı var mı? Paketler kaç milisaniyede gidip geliyor? Büyük paketler ve küçük paketler ağdan aynı şekilde gidebiliyor mu?
-- **traceroute (tracert)**:
+- **traceroute (tracert)**: Uzzktaki bir sisteme IP üserinden hangi rotadan gittiğimizi gösterir. ICMP kapalı olan sistemlerde `TCP Trace` denenebilir.
 - **Telnet**: Ağlarda yönetim ve kontrol amaçlı kullanılır. Ağ cihazlarının genellikle tamamı telnet ile yönetimi destekler. Bunun dışında, 2 cihaz arasında 4. katmanda bağlantı (erişebilirlik) kontrolü yapmak için de kullanılır. Örneğin SMTP veya HTTP gibi protokoller, Telnet ile çalıştırılabilir.
-- **netstat**
-- **nmap** (zenmap): TCP ve UDP port taraması yapar. 0-65536 arası tüm portlar ya da belirli portlar taranabilir.
-- **wireshark (tcpdump)**
-- **TCPView (Microsoft)**
+- **netstat** Bilgisayarımızda açık olan portları ve aktif ağ bağlantılarımızı gösterir. Linux'ta `sudo netstat -antulp` şeklinde en güzel çıktıyı verir.
+- **nmap** (zenmap): TCP ve UDP port taraması yapar. 0-65536 arası tüm portlar ya da belirli portlar taranabilir. Script taraması sayesinde zafiyet taraması bile yapabilir. Çok güçlü bir araçtır.
+- **wireshark (tcpdump)**: Ethernet kartını izler, tüm trafikleri kaydeder. İstenirse filtre girilerek kayıt yapması da sağlanabilir.
+- **TCPView (Microsoft)** Windows'ta aktif ağ bağlantılarını gösterir. Hangi uygulama nereye bağlantı yapıyor?
 
 ## Wireshark ile trafik analizi
 
