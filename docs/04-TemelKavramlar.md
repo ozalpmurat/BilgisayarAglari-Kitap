@@ -72,6 +72,7 @@ _Quoality of Service_. Bant genişliğinin verimli kullanılması için bazı tr
 ![QoS](images/B04-QoS.png){width="500"}  
 *QoS. Görsel kaynağı: https://www.nwkings.com/qos-in-networking/*
 
+
 ## Temel Bant ve Geniş Bant 
 
 - **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanır.
