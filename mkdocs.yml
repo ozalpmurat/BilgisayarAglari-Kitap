@@ -10,8 +10,19 @@ watch:
   - includes
 
 markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.betterem
   - callouts
   - admonition
+  - footnotes
+  - abbr
+  - attr_list
+  - md_in_html
   - pymdownx.details
   - pymdownx.snippets:
       auto_append:
@@ -24,11 +35,6 @@ markdown_extensions:
       - name: mermaid
         class: mermaid
         format: !!python/name:pymdownx.superfences.fence_code_format
-  - footnotes
-  - abbr
-  - attr_list
-  - attr_list
-  - md_in_html
   - toc:
       permalink: true
       toc_depth: 4
@@ -45,6 +51,10 @@ plugins:
       lang: tr
   - plantuml-colocator
   - mermaid2
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      num_workers: 8
+      puml_keyword: puml
   - mkdocs_pymdownx_material_extras
   - with-pdf:
       author: Murat Özalp
@@ -91,8 +101,7 @@ plugins:
 theme:
   # The available installed themes are: material, bootstrap, nature, mkdocs, readthedocs
   name: material
-  #locale: tr   # bu satır aktif olunca tr bişeysi bulunamadı diye log düşüyor
-  language: tr
+  locale: tr
   #custom_dir: my_theme_customizations/
   static_templates:
     - sitemap.html
