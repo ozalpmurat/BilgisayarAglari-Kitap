@@ -1,7 +1,6 @@
 # Temel Kavramlar
 
 ## Aktarım Verimliliği
-
 $$ \small{\mathtt{Aktarım \ Verimliliği = {Veri \over (Veri + TCP/UDP \ baslığı + IP \ baslığı + Ethernet \ baslığı)}}} $$
 
 Bu denkleme göre; bir seferde gönderilen veri bloğu ne kadar büyürse, verim o kadar artar.
@@ -9,82 +8,101 @@ Bu denkleme göre; bir seferde gönderilen veri bloğu ne kadar büyürse, verim
 ## MTU
  _Maximum Transmission Unit_. Bir seferde gönderilebilecek maksimum veri miktarını belirler. Ethernet ağlarında MTU değeri varsayılan olarak **1500
 bayt/kapsül**
+![MTU](images/B04-MTU.png)  
+*Görsel Kaynağı: https://info.support.huawei.com/info-finder/encyclopedia/en/MTU.html/*
+
+![MTU](images/B04-MTU_Windows.png)  
+*Görsel Kaynağı: https://softkeys.uk/blogs/blog/how-to-check-mtu-size-in-windows-10/*
 
 ## RTT
 _Round Trip Time_. Paketlerin karşı tarafa gidip geri gelmesi için geçen süre.
+![RTT](images/B04-RTT.png)
+*Linux'ta ping çıktısı*
 
 ## TTL
- _Time to Live_. Paketlerin Ağda sonsuz kadar dolaşmaması için kullanılan yaşam ömrü süresidir. Başlangıç TTL değeri sistemden sisteme değişir. 256, 128 veya 64 olabilmektedir. Bir paket, **hop noktaları** arasında her aktarıldığında **TTL değeri 1 azalır**.
-
+ _Time to Live_. Paketlerin ağda sonsuza kadar dolaşmaması için kullanılan **yaşam süresi**dir. Başlangıç TTL değeri sistemden sisteme değişir. 256, 128 veya 64 olabilmektedir. Bir paket, **hop noktaları** arasında her aktarıldığında **TTL değeri 1 azalır**.
 ![TTL değeri](images/B04-TTL.png)  
 *Görsel kaynağı: https://ipwithease.com/what-is-time-to-live-ttl-in-networking/*
 
+<br/>
 ![Zamana Karşı filmindeki insanların TTL değeri](images/B04-Film_ZamanaKarsi.jpg)  
 *Zamana Karşı filmindeki insanların TTL değeri*
 
 ## Band Genişliği (Bandwidth)
-
 Haberleşme kanalının veya iletim ortamının kapasitesini ifade etmek için
-kullanılır. Analog sinayallerde birini **<span
-style="color: violet">hertz (hz)</span>** iken digital sistemlerde
-**<span style="color: violet">bps (b/s)</span>**.  
-bir haberleşme sistemi, gönderirici, alıcı ve iletim ortamından oluşur.
-İletim kapasitesi en büyük olan bütün sistemin bant genişliği belirler.
+kullanılır. Analog sinyaallerde birini **Hertz (hz)** iken, dijital sistemlerde **bps (b/s)** şeklindedir.  
 
-<span style="color: red">Örnek</span>:
+Bant genişliği kavramını otoban yolda şerit sayısı gibi düşünebiliriz. Trafik ne kadar fazla olursa olsun, şerit sayısı arttıkça trafik sorunsuz ilerleyebilir. Bu kavram doğrudan iletimin hızını ifade etmemekte ama dolaylı olarak iletim süresinin kısalmasını sağlamaktadır.  
 
-<figure>
-<img src="images/bandwidth" id="fig:bandwidth_example"
-style="width:17cm" alt="Bant Genişliği" />
-<figcaption aria-hidden="true">Bant Genişliği</figcaption>
-</figure>
+Bir haberleşme sistemi, gönderirici, alıcı ve iletim ortamından oluşur.
+İletim kapasitesi en küçük olan, bütün sistemin bant genişliği belirler.
 
-**<span style="color: red">Soru</span>**
+**Bant genişliği ile ilgili diğer kavramlar:**
 
-1.  240 mb büyüklüğündeki bir MP3 dosyası bir sistemde 4dk’da
-    aktarılıyor. Bu sistemin aktarım kapasitesini (bant genişliğini)
-    bulunuz.
+1. Latency (gecikme süresi): Verinin ağ üzerinde aktarımı sırasında geçen süre.
+1. Response time (cevap süresi): Bilgisayarların performansı da dahil edilerek cevap almak için geçen toplam süre.
+1. Throughput (işlem hacmi): Bant genişliği teorik bir kavram iken, işlem hacmi uygulamada görülen gerçek kapasiteyi ifade eder. Anahtar (switch) cihazlarının da işlem kapasitesi bu kavram ile ifade edilir.
 
-2.  MP3 yerine MPG olsaydı ne olurdu?
+![Bant Genişliği](images/B04-BantGenisligi01.png){width="550"}  
+*Görsel kaynağı:https://medium.com/@sandeep15mca/latency-bandwidth-throughput-and-response-time-0ee4d9028277*
 
-**<span style="color: red">Çözüm</span>**
 
-Bw=?
+## Gecikme kaynakları
+![alt text](images/B04-BantGenisligi02.png)  
+*Görsel kaynağı:https://www.oreilly.com/content/primer-on-latency-and-bandwidth/*
 
-1.  4dk 240 mb =\> saniyede 1mb = <span style="color: red">8mb/s</span>
+![Gecikme Kaynakları](images/B04-Delay_kaynaklari.png)  
+*Gecikme Kaynakları. Görsel kaynağı: https://medium.com/@ComNetworks2014/computer-networks-traffic-delay-and-throughput-97c1c2820466/*
 
-2.  Değişim olmaz...
+!!! question "Örnek Soru"
+    240 MB büyüklüğündeki bir MP3 dosyası, görseldeki sistemde 4 dakikada aktarılıyor.
+
+    1. Bu sistemin aktarım kapasitesini (bant genişliğini) bulunuz.
+    2. Aktarılan dosya, MP3 yerine MPG olsaydı ne olurdu?
+
+    ![alt text](images/B04-BantGenisligi-sistemde.png){width="400"}
+
+## Jitter
+Dilimize _seğirme, sapma_ şeklinde çevrilebilir. Giden veri paketlerinin gecikme sürelerinde farklılık olması durumu. Özellikle canlı anlık iletişimin sağlıksız olmasına sebep olabilir.
+![Jitter](images/B04-Jitter.png){width="650"}  
+*Görsel kaynağı: https://sonary.com/content/jitter-what-it-is-and-how-to-deal-with-it/*
+
+## QoS - hizmet önceliklendirme
+_Quoality of Service_. Bant genişliğinin verimli kullanılması için bazı trafik verilerine öncelik vermek için kullanılır. Ambulans önceliği gibi düşünebilirsiniz. Belirli IP adreslerine ya da belirli uygulamalara öncelik verilebilir. Özellikle canlı anlık iletişim sağlayan telefon görüşme uygulamaları gibi durumları önceliklendirmek için kullanılır.
+![QoS](images/B04-QoS.png){width="500"}  
+*QoS. Görsel kaynağı: https://www.nwkings.com/qos-in-networking/*
 
 ## Temel Bant ve Geniş Bant 
 
-**Temel bant**
-_Base Band and Broad Band_. İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. **Örneğin**: Ethernette bu band kullanır.
-
-**Geniş Bant**
-İletim ortamında birden fazla frekans bandı kullanılır. bulunur. Basit
+- **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanır.
+- **Geniş Bant**  (_Broad band_). İletim ortamında birden fazla frekans bandı kullanılır. bulunur. Basit
 bir frekans band filtresi sayesinde kanallar ayrıştırılabilir. Telefon
 hattından aynı anda ses verinin taşınması buna örnektir.
 
-<img src="images/brood_band" style="width:17cm;height:7cm"
-alt="image" />
+![Temel ve geniş bant](images/B04-TemelBand-GenisBand.png)  
+*Görsel Kaynağı: https://www.computernetworkingnotes.com/networking-tutorials/differences-between-baseband-and-broadband-explained.html/*
+
+![Geniş bant kullanımı](B04-GenisBant-splitter.png)  
+*Geniş bant içindeki farklı verileri ayrıştırma*
 
 ## Paralel ve Seri İletişim
-
 Paralel iletişimde byte düzenyinde iletişim sağlanır. İki uç arasında en
 az 8 tane fiziksel iletim ortamı olmalıdır. Band genişliği teorik olarak
 8 hat daha fazla olduğu düşünülebilir. Ancak hem maliyet hem protokol
 tercihi hem de kullanılan topoloji gibi ektenler bu konuda etkilidir.
+![Paralel ve seri iletişim](<images/B04-Paralel_ve_Seri.png>)  
+*Görsel kaynağı: https://www.digikey.com/en/maker/tutorials/2023/what-is-serial-communication-and-how-does-it-compare-to-parallel*
 
-## Haberleşme Kanalı Modlari
+!!! question "Araştırma sorusu"
+    Paralel iletişim daha hızlı olmasına rağmen neden günümüzde hala bazı yerlerde seri iletişim kullanılıyor? Gündelik hayatımızda bilgisayar kullanırken nerelerde seri iletişim kuruyoruz?
 
+## Haberleşme Kanalı Modları
 1.  **Simplex Kanal**: Televizyon ve radyo gibi yayının tek taraflı olarak yapıldığı kanallardır.
+2.  **Half-dubleks Kanal**: Çıft yönlü iletişim vardır. Ancak aynı anda sadece bir taraf veri gönderebilir. **telsiz** gibi.
+3.  **Full-dupleks Kanal**: İki uç arasında iki tane simplex kanal vardır. Böylece aynı anda iki taraf veri gönderebilir ve alabilir. Örnek **telefon görüşmeleri**.
 
-2.  **Half-dubleks Kanal**: Çıft yönlu
-    iletişim vardır. Ancak aynı anda sadece bir taraf veri gönderebilir.
-    Örnek olarak **telsiz**.
+Günümüzde tüm bilgisayar ağları **full-dupleks**’tir.
+![Haberleşme Kanalı Modları](images/B04-hHaberlesme_Modlari.jpg)  
+*Görsel kaynağı: https://www.blackbox.co.uk/gb-gb/page/25069/Resources/Technical-Resources/Black-Box-Explains/Fibre-Optic-Cable/Simplex-vs-duplex-fiber-patch-cable/*
 
-3.  **Full-dupleks Kanal**: İki uc
-    arasında iki tane simplex kanal vardır. Böylece aynı anda iki taraf
-    veri gönderebilir ve alabilir. Örnek telefon görüşmeleri.
 
-Günümüzde tüm bilgisayar ağları **Full-dupleks**’tir.
