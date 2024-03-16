@@ -75,7 +75,7 @@ _Quoality of Service_. Bant genişliğinin verimli kullanılması için bazı tr
 
 ## Temel Bant ve Geniş Bant 
 
-- **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanır.
+- **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanıdr.
 - **Geniş Bant**  (_Broad band_). İletim ortamında birden fazla frekans bandı kullanılır. bulunur. Basit
 bir frekans band filtresi sayesinde kanallar ayrıştırılabilir. Telefon
 hattından aynı anda ses verinin taşınması buna örnektir.
