@@ -49,12 +49,13 @@ extra_javascript:
 plugins:
   - search:
       lang: tr
-  - plantuml-colocator
-  - mermaid2
-  - plantuml:
-      puml_url: https://www.plantuml.com/plantuml/
-      num_workers: 8
-      puml_keyword: puml
+  - glightbox
+#  - mermaid2
+#  - plantuml-colocator
+#  - plantuml:
+#      puml_url: https://www.plantuml.com/plantuml/
+#      num_workers: 8
+#      puml_keyword: puml
   - mkdocs_pymdownx_material_extras
   - with-pdf:
       author: Murat Özalp

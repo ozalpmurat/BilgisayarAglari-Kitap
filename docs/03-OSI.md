@@ -244,3 +244,17 @@ Bilgisayar ağları kapsamında **Servis** (hizmet) kavramı, ağ üzerinde beli
 - TCP 3-way handshake
 - HTTP/Telnet vb. parola görüntüleme
 - DNS ve HTTP trafikleri arka arkaya
+
+## OSI modeli ve güvenlik
+![OSI modeli ve güvenlik](images/B03-OSI_ve_Guvenlik.jpg)  
+*Görsel kaynağı: https://www.researchgate.net/publication/346192126_Requirements_for_cybersecurity_in_agricultural_communication_networks/*
+
+### Bilgi güvenliğinin temel unsurları
+![CIA üçgeni](images/B03-CIA_Ucgeni.jpg){width="400"}  
+*CIA üçgeni. Görsel kaynağı: https://fikirjeneratoru.com/bilgi-guvenligi-ve-bilgi-guvenligi-unsurlari/*
+
+![McCumber Küpü](images/B03-McCumber_Küpü.png)  
+*McCumber Küpü. Görsel kaynağı:  https://fikirjeneratoru.com/bilgi-guvenligi-ve-bilgi-guvenligi-unsurlari/*
+
+![CIA üçgeni genişletilmiş](images/B03-CIA_Ucgeni-Genisletilmis.png)  
+*Genişletilmiş CIA üçgeni*
