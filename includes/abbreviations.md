@@ -6,3 +6,4 @@
 *[W3C]: World Wide Web Consortium
 *[OSI]: OSI (Open Systems Interconnection) modeli ISO tarafından geliştirilmiştir
 *[CIA]: Gizlilik, Bütünlük, Erişilebilirlik (Confidentially, Integrity, Availability)
+*[EMI]: Elektromanyetik girişim (Electromagnetic Interference)

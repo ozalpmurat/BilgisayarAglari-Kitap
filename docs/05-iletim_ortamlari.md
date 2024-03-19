@@ -1,41 +1,28 @@
 # İletim Ortamları
 
-Temelde atmosfer ve kablo olmak üzere iki farklı iletim ortamı
+Temelde **atmosfer** ve **kablo** olmak üzere iki farklı iletim ortamı
 mevcuttur. Atmosferde RF (radyo frekans) dalgalarını kullanarak iletişim
-gerçekleşir. Kablolarda ise genellikle fiberoptik ve bakır kablo
+gerçekleşir. Kablolarda ise genellikle **fiberoptik** ve **bakır** kablo
 kullanılmaktadır.
 
-## İKİ TELLİ BAKIR TELEFON HATTI 
+İnternet yaygınlaşmaya başladığında, dünyadaki her eve kablo çekmek mümkün olmadığından, mevcut altyapılardan nasıl yararlanılacağına çalışıldı. Her eve gidebilecek en kolay yöntem telefon hattı olduğundan ilk İnternet bağlantıları telefon hattı üzerinden sağlandı. Eskiden telefon hattı üzerinden internet hizmeti de kullanmaya çalışırken, şimdi internet altyapısı üzerinden -_ihtiyaç olursa_- telefon hizmeti de kullanabiliyoruz.
 
-Telefon iletişimini sağlamak için tasarlanmıştır. Temel bant ve geniş
-bant internet hizmeti verilmektedir. Analog modülasyon teknikleriyle en
-fazla 56 Kb/s’lik band genişliği sağlar. xDSL teknolojileriyle 25
-Mb/s’lik bant genişliğine ulaşmaktadır.
+## İki Telli Bakır Telefon Hattı
+Telefon iletişimini sağlamak için tasarlanmıştır. İnternet'te yaygın kullanılan ilk kablo türüdür. Temel bant ve geniş bant internet hizmeti verilmektedir. Analog modülasyon teknikleriyle en fazla 56 Kb/s’lik band genişliği sağlar. xDSL teknolojileriyle teorik olarak 400 Mb/s’lik bant genişliğine ulaşılmaktadır.
 
-<figure>
-<img src="images/ikitellibakirkablo" id="fig:iki_telli_bakir_kablo"
-style="width:8cm;height:6cm" alt="İki telli Bakir Kablo" />
-<figcaption aria-hidden="true">İki telli Bakir Kablo</figcaption>
-</figure>
+![Çevirmeli Ağ](images/B05-CevirmeliAg.png)  
+*Görsel kaynağı: https://www.geeksforgeeks.org/types-of-internet-connection/*
 
-## KOAKSİYEL (COAXIAL) KABLO
-
-Genellikle elektriksel gürültünün yoğun olduğu şartlarda
-kullanılırdı.Yalıtkan bir tüpün içerisinde giden bir tel ve tüpün dışına
-sarılmış kafes şeklinde teller vardır. Yerel ağlarda (LAN) 180m’de(max)
-10M b/s bant genişliği sağlar. Bu kullanımı 10 Base 2 olarak bilinir.
-Daha sonra 500 m mesafede çalıştırılacak hale getirilir. 10 Base 2
-ismiyle standartlaştırılmıştır. 50 ohm’luk direnç değeri vardır. BNC
-tarzında konnektörler kullanılır. Günümüzde LAN’da hiç
+## Koaksiyel (Coaxial) Kablo
+Genellikle elektriksel gürültünün yoğun olduğu şartlarda kullanılırdı.Yalıtkan bir tüpün içerisinde giden bir tel ve tüpün dışına sarılmış kafes şeklinde teller vardır. Yerel ağlarda (LAN) 180m’de(max) 10M b/s bant genişliği sağlar. Bu kullanımı 10 Base 2 olarak bilinir. Daha sonra 500 m mesafede çalıştırılacak hale getirilir. 10 Base 2 ismiyle standartlaştırılmıştır. 50 ohm’luk direnç değeri vardır. BNC tarzında konnektörler kullanılır. Günümüzde LAN’da hiç
 kullanılmamaktadır. Sebebi hem 10 Mb/s hızının çok düşük olması, hem de
-UTP kablolar kadar ekonomik ve işlevsel olmamasıdır. Bilgisayar
-ağlarında doğrusal (bus) topolojilerde kullanılmıştır.
+UTP kablolar kadar ekonomik ve işlevsel olmamasıdır. Bilgisayar ağlarında doğrusal (bus) topolojilerde kullanılmıştır.
 
-<figure>
-<img src="images/400px-RG-59" id="fig:kooksiyel_kablo" style="width:8cm"
-alt="Koaksiyel Kablo" />
-<figcaption aria-hidden="true">Koaksiyel Kablo</figcaption>
-</figure>
+![Koaksiyel ](images/B05-Koaksiyel_Kablo.png)  
+*Görsel kaynağı: https://www.wiremasters.com/newshub/news/the-ins-and-outs-of-coaxial-cable*
+
+![BNC konnektörler](images/B05-BNC_Konnektorler.png)  
+*BNC Konnektörler*
 
 ## Bükümlü Çift Kablo (Twisted Pair Cable)
 İçerisinde bükülmüş çiftler halinde bakır tel bulunur. Kabloların birbirleri üzerindeki direnç elektromanyetik etkisini azaltmak için ikişerli olarak sarılı durumundadırlar. 
@@ -49,11 +36,11 @@ alt="Koaksiyel Kablo" />
 - F: Foiled (Folyolu)
 - S: Shielded (Korumalı)
 
-## FREKANSLARINA GÖRE BÜKÜMLÜ ÇİFT KABLO
+### Frekanslarına Göre xTP kablolar
 ![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-1.png)  
 *Görsel kaynağı: https://dc.mynetworkinsights.com/categories-of-copper-twisted-pair-cables/*
 
-![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-2.png){width="800"}
+![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-2.png){width="800"}  
 *Görsel kaynağı: https://telecom.samm.com/history-of-ethernet-lan-cables-categories*
 
 !!! warning "CAT-1, CAT-2, CAT-3"
@@ -71,69 +58,44 @@ Kablonun iki ucunun aynı standartlarla sonlandırılmasına **düz (Straight
 kablo)** denir. İki ucunda iki farklı standartta sonlandırılma yapılırsa
 **çapraz(cross-over)kablo** adı verilir.
 
-## ÇAPRAZ VE DÜZ KABLO
+### Ethernet Kablosunda Pin Dizilimi
 
-Düz kablo, bir bilgisayarı yönlendirici gibi bir ağ hub’ına bağlamak
-için yerel alan ağlarında kullanılan bir tür bükümlü çift kablodur. Bu
-tür kablolara bazen yama kablosu da denir ve bir veya daha fazla
-bilgisayarın kablosuz bir sinyal yoluyla bir yönlendiriciye eriştiği
-kablosuz bağlantılara bir alternatiftir. Aynı türden iki cihazı bağlamak
-için genellikle bir çapraz kablo kullanılır. Düz kablo ve çapraz kablo
-tasarımları aynı standartların ve kuralların çoğunu kullanır.
+![Ethernet Pinout](images/B05-Ethernet_Pinout.png)  
+*Görsel kaynağı: https://resources.altium.com/p/gigabit-ethernet-101-basics-implementation/*
 
-<figure>
-<img src="images/caprazduzz" id="fig:caprazduz_kablo" style="width:8cm"
-alt="kablolar" />
-<figcaption aria-hidden="true">kablolar</figcaption>
-</figure>
+### Çapraz ve Düz Kablo
 
-Yeni ağ cihazlarının tamamı MDI/MDIX adı verilen teknoloji sayesinde
-karşıdaki cihazın ne tarz bir cihaz olduğunu anlar ve hangi iletkenin ne
-amaçla kullanılacağını buna göre düzenler. Diğerleri enerji göndermek
-için kullanılır.
+Bilgisayar ile dağıtıcı cihazların (anahtar, hub) iletişim kurabilmesi için; Bilgisayarın TX (Transmit) hattına karşılık anahtarın RX (Receive) hattı denk gelmelidir. Dağıtıcı olan ve olmayan cihazların pinleri karşılıklı denk gelecek şekilde (TX <-> RX) tasarlanmıştır. Ancak aynı türde iki cihaz birbirine bağlanırsa o zaman TX-TX ve RX-RX portlar karşılıklı gelmiş olur. Bu durumda çapraz (Crossover) kablo kullanılır.
 
-<figure>
-<img src="images/ethcable" id="fig:caprazduz_kablo_ornek_gosterim"
-style="width:10cm" alt="kablolar-örnek" />
-<figcaption aria-hidden="true">kablolar-örnek</figcaption>
-</figure>
+![Çapraz kablo ne zaman kullanılır?](images/B05-CaprazKabloNeZaman.png)  
+*Çapraz kablo ne zaman kullanılır?*
 
-# FİBER OPTİK KABLOLAR
+![Çapraz kablo](images/B05-Capraz_Kablo.png)  
+*FastEthernet çapraz kablosu. Görsel kaynağı: https://www.youtube.com/watch?v=WSIuPM4q5Tw/*
 
-Fiber optik kablolar, veri göndermek için ışık sinyallerini
-kullanmaktadır.Bu kablolar elektrik kablolarına benzer. Ancak elektrik
-kablolarından farklı olarak ışığı taşımak için kullanılan minimum bir
-adet fiber optik içeren bir kablo çeşididir.  
-Fiber optik kablolar çeşitli özelliklere ve avantajlara sahiptirler.
-Fiber optik kablonun farklı alanlarda bu kadar sık tercih edilmesinin
-nedenleri kabloların bulundurduğu özellikler ve sunduğu bu
-avantajlardır.  
+!!! note "Auto-MDI-X"
+    Yeni ağ cihazlarının tamamı Auto-MDI-X adı verilen teknoloji sayesinde
+    karşıdaki cihazın ne tarz bir cihaz olduğunu anlar ve hangi pin'in ne
+    amaçla kullanılacağını buna göre düzenler.
 
-<figure>
-<img src="images/fiberoptik" id="fig:fiberoptikkablo" style="width:8cm"
-alt="fiberkablo" />
-<figcaption aria-hidden="true">fiberkablo</figcaption>
-</figure>
+#### Örnek
+![Çapraz ve düz kablo kullanımı](B05-CaprazveDuz_Kablo_Kullanimi.png)  
+*Çapraz kablo kullanım yerleri (örnek)*
 
-**Fiber Optik Avantajları**  
+## Fiberoptik Kablolar
 
--   Elektrik parazitlerinden etkilenmez.
+Fiber optik kablolar, veri göndermek için ışık sinyallerini kullanmaktadır. Işığın cam br tüp içinde iletilmesi şeklinde çalışır. Uzak mesafelerde veri iletişimi konusunda en sağlam ve ucuz seçenek fiberoptik kablolardır. Diğer seçenekler, Wifi ve uydu iletişimi olabilir.
 
--   Sıcaklık değişimleri ve neme karşı dayanıklıdır.
+![Fİberoptik Kablo](images/B05-Fİberoptik_Kablo_Yapisi.jpg)  
+*Görsel kaynağı: https://www.researchgate.net/publication/325386764_Optical_Fiber_Sensor_Review_and_Applications/*
 
--   Metalik kablolardan daha hafif ve daha küçüktürler.
-
--   Sinyal kaybı yok denecek kadar azdır ve sinyal güçlendirici
-    ihtiyacını azaltır.
-
--   Sıcaklık değişimleri, su baskınları, şiddetli hava ve nem gibi
-    çevresel parametrelere karşı dayanıklıdır.
-
-Bu kablolarda iletim için ışığın yansımasını kullanılır. Böylelikle bu
-kablolar çok daha uzun mesafelere veri iletimi yapılabilirler.
-Elektromanyetik enerji sızması meydana gelmediği için bilgi güvenliği
-sağlanmış olur. Bu kablolar ile bilginin ekonomik, verimli ve hızlı bir
-şekilde ulaştırılması sağlanır.
+### Fiberoptik Kablo Avantajları
+1. **Yüksek hız ve bant genişliği**: Fiber optik kablolar, geleneksel metal iletişim hatlarına göre daha yüksek bant genişliği sağlar. Bu sayede hızlı ve verimli veri aktarımı mümkün olur.
+1. **Daha az sinyal zayıflaması**: Optik fiberdeki sinyal kaybı bakır tellere göre daha azdır. Bu nedenle daha uzun mesafelerde veri iletimi sağlanabilir.
+1. **Daha az elektromanyetik girişim (EMI)**: Fiber optik kablolar, elektromanyetik girişime karşı daha az duyarlıdır ve daha güvenilirdir.
+1. **İnce ve hafif**: Fiber optik kablolar, bakır kablolar gibi kalın ve ağır değildir. Bu özellikleri sayesinde kurulum ve bakım işlemleri daha kolaydır.
+1. **Dış ortam koşullarına dayanıklı**: Sıcaklık değişimleri, su baskınları, şiddetli hava ve nem gibi çevresel parametrelere karşı dayanıklıdır.
+1. **Güvenli**: Elektromanyetik enerji sızması meydana gelmediği için bilgi güvenliği de sağlanmış olur. Kötü kişilerin araya girmesi, bakırdaki kadar kolay değildir.
 
 <figure>
 <img src="images/b03-fiberoptik_oyuncak.png"
