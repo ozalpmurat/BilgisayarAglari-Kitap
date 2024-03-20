@@ -49,7 +49,7 @@ extra_javascript:
 plugins:
   - search:
       lang: tr
-  - glightbox
+#  - glightbox
 #  - mermaid2
 #  - plantuml-colocator
 #  - plantuml:
