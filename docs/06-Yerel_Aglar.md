@@ -1,76 +1,48 @@
 # Yerel Ağlar - LAN/VLAN
-
 Yerel ağlarda haberleşmeyi sağlayan ethernet çerçevesinde(frame) 48
 bitlik adres kullanılır. MAC adresi 16’lık sayı sisteminde 12 tane
 karakter ile gösterilir.
+![MAC adresi](images/B06-MAC_AdresiNedir.png)  
+*Görsel kaynağı: https://tecadmin.net/media-access-control-address/*
 
-|        |                         |
-|:-------|:------------------------|
-| 16 bit | → 2<sup>4</sup> 0000    |
-| 48     | → 16 tane 2<sup>4</sup> |
+İlk 6 karakter (ilk 24 bit) üretici kodunu (OUI), son 6 karakter ise seri
+numarasını belirtir. Bir üretici aynı MAC adresini birden fazla karta
+veremez. Dolayısıyla -_teorik olarak_- MAC adresleri dünyada tektir (_uniq_). 
 
-İlk 6 karakterlik ilk 24 bit üretici kodunun son 6 karakter ise seri
-numarasını belirtir.Bir üretici aynı MAC adresiini birden fazla karar
-vermez.Dolyısıyla MAC adresleri dünyada tektir. \* Birden fazla aynı MAC
-adresi aynı ağ üzerinde(LAN,VLAN vb) olmamalıdır.
+!!! warning "Dikkat"
+    Birden fazla aynı MAC adresi aynı ağ üzerinde (LAN / VLAN) olmamalıdır.
 
-|                                              |                                               |
-|:---------------------------------------------|:----------------------------------------------|
-| **Windows**                                  | → CMD                                         |
-|                                              | → ipconfig                                    |
-|                                              | → getmac                                      |
-| **<span style="color: violet">Linux</span>** | → <span style="color: violet">ifconfig</span> |
+![Mac adresi öğrenme](images/B06-MAC_adresi_Windows.png)  
+*Görsel kaynağı: https://uknowit.uwgb.edu/page.php?id=28810/
 
-**Adres Çözümleme** Ağdaki Bilgisayarlar başlangıçta diğer
-bilgisayarların mac adreslerini bilemez. MAC adreslerini öğrenmek için;
+## ARP
+"Adres Çözümleme Protokolü" anlamındadır. İkinci katmanda çalışır. Ağdaki Bilgisayarların MAC adreslerini öğrenmek ve bu cihazdaki ARP tablosunu güncellemek en temel görevidir.
 
-## ARP(Adress Resulotion Protocol) (Adres Cözümleme Protokolü)
+Ağa yeni bağlanan cihaz IP adresi henüz olmadığından yayın mesajı göndererek IP adresi ister. Anahtarlarda tutulan IP ve MAC adreslerinin tablosuna "ARP tablosu" denir. ARP Tablosu dinamik olarak güncellenir ancak istenirse elle düzenleme ya da statik kayıt işlemi yapılabilir.
 
-Bu protokol ikinci katmanda çalışır.Ağdaki Bilgisayarların MAC
-adreslerini öğrenmek ve bu cihazdaki ARP tablosunu güncellemek en temel
-görevdir.
+![ARP nasıl çalışır](images/B06-ARP_Calismasi-yatay.png)  
+*Görsel kaynağı: https://community.fs.com/article/switch-mac-address-whats-it-and-how-does-it-work.html*
 
-SORU\*\* ARP tablosunda;statik kayıt ne işe yarar? 1970 de bilgisayar
-ağları tasarlanırken gelişimi hakkında kesin bilgi olmadığında
-statik(önü açık ) bırakılmıştır.
+!!! Question "Soru"
+    ARP tablosunda "statik kayıt ekleme özelliği" ne işe yarar?
 
-## YAYIN ADRESİ(BROADCAST ADDRESS)
 
-Tüm yerel ağı temsil eden tek bir adrestir .Bu adrese gönderilen paket
-ağdaki tüm cihalara aynı anda uaştırılır.İkinci veya üçüncü katmanda
-yayın mesajı gelir.Yayın mesajlarında ne gibi fark vardır?
-
-<figure>
-<img src="images/Yayınadresitablosu" id="fig:fosonlandırma"
-alt="fibersonlandırma" />
-<figcaption aria-hidden="true">fibersonlandırma</figcaption>
-</figure>
-
+## Yayın Adresi (Broadcast Address)
+Tüm yerel ağı temsil eden adrese **yayın adresi** denir. Bu adrese gönderilen veri, ağdaki tüm cihazlara aynı anda ulaştırılır. İkinci veya üçüncü katmanda yayın mesajı gönderilebilir.
   
-İkinci katmanda yayın adresi göndermek için çerçevedeki hedef mac
-adresindeki kısmında tüm bitler 1 yapılır. Dolayısıyla hedef adresi
-FF:FF:FF:FF:FF:FF yapılır.Ağa yeni bağlanan her cihaz kendi mac ve IP
-adreslerini içeren bir yayın mesajı gönderir. Her bilgisayarda ve
-anahtarda aynı ağdaki cihazlarla tutulan IP ve MAC adreslerinin
-tablosuna "ARP TABLOSU" denir. ARP Tablosu dinamik olarak
-güncellenir,ancak istenirse elle düzenleme ya da statik kayıt işlemi
-yapılabilir.
+İkinci katmanda yayın adresi göndermek için çerçevedeki hedef MAC adresi kısmında tüm bitler 1 yapılır. Dolayısıyla hedef adresi FF:FF:FF:FF:FF:FF olmuş olur.
 
-### YAYIN ALANI
+## Yayın Alanı
+Bilgisayarların doğrudan MAC adresleriyle haberleştikleri alandır. Bir yayın paketi gönderildiğinde, bunu alabilen tüm cihazlar aynı yayın alanındadır.
 
-Bilgisayarların doğrudan mac adresleriyle haberleştikleri alandır.Bir
-yayın paketi gönderildiğinde bunu alabilen tüm cihazlar aynı yayın
-alanındadır. Bir bilgisayr kendi yayın alanında olmayan başka bir
-bilgisayarla haberleşmek için "ağ geçidinden" geçmek zorundadır.
+!!! note "Yayın alanı, ağ geçidinde biter"
+    Bir bilgisayar kendi yayın alanında olmayan başka bir bilgisayarla  haberleşmek için "ağ geçidinden" geçmek zorundadır.
 
-## ÇARPIŞMA ALANI
+## Çarpışma Alanı
+Bir yayın alanı içerisinde bir veya birden fazla çarpışma alanı bulunabilir.Aynı çarpışma alanındaki bilgisayarlar birbirine gelen her paketi görürler,ancak sadece kendi mac adreslerine gelen her paketi alırlar. Çarpışma alanı aynı anda sadece bir pc tarafından kullanılabilir. İki PC aynı anda paket göndermek isterse çarpışma(collision) oluşur. Adını buradan alır.
 
-Bir yayın alanı içerisinde bir veya birden fazla çarpışma alanı
-bulunur.Aynı çarpışma alanındaki bilgisayarlar birbirine gelen her
-paketi görürler,ancak sadece kendi mac adreslerine gelen her paketi
-görürler. Çarpışma alanı aynı anda bir pc tarafından kullanılabilir.  
-İki PC aynı anda paket göndermek isterse çarpışma(collision)
-oluşur.Adını burdan alır.  
+!!! note "Çarpışma alanı"
+    Çarpışma alanı istenmeyen bir durumdur. HUB'lar çarpışma alanına sebep olur.
 
 <figure>
 <img src="images/soru_1" id="fig:lan_vlan_ornegi1"
@@ -110,49 +82,29 @@ daha kapasiteli olur. Anahtarları birbirinden ayıran bir diğer özellikte
 "demir gücü kapasitesi"anahtarın aynı anda çevirebileceği trafik
 miktarına "switchfabric" ya da "through put"denir.
 
-### AĞ GEÇİTLERİ(GATEWAY)
-Ağ geçidi tanımı yönlendirme,protokol çevirme veya güvenlik
-uygulaması gibi işlemleri yapan tüm cihazları kapsar.Sıradan bir PC
-,3.katman(L3) anahtar,yönlendirici veya özel üretilmiş donanım
-olabilir.
-Ağ geçitleri üzerindeki ağ arayüzüne(interface) bağlı olarak
-ethernet,Frame Relay,ATM,PPPoE gibi protokollerin hepsinin
-kullanılabilme özelliğine sahip olduğundan bazı kaynaklardan
-protokol çevirici olarak adlandırılır.
+## Ağ Geçidi (gateway)
+Bir ağdaki bilgisayarlar, kendi ağı dışındaki ağlara gidebilmek için ağ geçidinden geçmek zorundadır. Başka bir deyişle; "ağ geçidi, bir ağın dışarı açılan kapısıdır". Sıradan bir PC, 3.katman(L3) anahtar, yönlendirici veya özel üretilmiş donanımlar ağ geçidi görevi yapabilir. Hatta cep telefonumuzun internet bağlantısını bilgisayarımıza paylaştırdığımızda, cep telefonumuz, bilgisayar için bir "ağ geçidi" olmaktadır.
 
-Önceden bahsedildği gibi anahtarlar çarpışma alanına geçemezler.Bu
-nedenle kablolara göre daha fazla tercih edilir. Ancak anahtarlar da
-yayın trafiğini geçebilirer.Bünyesinde çok fazla anahtar bulunan yerel
-ağlar,yayın paketlerin çokluğu ağı hantallaştırır.Bu nedenle LAN’ları
-birbirinden çok alt ağa bölmek performansı arttıracaktır. **Örnek Yayın
-Mesajları**  
-\*IPV4 İIPV6 mesajları  
-\*Komşuluk mesajları  
-\*Donanım keşif mesajları  
-\*Ip alma (DHCP)mesajları  
-\*Virüs gibi kötü yazılımlar  
+Bazı ağ geçitleri, üzerindeki ağ arayüzüne(interface) bağlı olarak ethernet, Frame Relay, ATM, PPPoE gibi protokolleri kullanılabilme özelliğine sahip olduğundan bazı kaynaklarda _protokol çevirici_ olarak adlandırılır.
 
-## Alt Ağa Bölmenin temel olarak iki yolu vardır
+Önceden bahsedildiği gibi, anahtarlar çarpışma alanını geçirmezler ancak yayın trafiğini geçirirler. Bünyesinde çok fazla anahtar (çok faza bilgisayar) bulunan yerel ağlarda yayın paketlerin çokluğu, ağı hantallaştırabilir. Bu nedenle LAN’ları birden fazla alt ağlara bölmek performansı arttıracaktır.
 
-### Klasik Yöntem (Fiziksel Ağ Geçidi Kullanma)
+**Örnek yayın mesajları:**  
+- IPV4 İIPV6 mesajları  
+- Komşuluk mesajları  
+- Donanım keşif mesajları  
+- Ip alma (DHCP)mesajları  
+- Virüs (solucan) gibi kötü yazılımlar  
 
-Klasik yöntemde herbir ağ için bir ağ geçidi kullanılması
-zorunludr.Dolayısıyla ciihazların,bağlantıları ve topolojilerin
-sınırları en önemli kısıtlardır.Bir vlan yapısında ise fiziksel bir
-müdahale olmadan hatta uzaktan bağlanarak ağ istenilen şekilde
-özelleştirilebilir. **Sanal Ağlar(VLAN)**  
-yönlendirici,Kablosuz Ap,Güvenlik Duvarı,PC vb.
+## Alt Ağa Bölme Yöntemleri 
+**Klasik yöntem**de her bir ağ için bir fiziksel bir ağ geçidi kullanılması zorunludur. Dolayısıyla cihazların ve iletim ortamlarının sınırları en önemli kısıtlardır.
 
-<figure>
-<img src="images/Soru3" id="fig:vlan_ornegi"
-style="width:8cm;height:6cm" alt="VLAN" />
-<figcaption aria-hidden="true">VLAN</figcaption>
-</figure>
+Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağlanarak ağ istenilen şekilde özelleştirilebilir.
 
-Aynı ağ her yerde kullanılabiliyor.  
-Geleneksel yapıda ağları birbirinden ayrılması için ağ geçidi
-kullanılır  
-Bir anahtarda çok sayıda ağ(VLAN) kullanabiliyoruz.
+**Sanal ağ kullanmanın avantajları**
+- Farklı anahtarlar üzerindeki bilgisayarlar aynı ağda olabilir.
+- Aynı anahtarda birden fazla farklı ağ (VLAN) olabilir.
+- Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
 
 ## Ağları bölmenin faydaları
 1. **İşletme Kolaylığı**: Ağlar küçük olduğunda sorunu çözmek
@@ -173,26 +125,22 @@ style="width:8cm;height:6cm" alt="LAN-VLAN" />
 <figcaption aria-hidden="true">LAN-VLAN</figcaption>
 </figure>
 
-# VLAN ANAHTARLAR
-
-Üzerinde sanal ağlar tanımlanabilen anahtarlardır.Sıradan anahtarlarda
-üstün olmasının en önemli sebebi ayarlanabilir olmasıdır. Bu nedenle
-yönetilebilir anahtarlar da denmektedir.Vlan anahtarın üzerindeki
-portlar gruplandırılarak birden çok sanal ağ oluşturulabilir.
+## VLAN Anahtarlar
+Üzerinde sanal ağlar tanımlanabilen anahtarlardır. Aynı zamanda ayarlanabilir anahtarlardır. Bu nedenle yönetilebilir anahtarlar da denmektedir. VLAN anahtarın üzerindeki portlar gruplandırılarak birden çok sanal ağ oluşturulabilir.
 ![VLAN Anahtar](images/B06-VLAN_Anahtar.png)  
 *Görsel kaynağı: https://www.practicalnetworking.net/stand-alone/routing-between-vlans/*
 
-Her bir sanal anahtar ayrı bir ağ gibi çalıştırılabilir.Bu sanal ağlara "VLAN" denir.Her bir vlan’ın kendine özel Vlan Id isminde bir tanımlayıcı numarası olur. Anahtarları fizikse portları Vlan ID’leri ile eşleştirilerek ağlar düzenlenir.Aynı vlan numrasına sahip portlar aynı sanal ağa aittir.  
+Her bir sanal anahtar, ayrı bir ağ gibi çalıştırılabilir. Bu sanal ağlara "VLAN" (Virtual LAN ~ Sanal Ağ) denir. Her bir VLAN’ın kendine özel VLAN-ID  isminde bir tanımlayıcı numarası olur. Anahtarların fiziksel portları, VLAN ID’ler ile eşleştirilerek ağlar düzenlenir.
 
-Bazı durumlarda VLAN yapılandırılması portlardan ve fiziksel
-bağlantılardan bağımsız olarak yapılabilir.Örneğin pc’nin MAC
-adreslerine göre ya da kullanıcı kimlik doğrulama yöntemine göre
-(parola,parmak izi ) Vlan ataması yapılabilir.  
-Vlan anahtarlar kullanıldığında birden fazla sanal ağı oluşturursa bu
-alt ağlar arasında trafiğin yönlendirilmesi gerekmektedir. Bu yönlendirme
-işlemi anahtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak
-mümkündür.
-![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.jpg)  
+!!! info
+    Aynı VLAN numarasına sahip portlar aynı sanal ağa aittir.
+
+Bazı durumlarda VLAN yapılandırılması portlardan ve fiziksel bağlantılardan bağımsız olarak yapılabilir. Örneğin PC’nin MAC adreslerine göre ya da kullanıcı kimlik doğrulama yöntemine göre (parola, parmak izi, vb.) VLAN ataması yapılabilir. VLAN anahtarlar üzerinde birden fazla sanal ağ oluşturulursa bu alt ağlar arasında trafiğin yönlendirilmesi gerekmektedir. Bu yönlendirme işlemi anahtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak mümkündür.
+
+![VLAN arası yönlendirme](images/B06-InterVLAN_Routing.png)  
+*Görsel kaynağı: https://www.youtube.com/watch?v=SPloaasxkMQ*
+
+![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.png)  
 *Görsel kaynağı: https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html*
 
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
@@ -200,9 +148,9 @@ bir anahtar kullanılmalıdır.
 ![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)  
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches
 
-## IEEE 8021.q VLAN protokolü
+## IEEE 8021.Q VLAN protokolü
 **Dot1q** olarak ta bilinir. Ethernet protokolü ilk tasarlandığında VLAN ihtiyacı yoktu. 1998 yılında yayınlanan 802.1q protokolü ile Ethernet protokolü VLAN farkındalığı kazandı.
-![IEEE 802.1q](images/B06-Dot1q_frame.png)  
+![IEEE 802.1](images/B06-Dot1q_frame.png)  
 *Görsel kaynağı: https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/*
 
 **trunk (tagged) port:** Anahtarın herhangi bir portundan birden fazla VLAN taşınması gerekiyorsa o port trunk olarak yapılandırılmalıdır. Aynı zamanda bu bağlantıya da "trunk" denir. Genellikle iki anahtar arasında kullanılır ancak ihtiyaca göre 1 bilgisayara bile trunk bağlantı verilebilir. Anahtarlar, bu portta gelen-giden trafiklere bakarak başlık bilgisindeki trafiğin ilgili VLAN'a gitmesini sağlar.
@@ -213,8 +161,7 @@ bir anahtar kullanılmalıdır.
 
 Cisco firması `trunk/access` sözcüklerini kullanırken diğer üreticiler genellikle `tagged/untagged` sözcüklerini tercih etmektedir.
 
-# ANAHTAR KULLANIM MİMARİSİ
-
+## Anahtar Kullanım Mimarisi
 ![Anahtar Mimarisi](images/B06-AnahtarMimarisi.png)  
 *Görsel kaynağı: https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/*
 

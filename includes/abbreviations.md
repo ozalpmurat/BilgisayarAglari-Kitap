@@ -7,3 +7,5 @@
 *[OSI]: OSI (Open Systems Interconnection) modeli ISO tarafından geliştirilmiştir
 *[CIA]: Gizlilik, Bütünlük, Erişilebilirlik (Confidentially, Integrity, Availability)
 *[EMI]: Elektromanyetik girişim (Electromagnetic Interference)
+*[OUI]: Organizationally Unique Identifier (Kurumsal olarak benzersiz bir tanımlayı)
+*[ARP]: Adress Resulotion Protocol (Adres Çözümleme Protokolü  )
