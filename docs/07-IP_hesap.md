@@ -11,12 +11,91 @@ IPv4 adresleme sisteminde $2^{32}$ IP adresi kullanılabilirken, IPv6 adreslemes
 
 **Bu ders içerisinde IP ifadesi her kullanıldığında, IPv4 anlaşılmalıdır.** Bu ders açısından ikisi arasındaki en önemli fark; birisinin 32, diğerinin ise 128 bit olmasıdır. IP hesaplamaları tamamen aynıdır. Hesap mantığını anlamak için v4 hesapları -*kısa olduğu için*- daha iyi olacaktır. Sonrasında aynı hesapları v6'da da yapabilirsiniz.
 
+## IANA: IP Dağıtan Kuruluş
+https://www.iana.org/ web sitesinde faaliyetleri hakkında bilgi alınabilir.
+
+![IANA](images/B07-IANA1.png)  
+*IANA tarafından yetkilendirilen bölgesel internet kayıtçıları (RIR)*
+
+IANA, IP adreslerini /8 şeklinde RIR'lara dağıttı.
+![/8 IP adresleri](images/B07-IANA2.png)  
+*Görsel kaynağı: https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml*
+
+IANA elindeki tüm IPv4 adresleri 2011'de bitti.
+![IPv4 bitmesi](images/B07-IPv4-bitmesi.png)  
+*Görsel kaynağı: https://en.wikipedia.org/wiki/IPv4_address_exhaustion*
+
+## IP Sınıfları
+
+IP'nin ilk tasarlandığı sıralarda ortaya çıkmış bir kavramdır.
+Kurumlarda IP adresleri tahsis edilirken ihtiyaca göre optimal sayıda
+verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıfı, en küçük IP
+sınıfı C sınıfıdır.
+
+![Ip Sınıfları](images/B07-IP_Sinif1.png)  
+*Görsel kaynağı: https://medium.com/networks-security/tricks-to-remember-five-classes-of-ipv4-484c191678fb*
+
+- **A sınıfı:** İlk biti 0'dır. İlk oktet **0-127** arasında olur. Varsayılan ağ maskesi **255.0.0.0**'dır. A sınıfı bir IP adresinde $2^{24}$ tane IP oluşturulabilir.
+- **B sınıfı:** İlk iki biti 10 şeklindedir. Ondalık formda ilk
+okteti **128-191** şeklindedir. Varsayılan alt ağ maskesi
+**255.255.0.0**'dır. B sınıfı bir IP adresinde $2^{16}$ tane IP
+oluşturulabilir.
+- **C sınıfı:** İlk üç biti 110 şeklindedir. Ondalık formda ilk
+okteti **192-223** arasındaki adreslerdir. Varsayılan alt ağ maskesi
+**255.255.255.0**'dır. B sınıfı bir IP adresinde $2^{8}$ tane IP
+oluşturulabilir.
+- **D sınıfı:** İlk dört biti 1110'dır. Ondalık formda ilk
+okteti **224-239** arasındadır. **Multicast** (Çoklu yayın) olarak
+bilinir. Normalde hostlarda kullanılmaz.
+- **E sınıfı:** İlk okteti, **240-248** ile başlar. Deneysel amaçlar için rezerve
+edilmiştir. Normalde hostlarda ve ağlarda kullanılmaz.
+
+![IP sınıfları](images/B07-IP_Sinif2.png)  
+*Görsel kaynağı: https://www.routerfreak.com/definitive-guide-ip-address-classes/*
+
+
+### Peki neden böyle bir sınıflandırma yapıldı?
+```
+  Ağ biti   Host bitleri    Her ağdaki IP sayısı
+  --------- --------------- ----------------------
+  8         24-\>A sınıfı   $2^{24}$ tane IP
+  16        16-\>B sınıfı   $2^{16}$ tane IP
+  24        8-\>C sınıfı    $2^8$ tane IP
+```
+**ÖRNEK :** 132.x.x.x IP adresi B sınıfıdır. 132.45.x.x IP adresinin ilk
+iki okteti ağ tanımlayıcısı son iki oktet host tanımlayıcısıdır. $2^16$
+tane IP alabilir.
+
+112.x.x.x IP adresi A sınıfıdır. $2^{24}$ tane IP alabilir.
+
+193.140.253.x IP adresi C sınıfıdır. $2^8$ tane IP alabilir.
+
+## Özel IP Adresleri(Private IP Blocks)
+
+İnternette kullanılmayan IP adresleridir. İnternet üzerinde hiçbir
+yönlendirici tarafından yönlendirilmeyen IP adresleridir. Bu adreslerin
+kullanım amacı test uygulamaları ve NAT uygulamaları gibi durumlardır.
+IP adresleri tükendiğinden kurumlarda kullanılan bilgisayarların
+tamamına yetmemektedir. Bu nedenle günümüzde kurumların iç ağlarında
+özel IP adresleri istenilen sayıda kullanılabilir.
+
+-   10.0.0.0/8 -\>$2^{24}$ IP adresi
+
+-   172.16.0.0 -\>$2^{20}$ IP adresi
+
+-   192.168.0.0 -\>$2^{16}$ IP adresi
+
+**NAT(Network Address Translation)**
+
+XXX -------------------------------------- IMAGE
+----------------------------------- XXX\
+
 # IP Adresi ve Hesaplamaları
 32 bit uzunluğa sahip olan IP adresi 2 temel bileşene sahiptir:
 1.  Ağ tanımlayıcı
 2.  Host tanımlayıcı
 
-![IP bileşenleri](images/B08-IP2.png)  
+![IP bileşenleri](images/B07-IP2.png)  
 *IP bileşenleri*
 
 **host:** Bir ağ içerisinde IP atanabilen ve kendisinin ağa bağlanma
@@ -28,11 +107,11 @@ belirlenir. IP adresleri 32 bitin sekizerli olarak gruplandırılması ve
 decimal olarak gösterilmesi şeklinde olur. Bu 8 bitlik grupların her
 birine oktet denir. Her oktet birbirinden nokta ile ayrılır.
 
-![IP adresi](images/B08-IP1.png)  
+![IP adresi](images/B07-IP1.png)  
 *Görsel kaynağı: https://www.cloudns.net/blog/what-is-ipv4-everything-you-need-to-know/*
 
 Bir IP adresinin bağlı olduğu **sınıf** ilk oktetinden anlaşılır.
-![Ip Sınıfları](images/B08-IP3.jpg)  
+![Ip Sınıfları](images/B07-IP3.jpg)  
 *IP sınıfları*
 
 **ÖRNEK :** 16 tane IP adresini bölüyoruz. (${2^4}$ bit )\
@@ -88,84 +167,6 @@ IP sayısı $2^2=4$ tane Host sayısı $2^2-2=2$ tane
   2           8             $2(8-2) =12$
   4           4             $4(4-2) = 8$
 
-## IANA: IP Dağıtan Kuruluş
-https://www.iana.org/ web sitesinde faaliyetleri hakkında bilgi alınabilir.
-
-![IANA](images/B08-IANA1.png)  
-*IANA tarafından yetkilendirilen bölgesel internet kayıtçıları (RIR)*
-
-IANA, IP adreslerini /8 şeklinde RIR'lara dağıttı.
-![/8 IP adresleri](images/B08-IANA2.png)  
-*Görsel kaynağı: https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml*
-
-IANA elindeki tüm IPv4 adresleri 2011'de bitti.
-![IPv4 bitmesi](images/B08-IPv4-bitmesi.png)  
-*Görsel kaynağı: https://en.wikipedia.org/wiki/IPv4_address_exhaustion*
-
-## IP Sınıfları
-
-IP'nin ilk tasarlandığı sıralarda ortaya çıkmış bir kavramdır.
-Kurumlarda IP adresleri tahsis edilirken ihtiyaca göre optimal sayıda
-verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıfı, en küçük IP
-sınıfı C sınıfıdır.
-
-![Ip Sınıfları](images/B08-IP_Sinif1.png)  
-*Görsel kaynağı: https://medium.com/networks-security/tricks-to-remember-five-classes-of-ipv4-484c191678fb*
-
-- **A sınıfı:** İlk biti 0'dır. İlk oktet **0-127** arasında olur. Varsayılan ağ maskesi **255.0.0.0**'dır. A sınıfı bir IP adresinde $2^{24}$ tane IP oluşturulabilir.
-- **B sınıfı:** İlk iki biti 10 şeklindedir. Ondalık formda ilk
-okteti **128-191** şeklindedir. Varsayılan alt ağ maskesi
-**255.255.0.0**'dır. B sınıfı bir IP adresinde $2^{16}$ tane IP
-oluşturulabilir.
-- **C sınıfı:** İlk üç biti 110 şeklindedir. Ondalık formda ilk
-okteti **192-223** arasındaki adreslerdir. Varsayılan alt ağ maskesi
-**255.255.255.0**'dır. B sınıfı bir IP adresinde $2^{8}$ tane IP
-oluşturulabilir.
-- **D sınıfı:** İlk dört biti 1110'dır. Ondalık formda ilk
-okteti **224-239** arasındadır. **Multicast** (Çoklu yayın) olarak
-bilinir. Normalde hostlarda kullanılmaz.
-- **E sınıfı:** İlk okteti, **240-248** ile başlar. Deneysel amaçlar için rezerve
-edilmiştir. Normalde hostlarda ve ağlarda kullanılmaz.
-
-![IP sınıfları](images/B08-IP_Sinif2.png)  
-*Görsel kaynağı: https://www.routerfreak.com/definitive-guide-ip-address-classes/*
-
-
-### Peki neden böyle bir sınıflandırma yapıldı?
-```
-  Ağ biti   Host bitleri    Her ağdaki IP sayısı
-  --------- --------------- ----------------------
-  8         24-\>A sınıfı   $2^{24}$ tane IP
-  16        16-\>B sınıfı   $2^{16}$ tane IP
-  24        8-\>C sınıfı    $2^8$ tane IP
-```
-**ÖRNEK :** 132.x.x.x IP adresi B sınıfıdır. 132.45.x.x IP adresinin ilk
-iki okteti ağ tanımlayıcısı son iki oktet host tanımlayıcısıdır. $2^16$
-tane IP alabilir.
-
-112.x.x.x IP adresi A sınıfıdır. $2^{24}$ tane IP alabilir.
-
-193.140.253.x IP adresi C sınıfıdır. $2^8$ tane IP alabilir.
-
-## Özel IP Adresleri(Private IP Blocks)
-
-İnternette kullanılmayan IP adresleridir. İnternet üzerinde hiçbir
-yönlendirici tarafından yönlendirilmeyen IP adresleridir. Bu adreslerin
-kullanım amacı test uygulamaları ve NAT uygulamaları gibi durumlardır.
-IP adresleri tükendiğinden kurumlarda kullanılan bilgisayarların
-tamamına yetmemektedir. Bu nedenle günümüzde kurumların iç ağlarında
-özel IP adresleri istenilen sayıda kullanılabilir.
-
--   10.0.0.0/8 -\>$2^{24}$ IP adresi
-
--   172.16.0.0 -\>$2^{20}$ IP adresi
-
--   192.168.0.0 -\>$2^{16}$ IP adresi
-
-**NAT(Network Address Translation)**
-
-XXX -------------------------------------- IMAGE
------------------------------------ XXX\
 
 ## Ağ Maskesi (Netmask)
 
@@ -173,17 +174,17 @@ Ağ maskesinin iki temel görevi vardır:
 1. Ağın büyüklüğünü belirtmek
 2. Ağın nerede başladığını hesabında kullanmak
 
-![Maskeleme](images/B08-maskeleme.png)  
+![Maskeleme](images/B07-maskeleme.png)  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
 IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır. IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
 
-![Ağ büyüklüğü](images/B08-maske_ag_boyutu.png)
+![Ağ büyüklüğü](images/B07-maske_ag_boyutu.png)
 
-![Windows IP yapılandırması](images/B08-IP_config.png)  
+![Windows IP yapılandırması](images/B07-IP_config.png)  
 *Windows'ta iki farklı yerden IP yapılandırması yapılabiliyor. Görsel kaynağı: https://pureinfotech.com/set-static-ip-address-windows-10/*
 
-![Farklı alt ağ maskelerinin etkisi](images/B08-maske-tablo.png)  
+![Farklı alt ağ maskelerinin etkisi](images/B07-maske-tablo.png)  
 *Görsel kaynağı: https://www.trance-cat.com/electrical-circuit-calculators/en/subnet-mask-calculator.php*
 
 ## Ağ adresi
