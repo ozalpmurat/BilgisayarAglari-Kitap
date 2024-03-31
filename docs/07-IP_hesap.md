@@ -101,74 +101,64 @@ IP adresleri 32 bitin sekizerli olarak gruplandırılması ve onluk (decimal) ol
 *4 bit ile 2^4=16 tane farklı adres kullanılabilir*
 
 ### Host ve Network Kısımlarının Ayrıştırılması
-Bir IP adresinde soldan itibaren ilk X tane bit ağ tanımlayıcısıdır. Geri kalan  Y tane bit te host tanımlayıcısıdır. Bu durumda $X+Y=32$ olmalıdır.
+Bir IP adresinde soldan itibaren ilk X tane bit ağ tanımlayıcısıdır. Geri kalan Y tane bit te host tanımlayıcısıdır. Bu durumda $X+Y=32$ olur.
 
 ![](images/B07_IP_Adresi_Host_ve_Net_ID.png)  
 *Görsel kaynağı: https://sherihansliit.blogspot.com/2012/12/understanding-ip-address-configuration.html/*
 
-![](images/B07-IP_bolme4-bit.png)  
-*4 bitlik IP adresinin farklı bölünme şekilleri*
+!!! question "Müteahhit problemi"
+    Metin adında bir müteahhit, bir arazi üzerinde konut projesi yapacak. Metin'e şu şartlarla izin veriliyor:
 
+    1. Toplam 16 tane adres numarası kullanabilir. Bu numaraları bina numarası veya daire numarası olarak kullanabilir.
+    2. Her binada zemin kat ve çatı katında kimse oturamaz.
 
-**NOT :** Ağlardaki bilgisayar sayıları(kullanılabilecek ip sayıları)
-belirlenirken maksimum kapasite 2'nin kuvveti $(2^n)$ alınarak
-belirlenir.
+    Metin, kaç daireli kaç bina yapmalı ki; hem kârı çok azalmasın hem de müşteriler mutsuz olmasın?
+    ![](images/B07-Müteahhit.png)
+    *Müteahhit problemi. 16 daireli tek bina mı, 8 daireli 2 bina mı, ya da?*
+
+!!! note
+    Ağlardaki bilgisayar sayıları (kullanılabilecek IP sayıları) belirlenirken maksimum kapasite 2'nin kuvveti $(2^n)$ alınarak belirlenir.
 
 **ÖRNEK :** Bir şirketin iki farklı şubesinde 120 ve 280 adet bilgisayar
-kullanılmaktadır. Bu şirketler için optimal ağ büyüklüklerini
-hesaplayınız.
+kullanılmaktadır. Bu şirketler için optimal ağ büyüklüklerini hesaplayınız.
 
--   $120 => 2^n = 2^7 => 128$
+![](images/B07-2nin_Kuvvetleri.png)  
 
--   $280 => 2^n = 2^9 => 512$
+!!! note "IP sayısı ve host sayısı"
+    Host tanımlayıcısı kısmındaki bit sayısı ile elde edilebilecek adres sayısı, o ağda kullanılabilecek IP adresi sayısıdır. Her ağın ilk IP adresi `ağ adresi` ve son IP adresi de `yayın adresi` olarak kullanıldığından, her ağda kullanılabilecek **host sayısı IP sayısından 2 eksiktir**.
 
-**NOT :** Host tanımlayıcısı kısmında belirtilen bitlerde elde
-edilebilecek en büyük sayı o ağda kullanılabilecek IP adresi sayısıdır.
-Her ağın ilk IP adresi [\"ağ adresi\"]{.underline} ve son IP adresi
-[\"yayın adresi\"]{.underline} olarak kullanıldığından her ağda
-kullanılabilecek host sayısı IP sayısından 2 eksiktir.
+- Host bitleri : $N$ tane
+- Ağdaki IP adresi : $2^N$ tane
+- Ağda kullanılabilecek host sayısı $2^N-2$
 
--   Host bitleri : n tane
+**ÖRNEK :** 10.9.8.0 IP adresinin 30. bitten sonra bölündüğünü varsayalım. Bu ağda kullanılabilecek bütün IP adreslerini, kullanım amacına göre yazalım.
 
--   Ağdaki IP adresi : $2^n$ tane
+![](images/B07-Ornek-30bit.png)  
 
--   Ağda kullanılabilecek host sayısı $2^n-2$
+IP sayısı = $2^2=4$ tane  
+Host sayısı = $2^2-2=2$ tane
 
-**ÖRNEK :** 10.9.8.0 IP adresinin 30. bitten sonrasının bulunduğunu
-varsayalım. Alt ağ IP adresinin kullanım amacına göre yazalım.
-
-  -------- --------
-  \.....   \.....
-  30 bit   2bit
-  -------- --------
-
-IP sayısı $2^2=4$ tane Host sayısı $2^2-2=2$ tane
-
-  ------------------------------------------ ----- -----------------------------
-  1.IP adresi 10.9.8.0                       -\>   Ağ adresi
-  2\. ve 3. IP adresi 10.9.8.1 ve 10.9.8.2   -\>   Hostlar için kullanılabilir
-  4\. IP adresi 10.9.8.3                     -\>   Yayın adresi
-  ------------------------------------------ ----- -----------------------------
-
-**NOT :**
-
-  Ağ sayısı   Host sayısı   Toplam host sayısı
-  ----------- ------------- --------------------
-  1           16            14
-  2           8             $2(8-2) =12$
-  4           4             $4(4-2) = 8$
-
+1. IP adresi 10.9.8.0 : `Ağ adresi`
+2. IP adresi 10.9.8.1 : `Hostlar için kullanılabilir`
+3. IP adresi 10.9.8.2 : `Hostlar için kullanılabilir`
+4. IP adresi 10.9.8.3 : `Yayın adresi`
 
 ### Ağ Maskesi (Netmask)
+"Alt ağ maskesi" de denir Ağın kaçıncı bitten bölündüğü belirtir. IP adresi gibi 32 bitten oluşur. İkilik sistemde soldan itibaren `1`'lerle başlar, sonra `0`'larla devam eder. 1'den 0'a geçilen nokta, ağın bölündüğü kısımdır. Gündelik hayatta kolay olması için, onluk sistemde kullanılır.
 
 Ağ maskesinin iki temel görevi vardır:
-1. Ağın büyüklüğünü belirtmek
-2. Ağın nerede başladığını hesabında kullanmak
 
-![Maskeleme](images/B07-maskeleme.png)  
+1. Ağın büyüklüğünü belirtmek
+2. Ağın nerede başladığı hesabında kullanmak
+
+**Örnek bazı maskeler:**
+![](images/B07-Ornek_Maskeler.png){width="600"}  
+
+![Maskeleme](images/B07-maskeleme.png){width="400"}  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
-IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu iki bileşenin hangi bitten ayrılacağını bulmak için ağ maskesi kullanılır. IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
+!!! note
+    IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
 
 ![Ağ büyüklüğü](images/B07-maske_ag_boyutu.png)
 
@@ -178,65 +168,47 @@ IP adreslerinin bitlerden oluştuğunu ve iki bileşeni olduğunu biliyoruz. Bu 
 ![Farklı alt ağ maskelerinin etkisi](images/B07-maske-tablo.png)  
 *Görsel kaynağı: https://www.trance-cat.com/electrical-circuit-calculators/en/subnet-mask-calculator.php*
 
-### Ağ adresi
-Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa(ve işlemi) çıkan sonuç ağın adresini verir. Bu sayede, ağın nerede başladığı bulunmuş olur.
-
-**ÖRNEK :**
-
--   IP : 192.168.1.75
-
--   Ağ maskesi : 255.255.255.0
-
--   11000000.10101000.00000001.01001011
-
--   11111111.11111111.11111111.00000000
-
--   11000000.10101000.00000001.00000000
-
--   Ağ adresi 192.168.1.0
-
-### Ağ adresi ve yayın adresinin pratik hesabı
-IP adresinin bölündüğü biti biliyorsak; **IP adresinde** bu bitten sonrası `1` yapılırsa, `yayın adresi`ni buluruz. Aynı bitleri `0` yaptığımızda ise `ağ adresi`ni buluruz.
-
 ### CIDR Notasyonu
 
-Elimizde sadece IP adresleri olduğunda ağla ilgili yeterli bilgiye
-ulaşamadığımızı, ilave olarak IP adresinin hangi bitten bölündüğünü
-bilmemiz gerektiğini biliyoruz. Bunun için ağ maskesine alternatif
-olarak CIDR Notasyonu kullanılmaktadır. Bu gösterim şeklinde IP
-adresinin sağına \"/\" işareti konulup bölünen bit numarası yazılır.
+Ağ maskesine alternatif olarak CIDR Notasyonu kullanılmaktadır. Bu gösterim şeklinde, IP adresinin sağına `/` işareti konulup kaçıncı bitten sonra bölündüğü bilgisi yazılır.
 
-**ÖRNEK :**
+**Örnekler:**
 
--   192.168.1.75 IP adresli ve 255.255.255.0 ağ maskesine sahip bir
-    cihazın CIDR notasyonu 192.168.1.75/24 şeklindedir.
+- `192.168.1.75` IP adresli ve `255.255.255.0` ağ maskesine sahip bir cihazın CIDR notasyonu `192.168.1.75/24` şeklindedir.
+- `10.1.0.0` ve `255.0.0.0` ise `10.1.0.0/8` olarak gösterilir.
+- `10.9.8.0` ve `255.255.255.128` ise `10.9.8.0/25` şeklinde gösterilir. (`128` ikilik tabanda `10000000` şeklinde gösterildiğinden soldan itibaren 25 tane `1`, 7 tane de `0` vardır.)
 
--   10.1.0.0 ve 255.0.0.0 ise 10.1.0.0/8 olarak gösterilir.
+### Ağ adresi
+Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa (mantıksal `VE` işlemi) çıkan sonuç **ağın adresi**ni verir. Bu sayede, ağın nerede başladığı bulunmuş olur.
 
--   10.9.8.0 ve 255.255.255.128 ise 10.9.8.0/25 şeklinde gösterilir.
-    (128 ikilik tabanda 10000000 şeklinde gösterildiğinden soldan 25
-    tane 0 vardır.)
+**Örnek:**  IP adresi `192.168.1.75` olsun. Alt ağ maskesi de `255.255.255.0` olsun. Bu ağın ağ adresini bulalım.
+
+![](images/B07-Ornek-Ag_Adresi_Bulma.png){width="500"}  
+
+### Ağ adresi ve yayın adresinin pratik hesabı
+IP adresinin nereden bölündüğünü biliyorsak; **IP adresinde** bu bitten sonrası `1` yapılırsa, `yayın adresi`ni buluruz. Aynı bitleri `0` yaptığımızda ise `ağ adresi`ni buluruz.
+
+![](images/B07-Ornek-Kolay_Hesap.png){width="500"}  
 
 ### IP hesaplarında formüller ve özet
-1. **IP (v4) adresleri $32$ bitten oluşur**. Bu bitler sekizer gruplu (oktet) olarak yazılır ve okunur. Örnek: 10.170.265.44. IP adresinin her oktetinde 8 bit bulunduğundan, hiç bir oktet 255'ten büyük olamaz. Yani az önce verdiğim IP adresi, bozuk bir IP adresidir.
+1. **IP (v4) adresleri $32$ bitten oluşur**. Bu bitler sekizer gruplu (oktet) olarak yazılır ve okunur. Örnek: `10.170.265.44`. IP adresinin her oktetinde 8 bit bulunduğundan, hiç bir oktet 255'ten büyük olamaz. Yani az önce verdiğim IP adresi, bozuk bir IP adresidir.
 1. IP adresindeki $32$ bitin soldan itibaren $M$ tanesi ağı tanımlar. geri kalan $N$ tanesi de ($N=32-M$) hostları tanımlar. Bu iki bileşeni birbirinden ayırmanın iki yolu vardır:
-    * **CIDR** gösteriminde bölü işareti ( "/" ) kullanılır. örnek: $10.5.0.100/16$
-    * **Maske** ile gösteriminde M tane 1, N tane 0 olacak şekilde bitler ifade edilir. Sonra 10'luk sisteme çevrilerek IP adresinin yanına yazılır. Örnek: $10.5.0.100 - 255.255.0.0$
+    * **CIDR** gösteriminde bölü işareti ( "/" ) kullanılır. örnek: `10.5.0.100/16`
+    * **Maske** ile gösteriminde M tane 1, N tane 0 olacak şekilde bitler ifade edilir. Sonra 10'luk sisteme çevrilerek IP adresinin yanına yazılır. Örnek: `10.5.0.100 - 255.255.0.0`
 1. Bir **ağda kaç IP** olduğunu bulmak için, bölü işaretinden sonraki bitlerin sayısına bakılır. $N$ tane bit varsa, $2^N$ formülü ile ağdaki IP sayısı hesaplanır.
 1. Ağları alt ağlara bölmeye başlamadan önce mutlaka mevcut ağı tanımla. Nerede başlar? Nerede biter? Maskesi nedir? CIDR gösterimi nedir? Bu ağda kaç IP vardır?
 1. Bir ağın **alt ağ maskesi**ni bulmak için;
-    * IP adresinde, bölü'den önceki bitlerin tamamı 1 yapılır.
-    * IP adresinde, bölü'den sonraki bitlerin tamamı 0 yapılır.
+    * IP adresinde, bölü'den önceki bitlerin tamamı `1` yapılır.
+    * IP adresinde, bölü'den sonraki bitlerin tamamı `0` yapılır.
     * Sonra 10'luk sisteme çevrilir.
 1. Bir ağın **ağ adresi**ni bulmak için;
     * IP adresinde bölü'den sonraki bitlerin tamamı 0 yapılır. Sonra 10'luk sisteme çevrilir.
 1. Bir ağın **yayın adresi**ni bulmak için;
     * IP adresinde bölü'den sonraki bitlerin tamamı 1 yapılır. Sonra 10'luk sisteme çevrilir.
-1. **/N** şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar **/(N-1)** olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, /20 şeklinde bir ağı ikiye bölersek iki tane /21 ağ oluşur. Benzer şekilde, **/N** şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani /20 şeklindeki ağ dörde bölünürse elimizde 4 tane /22 ağ oluşur.
+1. $/N$ şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar $/(N-1)$ olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, `/20` şeklinde bir ağı ikiye bölersek iki tane `/21` ağ oluşur. Benzer şekilde, $/N$ şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani `/20` şeklindeki ağ dörde bölünürse elimizde 4 tane `/22` ağ oluşur.
 
 
-
-### Alt Ağa Bölme
+### Alt Ağlara Bölme
 
 IP adresi ve ağı temsil eden bit sayısı belirli olan bir ağ birden fazla
 küçük ağlara bölünebilir. Alt ağa bölme işlemi alt ağ maskesinde bir bit
