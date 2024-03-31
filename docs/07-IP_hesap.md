@@ -95,7 +95,7 @@ IP adresleri 32 bitin sekizerli olarak gruplandırılması ve onluk (decimal) ol
 *Görsel kaynağı: https://www.cloudns.net/blog/what-is-ipv4-everything-you-need-to-know/*
 
 !!! note "Kaç bitle kaç adres?"
-    $N$ tane bit kullanılarak yapılacak bir adresleme sisteminde, $2^n$ tane adres kullanılabilir.
+    $N$ tane bit kullanılarak yapılacak bir adresleme sisteminde, $2^N$ tane adres kullanılabilir.
 
 ![](images/B07-4bit_ile_16_adres.png)  
 *4 bit ile 2^4=16 tane farklı adres kullanılabilir*
