@@ -79,7 +79,7 @@ Bilgisayar ile dağıtıcı cihazların (anahtar, hub) iletişim kurabilmesi iç
     amaçla kullanılacağını buna göre düzenler.
 
 #### Örnek
-![Çapraz ve düz kablo kullanımı](B05-CaprazveDuz_Kablo_Kullanimi.png)  
+![Çapraz ve düz kablo kullanımı](images/B05-CaprazveDuz_Kablo_Kullanimi.png)  
 *Çapraz kablo kullanım yerleri (örnek)*
 
 ## Fiberoptik Kablolar
