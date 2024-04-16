@@ -97,32 +97,16 @@ Fiber optik kablolar, veri göndermek için ışık sinyallerini kullanmaktadır
 1. **Dış ortam koşullarına dayanıklı**: Sıcaklık değişimleri, su baskınları, şiddetli hava ve nem gibi çevresel parametrelere karşı dayanıklıdır.
 1. **Güvenli**: Elektromanyetik enerji sızması meydana gelmediği için bilgi güvenliği de sağlanmış olur. Kötü kişilerin araya girmesi, bakırdaki kadar kolay değildir.
 
-<figure>
-<img src="images/b03-fiberoptik_oyuncak.png"
-id="fig:b03-fiberoptik-oyuncak.png" style="width:8cm"
-alt="Fiber optik kablodan yapılan süs eşyası" />
-<figcaption aria-hidden="true">Fiber optik kablodan yapılan süs
-eşyası</figcaption>
-</figure>
+![Fiber optik kablodan yapılan süseşyası](images/B05-fiberoptik-oyuncak.png)  
+*Görsel kaynağı: https://he.aliexpress.com/item/1005005348057886.html/*
 
 **Fiber Optik Dezavantajları**  
-Sınırlı Uygulama — Fiber optik kablo sadece zeminde kullanılabilir ve
-zemini terk edemez veya mobil iletişim ile çalışamaz.  
-Düşük Güç — Işık yayan kaynaklar, düşük güçle sınırlıdır. Güç kaynağını
-iyileştirmek için yüksek güç yayıcıları bulunmasına rağmen, ek maliyet
-ekleyecektir.  
-Kırılganlık - Fiber optik, bakır tellere kıyasla daha kırılgandır ve
+1. Kırılganlık - Fiber optik, bakır tellere kıyasla daha kırılgandır ve
 hasara karşı daha hassastır. Fiber optik kabloları bükmemeli veya
 bükmemelisiniz.  
-Mesafe — Verici ve alıcı arasındaki mesafe kısa olmalı veya sinyali
-arttırmak için tekrarlayıcılara ihtiyaç duyulmalıdır.  
 
-<figure>
-<img src="images/b03-kirik-fiberoptik.png"
-id="fig:b03-kirik-fiberoptik.png" style="width:8cm"
-alt="Kırık fiber optik kablo" />
-<figcaption aria-hidden="true">Kırık fiber optik kablo</figcaption>
-</figure>
+![Sağlam ve kırık fiberoptik kablolar](images/B05-kirik-fiberoptik.png)  
+*Görsel kaynağı: https://www.amazon.in/3D-Cloud-Plastic-Connector-Equipment/dp/B07SZFLHB1/*
 
 Veri optik dalgalar arıcılığı ile ışığın yansıma kurallarına göre elde
 edilir. Elektriksel sinyallerine göre mesafeye bağı zayıflama sinyalleri

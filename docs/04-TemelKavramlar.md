@@ -28,14 +28,14 @@ _Round Trip Time_. Paketlerin karşı tarafa gidip geri gelmesi için geçen sü
 ![Zamana Karşı filmindeki insanların TTL değeri](images/B04-Film_ZamanaKarsi.jpg)  
 *Zamana Karşı filmindeki insanların TTL değeri*
 
-## Band Genişliği (Bandwidth)
+## Bant Genişliği (Bandwidth)
 Haberleşme kanalının veya iletim ortamının kapasitesini ifade etmek için
-kullanılır. Analog sinyaallerde birini **Hertz (hz)** iken, dijital sistemlerde **bps (b/s)** şeklindedir.  
+kullanılır. Analog sinyallerde birini **Hertz (hz)** iken, dijital sistemlerde **bps (b/s)** şeklindedir.  
 
-Bant genişliği kavramını otoban yolda şerit sayısı gibi düşünebiliriz. Trafik ne kadar fazla olursa olsun, şerit sayısı arttıkça trafik sorunsuz ilerleyebilir. Bu kavram doğrudan iletimin hızını ifade etmemekte ama dolaylı olarak iletim süresinin kısalmasını sağlamaktadır.  
+!!! note
+    "Bant genişliği" kavramını otoban yolda şerit sayısı gibi düşünebiliriz. Trafik ne kadar fazla olursa olsun, şerit sayısı arttıkça trafik sorunsuz ilerleyebilir. Bu kavram doğrudan iletimin hızını ifade etmemekte ama dolaylı olarak iletim süresinin kısalmasını sağlamaktadır.  
 
-Bir haberleşme sistemi, gönderirici, alıcı ve iletim ortamından oluşur.
-İletim kapasitesi en küçük olan, bütün sistemin bant genişliği belirler.
+Bir haberleşme sistemi, gönderici, alıcı ve iletim ortamından oluşur. İletim kapasitesi en küçük olan, bütün sistemin bant genişliği belirler.
 
 **Bant genişliği ile ilgili diğer kavramlar:**
 
@@ -68,14 +68,14 @@ Dilimize _seğirme, sapma_ şeklinde çevrilebilir. Giden veri paketlerinin geci
 *Görsel kaynağı: https://sonary.com/content/jitter-what-it-is-and-how-to-deal-with-it/*
 
 ## QoS - hizmet önceliklendirme
-_Quoality of Service_. Bant genişliğinin verimli kullanılması için bazı trafik verilerine öncelik vermek için kullanılır. Ambulans önceliği gibi düşünebilirsiniz. Belirli IP adreslerine ya da belirli uygulamalara öncelik verilebilir. Özellikle canlı anlık iletişim sağlayan telefon görüşme uygulamaları gibi durumları önceliklendirmek için kullanılır.
+_Quality of Service_. Bant genişliğinin verimli kullanılması için bazı trafik verilerine öncelik vermek için kullanılır. Ambulans önceliği gibi düşünebilirsiniz. Belirli IP adreslerine ya da belirli uygulamalara öncelik verilebilir. Özellikle canlı anlık iletişim sağlayan telefon görüşme uygulamaları gibi durumları önceliklendirmek için kullanılır.
 ![QoS](images/B04-QoS.png){width="500"}  
 *QoS. Görsel kaynağı: https://www.nwkings.com/qos-in-networking/*
 
 
 ## Temel Bant ve Geniş Bant 
 
-- **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanıdr.
+- **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanılır.
 - **Geniş Bant**  (_Broad band_). İletim ortamında birden fazla frekans bandı kullanılır. bulunur. Basit
 bir frekans band filtresi sayesinde kanallar ayrıştırılabilir. Telefon
 hattından aynı anda ses verinin taşınması buna örnektir.
@@ -83,14 +83,11 @@ hattından aynı anda ses verinin taşınması buna örnektir.
 ![Temel ve geniş bant](images/B04-TemelBand-GenisBand.png)  
 *Görsel Kaynağı: https://www.computernetworkingnotes.com/networking-tutorials/differences-between-baseband-and-broadband-explained.html/*
 
-![Geniş bant kullanımı](B04-GenisBant-splitter.png)  
+![Geniş bant kullanımı](images/B04-GenisBant-splitter.png)  
 *Geniş bant içindeki farklı verileri ayrıştırma*
 
 ## Paralel ve Seri İletişim
-Paralel iletişimde byte düzenyinde iletişim sağlanır. İki uç arasında en
-az 8 tane fiziksel iletim ortamı olmalıdır. Band genişliği teorik olarak
-8 hat daha fazla olduğu düşünülebilir. Ancak hem maliyet hem protokol
-tercihi hem de kullanılan topoloji gibi ektenler bu konuda etkilidir.
+Paralel iletişimde byte düzeyinde iletişim sağlanır. İki uç arasında en az 8 tane fiziksel iletim ortamı olmalıdır. Band genişliği teorik olarak 8 hat daha fazla olduğu düşünülebilir. Ancak hem maliyet hem protokol tercihi hem de kullanılan topoloji gibi etkenler bu konuda etkilidir.
 ![Paralel ve seri iletişim](<images/B04-Paralel_ve_Seri.png>)  
 *Görsel kaynağı: https://www.digikey.com/en/maker/tutorials/2023/what-is-serial-communication-and-how-does-it-compare-to-parallel*
 
@@ -103,7 +100,7 @@ tercihi hem de kullanılan topoloji gibi ektenler bu konuda etkilidir.
 3.  **Full-dupleks Kanal**: İki uç arasında iki tane simplex kanal vardır. Böylece aynı anda iki taraf veri gönderebilir ve alabilir. Örnek **telefon görüşmeleri**.
 
 Günümüzde tüm bilgisayar ağları **full-dupleks**’tir.
-![Haberleşme Kanalı Modları](images/B04-hHaberlesme_Modlari.jpg)  
+![Haberleşme Kanalı Modları](images/B04-Haberlesme_Modlari.jpg)  
 *Görsel kaynağı: https://www.blackbox.co.uk/gb-gb/page/25069/Resources/Technical-Resources/Black-Box-Explains/Fibre-Optic-Cable/Simplex-vs-duplex-fiber-patch-cable/*
 
 
