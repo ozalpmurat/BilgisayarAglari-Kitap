@@ -83,10 +83,13 @@ Bilgisayar ile dağıtıcı cihazların (anahtar, hub) iletişim kurabilmesi iç
 *Çapraz kablo kullanım yerleri (örnek)*
 
 ## Fiberoptik Kablolar
+Işığın cam bir tüp içinde iletilmesi şeklinde çalışır. Veri optik dalgalar arıcılığı ile ışığın yansıma kurallarına göre elde edilir. Elektriksel sinyallere kıyasla, sinyalin mesafeye bağlı zayıflama ve kayıpları çok azdır. Bakır kablolarda olduğu gibi gerilim farkından kaynaklanan topraklama ihtiyacı yoktur.
 
-Fiber optik kablolar, veri göndermek için ışık sinyallerini kullanmaktadır. Işığın cam br tüp içinde iletilmesi şeklinde çalışır. Uzak mesafelerde veri iletişimi konusunda en sağlam ve ucuz seçenek fiberoptik kablolardır. Diğer seçenekler, Wifi ve uydu iletişimi olabilir.
+Verici tarafından ışık kaynağı olarak lazer diyod(led), alıcı tarafında ise fotodiyod ya da foto transistör gibi elektronik elemanlar kullanılır.
 
-![Fİberoptik Kablo](images/B05-Fİberoptik_Kablo_Yapisi.jpg)  
+ Uzak mesafelerde veri iletişimi konusunda fiberoptik kablo dışında Wifi ve uydu iletişimi gibi seçenekler de bulunmaktadır. Ancak en sağlam ve ucuz seçenek fiberoptik kablolardır.
+
+![Fiberoptik Kablo](images/B05-Fİberoptik_Kablo_Yapisi.jpg)  
 *Görsel kaynağı: https://www.researchgate.net/publication/325386764_Optical_Fiber_Sensor_Review_and_Applications/*
 
 ### Fiberoptik Kablo Avantajları
@@ -103,42 +106,33 @@ Fiber optik kablolar, veri göndermek için ışık sinyallerini kullanmaktadır
 **Fiber Optik Dezavantajları**  
 1. Kırılganlık - Fiber optik, bakır tellere kıyasla daha kırılgandır ve
 hasara karşı daha hassastır. Fiber optik kabloları bükmemeli veya
-bükmemelisiniz.  
+bükmemelisiniz.
+1. Yerel ağlarda, bakır kablolar ve ekipmanlarına göre maliyetli olmaktadır.
 
 ![Sağlam ve kırık fiberoptik kablolar](images/B05-kirik-fiberoptik.png)  
 *Görsel kaynağı: https://www.amazon.in/3D-Cloud-Plastic-Connector-Equipment/dp/B07SZFLHB1/*
 
-Veri optik dalgalar arıcılığı ile ışığın yansıma kurallarına göre elde
-edilir. Elektriksel sinyallerine göre mesafeye bağı zayıflama sinyalleri
-çok azdır. Bakır kablolarda olduğu gibi gerilim farkından kaynaklanan
-topraklama ihtiyacı yoktur. Fiberoptik kabloların yerel ağa
-bağlanmasında elektriksel sinyal ile optik dalgalar arasında çevrilmesi
-gerekir.Verici tarafından ışık kaynağı olarak lazer diyod(led),alıcı
-tarafında ise fotodiyod ya da foto transistör kullanılır.
+### Fiberoptik kablo türleri
+Işık ileten tüpün çapına göre; Single Mod(SM) ve Multi Mod(MM) olmak üzere ikiye ayrılır:
+![Single mod ve multi mod fiberoptik kablo](images/B05-Fiber_single_ve_multi.png)  
+*Görsel kaynağı: https://learn.aflglobal.com/enterprise/single-mode-vs-multimode/*
 
-## FİBER OPTİK KABLO TÜRLERİ
+**Multi-Mode**: Bina ya da kampüs içi kısa mesafelerde tercih edilir. Verici ve alıcı maliyetleri single moda göre yarı yarıya azdır.
 
-Single mod(SM) ve Multi mod(MM) olmak üzere ikiye ayrılır  
-**Multi-Mode**  
-Bina ya da kampüs içi kısa mesafelerde tercih edilir.Optik dalga üretmek
-için Led kullanılır.Verici ve alıcı maliyetleri single moduna göre yarı
-yarıya azdır. **Single-Mode** Hem daha uzun mesafelerde hem de daha
-yüksek band genişliğine imkan sağlar. Optik dalga üretmek için
-LazerDiyod kullanılır.Bu nedenle verici ve alıcı donanım maliyetleri
-daha fazladır.
+**Single-Mode**: Daha uzun mesafelerde daha yüksek bant genişliğine imkan sağlar. Verici ve alıcı donanım maliyetleri daha fazladır.
 
-<figure>
-<img src="images/single-multimode" id="fig:single_multi_mode"
-style="width:10cm" alt="single-multimode" />
-<figcaption aria-hidden="true">single-multimode</figcaption>
-</figure>
+![Single mod ve multi mod fiberoptik kablo](images/B05-fiber_single_ve_multi2.png)  
+*Görsel kaynağı: https://fukuoka-ken-ken.co.jp/multi-mode-optical-fiber-k.html*
 
-## FİBER OPTİK ÇEVİRİCİLER
+### Fiberoptik çeviriciler
+Fiberoptik kablodan gelen ışık sinyallerinin bakır yerel ağlarda kullanılabilmesi için elektriksel sinyallere dönüştürülmesini sağlar. Günümüzde, SFP adı verilen küçük tipte çeviriciler kullanılmaktadır. SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağlantının bant genişliği belirlenir. Fiberoptik çeviriciler için kullanılan diğer isimler şöyle sıralanabilir:
 
-\*F/O CONVERTOR  
-\*F/O TRANSREİVER (ALICI/VERİCİ)  
-\*GBIC (Switch modülü halindedir)  
-\*STP (Switch modülü halindedir)  
+- F/O converter 
+- F/O transceiver (transmitter & receiver)
+- GBIC. _Gigabit Interface Connector_. Switch modülü halinde olur.
+- SFP. _Small Form-factor Pluggable Module_. Switch modülü halinde olur. Bakır ve fiber için SFP'ler bulunmaktadır.
+![Fiber ve bakır SFP](images/B05-fiber_SFP_bakir_ve_fiber.png)  
+*Görsel kaynağı: https://www.qsfptek.com/qt-news/sfp-module-introduction-sfp-meaning-fiber-sfp-and-copper-sfp/*
 
 ## YEREL AĞLAR (LAN)
 
