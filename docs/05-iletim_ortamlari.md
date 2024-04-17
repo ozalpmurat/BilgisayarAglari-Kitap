@@ -40,16 +40,14 @@ UTP kablolar kadar ekonomik ve işlevsel olmamasıdır. Bilgisayar ağlarında d
 ![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-1.png)  
 *Görsel kaynağı: https://dc.mynetworkinsights.com/categories-of-copper-twisted-pair-cables/*
 
-![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-2.png){width="800"}  
+![Bükümlü Çift Kablolar](images/B02-UTP-Kategoriler-2.png) {width="800"}  
 *Görsel kaynağı: https://telecom.samm.com/history-of-ethernet-lan-cables-categories*
 
 !!! warning "CAT-1, CAT-2, CAT-3"
     Telefon hatlarında kullanılır, ağlarda kullanılmaz.  
 
-<figure markdown="span">
-  ![RJ-45 konnektör](images/B02-RJ45-Konnektor.png){ width="800" }
-  <figcaption>Görsel kaynağı: https://www.electricalvolt.com/how-to-crimp-rj45-connector/</figcaption>
-</figure>
+![RJ-45 konnektör](images/B02-RJ45-Konnektor.png){ width="800" }  
+*Görsel kaynağı: https://www.electricalvolt.com/how-to-crimp-rj45-connector/*
 
 Bükümlü çift CAT5 VE CAT6 Kabloları sonlandırmak için RJ-45 adı verilen
 konnektörler kullanılır. Bu kablolar iki farklı iki şekilde
@@ -79,6 +77,7 @@ Bilgisayar ile dağıtıcı cihazların (anahtar, hub) iletişim kurabilmesi iç
     amaçla kullanılacağını buna göre düzenler.
 
 #### Örnek
+Görsel, Cisco Packet Tracer uygulamasında oluşturulmuştur. Kesikli çizgiler çapraz kabloyu temsil eder. Düz çizgi de düz kabloyu temsil eder.  
 ![Çapraz ve düz kablo kullanımı](images/B05-CaprazveDuz_Kablo_Kullanimi.png)  
 *Çapraz kablo kullanım yerleri (örnek)*
 
@@ -92,7 +91,7 @@ Verici tarafından ışık kaynağı olarak lazer diyod(led), alıcı tarafında
 ![Fiberoptik Kablo](images/B05-Fİberoptik_Kablo_Yapisi.jpg)  
 *Görsel kaynağı: https://www.researchgate.net/publication/325386764_Optical_Fiber_Sensor_Review_and_Applications/*
 
-### Fiberoptik Kablo Avantajları
+### Fiberoptik kablo avantajları
 1. **Yüksek hız ve bant genişliği**: Fiber optik kablolar, geleneksel metal iletişim hatlarına göre daha yüksek bant genişliği sağlar. Bu sayede hızlı ve verimli veri aktarımı mümkün olur.
 1. **Daha az sinyal zayıflaması**: Optik fiberdeki sinyal kaybı bakır tellere göre daha azdır. Bu nedenle daha uzun mesafelerde veri iletimi sağlanabilir.
 1. **Daha az elektromanyetik girişim (EMI)**: Fiber optik kablolar, elektromanyetik girişime karşı daha az duyarlıdır ve daha güvenilirdir.
@@ -103,11 +102,11 @@ Verici tarafından ışık kaynağı olarak lazer diyod(led), alıcı tarafında
 ![Fiber optik kablodan yapılan süseşyası](images/B05-fiberoptik-oyuncak.png)  
 *Görsel kaynağı: https://he.aliexpress.com/item/1005005348057886.html/*
 
-**Fiber Optik Dezavantajları**  
-1. Kırılganlık - Fiber optik, bakır tellere kıyasla daha kırılgandır ve
+### Fiberoptik kablo dezavantajları
+1. **Kırılganlık** - Fiber optik, bakır tellere kıyasla daha kırılgandır ve
 hasara karşı daha hassastır. Fiber optik kabloları bükmemeli veya
 bükmemelisiniz.
-1. Yerel ağlarda, bakır kablolar ve ekipmanlarına göre maliyetli olmaktadır.
+1. **Pahalı**. Yerel ağlarda, bakır kablolar ve ekipmanlarına göre maliyetli olmaktadır.
 
 ![Sağlam ve kırık fiberoptik kablolar](images/B05-kirik-fiberoptik.png)  
 *Görsel kaynağı: https://www.amazon.in/3D-Cloud-Plastic-Connector-Equipment/dp/B07SZFLHB1/*
@@ -125,7 +124,11 @@ Işık ileten tüpün çapına göre; Single Mod(SM) ve Multi Mod(MM) olmak üze
 *Görsel kaynağı: https://fukuoka-ken-ken.co.jp/multi-mode-optical-fiber-k.html*
 
 ### Fiberoptik çeviriciler
-Fiberoptik kablodan gelen ışık sinyallerinin bakır yerel ağlarda kullanılabilmesi için elektriksel sinyallere dönüştürülmesini sağlar. Günümüzde, SFP adı verilen küçük tipte çeviriciler kullanılmaktadır. SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağlantının bant genişliği belirlenir. Fiberoptik çeviriciler için kullanılan diğer isimler şöyle sıralanabilir:
+Fiberoptik kablodan gelen ışık sinyallerinin bakır yerel ağlarda kullanılabilmesi için elektriksel sinyallere dönüştürülmesini sağlar. Günümüzde, SFP adı verilen küçük tipte çeviriciler kullanılmaktadır.   
+![SFP, switch ve fiber sonlandırma kutusu](images/B05-fiber-sfp_switch.png)  
+*Görsel kaynağı: https://salepubsm.live/product_details/37305281.html/*
+
+SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağlantının bant genişliği belirlenir. Fiberoptik çeviriciler için kullanılan diğer isimler şöyle sıralanabilir:
 
 - F/O converter 
 - F/O transceiver (transmitter & receiver)
