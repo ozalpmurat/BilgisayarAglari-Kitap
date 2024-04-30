@@ -55,13 +55,16 @@ bilinir. Normalde hostlarda kullanılmaz.
 
 **Örnekler:**
 
-- 132.45.x.x IP adresinin ilk iki okteti ağ tanımlayıcısı, son iki oktet host tanımlayıcısıdır. Böyle bir ağda $2^{16}$ tane IP olabilir.
-- 112.x.x.x IP adresi A sınıfıdır. Bu ağda, $2^{24}$ tane IP olabilir.
-- 193.140.253.x IP adresi C sınıfıdır. $2^8$ tane IP alabilir.
+- **BŞEÜ**: `79.123.224.15` A sınıfı olduğu için, bu IP'nin dahil olduğu ağda $2^{24}$ (~16M) tane IP olabilir.
+- **ODTÜ**: `144.122.145.153` IP adresi B sınıfıdır. Bu IP'nin dahil olduğu ağda, $2^{16}$ (~65K) tane IP olabilir.
+- **SAÜ**: `193.140.253.240` IP adresi C sınıfıdır. Bu IP'nimn dahil olduğu ağda $2^8$ (256) tane IP olabilir.
+
+!!! warn "IP sınıflarının günümüzdeki anlamı"
+    İlk başta IP adresleri dağıtılırken kolaylık olsun diye tasarlanmış olan IP sınıfları günümüzde bu anlamda kullanılmamaktadır. BŞEÜ'de 16M IP adresi yoktur. SAÜ'de de C sınıfından (256) daha fazla IP adresi vardır. Örneklerden sadece ODTÜ'nünki gerçekten B sınıfı olarak (~65K) tahsis edilmiştir.
 
 ### Özel ve genel IP Adresleri (Private & public IP Blocks)
 
-Özel (private) IP adresleri, İnternet'te kullanılmayan IP adresleridir. Bu nedenle _sanal IP adresi_ de denir. İnternet üzerinde hiçbir yönlendirici tarafından iletilmezler. Bu adreslerin kullanım amacı, test uygulamaları ve NAT uygulamaları gibi durumlardır. Aşağıdaki tabloda mzel IP adres aralıkları verilmiştir. Bunların dışındaki adresler, genel (public) IP adresidir.
+Özel (private) IP adresleri, İnternet'te kullanılmayan IP adresleridir. Bu nedenle _sanal IP adresi_ de denir. İnternet üzerinde hiçbir yönlendirici tarafından iletilmezler. Bu adreslerin kullanım amacı, test uygulamaları ve NAT uygulamaları gibi durumlardır. Aşağıdaki tabloda özel IP adres aralıkları verilmiştir. Bunların dışındaki adresler, genel (public) IP adresidir.
 
 ![](images/B07-Ozel_IP_Adresleri.png)
 *Görsel kaynağı: https://datatracker.ietf.org/doc/html/rfc1918/*
@@ -75,7 +78,7 @@ Bir IP adresinin, diğer ağlara giderken farklı bir adrese dönüştürülmesi
 **NAT Tablosu**: NAT işlemi yapılırken hangi IP adresini kimin ne zaman kullandığını tutar. Bu sayede ilgili IP'nin yaptığı isteklere gelen cevaplar doğru şekilde iletilebilir.
 
 !!! note "Bahçe terliği benzetmesi"
-    Yalnızca 1 public IP adresi olan bir kurumun ağında çok sayıda bilgisayar internet'e çıkıyor oldsun. Bu örneği, evin arka bahçe kapısında tek terlik bulunmasına benzetebiliriz. Bahçede işi olan kişi terliği giyer, işini halledince terliği çıkarıp eve girer. Sonra başkası aynı terliği kullanır. Bahçeyi gören komşular hep aynı terlikleri görürler ama o terlikleri kullanan kişi değişmiş olur.
+    Yalnızca 1 public IP adresi olan bir kurumun ağında çok sayıda bilgisayar internet'e çıkıyor olsun. Bu örneği, evin arka bahçe kapısında tek terlik bulunmasına benzetebiliriz. Bahçede işi olan kişi terliği giyer, işini halledince terliği çıkarıp eve girer. Sonra başkası aynı terliği kullanır. Bahçeyi gören komşular hep aynı terlikleri görürler ama o terlikleri kullanan kişi değişmiş olur.
 
 ## IP Adresi ve Hesaplamaları
 32 bit uzunluğa sahip olan IP adresi 2 temel bileşene sahiptir:
@@ -143,6 +146,10 @@ Host sayısı = $2^2-2=2$ tane
 3. IP adresi 10.9.8.2 : `Hostlar için kullanılabilir`
 4. IP adresi 10.9.8.3 : `Yayın adresi`
 
+![/30 network kullanım örneği](images/B07-Bolu30_network.png)  
+*Örnek /30 ağ kullanım şekli: Dummy Network*  
+*Görsel kaynağı: https://www.computernetworkingnotes.com/ccna-study-guide/contiguous-and-discontiguous-networks-explained.html*
+
 ### Ağ Maskesi (Netmask)
 "Alt ağ maskesi" de denir Ağın kaçıncı bitten bölündüğü belirtir. IP adresi gibi 32 bitten oluşur. İkilik sistemde soldan itibaren `1`'lerle başlar, sonra `0`'larla devam eder. 1'den 0'a geçilen nokta, ağın bölündüğü kısımdır. Gündelik hayatta kolay olması için, onluk sistemde kullanılır.
 
@@ -208,86 +215,81 @@ IP adresinin nereden bölündüğünü biliyorsak; **IP adresinde** bu bitten so
 1. $/N$ şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar $/(N-1)$ olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, `/20` şeklinde bir ağı ikiye bölersek iki tane `/21` ağ oluşur. Benzer şekilde, $/N$ şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani `/20` şeklindeki ağ dörde bölünürse elimizde 4 tane `/22` ağ oluşur.
 
 
-### Alt Ağlara Bölme
+## Alt Ağlara Bölme
 
-IP adresi ve ağı temsil eden bit sayısı belirli olan bir ağ birden fazla
-küçük ağlara bölünebilir. Alt ağa bölme işlemi alt ağ maskesinde bir bit
-kaydırılarak yapılır. Bu şekilde $2^n$ tane alt ağ bölme işlemi
+IP adresi ve ağı temsil eden bit sayısı belirli olan bir ağ, birden fazla
+küçük ağlara bölünebilir. Alt ağa bölme işlemi alt ağ maskesinde bit
+kaydırılarak yapılır. /N şeklindeki bir ağ için; /(N+1) şeklinde 1 bitlik kaydırma yapılırsa, önceki ağ ikiye bölünmüş olur. 2 bit kaydırılırsa, 4'e bölünmüş olur. Bu şekilde $2^n$ tane alt ağ bölme işlemi
 yapılabilir.
 
-**ÖRNEK :**
+### Soru-1
 
-**a)** 10.0.0.0/24 ağını iki ayrı ağa bölünüz.
+- **A)** 10.0.0.0/24 ağını iki ayrı ağa bölünüz.  
+- **B)** Yeni oluşturulan ağlar için 10.0.0.100 ve 10.0.0.150 IP adreslerinin aynı ağda olup olmadıklarını hesaplayın. (İpucu : Ağ adresi
+= IP x Ağ maskesi)  
+- **C)** 128 IP'li ağların her birini ikiye bölünüz.
 
-**b)**Yeni oluşturulan ağlar için 10.0.0.100 ve 10.0.0.150 IP
-adreslerinin aynı ağda olup olmadıklarını hesaplayın. (İpucu : Ağ adresi
-= IP x Ağ maskesi)
+#### Çözüm-1
+!!! note "Not:"
+    Çözüme geçmeden önce mutlaka bölünmemiş ağın analiz edilmesi gerekir. Başlangıç-bitiş adreslerini ve kaç IP adresi olduğunu belirlemeliyiz.
 
-**c)**128 IP'li ağların her birini ikiye bölünüz.
+**Analiz:**
 
-[Çözüm :]{.underline}
+- Verilen ağ `/24` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 24 tane `1`, 8 tane `0` olur. Yani alt ağ maskesi `255.255.255.0` şeklindedir.
+- Bu ağda hostları tanımlamak için 8 bit kullanılmıştır. Demek ki ağda $2^8$=`256` tane IP adresi vardır. İkiye böldüğümüzde `128` IP'lik iki ayrı ağ oluşacaktır.
+- Ana ağın başlangıç noktasını belirlemek için ağ adresini bulmalıyız. Bu ağda ağ adresi `10.0.0.0` IP adresidir.
 
-**a)**
+> **A şıkkı**
 
--   Ağ : 10.0.0.0/24
+> - Ana ağın maskesini ikilik sistemde `11111111.11111111.11111111.00000000` şeklinde yazabiliriz.
+> - `24.` bitten bölünmüş olan ağda 1 bit kaydırma yaparsak; `25 tane 1`, `7 tane 0` olacaktır. Bu durumda ana ağı ikiye bölmüş oluruz. Her bir alt ağda $2^7$=`128` tane IP adresi olur.
+> - Ağ bölündükten sonra 1. alt ağın başlangıç adresi (ağ adresi), ana ağın ağ adresi ile aynı olacaktır. Buna göre tabloyu oluşturabiliriz.
+> 
+> |       | Ağ adresi     | Yayın adresi | Ağ maskesi      | IP sayısı | Host sayısı |
+> |-------|---------------|--------------|-----------------|-----------|---|
+> | 1. ağ | 10.0.0.0/25   | 10.0.0.127   | 255.255.255.128 | 128       | 126 |
+> | 2. ağ | 10.0.0.128/25 | 10.0.0.255   | 255.255.255.128 | 128       | 126 |
 
--   Ağ maskesi : 255.255.255.0 (24 tane 1, 8 tane 0 var. $2^8$ tane IP
-    var)
+> **b)**
 
--   Ağ maskesi : 11111111.11111111.11111111.00000000 ağ maskesinde 1 bit
-    sağa kaydırdığımızda 25 tane 1, 7 tane 0 olacaktır. $2^7=128$ tane
-    IP elde edilir.
+>   ------------- ------------------------------------- --- ------------
+>                 00001001.00000000.00000000.01100100   =   10.0.0.100
+>   ağ maskesi:   11111111.11111111.11111111.00000000   =   10.0.0.128
+>                 00001001.00000000.00000000.10010110   =   10.0.0.150
+>   ------------- ------------------------------------- --- ------------
 
-1 bit kayarsa $2^1=2$ alt ağ, 2 bit kayarsa $2^2=4$ alt ağ, \.... ,n bit
-kayarsa $2^n$ alt ağ elde edilebilir.
+> Son oktetleri farklı olacağından aynı ağda değillerdir.
 
-10.0.0.0/25 notasyonuna sahip bir ağda 1.alt ağ 10.0.0.0 IP adresiyle
-başlar. 128 adet IP tanımlanır. Son IP 10.0.0.127 olur. 2. alt ağ ise
-10.0.0.128 IP adresinden 10.0.0.255 IP adresine kadar 128 adet IP
-alabilir.
+> **c)**
 
-         Ağ adresi       Yayın adresi   Ağ maskesi        IP sayısı   Host sayısı
-  ------ --------------- -------------- ----------------- ----------- -------------
-  1.ağ   10.0.0.0/25     10.0.0.127     255.255.255.128   128         126
-  2.ağ   10.0.0.128/25   10.0.0.255     255.255.255.128   128         126
+>       1.ağ           2.ağ
+>   ------------- ---------------
+>    10.0.0.0/25   10.0.0.128/25
 
-**b)**
+> Ağ maskesi 255.255.255.128
 
-  ------------- ------------------------------------- --- ------------
-                00001001.00000000.00000000.01100100   =   10.0.0.100
-  ağ maskesi:   11111111.11111111.11111111.00000000   =   10.0.0.128
-                00001001.00000000.00000000.10010110   =   10.0.0.150
-  ------------- ------------------------------------- --- ------------
+> 1111111.11111111.11111111.10000000
 
-Son oktetleri farklı olacağından aynı ağda değillerdir.
+> Yeni oluşan ağ maskesi 255.255.255.192\
+> \
+> XXX --------------------- TABLO ------------------------ XXX\
+> \
+> \
+> \
+> XXX --------------------- TABLO ------------------------ XXX\
+> \
+> \
+> \
+> XXX --------------------- TABLO ------------------------ XXX\
+> \
+> \
+> \
+> XXX --------------------- TABLO ------------------------ XXX\
 
-**c)**
 
-      1.ağ           2.ağ
-  ------------- ---------------
-   10.0.0.0/25   10.0.0.128/25
+### Soru-2
 
-Ağ maskesi 255.255.255.128
-
-1111111.11111111.11111111.10000000
-
-Yeni oluşan ağ maskesi 255.255.255.192\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-**SORU :** 10.9.6.0/25 ağını 4 ayrı ağa bölünüz.
+10.9.6.0/25 ağını 4 ayrı ağa bölünüz.
 
 Ağ maskesi 255.255.255.0 11111111.11111111.11111111.0
 
@@ -341,7 +343,7 @@ XXX -------------------------------------- IMAGE
 \
 \
 
-### Ağ Geçidi IP Adresleri 
+## Ağ Geçidi IP Adresleri 
 
 Her ağ için ilk IP adresi ağ adresi, son IP adresi yayın adresi olduğunu
 biliyoruz. Kural olmamakla birlikte genel teamüllere göre ağ adresinden

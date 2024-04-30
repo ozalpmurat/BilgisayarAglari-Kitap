@@ -1,10 +1,11 @@
 # Ağ Topolojileri 
-![Topolojiler](images/B02-Topolojiler.jpg)  
-*Görsel kaynağı: https://www.dnsstuff.com/what-is-network-topology*
+Ağ topolojisi, bir ağı oluşturan cihazların fiziksel ve mantıksal yerleşim biçimidir. Bu bölümde çokça bilinen fiziksel ağ topolojilerini inceleyeceğiz.
 
-Ağ topolojileri "bir ağı oluşturan cihazların fiziksel ve mantıksal yerleşimidir". Network Topology (Ağ Topolojisi) Yerel Ağ Alanı (LAN) içerisinde bulunan bilgisayarların fiziksel ve mantıksal yerleşimini ifade eder. Fiziksel Topoloji ağ içerisinde bulunan tüm cihazların birbirlerine nasıl bağlanacağını ve bağlantı için ne tür kablo kullanacağını belirtirken Mantıksal Topoloji bu cihazların nasıl haberleşeceğini belirtir ve bu cihazları ortak bir protokol altında birleştirir. Kullanılmak istenen Ağ Teknolojisine göre farklı ağ topolojileri kullanılmaktadır. Fiziksel Topolojinin 6 farklı çeşidi vardır. Bunlar Bus(Yol), Ring(Halka), Yıldız(Star), Ext Star(Gelişmiş Yıldız), Mesh(Örgü) ve Tree(Ağaç) topolojileridir.
-Broadcast(Yayın) ve Token Passing(İz) mantıksal topolojilere birer
-örnektir.
+![Topolojiler](images/B02-Topolojiler.jpg)  
+*Görsel kaynağı: https://www.dnsstuff.com/what-is-network-topology*  
+
+``` note
+    "Ağ topolojisi" kavramını her kullandığımızda, bilgisayar ağlarından bahsettiğimizi unutmayalım. Bilgisayar ağlarının dışında da ağ sistemleri bulunmaktadır ve bunlar farklı topolojiler kullanıyor olabilirler.
 
 ## Doğrusal (Bus) Topoloji
 Doğrusal bir hat üzerinde bilgisayarların T konnektörlerle bağlanması

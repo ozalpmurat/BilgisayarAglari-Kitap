@@ -138,14 +138,9 @@ SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağ
 *Görsel kaynağı: https://www.qsfptek.com/qt-news/sfp-module-introduction-sfp-meaning-fiber-sfp-and-copper-sfp/*
 
 ## YEREL AĞLAR (LAN)
+Kablo çekebileceğimiz (bize ait olan) yerler yerel ağlardır. Yerel ağın fiziksel büyüklük ile ilgisi yoktur. Fabrika, kampüs arazisi, hatta organize sanayi bölgesi gibi ortak kullanılan alanlar bile yerel ağ olabilir. Yerel ağlarda bant genişliği, protokol, topoloji tercihi gibi konularda, kurum kendi isteğine göre karar verilebilir. LAN'ları, WAN'lardan ayıran en önemli konu budur. Günümüz yerel ağlarında ethernet harici protokol kullanılmamaktadır.
 
-Kablo çekebileceğimiz (bize ait olan ) yerler yerel ağlardır. Ağlarda
-band genişliği ,protokol,topoloji gibi altarnetifler isteğe göre
-özelleştirilebilir. Günümüz yerel ağlarında ethernet harici protokol
-kullanılmamamktadır.
-
-## ETHERNET PROTOKOLÜ
-
+## Ethernet Protokolü
 İlk kez "INTEL VE XEROX" tarafından geliştirilmiştir.Daha sonra
 IEEE(Institue of Electrical and Electronical Enginner) tarafından 809.3
 ismi ile standartlaştırılmıştır.
