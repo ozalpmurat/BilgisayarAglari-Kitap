@@ -33,6 +33,7 @@ mkdocs-print-site-plugin
 mkdocs-with-pdf
 mkdocs_puml
 mkdocs_pymdownx_material_extras
+mkdocs-video
 packaging
 paginate
 pathspec

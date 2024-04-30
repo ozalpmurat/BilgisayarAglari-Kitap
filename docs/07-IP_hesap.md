@@ -1,4 +1,7 @@
 # İnternet'in Protokolü: IP
+Bu bölümdeki içeriği anlattığım bir video var. Alt ağlara bölme konusuna kadar anlatmıştım. İsteyenler videodan da faydalanabilir:
+![type:video](https://www.youtube.com/embed/e9-lU0aXz1g)
+
 ## Genel Bilgiler
 ![](images/B07-IP_Version.png){width="300"}   
 
@@ -286,6 +289,9 @@ yapılabilir.
 > \
 > XXX --------------------- TABLO ------------------------ XXX\
 
+-----
+## BURADAN SONRASI DÜZENLENMEDİ
+-----
 
 ### Soru-2
 
