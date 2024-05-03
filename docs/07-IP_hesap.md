@@ -156,10 +156,11 @@ Host sayısı = $2^2-2=2$ tane
 ### Ağ Maskesi (Netmask)
 "Alt ağ maskesi" de denir Ağın kaçıncı bitten bölündüğü belirtir. IP adresi gibi 32 bitten oluşur. İkilik sistemde soldan itibaren `1`'lerle başlar, sonra `0`'larla devam eder. 1'den 0'a geçilen nokta, ağın bölündüğü kısımdır. Gündelik hayatta kolay olması için, onluk sistemde kullanılır.
 
-Ağ maskesinin iki temel görevi vardır:
+Ağ maskesinin temel görevleri:
 
+1. IP adresinde, `network ID` ile `host ID` kısımlarının hangi bitlerden ayrıldığını belirlemek.
 1. Ağın büyüklüğünü belirtmek
-2. Ağın nerede başladığı hesabında kullanmak
+1. Ağın nerede başladığı (ağ adresi) hesabında kullanmak
 
 **Örnek bazı maskeler:**
 ![](images/B07-Ornek_Maskeler.png){width="600"}  
