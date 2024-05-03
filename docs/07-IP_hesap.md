@@ -167,6 +167,9 @@ Ağ maskesinin iki temel görevi vardır:
 ![Maskeleme](images/B07-maskeleme.png){width="400"}  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
+![Maskeleme](images/B07-maskeleme2.png)  
+*Görsel kaynağı: https://www.photoshopessentials.com/basics/photoshop-layer-masks-advanced-tips-and-tricks/*
+
 !!! note
     IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
 
