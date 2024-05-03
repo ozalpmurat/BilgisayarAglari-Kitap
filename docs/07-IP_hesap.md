@@ -169,7 +169,7 @@ Ağ maskesinin temel görevleri:
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
 ![Maskeleme](images/B07-maskeleme2.png)  
-*Görsel kaynağı: https://www.photoshopessentials.com/basics/photoshop-layer-masks-advanced-tips-and-tricks/*
+*Görsel kaynağı: https://en.wikipedia.org/wiki/Mask_%28computing%29*
 
 !!! note
     IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
