@@ -168,9 +168,6 @@ Ağ maskesinin temel görevleri:
 ![Maskeleme](images/B07-maskeleme.png){width="400"}  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
-![Maskeleme](images/B07-maskeleme2.png)  
-*Görsel kaynağı: https://en.wikipedia.org/wiki/Mask_%28computing%29*
-
 !!! note
     IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
 
@@ -194,6 +191,9 @@ Ağ maskesine alternatif olarak CIDR Notasyonu kullanılmaktadır. Bu gösterim 
 
 ### Ağ adresi
 Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa (mantıksal `VE` işlemi) çıkan sonuç **ağın adresi**ni verir. Bu sayede, ağın nerede başladığı bulunmuş olur.
+
+![Maskeleme](images/B07-maskeleme2.png)  
+*Görsel kaynağı: https://en.wikipedia.org/wiki/Mask_%28computing%29*
 
 **Örnek:**  IP adresi `192.168.1.75` olsun. Alt ağ maskesi de `255.255.255.0` olsun. Bu ağın ağ adresini bulalım.
 
