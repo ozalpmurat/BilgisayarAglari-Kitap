@@ -299,7 +299,7 @@ yapılabilir.
 
 ### Soru-2
 
-10.9.6.0/25 ağını 4 ayrı ağa bölünüz.
+10.9.6.11/25 şeklinde verilen bir IP adresi var. Bu IP adresinin bulunduğu ağı, 4 ayrı alt ağa bölünüz.
 
 Ağ maskesi 255.255.255.0 11111111.11111111.11111111.0
 
