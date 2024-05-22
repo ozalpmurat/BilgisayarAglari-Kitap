@@ -229,129 +229,144 @@ küçük ağlara bölünebilir. Alt ağa bölme işlemi alt ağ maskesinde bit
 kaydırılarak yapılır. /N şeklindeki bir ağ için; /(N+1) şeklinde 1 bitlik kaydırma yapılırsa, önceki ağ ikiye bölünmüş olur. 2 bit kaydırılırsa, 4'e bölünmüş olur. Bu şekilde $2^n$ tane alt ağ bölme işlemi
 yapılabilir.
 
-### Soru-1
-
-- **A)** 10.0.0.0/24 ağını iki ayrı ağa bölünüz.  
-- **B)** Yeni oluşturulan ağlar için 10.0.0.100 ve 10.0.0.150 IP adreslerinin aynı ağda olup olmadıklarını hesaplayın. (İpucu : Ağ adresi
-= IP x Ağ maskesi)  
-- **C)** 128 IP'li ağların her birini ikiye bölünüz.
-
-#### Çözüm-1
 !!! note "Not:"
     Çözüme geçmeden önce mutlaka bölünmemiş ağın analiz edilmesi gerekir. Başlangıç-bitiş adreslerini ve kaç IP adresi olduğunu belirlemeliyiz.
 
-**Analiz:**
+---
+
+### Örnek-1: İkiye bölme
+
+!!! question "İkiye bölme"
+    10.0.0.0/24 ağını iki ayrı ağa bölünüz.  
+
+**ANALİZ**
 
 - Verilen ağ `/24` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 24 tane `1`, 8 tane `0` olur. Yani alt ağ maskesi `255.255.255.0` şeklindedir.
 - Bu ağda hostları tanımlamak için 8 bit kullanılmıştır. Demek ki ağda $2^8$=`256` tane IP adresi vardır. İkiye böldüğümüzde `128` IP'lik iki ayrı ağ oluşacaktır.
 - Ana ağın başlangıç noktasını belirlemek için ağ adresini bulmalıyız. Bu ağda ağ adresi `10.0.0.0` IP adresidir.
+- Ana ağın son IP adresi ise yayın adresidir. Bunu hesaplarsak, `10.0.0.255` buluruz.
 
-> **A şıkkı**
+![IP adres aralığı](images/B07-IP_adresi_cetveli-24.png)  
+*Görsel: IP adres aralığı. Bölünmeden önceki hali*
 
-> - Ana ağın maskesini ikilik sistemde `11111111.11111111.11111111.00000000` şeklinde yazabiliriz.
-> - `24.` bitten bölünmüş olan ağda 1 bit kaydırma yaparsak; `25 tane 1`, `7 tane 0` olacaktır. Bu durumda ana ağı ikiye bölmüş oluruz. Her bir alt ağda $2^7$=`128` tane IP adresi olur.
+**ÇÖZÜM**
+
+> - Ana ağın maskesini ikilik sistemde `11111111.11111111.11111111.00000000` şeklinde yazabiliriz.  
+> - `24.` bitten bölünmüş olan ağda 1 bit kaydırma yaparsak; `25 tane 1`, `7 tane 0` olacaktır. Bu durumda ana ağı ikiye bölmüş oluruz. Her bir alt ağda $2^7$=`128` tane IP adresi olur.  
 > - Ağ bölündükten sonra 1. alt ağın başlangıç adresi (ağ adresi), ana ağın ağ adresi ile aynı olacaktır. Buna göre tabloyu oluşturabiliriz.
 > 
 > |       | Ağ adresi     | Yayın adresi | Ağ maskesi      | IP sayısı | Host sayısı |
 > |-------|---------------|--------------|-----------------|-----------|---|
 > | 1. ağ | 10.0.0.0/25   | 10.0.0.127   | 255.255.255.128 | 128       | 126 |
 > | 2. ağ | 10.0.0.128/25 | 10.0.0.255   | 255.255.255.128 | 128       | 126 |
+> 
+> ![IP adres aralığı](images/B07-IP_adresi_cetveli-25.png)  
+> *Görsel: IP adres aralığı. İkiye bölünmüş hali*
 
-> **b)**
+---
 
->   ------------- ------------------------------------- --- ------------
->                 00001001.00000000.00000000.01100100   =   10.0.0.100
->   ağ maskesi:   11111111.11111111.11111111.00000000   =   10.0.0.128
->                 00001001.00000000.00000000.10010110   =   10.0.0.150
->   ------------- ------------------------------------- --- ------------
+### Örnek-2: Dörde bölme
 
-> Son oktetleri farklı olacağından aynı ağda değillerdir.
+!!! question "Dörde bölme"
+    10.9.6.200/25 şeklinde verilen bir IP adresi var. Bu IP adresinin bulunduğu ağı, 4 ayrı alt ağa bölünüz.
 
-> **c)**
+**ANALİZ**
 
->       1.ağ           2.ağ
->   ------------- ---------------
->    10.0.0.0/25   10.0.0.128/25
+- **Alt ağ maskesi:** Verilen ağ `/25` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 25 tane `1`, 7 tane `0` olur. Yani alt ağ maskesi `255.255.255.128` şeklindedir. Bunu dörde böldüğümüzde, `/27` şeklinde 4 tane alt ağ oluşacaktır.
+- **Ağdaki IP sayısı:** Bu ağda hostları tanımlamak için 7 bit kullanılmıştır. Demek ki ağda $2^7$=`128` tane IP adresi vardır. Dörde böldüğümüzde `32` IP'lik dört ayrı ağ oluşacaktır.
+- **Ağ adresi:** Ana ağın başlangıç noktasını belirlemek için, IP adresindeki 25. bitten sonrasını 0 yaparsak "10.9.6.(1<font color='blue'>0000000</font>)~2~" olur. Bunu onluk olarak yazarsak, ağ adresini `10.9.6.128` şeklinde buluruz.
+- **Yayın adresi:** Ana ağın son IP adresini hesaplamak için 25. bitten sonrasını 1 yaparsak "10.9.6.(1<font color='blue'>1111111</font>)~2~" olur. Bunu onluk olarak yazarsak, `10.9.6.255` buluruz.
 
-> Ağ maskesi 255.255.255.128
+![IP adres aralığı](images/B07-IP_adresi_cetveli-soru2-25.png)  
+*Görsel: IP adres aralığı. Bölünmeden önceki hali*
 
-> 1111111.11111111.11111111.10000000
+**ÇÖZÜM**
 
-> Yeni oluşan ağ maskesi 255.255.255.192\
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
-> \
-> \
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
-> \
-> \
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
-> \
-> \
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
+> - `25`. bitten bölünmüş olan ağda `2` bit kaydırma yaparsak; ağı dörde bölmüş oluruz (2^2^=4). Alt ağların maskesinde; 27 tane 1, 5 tane 0 olacaktır. Bu durumda ana ağı dörde bölmüş oluruz. Her bir alt ağda 32 tane IP adresi olur.
+> - Ağ bölündükten sonra 1. alt ağın başlangıç adresi (ağ adresi), ana ağın ağ adresi ile aynı olacaktır. Buna göre tabloyu oluşturabiliriz.
+> - İlk ağın ilk IP adresinden itibaren, `32` ekleyerek devam edersek, bütün alt ağların ağ adreslerini bulabiliriz.
 
------
-## BURADAN SONRASI DÜZENLENMEDİ
------
+> |       | Ağ adresi     | Yayın adresi | Ağ maskesi      | IP sayısı | Host sayısı |
+> |-------|---------------|--------------|-----------------|-----------|---|
+> | 1. ağ | 10.9.6.128/27 | 10.9.6.159   | 255.255.255.224 | 32       | 30 |
+> | 2. ağ | 10.9.6.160/27 | 10.9.6.191   | 255.255.255.224 | 32       | 30 |
+> | 3. ağ | 10.9.6.192/27 | 10.9.6.223   | 255.255.255.224 | 32       | 30 |
+> | 4. ağ | 10.9.6.224/27 | 10.9.6.255   | 255.255.255.224 | 32       | 30 |
+>  
+> ![IP adres aralığı](images/B07-IP_adresi_cetveli-soru2-27.png)  
+> *Görsel: IP adres aralığı. Bölündükten sonra*
 
-### Soru-2
+---
 
-10.9.6.11/25 şeklinde verilen bir IP adresi var. Bu IP adresinin bulunduğu ağı, 4 ayrı alt ağa bölünüz.
+### Örnek-3: Büyük ağları bölme
+!!! question "Büyük ağları bölme"
+    192.168.1.100/16 ağını 8 alt ağa bölün. İlk ve son alt ağlar için şunları hesaplayın:  
+    - Ağ adresi  
+    - Yayın adresi   
+    - Alt ağ maskesi
 
-Ağ maskesi 255.255.255.0 11111111.11111111.11111111.0
+**ANALİZ**
 
-  ----------------- --- --------------------------------------------------------
-  Yeni ağ maskesi   :   11111111.11111111.11111111.11100000 ($2^5=32$ IP var.)
-                    :   255.255.255.224
-  ----------------- --- --------------------------------------------------------
+- **Alt ağ maskesi:** Verilen ağ `/16` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 16 tane `1`, 16 tane `0` olur. Yani alt ağ maskesi `255.255.0.0` şeklindedir. Bunu sekize böldüğümüzde, `/19` şeklinde 8 tane alt ağ oluşacaktır.
+- **Ağdaki IP sayısı:** Bu ağda hostları tanımlamak için 16 bit kullanılmıştır. Demek ki ağda $2^16$=`65536` tane IP adresi vardır. Sekize böldüğümüzde `8192` IP'lik sekiz ayrı ağ oluşacaktır.
+- **Ağ adresi:** Ana ağın başlangıç noktasını belirlemek için, IP adresindeki 16. bitten sonrasını 0 yaparsak `192.168.0.0` olur.
+- **Yayın adresi:** Ana ağın son IP adresini hesaplamak için 16. bitten sonrasını 1 yaparsak `192.168.255.255` olur.
 
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-**ÖRNEK :** 10.0.0.0/22'yi 4 alt ağa bölünüz.
+![IP adres aralığı](images/B07-IP_adresi_cetveli-soru3-16.png)  
+*Görsel: IP adres aralığı. Bölünmeden önceki hali*
 
-11111111.11111111.11111100.00000000 $2^{10}=1024$ tane IP var.
+!!! note "Not:"
+    Küçük ağlarda alt ağları hesaplamak için, örneğin 32'şer ilerleyerek kolayca hesaplayabiliyoruz. Ancak büyük ağlarda 8192 ekleyerek gitmek çok kolay olmayacak. Bu örneğin öncekilerden farklı yanı budur. Aşağıdaki çözüme dikkat ediniz.
 
-Ağ maskesi : 255.255.252.0
+**ÇÖZÜM**
 
-Yeni alt ağ maskesi : 255.255.255.0(2 bit kaydı.$2^{8}=256$ IP var.) d
-Yeni CIDR gösterimi -\> 10.0.0.0/24 olmalıdır.
+> - `16`. bitten bölünmüş olan ağda `3` bit kaydırma yaparsak; ağı sekize bölmüş oluruz (2^3^=8). Alt ağların maskesinde; 19 tane 1, 13 tane 0 olacaktır. Bu durumda ana ağı sekize bölmüş oluruz. Her bir alt ağda 8192 tane (2^13^) IP adresi olur.
+> - Ağ bölündükten sonra **1. alt ağın başlangıç adresi** (ağ adresi), ana ağın ağ adresi ile aynı olacaktır: `192.168.0.0`
+> - **Son alt ağın yayın adresi** de ana ağın yayın adresi ile aynı olacaktır: `192.168.255.255`
+> - Birinci alt ağın yayın adresini bulmak için, bu alt ağ içindeki herhangi bir IP adresini örnek olarak alıp, 19. bitten sonrasını 1 yapabiliriz. Elimizde zaten bu alt ağdan bir IP adresi var. 192.168.0.0 IP adresi hem bölünmemiş ana ağın, hem de bölündükten sonraki ilk alt ağın bir parçasıdır. Eğer /16 olarak düşünülürse, ana ağın bir parçası olarak hesaplanabilir. /19 olarak düşündüğümüzde ise 8192 IP adresine sahip olan 1. alt ağa ait bir IP adresidir.  192.168.0.0 IP adresinin 19. bitten sonrasını 1 yaparsak **birinci alt ağın yayın adresi**ni buluruz:  
+192.168.(000<font color="blue">11111.11111111</font>)~2~ = `192.168.31.255`
+> - Üstteki maddeye benzer şekilde; son alt ağdan  1 IP adresini alıp bunun ağ adresini (/19 olarak) hesaplarsak, son alt ağın ağ adresini bulmuş oluruz. Bu nedenle son alt ağa ait olan 192.168.255.255 IP adresinin 19. bitten sonrasını 0 yaparsak **son alt ağın ağ adresi**ni buluruz:  
+192.168.(111<font color="blue">00000.00000000</font>)~2~ = `192.168.224.0`
+> - Yeni oluşan küçük ağların alt ağ maskesini hesaplamak için /19 olan ifadeyi ikilik sistemde yazmalıyız:
+(11111111.11111111.111<font color="blue">00000.00000000</font>)~2~ = `255.255.224.0`
 
-10.0.0.0 -\> 10.0.0.255
+> ![IP adres aralığı](images/B07-IP_adresi_cetveli-soru3-19.png)  
+> *Görsel: IP adres aralığı. Bölündükten sonra*
+Görsel üzerinde siyah ile işaretlenen IP adresleri zaten ilk analizde bulunmuştu. Mavi ile işaretlenenler, soruda istenen ve çözümde bulduğumuz IP adresleri. Yeşil ile işaretlenenler soruda istenmiyordu ama birkaç tanesini göstermek istedim şekil üzerinde de. Soruda istenen verileri yeniden tablo halinde yazalım:
 
-10.0.1.0 -\> 10.0.1.255
+> |       | Ağ adresi        | Yayın adresi    | Ağ maskesi    |
+> |-------|------------------|-----------------|---------------|
+> | 1. ağ | 192.168.0.0/19   | 192.168.31.255  | 255.255.224.0 |
+> | 8. ağ | 192.168.224.0/19 | 192.168.255.255 | 255.255.224.0 |
 
-10.0.2.0 -\> 10.0.2.255
+---
 
-10.0.3.0 -\> 10.0.3.255
+### Örnek-4: Farklı büyüklüklerde alt ağlar
 
-**ÖRNEK :** /17 şeklinde gösterilen ağın maskesi nedir?
-
-11111111.11111111.10000000.00000000 = 255.255.128.0 şeklindedir.
-
-**ÖRNEK :** 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç host olabilir?
-
-$2^{16}-2$ adet host olabilir.
-
-**NOT :** Özel IP ile ??? 127 ile başlayan IP ler kullanılamazlar.
-Localhost : 127.0.0.1 bilgisayarın kendisini temsil eder.
-
-169.254.0.0 Windows işletim sisteminin IP alınamadığında kendi IP
-bloğundan otomatik olarak verdiği IP adresidir.
-
-**ÖRNEK :** Bir şirkete 192.168.100.0/24 şeklinde IP aralığı tahsis
-edilmiştir. Şekilde sistem yöneticisi ağdaki aşırı yayın trafiğinin
-sorun çıkardığını düşünerek ağı alt ağlara bölmek istiyor. Birimlerin PC
-sayısı aşağıdaki gibidir. Teknik birim=70, Pazarlama=40, Muhasebe=20,
-İdari birim=25\
+!!! question "Farklı büyüklüklerde alt ağlar"
+    Bir şirkete 192.168.100.0/24 şeklinde IP aralığı tahsis edilmiştir. Şekilde sistem yöneticisi ağdaki aşırı yayın trafiğinin sorun çıkardığını düşünerek ağı alt ağlara bölmek istiyor. Birimlerin PC sayısı aşağıdaki gibidir.
+    
+    Teknik birim=70, Pazarlama=40, Muhasebe=20, İdari birim=25
 \
 XXX -------------------------------------- IMAGE
 ----------------------------------- XXX\
 \
 \
+
+169.254.0.0 Windows işletim sisteminin IP alınamadığında kendi IP
+bloğundan otomatik olarak verdiği IP adresidir.
+
+
+### Örnek çalışma soruları
+
+1. /17 şeklinde gösterilen ağın maskesi nedir?
+1. 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç host olabilir?
+
+
+-----
+## BURADAN SONRASI DÜZENLENMEDİ
+-----
+
 
 ## Ağ Geçidi IP Adresleri 
 
