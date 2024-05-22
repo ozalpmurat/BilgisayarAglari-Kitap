@@ -332,7 +332,8 @@ yapılabilir.
 
 > ![IP adres aralığı](images/B07-IP_adresi_cetveli-soru3-19.png)  
 > *Görsel: IP adres aralığı. Bölündükten sonra*
-Görsel üzerinde siyah ile işaretlenen IP adresleri zaten ilk analizde bulunmuştu. Mavi ile işaretlenenler, soruda istenen ve çözümde bulduğumuz IP adresleri. Yeşil ile işaretlenenler soruda istenmiyordu ama birkaç tanesini göstermek istedim şekil üzerinde de. Soruda istenen verileri yeniden tablo halinde yazalım:
+
+> Görsel üzerinde siyah ile işaretlenen IP adresleri zaten ilk analizde bulunmuştu. Mavi ile işaretlenenler, soruda istenen ve çözümde bulduğumuz IP adresleri. Yeşil ile işaretlenenler soruda istenmiyordu ama birkaç tanesini göstermek istedim şekil üzerinde de. Soruda istenen verileri yeniden tablo halinde yazalım:
 
 > |       | Ağ adresi        | Yayın adresi    | Ağ maskesi    |
 > |-------|------------------|-----------------|---------------|
