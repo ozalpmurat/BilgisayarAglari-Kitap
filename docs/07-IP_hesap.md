@@ -357,12 +357,17 @@ XXX -------------------------------------- IMAGE
 169.254.0.0 Windows işletim sisteminin IP alınamadığında kendi IP
 bloğundan otomatik olarak verdiği IP adresidir.
 
+---
 
-### Örnek çalışma soruları
+### Çalışma soruları
 
 1. /17 şeklinde gösterilen ağın maskesi nedir?
-1. 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç host olabilir?
-
+1. 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç IP olabilir?
+1. 255.255.255.224 şeklindeki alt ağ maskesi olan bir ağda kaç host olabilir?
+1. 192.168.1.0/8 ağını ikiye bölün.
+1. 172.16.172.220/26 ağını ikiye bölün.
+1. 10.0.0.0/8 ağını 16'ya bölün. Sadece ilk alt ağ için ağ adresi, yayın adresi, alt ağ maskesi değerlerini hesaplayın.
+1. 10.0.0.0/29 ağını ikiye bölün. 
 
 -----
 ## BURADAN SONRASI DÜZENLENMEDİ
