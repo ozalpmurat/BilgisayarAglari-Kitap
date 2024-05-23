@@ -60,23 +60,44 @@ bilinir. Normalde hostlarda kullanılmaz.
 
 - **BŞEÜ**: `79.123.224.15` A sınıfı olduğu için, bu IP'nin dahil olduğu ağda $2^{24}$ (~16M) tane IP olabilir.
 - **ODTÜ**: `144.122.145.153` IP adresi B sınıfıdır. Bu IP'nin dahil olduğu ağda, $2^{16}$ (~65K) tane IP olabilir.
-- **SAÜ**: `193.140.253.240` IP adresi C sınıfıdır. Bu IP'nimn dahil olduğu ağda $2^8$ (256) tane IP olabilir.
+- **SAÜ**: `193.140.253.240` IP adresi C sınıfıdır. Bu IP'nin dahil olduğu ağda $2^8$ (256) tane IP olabilir.
 
 !!! warn "IP sınıflarının günümüzdeki anlamı"
     İlk başta IP adresleri dağıtılırken kolaylık olsun diye tasarlanmış olan IP sınıfları günümüzde bu anlamda kullanılmamaktadır. BŞEÜ'de 16M IP adresi yoktur. SAÜ'de de C sınıfından (256) daha fazla IP adresi vardır. Örneklerden sadece ODTÜ'nünki gerçekten B sınıfı olarak (~65K) tahsis edilmiştir.
+## Rezerve IP Adresleri
+IETF ve IANA tarafından, özel amaçlar için kullanılmak üzere farklı adres blokları ayrılmıştır. En temel olarak; ==özel== ve ==genel== IP adresleri şeklinde bir ayrım yapılmıştır. İç ağda özel IP adresine sahip olan bilgisayarlar, İnternet'e çıkarken genel IP adresi kullanırlar.
+
+Bunların dışında da farklı amaçlarla ayrılmış adres aralıkları bulunmaktadır. Aşağıda ayrılmış olan bu adresler kısaca açıklanmıştır.
 
 ### Özel ve genel IP Adresleri (Private & public IP Blocks)
 
 Özel (private) IP adresleri, İnternet'te kullanılmayan IP adresleridir. Bu nedenle _sanal IP adresi_ de denir. İnternet üzerinde hiçbir yönlendirici tarafından iletilmezler. Bu adreslerin kullanım amacı, test uygulamaları ve NAT uygulamaları gibi durumlardır. Aşağıdaki tabloda özel IP adres aralıkları verilmiştir. Bunların dışındaki adresler, genel (public) IP adresidir.
 
-![](images/B07-Ozel_IP_Adresleri.png)
-*Görsel kaynağı: https://datatracker.ietf.org/doc/html/rfc1918/*
+| CIDR gösterimi | Adres aralığı                 | IP sayısı |
+| -------------- | ----------------------------- | --------- |
+| /8            | 10.0.0.0 - 10.255.255.255     | 16.777.216|
+| /12            | 172.16.0.0 - 172.31.255.255   |  1.048.576|
+| /16            | 192.168.0.0 - 192.168.255.255 |     65.536|
+
+### Diğer ayrılmış IP adres aralıkları
+
+| **Adres bloğu** | **Adres aralığı**             | **Adres sayısı** | **Açıklama**           |
+| --------------- | ----------------------------- | ---------------- | ---------------------- |
+| 0.0.0.0/8       | 0.0.0.0 - 0.255.255.255       | 16.777.216         | Ağın kendisi (“Bu” ağ) |
+| 127.0.0.0/8     | 127.0.0.0 - 127.255.255.255   | 16.777.216         | Loopback (localhost)   |
+| 169.254.0.0/16  | 169.254.0.0 - 169.254.255.255 | 65.536            | Link-local             |
+
+**Loopback adresi**: Bilgisayarın kendisini temsil eder. Paketler bilgisayardan cihazdan asla ayrılmazlar. Bilgisayarın kendi üzerinde çalıştırılan uygulamalar için kullanılır. Test amacıyla da kullanılabilir.
+
+IPv4 için, `127.0.0.0/8` A sınıfı adres bloğunun tamamı loopback için ayrılmıştır. IPv6'da ise bu amaçla sadece `::1` adresi kullanılır.
+
+**Link-local adresler**: DHCP vasıtasıyla otomatik IP almak üzere yapılandırılmış ağlarda, bir IP adresi alamayan bilgisayarlar bu bloktan kendi kendine bir IP adresi verirler. Eğer bir bilgisayarda `169.254.X.X` şeklinde bir IP adresi görürseniz, "_bu bilgisayar IP alamamış_" denir. Eğer DHCP sisteminde bir sorun olursa, link-local adresler sayesinde aynı ağdaki (LAN) bilgisayarlar kendileri arasında haberleşebilirler.
 
 ### NAT (Network Address Translation)
 ![NAT](images/B07-NAT_Tablosu.png)  
 *Görsel kaynağı: https://onlinecomputertips.com/support-categories/networking/601-network-address-translation-nat/*
 
-Bir IP adresinin, diğer ağlara giderken farklı bir adrese dönüştürülmesi işlemidir. Genellikle, kurumlardaki az sayıda _-hatta tek-_ IP adresini, çok sayıda bilgisayarda kullanabilmek için uygulanır. IPv4'ün beklenenden erken bitmesine karşılık çözüm olarak kullanılmaktadır. IPv6'ya geçildiğinde bu işlemlere gerek kalmayacaktır.
+Bir IP adresinin, diğer ağlara giderken farklı bir adrese dönüştürülmesi işlemidir. Genellikle, kurumlarda tahsis edilen az sayıda _-hatta tek-_ public IP adresini, çok sayıda bilgisayarda kullanabilmek için uygulanır. IPv4'ün beklenenden erken bitmesine karşılık çözüm olarak kullanılmaktadır. IPv6'ya geçildiğinde bu işlemlere gerek kalmayacaktır.
 
 **NAT Tablosu**: NAT işlemi yapılırken hangi IP adresini kimin ne zaman kullandığını tutar. Bu sayede ilgili IP'nin yaptığı isteklere gelen cevaplar doğru şekilde iletilebilir.
 
@@ -348,15 +369,22 @@ yapılabilir.
     Bir şirkete 192.168.100.0/24 şeklinde IP aralığı tahsis edilmiştir. Şekilde sistem yöneticisi ağdaki aşırı yayın trafiğinin sorun çıkardığını düşünerek ağı alt ağlara bölmek istiyor. Birimlerin PC sayısı aşağıdaki gibidir.
     
     Teknik birim=70, Pazarlama=40, Muhasebe=20, İdari birim=25
-\
-XXX -------------------------------------- IMAGE
------------------------------------ XXX\
-\
-\
 
-169.254.0.0 Windows işletim sisteminin IP alınamadığında kendi IP
-bloğundan otomatik olarak verdiği IP adresidir.
+**ANALİZ**
 
+- **Alt ağ maskesi:** Verilen ağ `/14` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; `255.255.0.0` şeklindedir.
+- **Ağdaki IP sayısı:** Ağda $2^8$=`256` tane IP adresi vardır.
+- **Ağ adresi:** IP adresindeki 24. bitten sonrasını 0 yaparsak `192.168.100.0/24` olur.
+- **Yayın adresi:** Ana ağın son IP adresini hesaplamak için 16. bitten sonrasını 1 yaparsak `192.168.100.255` olur.
+- Her birim için 2^n^ formülüne göre optimum ağ büyüklüklerini yazalım:  
+    Teknik: 2^7^ = 128  
+    Pazarlama : 2^6^ = 64  
+    Muhasebe: 2^5^ = 32  
+    İdari: 2^5^ = 32
+- Ağları alt ağlara bölerken iki eşit parçaya bölündüğünü biliyoruz. Burada ise farklı boyutlarda ağ ihtiyacı var. Normalde bu tarz bir uygulama pek olmamaktadır. Ancak verilen soru özellikle hazırlanmıştır. Önce ağı ikiye bölerek 2x128 ağ yapılabilir. Sonra bu alt ağlardan birisi yeniden ikiye bölünerek 128+64+64 şeklinde 3 ağ yapılabilir. BU 64'lerden birisi bir daha ikiye bölünürse 128+64+32+32 şeklinde 4 tane alt ağ elde edebiliriz. Bu da tam örneğe uygun hale gelmektedir.
+
+**ÇÖZÜM**
+> Çözümü size bırakıyorum[.](https://gist.github.com/ozalpmurat/866b27e515129c098757d9fb0954f5f7)
 ---
 
 ### Çalışma soruları

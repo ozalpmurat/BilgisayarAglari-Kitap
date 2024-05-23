@@ -12,3 +12,4 @@
 *[RIR]: Regional Internet Registry (Bölgesel kayıt denetçisi)
 *[IANA]: Internet Assigned Numbers Authority (İnternet Tahsisli Numaralar Kurumu)
 *[NAT]: Network Address Translation (ağ adresi dönüşümü)
+*[IETF]: Internet Engineering Task Force (İnternet Mühendisliği Görev Grubu).İnternet protokollerini geliştiren ve standartlaştıran topluluk.
