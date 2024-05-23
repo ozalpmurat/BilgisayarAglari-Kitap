@@ -383,6 +383,9 @@ yapılabilir.
     İdari: 2^5^ = 32
 - Ağları alt ağlara bölerken iki eşit parçaya bölündüğünü biliyoruz. Burada ise farklı boyutlarda ağ ihtiyacı var. Normalde bu tarz bir uygulama pek olmamaktadır. Ancak verilen soru özellikle hazırlanmıştır. Önce ağı ikiye bölerek 2x128 ağ yapılabilir. Sonra bu alt ağlardan birisi yeniden ikiye bölünerek 128+64+64 şeklinde 3 ağ yapılabilir. BU 64'lerden birisi bir daha ikiye bölünürse 128+64+32+32 şeklinde 4 tane alt ağ elde edebiliriz. Bu da tam örneğe uygun hale gelmektedir.
 
+![Bölündükten sonraki durum](images/B07-IP_adresi_cetveli-soru4.png)  
+*Görsel: bölünme sonrası durum*
+
 **ÇÖZÜM**
 > Çözümü size bırakıyorum[.](https://gist.github.com/ozalpmurat/866b27e515129c098757d9fb0954f5f7)
 ---
