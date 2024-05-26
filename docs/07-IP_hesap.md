@@ -393,101 +393,57 @@ yapılabilir.
 ### Çalışma soruları
 
 1. /17 şeklinde gösterilen ağın maskesi nedir?
-1. 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç IP olabilir?
+1. IP adresi 10.10.0.0 ve alt ağ maskesi 255.255.0.0 olan bir bilgisayarın bulunduğu ağda kaç IP olabilir?
 1. 255.255.255.224 şeklindeki alt ağ maskesi olan bir ağda kaç host olabilir?
 1. 192.168.1.0/8 ağını ikiye bölün.
 1. 172.16.172.220/26 ağını ikiye bölün.
 1. 10.0.0.0/8 ağını 16'ya bölün. Sadece ilk alt ağ için ağ adresi, yayın adresi, alt ağ maskesi değerlerini hesaplayın.
 1. 10.0.0.0/29 ağını ikiye bölün. 
+1. 10.50.100.200/25 şeklinde IP adresi tahsis edilmiş bir bilgisayarın ağ adresi ve yayın adresi nedir?
+
+## Ağ Geçidi IP Adresleri 
+
+![Ağ geçidi](images/B07-Ag_gecidi_01.png)  
+*Görsel: Windows bilgisayarda ağ geçidi IP adresi*
+
+Aynı ağdaki bilgisayarlar, kendi aralarında 2. katmanda MAC adresleri ile haberleşirler. Farklı bir ağdaki IP adresi ile iletişim kurmak istediklerinde, ilk gitmeleri gereken yer, kendi ağ geçidi olarak bildikleri IP adresidir. Ağ geçidi, bir ağdaki bilgisayarların diğer ağlara gidebilmesi için geçmeleri gereken kapıya denir.
+
+Genellikle her ağda yalnızca 1 tane ağ geçidi olur. Bu da IP adresleri ile beraber bilgisayarlara otomatik olarak gönderilir. Özel durumlarda ağlarda birden fazla ağ geçidi olabilir. Bu tarz durumlarda hangi hedeflere giderken hangi ağ geçidinden geçmesi gerektiğini belirten "yönlendirme tablosu" kullanılır.
+
+Her ağ için; ilk IP adresinin ağ adresi, son IP adresinin yayın adresi olduğunu
+biliyoruz. Kural olmamakla birlikte, genel teamüllere göre, ağ adresinden
+sonraki ilk IP adresi (kullanılabilecek ilk host adresi) ağ geçidi olarak
+belirlenir.
+
+!!! note "Ağ geçidi IP adresi"
+    Ağ geçidi IP adresi, her bir ağın doğrudan bağlı olduğu yönlendirici arayüzünde (interface, ağ arabirimi, port, ethernet kartı, NIC[_Network Interface Card_]) tanımlı olan IP adresi olmak zorundadır.
+
+![Ağ geçidi](images/B07-Ag_gecidi_02.png)  
+*Görsel kaynağı: https://www.sharetechnote.com/html/IP_Network_DefaultGateway.html*  
+Yukarıdaki görselde, bilgisayarlar iki farklı ağa bağlanmıştır. Görseldeki Ip bilgileri aşağıda tablo halinde de yazılmıştır:
+
+|        | Ağ adresi        | Yayın adresi   | Ağ maskesi    | Ağ geçidi    |
+|--------|------------------|----------------|---------------|--------------|
+| Sol ağ | 192.168.4.0 (/24)   | 192.168.4.255  | 255.255.255.0 | 192.168.4.1  |
+| Sağ ağ | 192.168.12.0 (/24)  | 192.168.12.255 | 255.255.255.0 | 192.168.12.1 |
 
 -----
 ## BURADAN SONRASI DÜZENLENMEDİ
 -----
 
+### Örnek-5: Ağ geçidine ihtiyaç duymadan haberleşebilmek
+Aşağıdaki bilgisayarlardan hangileri, birbirleri ile ağ geçidine ihtiyaç duymadan haberleşirler?
 
-## Ağ Geçidi IP Adresleri 
+- a) 10.0.0.120/25  
+- b) 10.0.0.121/24  
+- c) 10.0.0.254/24  
+- d) 10.0.0.1/24  
+- e) 10.0.0.253/25
 
-Her ağ için ilk IP adresi ağ adresi, son IP adresi yayın adresi olduğunu
-biliyoruz. Kural olmamakla birlikte genel teamüllere göre ağ adresinden
-sonraki ilk IP adresi(kullanılabilecek ilk host adresi) ağ geçidi olarak
-belirlenir. Herhangi bir host adresi ağ geçidi olarak belirlense de
-hiçbir problem olmaz.
-
-**NOT :** IP adresinin ve ağın son IP adresi değiştirilemez.
-
-**NOT :** Ağ geçidi IP adresi her bir ağın doğrudan bağlı olduğu
-yönlendirici arayüzünde(interface, ara birim, ethernet kartı,
-NIC(Network Interface Card)) tanımlı olan IP adresi olmak zorundadır.
-
-Günümüzde kullanılışı :\
-\
-\
-XXX -------------------------------------- IMAGE
------------------------------------ XXX\
-\
-\
-[Soruya gelirsek : ]{.underline}\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-Ağ adresi : 192.168.0.0
-
-Yayın adresi : 192.168.100.127\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-Alt ağ maskesi ise teknik:255.255.255.0,
-
-pazarlama:255.255.255.192,
-
-muhasebe:255.255.255.224,
-
-idari:255.255.255.255 ??? şeklindedir.
-
-**ÖRNEK :** 10.50.100.200/25 şeklinde IP adresi tahsis edilmiş bir
-bilgisayarın ağ adresi ve yayın adresi nedir?
-
-32-25=7 olduğundan $2^7 =128$ tane IP var.
-
-  --- ----------------- --------------
-      10.50.100.200     
-  x   255.255.255.128   
-      10.50.100.128     ağ adresi
-      10.50.100.255     yayın adresi
-  --- ----------------- --------------
-
-**ÖRNEK :** Aşağıdaki bilgisayarlardan hangileri ağ geçidine ihtiyaç
-duymadan haberleşirler.
-
-::: center
-  ----- --------------- ------------------------- ------
-                          [Ağ adresi]{.underline} 
-    a\) 10.0.0.120/25                    10.0.0.0 -128
-    b\) 10.0.0.121/24                    10.0.0.0 -256
-    c\) 10.0.0.254/24                    10.0.0.0 -256
-    d\) 10.0.0.1/24                      10.0.0.0 -256
-    e\) 10.0.0.253/25                    10.0.0.0 -128
-  ----- --------------- ------------------------- ------
-:::
-
-**NOT :** X'in Y ile aynı ağda olup olmadığını anlamak için X
-bilgisayarı Y nin IP adresiyle kendi ağ maskesini çarpar. Kendi ağ
-adresiyle karşılaştırır.
+!!! note "İki bilgisayar aynı ağda mı?"
+    X bilgisayarı; Y ile aynı ağda olup olmadığını anlamak için, Y nin IP adresiyle kendi ağ maskesini çarpar. Çıkan sonucu kendi ağ adresiyle karşılaştırır.
 
 A'nın B ile haberleşmesi :
-
   ------------------ --- ------------ -- --
   B'nin IP adresi        10.0.0.121      
   A'nın ağ maskesi   x   10.0.0.128      
