@@ -418,14 +418,13 @@ belirlenir.
 !!! note "Ağ geçidi IP adresi"
     Ağ geçidi IP adresi, her bir ağın doğrudan bağlı olduğu yönlendirici arayüzünde (interface, ağ arabirimi, port, ethernet kartı, NIC[_Network Interface Card_]) tanımlı olan IP adresi olmak zorundadır.
 
-![Ağ geçidi](images/B07-Ag_gecidi_02.png)  
-*Görsel kaynağı: https://www.sharetechnote.com/html/IP_Network_DefaultGateway.html*  
-Yukarıdaki görselde, bilgisayarlar iki farklı ağa bağlanmıştır. Görseldeki Ip bilgileri aşağıda tablo halinde de yazılmıştır:
+Yukarıdaki örnek için ağ geçidi bilgileri aşağıdaki görselde verilmiştir. Her ağın kullanılabilir ilk host adresi "ağ geçidi" IP adresi olarak yönlendiricinin ilgili bacağına (NIC) verilmiştir. Yönlendiricinin WAN bacağı ise internet bağlantısı olarak kullanılmaktadır. Bu bacakta 256 IP adresi tanımlıdır.
+![Ağ geçidi örneği](images/B07-Ag_gecidi_03.png)  
+*Görsel: Önceki örneğin ağ bilgileri*
 
-|        | Ağ adresi        | Yayın adresi   | Ağ maskesi    | Ağ geçidi    |
-|--------|------------------|----------------|---------------|--------------|
-| Sol ağ | 192.168.4.0 (/24)   | 192.168.4.255  | 255.255.255.0 | 192.168.4.1  |
-| Sağ ağ | 192.168.12.0 (/24)  | 192.168.12.255 | 255.255.255.0 | 192.168.12.1 |
+Aşağıdaki görselde, Cisco yönlendiricilerde bir bacağa (NIC, Ethernet kartı, port) IP adresinin nasıl verildiği görülmektedir.  Görselde verilen yönlendiricide iki NIC vardır: `FastEthernet 0/1` ve `FastEthernet 1/1` şeklinde. Bu iki interface'e IP adresi verilebilmesi için yapılması gereken konfig te aynı görselin üst kısmındaki metinlerde verilmiştir. 
+![Ağ geçidi örneği](images/B07-Ag_gecidi_04.png)  
+*Görsel kaynağı: https://www.flackbox.com/cisco-basic-router-switch-configuration*
 
 -----
 ## BURADAN SONRASI DÜZENLENMEDİ
