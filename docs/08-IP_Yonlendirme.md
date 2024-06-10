@@ -37,7 +37,7 @@ style="width:5cm" alt="Statik Yönlendirme" />
 Yönlendirme algoritmaları tarafından hesaplanarak bulunur. Ağ yöneticisi
 tarafından önceden bazı filtreler ve tanımlamalar yapılmalıdır. Ağda
 değişiklik olduğunda yollar otomatik olarak düzeltilir. En yaygın
-yönlendirme algoritmadır.
+yönlendirme algoritmaları OSPF, BGP, RIP şeklindedir.
 
 <figure>
 <img src="images/BurayaGorselGelecek.png" id="fig:DinamikYonlendirme1"

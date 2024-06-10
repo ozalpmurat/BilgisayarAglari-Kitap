@@ -4,7 +4,7 @@ Ağ topolojisi, bir ağı oluşturan cihazların fiziksel ve mantıksal yerleşi
 ![Topolojiler](images/B02-Topolojiler.jpg)  
 *Görsel kaynağı: https://www.dnsstuff.com/what-is-network-topology*  
 
-``` note
+!!! note
     "Ağ topolojisi" kavramını her kullandığımızda, bilgisayar ağlarından bahsettiğimizi unutmayalım. Bilgisayar ağlarının dışında da ağ sistemleri bulunmaktadır ve bunlar farklı topolojiler kullanıyor olabilirler.
 
 ## Doğrusal (Bus) Topoloji

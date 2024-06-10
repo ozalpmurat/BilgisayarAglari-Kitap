@@ -1,5 +1,5 @@
 # İnternet'in Protokolü: IP
-Bu bölümdeki içeriği anlattığım bir video var. Alt ağlara bölme konusuna kadar anlatmıştım. İsteyenler videodan da faydalanabilir:
+Bu bölümdeki içeriği anlattığım bir video var. Alt ağlara bölme konusuna kadar anlatmıştım. İsteyenler videodan da faydalanabilir: [https://www.youtube.com/embed/e9-lU0aXz1g](https://www.youtube.com/embed/e9-lU0aXz1g)
 ![type:video](https://www.youtube.com/embed/e9-lU0aXz1g)
 
 ## Genel Bilgiler
@@ -38,21 +38,7 @@ IP  adresi verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıf
 
 ![IP Sınıfları](images/B07-IP_Sinif1.png)  
 *Görsel kaynağı: https://medium.com/networks-security/tricks-to-remember-five-classes-of-ipv4-484c191678fb*
-<!---
-**A sınıfı:** İlk biti 0'dır. İlk oktet **0-127** arasında olur. Varsayılan ağ maskesi **255.0.0.0**'dır. A sınıfı bir IP adresinde $2^{24}$ tane IP oluşturulabilir.
-- **B sınıfı:** İlk iki biti 10 şeklindedir. Ondalık formda ilk
-okteti **128-191** şeklindedir. Varsayılan alt ağ maskesi
-**255.255.0.0**'dır. B sınıfı bir IP adresinde $2^{16}$ tane IP
-oluşturulabilir.
-- **C sınıfı:** İlk üç biti 110 şeklindedir. Ondalık formda ilk
-okteti **192-223** arasındaki adreslerdir. Varsayılan alt ağ maskesi
-**255.255.255.0**'dır. B sınıfı bir IP adresinde $2^{8}$ tane IP
-oluşturulabilir.
-- **D sınıfı:** İlk dört biti 1110'dır. Ondalık formda ilk
-okteti **224-239** arasındadır. **Multicast** (Çoklu yayın) olarak
-bilinir. Normalde hostlarda kullanılmaz.
-- **E sınıfı:** İlk okteti, **240-248** ile başlar. Deneysel amaçlar için rezerve edilmiştir. Normalde hostlarda ve ağlarda kullanılmaz.
--->
+
 ![IP sınıfları](images/B07-IP_Sinif2.png){width="700"}  
 *Görsel kaynağı: https://www.routerfreak.com/definitive-guide-ip-address-classes/*
 
@@ -437,32 +423,26 @@ Aşağıdaki görselde kurumlarda güncel durumda kullanılan standart bir topol
 1. Evlerde kullandığımız xDSL modemler buradaki bir çok işi tek başına yapıyor: Protokol çevirme, yönlendirme, NAT, güvenlik duvarı, switching, Wifi Access point, traffic shaping, vb.
 
 ![Güncel ağ topolojisi](images/B07-Ag_gecidi_ve_GenelTopoloji.png)  
-*Kurumlarda güncel topoloji*
+*Kurumlarda kullanılan güncel topoloji*
 
 Aşağıdaki görselde Cisco cihazlarda yapılan bir DHCP-relay işlemi gösterilmiştir. Görseldeki 50.0.0.10 IP adresi, o network'ün DHCP server IP adresidir.
 
 ![Cisco DHCP relay](images/B07-Ag_gecidi_DHCP_relay.png)  
 *Görsel: Cisco DHCP relay işlemi*
 
------
-## BURADAN SONRASI DÜZENLENMEDİ
------
-
-### Örnek-5: Ağ geçidine ihtiyaç duymadan haberleşebilmek
-Aşağıdaki bilgisayarlardan hangileri, birbirleri ile ağ geçidine ihtiyaç duymadan haberleşirler?
-
-- a) 10.0.0.120/25  
-- b) 10.0.0.121/24  
-- c) 10.0.0.254/24  
-- d) 10.0.0.1/24  
-- e) 10.0.0.253/25
+## İki Bilgisayar Aynı Ağda Mı?
 
 !!! note "İki bilgisayar aynı ağda mı?"
-    X bilgisayarı; Y ile aynı ağda olup olmadığını anlamak için, Y nin IP adresiyle kendi ağ maskesini çarpar. Çıkan sonucu kendi ağ adresiyle karşılaştırır.
+    A bilgisayarı; iletişim kurmak istediği B bilgisayarı ile aynı ağda olup olmadığını anlamak için, B nin IP adresiyle kendi ağ maskesini çarpar. Çıkan sonucu kendi ağ adresiyle karşılaştırır.
+
+### Örnek-5
+
+!!! question "Örnek-5"
+    10.0.0.127/24 ve 10.0.0.128/24 IP adreslerinin, birbirleri ile haberleşebilmek için ağ geçidine ihtiyaçları var mıdır?
 
 A'nın B ile haberleşmesi :
   ------------------ --- ------------ -- --
-  B'nin IP adresi        10.0.0.121      
+  B'nin IP adresi        10.0.0.128      
   A'nın ağ maskesi   x   10.0.0.128      
                          10.0.0.0        
   ------------------ --- ------------ -- --

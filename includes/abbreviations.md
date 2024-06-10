@@ -18,3 +18,6 @@
 *[DMZ]: Demilitarized Zone (savunmasız bölge anlamındadır. Genellikle, sunucuların olduğu bölgeyi ifade eder. İnternet'ten gelebilecek tehditlere karşı daha riskli bir durumda olduğu için bu isim kullanılır)
 *[XXX]: Bu yazıyı görüyorsanız, burayı düzenlemeyi unutmuşumdur. Geri besleme yapabilirsiniz :)
 *[xDSL]: ADSL, VDSL, SHDSL, vb. modemlerin genel ismi.
+*[OSPF]: Open Shortest Path First (En kısa yola öncelik)
+*[BGP]: Border Gateway Protocol (Sınır Geçit Protokolü)
+*[RIP]: Router Information Protocol - (Yönlendirme bilgi protokolü)
