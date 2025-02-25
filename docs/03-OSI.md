@@ -131,7 +131,7 @@ aktarabilirler. **HUB’lardan en önemli farkı budur**.
 *Görsel kaynağı: https://www.pcmag.com/encyclopedia/term/ethernet-hub*
 
 ### 3: Ağ Katmanı (IP)
-İnternet'i dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kılan
+İnternet'i dünyanın farklı yerlerindeki ağlar üzerinden erişilebilir kılan
 katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
 yönlendirilebilir bir protokol olduğundan her türlü veri ağı üzerinden
 haberleşmeye olarak sağlanır. Bu katman en önemli görevi yönlendirme
