@@ -131,15 +131,14 @@ aktarabilirler. **HUB’lardan en önemli farkı budur**.
 *Görsel kaynağı: https://www.pcmag.com/encyclopedia/term/ethernet-hub*
 
 ### 3: Ağ Katmanı (IP)
-İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
+İnternet'i dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kılan
 katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
-yönlendirilebilir bir protokol olduğundan her türlü veri aağı üzerinden
+yönlendirilebilir bir protokol olduğundan her türlü veri ağı üzerinden
 haberleşmeye olarak sağlanır. Bu katman en önemli görevi yönlendirme
 işlemidir. Yönlendirme işlemi birden fazla ağ arayüzüne (network
 interface) sahip olan yönlendirici(router) adı verilen cihazlar
 tarafından yapılır. IP internetin temel protokolüdür. Yani bir PC
-internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
-üçüncü katmanda da çalışabilmektedir.
+internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır.
 !!! note
     3\. katmanda aktarılan verinin en küçük anlamlı birimine `paket` denir.
 
