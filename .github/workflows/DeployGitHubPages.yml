@@ -60,8 +60,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment # This is required for environment
         uses: actions/deploy-pages@v2
-        with:
-          artifact_name: github-pages
         # Asagisi, PDF halini release ediyort ama kendi release'inin uzerine yazamiyor. Iptal ettim.
         # Bunun yerine dogrudan pdf linkini ekledim README.MD dosyasına.
       # - name: Upload binaries to release
