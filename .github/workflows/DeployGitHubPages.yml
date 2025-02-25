@@ -55,7 +55,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: 'site/' # MkDocs builds to site/ by default
       - name: Deploy to GitHub Pages
         id: deployment # This is required for environment
