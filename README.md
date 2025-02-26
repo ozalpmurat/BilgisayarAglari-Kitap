@@ -18,6 +18,7 @@ cd env
 source bin/activate
 git checkout https://github.com/ozalpmurat/BilgisayarAglari-Kitap.git
 cd BilgisayarAglari-Kitap
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 mkdocs build
 mkdocs serve
