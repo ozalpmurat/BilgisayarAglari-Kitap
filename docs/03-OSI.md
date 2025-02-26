@@ -70,7 +70,6 @@ algoritmasıdır**.
 ![Eşlik biti](images/B03-Eslik-Biti.png)  
 *Görsel kaynağı: https://www.hbmacit.com/2020/06/12/c-ile-parite-biti-hesaplama/*
 
-
 Verinin doğru olup olmadığına bakmaz, sadece
 sağlamlığını kontrol eder. Bu katmanda üst katmandan gelen veriler
 çerçeve (frame) adı verilen paketleme işlemini tabi tutulur. Kapsülleme
