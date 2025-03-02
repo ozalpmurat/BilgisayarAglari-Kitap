@@ -48,9 +48,6 @@ Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığ�
 ![OSI ve TCP/IP modeli katmanları](images/B03-OSI_Katmanlar-2.png)  
 *Görsel kaynağı: <https://community.fs.com/article/tcpip-vs-osi-whats-the-difference-between-the-two-models.html>*
 
-![OSI katmanları veri isimleri](images/B03-OSI_Katmanlar-veri_isimleri.png)  
-*Aktarılan verinin; dördüncü, üçüncü ve ikinci katmandaki isimleri: Segment, Paket, Çerçeve/Kapsül*
-
 ### 1: Fiziksel Katman
 
 Haberleşme kanalının elektriksel ve mekanik olarak tanımlandığı
