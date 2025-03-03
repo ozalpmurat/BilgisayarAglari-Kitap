@@ -16,7 +16,6 @@ ghp-import
 html5lib
 httplib2
 idna
-install
 Jinja2
 jsbeautifier
 libsass

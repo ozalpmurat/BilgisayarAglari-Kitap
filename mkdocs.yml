@@ -9,6 +9,11 @@ site_url: https://ozalpmurat.github.io/BilgisayarAglari-Kitap/
 watch:
   - includes
 
+extra:
+  analytics:
+    provider: google
+    property: G-QTZXBE6Z2Z
+
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite

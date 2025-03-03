@@ -34,7 +34,6 @@ Bilgisayar ağlarının nasıl çalıştığını anlamak için kullanılır. Ge
 
 Bir bilgisayardan gönderilen bir bilginin diğer bilgisayara nasıl ulaştığını anlatmak için tasarlanmıştır. İletişimi 7 katmanlı mimarı ile tanımlar. Ağ elemanlarının nasıl çalıştığını ve verinin iletimi sırasında hangi işlemlerden geçtiğini kavramak için kullanılan rehberdir. OSI Katmanlarının mantığını anlamak ağları planlamak, ağ üzerinden çalışan program yazmak ve ağ sorunlarını çözmek için önemlidir.
 
-
 - 7-Uygulama (Application)
 - 6-Sunum (Presentation)
 - 5-Oturum (Session)
@@ -153,15 +152,15 @@ aktarabilirler. **HUB’lardan en önemli farkı budur**.
 | *Görsel kaynağı: https://www.pcmag.com/encyclopedia/term/ethernet-hub* |
 
 ### 3: Ağ Katmanı (IP)
-İnternet dünyanın farklı yerlerindeki ağlar üzerinden erişebilir kiler
+
+İnternet'i dünyanın farklı yerlerindeki ağlar üzerinden erişilebilir kılan
 katman budur. Kaynak ve hedef olarak IP adresi kullanılır. IP
-yönlendirilebilir bir protokol olduğundan her türlü veri aağı üzerinden
+yönlendirilebilir bir protokol olduğundan her türlü veri ağı üzerinden
 haberleşmeye olarak sağlanır. Bu katman en önemli görevi yönlendirme
 işlemidir. Yönlendirme işlemi birden fazla ağ arayüzüne (network
 interface) sahip olan yönlendirici(router) adı verilen cihazlar
 tarafından yapılır. IP internetin temel protokolüdür. Yani bir PC
-internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır. Bazı anahtarlar
-üçüncü katmanda da çalışabilmektedir.
+internete bağlanacaksa IP’yi mutlaka biliyor olmalıdır.
 !!! note
     3\. katmanda aktarılan verinin en küçük anlamlı birimine `paket` denir.
 

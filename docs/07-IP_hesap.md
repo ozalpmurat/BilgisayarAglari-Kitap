@@ -1,5 +1,5 @@
 # İnternet'in Protokolü: IP
-Bu bölümdeki içeriği anlattığım bir video var. Alt ağlara bölme konusuna kadar anlatmıştım. İsteyenler videodan da faydalanabilir:
+Bu bölümdeki içeriği anlattığım bir video var. Alt ağlara bölme konusuna kadar anlatmıştım. İsteyenler videodan da faydalanabilir: [https://www.youtube.com/embed/e9-lU0aXz1g](https://www.youtube.com/embed/e9-lU0aXz1g)
 ![type:video](https://www.youtube.com/embed/e9-lU0aXz1g)
 
 ## Genel Bilgiler
@@ -38,21 +38,7 @@ IP  adresi verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıf
 
 ![IP Sınıfları](images/B07-IP_Sinif1.png)  
 *Görsel kaynağı: https://medium.com/networks-security/tricks-to-remember-five-classes-of-ipv4-484c191678fb*
-<!---
-**A sınıfı:** İlk biti 0'dır. İlk oktet **0-127** arasında olur. Varsayılan ağ maskesi **255.0.0.0**'dır. A sınıfı bir IP adresinde $2^{24}$ tane IP oluşturulabilir.
-- **B sınıfı:** İlk iki biti 10 şeklindedir. Ondalık formda ilk
-okteti **128-191** şeklindedir. Varsayılan alt ağ maskesi
-**255.255.0.0**'dır. B sınıfı bir IP adresinde $2^{16}$ tane IP
-oluşturulabilir.
-- **C sınıfı:** İlk üç biti 110 şeklindedir. Ondalık formda ilk
-okteti **192-223** arasındaki adreslerdir. Varsayılan alt ağ maskesi
-**255.255.255.0**'dır. B sınıfı bir IP adresinde $2^{8}$ tane IP
-oluşturulabilir.
-- **D sınıfı:** İlk dört biti 1110'dır. Ondalık formda ilk
-okteti **224-239** arasındadır. **Multicast** (Çoklu yayın) olarak
-bilinir. Normalde hostlarda kullanılmaz.
-- **E sınıfı:** İlk okteti, **240-248** ile başlar. Deneysel amaçlar için rezerve edilmiştir. Normalde hostlarda ve ağlarda kullanılmaz.
--->
+
 ![IP sınıfları](images/B07-IP_Sinif2.png){width="700"}  
 *Görsel kaynağı: https://www.routerfreak.com/definitive-guide-ip-address-classes/*
 
@@ -60,23 +46,44 @@ bilinir. Normalde hostlarda kullanılmaz.
 
 - **BŞEÜ**: `79.123.224.15` A sınıfı olduğu için, bu IP'nin dahil olduğu ağda $2^{24}$ (~16M) tane IP olabilir.
 - **ODTÜ**: `144.122.145.153` IP adresi B sınıfıdır. Bu IP'nin dahil olduğu ağda, $2^{16}$ (~65K) tane IP olabilir.
-- **SAÜ**: `193.140.253.240` IP adresi C sınıfıdır. Bu IP'nimn dahil olduğu ağda $2^8$ (256) tane IP olabilir.
+- **SAÜ**: `193.140.253.240` IP adresi C sınıfıdır. Bu IP'nin dahil olduğu ağda $2^8$ (256) tane IP olabilir.
 
 !!! warn "IP sınıflarının günümüzdeki anlamı"
     İlk başta IP adresleri dağıtılırken kolaylık olsun diye tasarlanmış olan IP sınıfları günümüzde bu anlamda kullanılmamaktadır. BŞEÜ'de 16M IP adresi yoktur. SAÜ'de de C sınıfından (256) daha fazla IP adresi vardır. Örneklerden sadece ODTÜ'nünki gerçekten B sınıfı olarak (~65K) tahsis edilmiştir.
+## Rezerve IP Adresleri
+IETF ve IANA tarafından, özel amaçlar için kullanılmak üzere farklı adres blokları ayrılmıştır. En temel olarak; ==özel== ve ==genel== IP adresleri şeklinde bir ayrım yapılmıştır. İç ağda özel IP adresine sahip olan bilgisayarlar, İnternet'e çıkarken genel IP adresi kullanırlar.
+
+Bunların dışında da farklı amaçlarla ayrılmış adres aralıkları bulunmaktadır. Aşağıda ayrılmış olan bu adresler kısaca açıklanmıştır.
 
 ### Özel ve genel IP Adresleri (Private & public IP Blocks)
 
 Özel (private) IP adresleri, İnternet'te kullanılmayan IP adresleridir. Bu nedenle _sanal IP adresi_ de denir. İnternet üzerinde hiçbir yönlendirici tarafından iletilmezler. Bu adreslerin kullanım amacı, test uygulamaları ve NAT uygulamaları gibi durumlardır. Aşağıdaki tabloda özel IP adres aralıkları verilmiştir. Bunların dışındaki adresler, genel (public) IP adresidir.
 
-![](images/B07-Ozel_IP_Adresleri.png)
-*Görsel kaynağı: https://datatracker.ietf.org/doc/html/rfc1918/*
+| CIDR gösterimi | Adres aralığı                 | IP sayısı |
+| -------------- | ----------------------------- | --------- |
+| /8            | 10.0.0.0 - 10.255.255.255     | 16.777.216|
+| /12            | 172.16.0.0 - 172.31.255.255   |  1.048.576|
+| /16            | 192.168.0.0 - 192.168.255.255 |     65.536|
+
+### Diğer ayrılmış IP adres aralıkları
+
+| **Adres bloğu** | **Adres aralığı**             | **Adres sayısı** | **Açıklama**           |
+| --------------- | ----------------------------- | ---------------- | ---------------------- |
+| 0.0.0.0/8       | 0.0.0.0 - 0.255.255.255       | 16.777.216         | Ağın kendisi (“Bu” ağ) |
+| 127.0.0.0/8     | 127.0.0.0 - 127.255.255.255   | 16.777.216         | Loopback (localhost)   |
+| 169.254.0.0/16  | 169.254.0.0 - 169.254.255.255 | 65.536            | Link-local             |
+
+**Loopback adresi**: Bilgisayarın kendisini temsil eder. Paketler bilgisayardan cihazdan asla ayrılmazlar. Bilgisayarın kendi üzerinde çalıştırılan uygulamalar için kullanılır. Test amacıyla da kullanılabilir.
+
+IPv4 için, `127.0.0.0/8` A sınıfı adres bloğunun tamamı loopback için ayrılmıştır. IPv6'da ise bu amaçla sadece `::1` adresi kullanılır.
+
+**Link-local adresler**: DHCP vasıtasıyla otomatik IP almak üzere yapılandırılmış ağlarda, bir IP adresi alamayan bilgisayarlar bu bloktan kendi kendine bir IP adresi verirler. Eğer bir bilgisayarda `169.254.X.X` şeklinde bir IP adresi görürseniz, "_bu bilgisayar IP alamamış_" denir. Eğer DHCP sisteminde bir sorun olursa, link-local adresler sayesinde aynı ağdaki (LAN) bilgisayarlar kendileri arasında haberleşebilirler.
 
 ### NAT (Network Address Translation)
 ![NAT](images/B07-NAT_Tablosu.png)  
 *Görsel kaynağı: https://onlinecomputertips.com/support-categories/networking/601-network-address-translation-nat/*
 
-Bir IP adresinin, diğer ağlara giderken farklı bir adrese dönüştürülmesi işlemidir. Genellikle, kurumlardaki az sayıda _-hatta tek-_ IP adresini, çok sayıda bilgisayarda kullanabilmek için uygulanır. IPv4'ün beklenenden erken bitmesine karşılık çözüm olarak kullanılmaktadır. IPv6'ya geçildiğinde bu işlemlere gerek kalmayacaktır.
+Bir IP adresinin, diğer ağlara giderken farklı bir adrese dönüştürülmesi işlemidir. Genellikle, kurumlarda tahsis edilen az sayıda _-hatta tek-_ public IP adresini, çok sayıda bilgisayarda kullanabilmek için uygulanır. IPv4'ün beklenenden erken bitmesine karşılık çözüm olarak kullanılmaktadır. IPv6'ya geçildiğinde bu işlemlere gerek kalmayacaktır.
 
 **NAT Tablosu**: NAT işlemi yapılırken hangi IP adresini kimin ne zaman kullandığını tutar. Bu sayede ilgili IP'nin yaptığı isteklere gelen cevaplar doğru şekilde iletilebilir.
 
@@ -168,9 +175,6 @@ Ağ maskesinin temel görevleri:
 ![Maskeleme](images/B07-maskeleme.png){width="400"}  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
 
-![Maskeleme](images/B07-maskeleme2.png)  
-*Görsel kaynağı: https://en.wikipedia.org/wiki/Mask_%28computing%29*
-
 !!! note
     IP adresi ile beraber, ağ maskesinin kullanılması zorunludur.
 
@@ -194,6 +198,9 @@ Ağ maskesine alternatif olarak CIDR Notasyonu kullanılmaktadır. Bu gösterim 
 
 ### Ağ adresi
 Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa (mantıksal `VE` işlemi) çıkan sonuç **ağın adresi**ni verir. Bu sayede, ağın nerede başladığı bulunmuş olur.
+
+![Maskeleme](images/B07-maskeleme2.png)  
+*Görsel kaynağı: https://en.wikipedia.org/wiki/Mask_%28computing%29*
 
 **Örnek:**  IP adresi `192.168.1.75` olsun. Alt ağ maskesi de `255.255.255.0` olsun. Bu ağın ağ adresini bulalım.
 
@@ -229,215 +236,213 @@ küçük ağlara bölünebilir. Alt ağa bölme işlemi alt ağ maskesinde bit
 kaydırılarak yapılır. /N şeklindeki bir ağ için; /(N+1) şeklinde 1 bitlik kaydırma yapılırsa, önceki ağ ikiye bölünmüş olur. 2 bit kaydırılırsa, 4'e bölünmüş olur. Bu şekilde $2^n$ tane alt ağ bölme işlemi
 yapılabilir.
 
-### Soru-1
-
-- **A)** 10.0.0.0/24 ağını iki ayrı ağa bölünüz.  
-- **B)** Yeni oluşturulan ağlar için 10.0.0.100 ve 10.0.0.150 IP adreslerinin aynı ağda olup olmadıklarını hesaplayın. (İpucu : Ağ adresi
-= IP x Ağ maskesi)  
-- **C)** 128 IP'li ağların her birini ikiye bölünüz.
-
-#### Çözüm-1
 !!! note "Not:"
     Çözüme geçmeden önce mutlaka bölünmemiş ağın analiz edilmesi gerekir. Başlangıç-bitiş adreslerini ve kaç IP adresi olduğunu belirlemeliyiz.
 
-**Analiz:**
+---
+
+### Örnek-1: İkiye bölme
+
+!!! question "İkiye bölme"
+    10.0.0.0/24 ağını iki ayrı ağa bölünüz.  
+
+**ANALİZ**
 
 - Verilen ağ `/24` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 24 tane `1`, 8 tane `0` olur. Yani alt ağ maskesi `255.255.255.0` şeklindedir.
 - Bu ağda hostları tanımlamak için 8 bit kullanılmıştır. Demek ki ağda $2^8$=`256` tane IP adresi vardır. İkiye böldüğümüzde `128` IP'lik iki ayrı ağ oluşacaktır.
 - Ana ağın başlangıç noktasını belirlemek için ağ adresini bulmalıyız. Bu ağda ağ adresi `10.0.0.0` IP adresidir.
+- Ana ağın son IP adresi ise yayın adresidir. Bunu hesaplarsak, `10.0.0.255` buluruz.
 
-> **A şıkkı**
+![IP adres aralığı](images/B07-IP_adresi_cetveli-24.png)  
+*Görsel: IP adres aralığı. Bölünmeden önceki hali*
 
-> - Ana ağın maskesini ikilik sistemde `11111111.11111111.11111111.00000000` şeklinde yazabiliriz.
-> - `24.` bitten bölünmüş olan ağda 1 bit kaydırma yaparsak; `25 tane 1`, `7 tane 0` olacaktır. Bu durumda ana ağı ikiye bölmüş oluruz. Her bir alt ağda $2^7$=`128` tane IP adresi olur.
+**ÇÖZÜM**
+
+> - Ana ağın maskesini ikilik sistemde `11111111.11111111.11111111.00000000` şeklinde yazabiliriz.  
+> - `24.` bitten bölünmüş olan ağda 1 bit kaydırma yaparsak; `25 tane 1`, `7 tane 0` olacaktır. Bu durumda ana ağı ikiye bölmüş oluruz. Her bir alt ağda $2^7$=`128` tane IP adresi olur.  
 > - Ağ bölündükten sonra 1. alt ağın başlangıç adresi (ağ adresi), ana ağın ağ adresi ile aynı olacaktır. Buna göre tabloyu oluşturabiliriz.
 > 
 > |       | Ağ adresi     | Yayın adresi | Ağ maskesi      | IP sayısı | Host sayısı |
 > |-------|---------------|--------------|-----------------|-----------|---|
 > | 1. ağ | 10.0.0.0/25   | 10.0.0.127   | 255.255.255.128 | 128       | 126 |
 > | 2. ağ | 10.0.0.128/25 | 10.0.0.255   | 255.255.255.128 | 128       | 126 |
+> 
+> ![IP adres aralığı](images/B07-IP_adresi_cetveli-25.png)  
+> *Görsel: IP adres aralığı. İkiye bölünmüş hali*
 
-> **b)**
+---
 
->   ------------- ------------------------------------- --- ------------
->                 00001001.00000000.00000000.01100100   =   10.0.0.100
->   ağ maskesi:   11111111.11111111.11111111.00000000   =   10.0.0.128
->                 00001001.00000000.00000000.10010110   =   10.0.0.150
->   ------------- ------------------------------------- --- ------------
+### Örnek-2: Dörde bölme
 
-> Son oktetleri farklı olacağından aynı ağda değillerdir.
+!!! question "Dörde bölme"
+    10.9.6.200/25 şeklinde verilen bir IP adresi var. Bu IP adresinin bulunduğu ağı, 4 ayrı alt ağa bölünüz.
 
-> **c)**
+**ANALİZ**
 
->       1.ağ           2.ağ
->   ------------- ---------------
->    10.0.0.0/25   10.0.0.128/25
+- **Alt ağ maskesi:** Verilen ağ `/25` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 25 tane `1`, 7 tane `0` olur. Yani alt ağ maskesi `255.255.255.128` şeklindedir. Bunu dörde böldüğümüzde, `/27` şeklinde 4 tane alt ağ oluşacaktır.
+- **Ağdaki IP sayısı:** Bu ağda hostları tanımlamak için 7 bit kullanılmıştır. Demek ki ağda $2^7$=`128` tane IP adresi vardır. Dörde böldüğümüzde `32` IP'lik dört ayrı ağ oluşacaktır.
+- **Ağ adresi:** Ana ağın başlangıç noktasını belirlemek için, IP adresindeki 25. bitten sonrasını 0 yaparsak "10.9.6.(1<font color='blue'>0000000</font>)~2~" olur. Bunu onluk olarak yazarsak, ağ adresini `10.9.6.128` şeklinde buluruz.
+- **Yayın adresi:** Ana ağın son IP adresini hesaplamak için 25. bitten sonrasını 1 yaparsak "10.9.6.(1<font color='blue'>1111111</font>)~2~" olur. Bunu onluk olarak yazarsak, `10.9.6.255` buluruz.
 
-> Ağ maskesi 255.255.255.128
+![IP adres aralığı](images/B07-IP_adresi_cetveli-soru2-25.png)  
+*Görsel: IP adres aralığı. Bölünmeden önceki hali*
 
-> 1111111.11111111.11111111.10000000
+**ÇÖZÜM**
 
-> Yeni oluşan ağ maskesi 255.255.255.192\
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
-> \
-> \
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
-> \
-> \
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
-> \
-> \
-> \
-> XXX --------------------- TABLO ------------------------ XXX\
+> - `25`. bitten bölünmüş olan ağda `2` bit kaydırma yaparsak; ağı dörde bölmüş oluruz (2^2^=4). Alt ağların maskesinde; 27 tane 1, 5 tane 0 olacaktır. Bu durumda ana ağı dörde bölmüş oluruz. Her bir alt ağda 32 tane IP adresi olur.
+> - Ağ bölündükten sonra 1. alt ağın başlangıç adresi (ağ adresi), ana ağın ağ adresi ile aynı olacaktır. Buna göre tabloyu oluşturabiliriz.
+> - İlk ağın ilk IP adresinden itibaren, `32` ekleyerek devam edersek, bütün alt ağların ağ adreslerini bulabiliriz.
 
------
-## BURADAN SONRASI DÜZENLENMEDİ
------
+> |       | Ağ adresi     | Yayın adresi | Ağ maskesi      | IP sayısı | Host sayısı |
+> |-------|---------------|--------------|-----------------|-----------|---|
+> | 1. ağ | 10.9.6.128/27 | 10.9.6.159   | 255.255.255.224 | 32       | 30 |
+> | 2. ağ | 10.9.6.160/27 | 10.9.6.191   | 255.255.255.224 | 32       | 30 |
+> | 3. ağ | 10.9.6.192/27 | 10.9.6.223   | 255.255.255.224 | 32       | 30 |
+> | 4. ağ | 10.9.6.224/27 | 10.9.6.255   | 255.255.255.224 | 32       | 30 |
+>  
+> ![IP adres aralığı](images/B07-IP_adresi_cetveli-soru2-27.png)  
+> *Görsel: IP adres aralığı. Bölündükten sonra*
 
-### Soru-2
+---
 
-10.9.6.0/25 ağını 4 ayrı ağa bölünüz.
+### Örnek-3: Büyük ağları bölme
+!!! question "Büyük ağları bölme"
+    192.168.1.100/16 ağını 8 alt ağa bölün. İlk ve son alt ağlar için şunları hesaplayın:  
+    - Ağ adresi  
+    - Yayın adresi   
+    - Alt ağ maskesi
 
-Ağ maskesi 255.255.255.0 11111111.11111111.11111111.0
+**ANALİZ**
 
-  ----------------- --- --------------------------------------------------------
-  Yeni ağ maskesi   :   11111111.11111111.11111111.11100000 ($2^5=32$ IP var.)
-                    :   255.255.255.224
-  ----------------- --- --------------------------------------------------------
+- **Alt ağ maskesi:** Verilen ağ `/16` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; 16 tane `1`, 16 tane `0` olur. Yani alt ağ maskesi `255.255.0.0` şeklindedir. Bunu sekize böldüğümüzde, `/19` şeklinde 8 tane alt ağ oluşacaktır.
+- **Ağdaki IP sayısı:** Bu ağda hostları tanımlamak için 16 bit kullanılmıştır. Demek ki ağda $2^16$=`65536` tane IP adresi vardır. Sekize böldüğümüzde `8192` IP'lik sekiz ayrı ağ oluşacaktır.
+- **Ağ adresi:** Ana ağın başlangıç noktasını belirlemek için, IP adresindeki 16. bitten sonrasını 0 yaparsak `192.168.0.0` olur.
+- **Yayın adresi:** Ana ağın son IP adresini hesaplamak için 16. bitten sonrasını 1 yaparsak `192.168.255.255` olur.
 
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-**ÖRNEK :** 10.0.0.0/22'yi 4 alt ağa bölünüz.
+![IP adres aralığı](images/B07-IP_adresi_cetveli-soru3-16.png)  
+*Görsel: IP adres aralığı. Bölünmeden önceki hali*
 
-11111111.11111111.11111100.00000000 $2^{10}=1024$ tane IP var.
+!!! note "Not:"
+    Küçük ağlarda alt ağları hesaplamak için, örneğin 32'şer ilerleyerek kolayca hesaplayabiliyoruz. Ancak büyük ağlarda 8192 ekleyerek gitmek çok kolay olmayacak. Bu örneğin öncekilerden farklı yanı budur. Aşağıdaki çözüme dikkat ediniz.
 
-Ağ maskesi : 255.255.252.0
+**ÇÖZÜM**
 
-Yeni alt ağ maskesi : 255.255.255.0(2 bit kaydı.$2^{8}=256$ IP var.) d
-Yeni CIDR gösterimi -\> 10.0.0.0/24 olmalıdır.
+> - `16`. bitten bölünmüş olan ağda `3` bit kaydırma yaparsak; ağı sekize bölmüş oluruz (2^3^=8). Alt ağların maskesinde; 19 tane 1, 13 tane 0 olacaktır. Bu durumda ana ağı sekize bölmüş oluruz. Her bir alt ağda 8192 tane (2^13^) IP adresi olur.
+> - Ağ bölündükten sonra **1. alt ağın başlangıç adresi** (ağ adresi), ana ağın ağ adresi ile aynı olacaktır: `192.168.0.0`
+> - **Son alt ağın yayın adresi** de ana ağın yayın adresi ile aynı olacaktır: `192.168.255.255`
+> - Birinci alt ağın yayın adresini bulmak için, bu alt ağ içindeki herhangi bir IP adresini örnek olarak alıp, 19. bitten sonrasını 1 yapabiliriz. Elimizde zaten bu alt ağdan bir IP adresi var. 192.168.0.0 IP adresi hem bölünmemiş ana ağın, hem de bölündükten sonraki ilk alt ağın bir parçasıdır. Eğer /16 olarak düşünülürse, ana ağın bir parçası olarak hesaplanabilir. /19 olarak düşündüğümüzde ise 8192 IP adresine sahip olan 1. alt ağa ait bir IP adresidir.  192.168.0.0 IP adresinin 19. bitten sonrasını 1 yaparsak **birinci alt ağın yayın adresi**ni buluruz:  
+192.168.(000<font color="blue">11111.11111111</font>)~2~ = `192.168.31.255`
+> - Üstteki maddeye benzer şekilde; son alt ağdan  1 IP adresini alıp bunun ağ adresini (/19 olarak) hesaplarsak, son alt ağın ağ adresini bulmuş oluruz. Bu nedenle son alt ağa ait olan 192.168.255.255 IP adresinin 19. bitten sonrasını 0 yaparsak **son alt ağın ağ adresi**ni buluruz:  
+192.168.(111<font color="blue">00000.00000000</font>)~2~ = `192.168.224.0`
+> - Yeni oluşan küçük ağların alt ağ maskesini hesaplamak için /19 olan ifadeyi ikilik sistemde yazmalıyız:
+(11111111.11111111.111<font color="blue">00000.00000000</font>)~2~ = `255.255.224.0`
 
-10.0.0.0 -\> 10.0.0.255
+> ![IP adres aralığı](images/B07-IP_adresi_cetveli-soru3-19.png)  
+> *Görsel: IP adres aralığı. Bölündükten sonra*
 
-10.0.1.0 -\> 10.0.1.255
+> Görsel üzerinde siyah ile işaretlenen IP adresleri zaten ilk analizde bulunmuştu. Mavi ile işaretlenenler, soruda istenen ve çözümde bulduğumuz IP adresleri. Yeşil ile işaretlenenler soruda istenmiyordu ama birkaç tanesini göstermek istedim şekil üzerinde de. Soruda istenen verileri yeniden tablo halinde yazalım:
 
-10.0.2.0 -\> 10.0.2.255
+> |       | Ağ adresi        | Yayın adresi    | Ağ maskesi    |
+> |-------|------------------|-----------------|---------------|
+> | 1. ağ | 192.168.0.0/19   | 192.168.31.255  | 255.255.224.0 |
+> | 8. ağ | 192.168.224.0/19 | 192.168.255.255 | 255.255.224.0 |
 
-10.0.3.0 -\> 10.0.3.255
+---
 
-**ÖRNEK :** /17 şeklinde gösterilen ağın maskesi nedir?
+### Örnek-4: Farklı büyüklüklerde alt ağlar
 
-11111111.11111111.10000000.00000000 = 255.255.128.0 şeklindedir.
+!!! question "Farklı büyüklüklerde alt ağlar"
+    Bir şirkete 192.168.100.0/24 şeklinde IP aralığı tahsis edilmiştir. Şekilde sistem yöneticisi ağdaki aşırı yayın trafiğinin sorun çıkardığını düşünerek ağı alt ağlara bölmek istiyor. Birimlerin PC sayısı aşağıdaki gibidir.
+    
+    Teknik birim=70, Pazarlama=40, Muhasebe=20, İdari birim=25
 
-**ÖRNEK :** 10.10.0.0 ve 255.255.0.0 şeklindeki ağda kaç host olabilir?
+**ANALİZ**
 
-$2^{16}-2$ adet host olabilir.
+- **Alt ağ maskesi:** Verilen ağ `/14` şeklindedir. Bunu ağ maskesi cinsinden yazmak istersek; `255.255.0.0` şeklindedir.
+- **Ağdaki IP sayısı:** Ağda $2^8$=`256` tane IP adresi vardır.
+- **Ağ adresi:** IP adresindeki 24. bitten sonrasını 0 yaparsak `192.168.100.0/24` olur.
+- **Yayın adresi:** Ana ağın son IP adresini hesaplamak için 16. bitten sonrasını 1 yaparsak `192.168.100.255` olur.
+- Her birim için 2^n^ formülüne göre optimum ağ büyüklüklerini yazalım:  
+    Teknik: 2^7^ = 128  
+    Pazarlama : 2^6^ = 64  
+    Muhasebe: 2^5^ = 32  
+    İdari: 2^5^ = 32
+- Ağları alt ağlara bölerken iki eşit parçaya bölündüğünü biliyoruz. Burada ise farklı boyutlarda ağ ihtiyacı var. Normalde bu tarz bir uygulama pek olmamaktadır. Ancak verilen soru özellikle hazırlanmıştır. Önce ağı ikiye bölerek 2x128 ağ yapılabilir. Sonra bu alt ağlardan birisi yeniden ikiye bölünerek 128+64+64 şeklinde 3 ağ yapılabilir. BU 64'lerden birisi bir daha ikiye bölünürse 128+64+32+32 şeklinde 4 tane alt ağ elde edebiliriz. Bu da tam örneğe uygun hale gelmektedir.
 
-**NOT :** Özel IP ile ??? 127 ile başlayan IP ler kullanılamazlar.
-Localhost : 127.0.0.1 bilgisayarın kendisini temsil eder.
+![Bölündükten sonraki durum](images/B07-IP_adresi_cetveli-soru4.png)  
+*Görsel: bölünme sonrası durum*
 
-169.254.0.0 Windows işletim sisteminin IP alınamadığında kendi IP
-bloğundan otomatik olarak verdiği IP adresidir.
+**ÇÖZÜM**
+> Çözümü size bırakıyorum[.](https://gist.github.com/ozalpmurat/866b27e515129c098757d9fb0954f5f7)
+---
 
-**ÖRNEK :** Bir şirkete 192.168.100.0/24 şeklinde IP aralığı tahsis
-edilmiştir. Şekilde sistem yöneticisi ağdaki aşırı yayın trafiğinin
-sorun çıkardığını düşünerek ağı alt ağlara bölmek istiyor. Birimlerin PC
-sayısı aşağıdaki gibidir. Teknik birim=70, Pazarlama=40, Muhasebe=20,
-İdari birim=25\
-\
-XXX -------------------------------------- IMAGE
------------------------------------ XXX\
-\
-\
+### Çalışma soruları
+
+1. /17 şeklinde gösterilen ağın maskesi nedir?
+1. IP adresi 10.10.0.0 ve alt ağ maskesi 255.255.0.0 olan bir bilgisayarın bulunduğu ağda kaç IP olabilir?
+1. 255.255.255.224 şeklindeki alt ağ maskesi olan bir ağda kaç host olabilir?
+1. 192.168.1.0/8 ağını ikiye bölün.
+1. 172.16.172.220/26 ağını ikiye bölün.
+1. 10.0.0.0/8 ağını 16'ya bölün. Sadece ilk alt ağ için ağ adresi, yayın adresi, alt ağ maskesi değerlerini hesaplayın.
+1. 10.0.0.0/29 ağını ikiye bölün. 
+1. 10.50.100.200/25 şeklinde IP adresi tahsis edilmiş bir bilgisayarın ağ adresi ve yayın adresi nedir?
 
 ## Ağ Geçidi IP Adresleri 
 
-Her ağ için ilk IP adresi ağ adresi, son IP adresi yayın adresi olduğunu
-biliyoruz. Kural olmamakla birlikte genel teamüllere göre ağ adresinden
-sonraki ilk IP adresi(kullanılabilecek ilk host adresi) ağ geçidi olarak
-belirlenir. Herhangi bir host adresi ağ geçidi olarak belirlense de
-hiçbir problem olmaz.
+![Ağ geçidi](images/B07-Ag_gecidi_01.png)  
+*Görsel: Windows bilgisayarda ağ geçidi IP adresi*
 
-**NOT :** IP adresinin ve ağın son IP adresi değiştirilemez.
+Aynı ağdaki bilgisayarlar, kendi aralarında 2. katmanda MAC adresleri ile haberleşirler. Farklı bir ağdaki IP adresi ile iletişim kurmak istediklerinde, ilk gitmeleri gereken yer, kendi ağ geçidi olarak bildikleri IP adresidir. Ağ geçidi, bir ağdaki bilgisayarların diğer ağlara gidebilmesi için geçmeleri gereken kapıya denir.
 
-**NOT :** Ağ geçidi IP adresi her bir ağın doğrudan bağlı olduğu
-yönlendirici arayüzünde(interface, ara birim, ethernet kartı,
-NIC(Network Interface Card)) tanımlı olan IP adresi olmak zorundadır.
+Genellikle her ağda yalnızca 1 tane ağ geçidi olur. Bu da IP adresleri ile beraber bilgisayarlara otomatik olarak gönderilir. Özel durumlarda ağlarda birden fazla ağ geçidi olabilir. Bu tarz durumlarda hangi hedeflere giderken hangi ağ geçidinden geçmesi gerektiğini belirten "yönlendirme tablosu" kullanılır.
 
-Günümüzde kullanılışı :\
-\
-\
-XXX -------------------------------------- IMAGE
------------------------------------ XXX\
-\
-\
-[Soruya gelirsek : ]{.underline}\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-Ağ adresi : 192.168.0.0
+Her ağ için; ilk IP adresinin ağ adresi, son IP adresinin yayın adresi olduğunu
+biliyoruz. Kural olmamakla birlikte, genel teamüllere göre, ağ adresinden
+sonraki ilk IP adresi (kullanılabilecek ilk host adresi) ağ geçidi olarak
+belirlenir.
 
-Yayın adresi : 192.168.100.127\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-\
-\
-XXX --------------------- TABLO ------------------------ XXX\
-\
-Alt ağ maskesi ise teknik:255.255.255.0,
+!!! note "Ağ geçidi IP adresi"
+    Ağ geçidi IP adresi, her bir ağın doğrudan bağlı olduğu yönlendirici arayüzünde (interface, ağ arabirimi, port, ethernet kartı, NIC[_Network Interface Card_]) tanımlı olan IP adresi olmak zorundadır.
 
-pazarlama:255.255.255.192,
+Yukarıdaki örnek için ağ geçidi bilgileri aşağıdaki görselde verilmiştir. Her ağın kullanılabilir ilk host adresi "ağ geçidi" IP adresi olarak yönlendiricinin ilgili bacağına (NIC) verilmiştir. Yönlendiricinin WAN bacağı ise internet bağlantısı olarak kullanılmaktadır. Bu bacakta 256 IP adresi tanımlıdır.
+![Ağ geçidi örneği](images/B07-Ag_gecidi_03.png)  
+*Görsel: Önceki örneğin ağ bilgileri*
 
-muhasebe:255.255.255.224,
+Aşağıdaki görselde, Cisco yönlendiricilerde bir bacağa (NIC, Ethernet kartı, port) IP adresinin nasıl verildiği görülmektedir.  Görselde verilen yönlendiricide iki NIC vardır: `FastEthernet 0/1` ve `FastEthernet 1/1` şeklinde. Bu iki interface'e IP adresi verilebilmesi için yapılması gereken konfig te aynı görselin üst kısmındaki metinlerde verilmiştir. 
+![Ağ geçidi örneği](images/B07-Ag_gecidi_04.png)  
+*Görsel kaynağı: https://www.flackbox.com/cisco-basic-router-switch-configuration*
 
-idari:255.255.255.255 ??? şeklindedir.
+Aşağıdaki görselde kurumlarda güncel durumda kullanılan standart bir topoloji verilmiştir. Artık bulut tabanlı çözümlere geçilmeye başladığı için birçok kurumda fiziksek sunucu bile bulunmamaktadır. Ancak kendi veri merkezi olan ve sunucusu olan kurumlar bu tarz bir yapı kullanmaktadır. Bu görsele ilaveten istenirse; IPS, WAF, traffic shaper, NAC, vb. birçok sistem eklenebilir. Ancak sade olması için minimal çizim yapılmıştır. Görselde birkaç noktayı vurgulayabiliriz:
 
-**ÖRNEK :** 10.50.100.200/25 şeklinde IP adresi tahsis edilmiş bir
-bilgisayarın ağ adresi ve yayın adresi nedir?
+1. Güvenlik duvarının 3 bacağı (_interface, NIC, port, Ethernet kartı. Hepsi aynı anlamda._) var: LAN, WAN ve DMZ. İstenirse bu bölgelerin sayısı arttırılabilir.
+1. Hem LAN'lar hem de VLAN'lar kullanılıyor.
+1. VLAN'lar omurga anahtarında oluşturulmuş. Her VLAN'ın bir interface'i (sanal NIC) var. Bu interface'lere IP adresi verilmiş. Her VLAN'daki her bilgisayarın da ağ geçidi bu IP adresleri olarak kullanılıyor.
+1. Herhangi bir VLAN veya LAN'da bir PC IP almak istediğinde, "Ortamda DHCP sunucusu var mı?" (`discovery`) diye bir broadcast mesajı gönderiyor. Bu mesaj sadece kendi ağındaki IP'lere gidiyor. Bu IP'lere kendi ağ geçidi de dahil. Ağ geçidi olan cihaz da (_bu topoloji için omurga anahtarı_) bu mesajı alıp DHCP sunucuya aktarıyor. Gelen cevabı (`offer`) ilgili PC'ye geri gönderiyor. Bir IP alma isteğinin, başka bir ağdaki sunucuya iletilmesi işlemine ==DHCP relay== denir. DHCP relay işlemini; anahtar, yönlendirici ya da ağdaki herhangi bir PC yapabilir.
+1. Sunucu bölgesinde otomatik IP kullanılmayabilir. Elle yönetmek çok zor olmaz, hatta "elle IP vermek" hataları da azaltabilir. Ancak kullanıcı bilgisayarlarında her zaman otomatik IP kullanırız.
+1. DHCP sunucusuna bir "IP isteği" mesajı geldiğinde, sunucu bu mesaja 4 temel veri içeren bir cevap döndürür: IP adresi, alt ağ maskesi, ağ geçidi, DNS sunucu IP adresi. İstenirse bunlara ilave başka veriler de gönderilebilir: NTP server, TFTP server, vb.
+1. Evlerde kullandığımız xDSL modemler buradaki bir çok işi tek başına yapıyor: Protokol çevirme, yönlendirme, NAT, güvenlik duvarı, switching, Wifi Access point, traffic shaping, vb.
 
-32-25=7 olduğundan $2^7 =128$ tane IP var.
+![Güncel ağ topolojisi](images/B07-Ag_gecidi_ve_GenelTopoloji.png)  
+*Kurumlarda kullanılan güncel topoloji*
 
-  --- ----------------- --------------
-      10.50.100.200     
-  x   255.255.255.128   
-      10.50.100.128     ağ adresi
-      10.50.100.255     yayın adresi
-  --- ----------------- --------------
+Aşağıdaki görselde Cisco cihazlarda yapılan bir DHCP-relay işlemi gösterilmiştir. Görseldeki 50.0.0.10 IP adresi, o network'ün DHCP server IP adresidir.
 
-**ÖRNEK :** Aşağıdaki bilgisayarlardan hangileri ağ geçidine ihtiyaç
-duymadan haberleşirler.
+![Cisco DHCP relay](images/B07-Ag_gecidi_DHCP_relay.png)  
+*Görsel: Cisco DHCP relay işlemi*
 
-::: center
-  ----- --------------- ------------------------- ------
-                          [Ağ adresi]{.underline} 
-    a\) 10.0.0.120/25                    10.0.0.0 -128
-    b\) 10.0.0.121/24                    10.0.0.0 -256
-    c\) 10.0.0.254/24                    10.0.0.0 -256
-    d\) 10.0.0.1/24                      10.0.0.0 -256
-    e\) 10.0.0.253/25                    10.0.0.0 -128
-  ----- --------------- ------------------------- ------
-:::
+## İki Bilgisayar Aynı Ağda Mı?
 
-**NOT :** X'in Y ile aynı ağda olup olmadığını anlamak için X
-bilgisayarı Y nin IP adresiyle kendi ağ maskesini çarpar. Kendi ağ
-adresiyle karşılaştırır.
+!!! note "İki bilgisayar aynı ağda mı?"
+    A bilgisayarı; iletişim kurmak istediği B bilgisayarı ile aynı ağda olup olmadığını anlamak için, B nin IP adresiyle kendi ağ maskesini çarpar. Çıkan sonucu kendi ağ adresiyle karşılaştırır.
+
+### Örnek-5
+
+!!! question "Örnek-5"
+    10.0.0.127/24 ve 10.0.0.128/24 IP adreslerinin, birbirleri ile haberleşebilmek için ağ geçidine ihtiyaçları var mıdır?
 
 A'nın B ile haberleşmesi :
-
   ------------------ --- ------------ -- --
-  B'nin IP adresi        10.0.0.121      
+  B'nin IP adresi        10.0.0.128      
   A'nın ağ maskesi   x   10.0.0.128      
                          10.0.0.0        
   ------------------ --- ------------ -- --
