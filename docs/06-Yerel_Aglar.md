@@ -1,4 +1,30 @@
 # Yerel Ağlar - LAN/VLAN
+
+## Ethernet Protokolü
+
+İlk kez "INTEL VE XEROX" tarafından geliştirilmiştir.Daha sonra
+IEEE(Institue of Electrical and Electronical Enginner) tarafından 802.3
+ismi ile standartlaştırılmıştır.
+
+**İsimlendirmeler**
+
+- 10 Base 2: 10 sayısı 10 Mb/s’yi ifade eder. "Base" sözcüğü temel
+bandı ifade eder. En sondaki kablo türüdür. 2 olduğunda ince (thin)
+koaksiyel kablo ile ~200 metre sınırını belirtir.
+- 10 Base 5: Sondaki 5 Kalın(thick) koaksiyel kablo olduğunu
+belirtir.  
+- 10 Base T: "T" harfi, bükümlü çift kablo olduğunu ifade eder.  
+- 100 Base TX: Fast Ethernet Cat-5 kablo kullanılır.  
+- 100 Base FX: F harfi Fiberoptik Kablo kullanıldığını belirtir.  
+- 1000 Base T: Gigabit bükümlü çift kablo.
+- 1000 Base LX: L long kısaltmasıdır. SM FO kablolar kullanılır. Uzak
+mesafelerde tercih edilir. En önemli dezavantajı maliyetlerin SX’e göre
+fazla olmasıdır.  
+- 1000 Base SX: MM FO kablolar kullanılır.Kısa mesafeleri
+destekler. Ekipmanları daha ucuzdur.  
+
+## MAC Adresi
+
 Yerel ağlarda haberleşmeyi sağlayan ethernet çerçevesinde(frame) 48
 bitlik adres kullanılır. MAC adresi 16’lık sayı sisteminde 12 tane
 karakter ile gösterilir.
