@@ -57,10 +57,11 @@ Bir haberleşme sistemi, gönderici, alıcı ve iletim ortamından oluşur. İle
 !!! question "Örnek Soru"
     240 MB büyüklüğündeki bir MP3 dosyası, görseldeki sistemde 4 dakikada aktarılıyor.
 
-    1. Bu sistemin aktarım kapasitesini (bant genişliğini) bulunuz.
-    2. Aktarılan dosya, MP3 yerine MPG olsaydı ne olurdu?
+    1. Bu sistemin aktarım kapasitesi (bant genişliği) ne kadardır?
+    1. Dosya aktarım hızı b/s cinsinden ne olmuştur?
+    1. Aktarılan dosya, MP3 yerine MPG olsaydı ne olurdu?
 
-    ![alt text](images/B04-BantGenisligi-sistemde.png){width="400"}
+    ![Örnek](images/B04-BantGenisligi-sistemde.png){width="400"}
 
 ## Jitter
 Dilimize _seğirme, sapma_ şeklinde çevrilebilir. Giden veri paketlerinin gecikme sürelerinde farklılık olması durumu. Özellikle canlı anlık iletişimin sağlıksız olmasına sebep olabilir.
@@ -68,12 +69,12 @@ Dilimize _seğirme, sapma_ şeklinde çevrilebilir. Giden veri paketlerinin geci
 *Görsel kaynağı: https://sonary.com/content/jitter-what-it-is-and-how-to-deal-with-it/*
 
 ## QoS - hizmet önceliklendirme
+
 _Quality of Service_. Bant genişliğinin verimli kullanılması için bazı trafik verilerine öncelik vermek için kullanılır. Ambulans önceliği gibi düşünebilirsiniz. Belirli IP adreslerine ya da belirli uygulamalara öncelik verilebilir. Özellikle canlı anlık iletişim sağlayan telefon görüşme uygulamaları gibi durumları önceliklendirmek için kullanılır.
-![QoS](images/B04-QoS.png){width="500"}  
-*QoS. Görsel kaynağı: https://www.nwkings.com/qos-in-networking/*
+![QoS](images/B04-QoS.jpg){width="500"}  
+*QoS. Görsel kaynağı: https://www.linkedin.com/pulse/what-qos-saravind-rajan/*
 
-
-## Temel Bant ve Geniş Bant 
+## Temel Bant ve Geniş Bant
 
 - **Temel bant**(_Base Band_). İletim ortamında tek bir frekans bandı kullanılır. Böylece teorik olarak iletim ortamının tüm kapasitesi tek bir kanal için kullanılır. Ethernet'te temel bant kullanılır.
 - **Geniş Bant**  (_Broad band_). İletim ortamında birden fazla frekans bandı kullanılır. bulunur. Basit
@@ -87,6 +88,7 @@ hattından aynı anda ses verinin taşınması buna örnektir.
 *Geniş bant içindeki farklı verileri ayrıştırma*
 
 ## Paralel ve Seri İletişim
+
 Paralel iletişimde byte düzeyinde iletişim sağlanır. İki uç arasında en az 8 tane fiziksel iletim ortamı olmalıdır. Band genişliği teorik olarak 8 hat daha fazla olduğu düşünülebilir. Ancak hem maliyet hem protokol tercihi hem de kullanılan topoloji gibi etkenler bu konuda etkilidir.
 ![Paralel ve seri iletişim](<images/B04-Paralel_ve_Seri.png>)  
 *Görsel kaynağı: https://www.digikey.com/en/maker/tutorials/2023/what-is-serial-communication-and-how-does-it-compare-to-parallel*
@@ -95,12 +97,12 @@ Paralel iletişimde byte düzeyinde iletişim sağlanır. İki uç arasında en 
     Paralel iletişim daha hızlı olmasına rağmen neden günümüzde hala bazı yerlerde seri iletişim kullanılıyor? Gündelik hayatımızda bilgisayar kullanırken nerelerde seri iletişim kuruyoruz?
 
 ## Haberleşme Kanalı Modları
-1.  **Simplex Kanal**: Televizyon ve radyo gibi yayının tek taraflı olarak yapıldığı kanallardır.
-2.  **Half-dubleks Kanal**: Çıft yönlü iletişim vardır. Ancak aynı anda sadece bir taraf veri gönderebilir. **telsiz** gibi.
-3.  **Full-dupleks Kanal**: İki uç arasında iki tane simplex kanal vardır. Böylece aynı anda iki taraf veri gönderebilir ve alabilir. Örnek **telefon görüşmeleri**.
+
+1. **Simplex Kanal**: Televizyon ve radyo gibi yayının tek taraflı olarak yapıldığı kanallardır.
+2. **Half-dubleks Kanal**: Çift yönlü iletişim vardır. Ancak aynı anda sadece bir taraf veri gönderebilir. **telsiz** gibi.
+3. **Full-dupleks Kanal**: İki uç arasında iki tane simplex kanal vardır. Böylece aynı anda iki taraf veri gönderebilir ve alabilir. Örnek **telefon görüşmeleri**.
 
 Günümüzde tüm bilgisayar ağları **full-dupleks**’tir.
 ![Haberleşme Kanalı Modları](images/B04-Haberlesme_Modlari.jpg)  
 *Görsel kaynağı: https://www.blackbox.co.uk/gb-gb/page/25069/Resources/Technical-Resources/Black-Box-Explains/Fibre-Optic-Cable/Simplex-vs-duplex-fiber-patch-cable/*
-
 

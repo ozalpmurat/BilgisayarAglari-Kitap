@@ -253,6 +253,15 @@ Bilgisayar ağları kapsamında **Servis** (hizmet) kavramı, ağ üzerinde beli
 - HTTP/Telnet vb. parola görüntüleme
 - DNS ve HTTP trafikleri arka arkaya
 
+!!! Ubuntu'da basit parolalı web sayfası yapma:
+    ```sh
+    sudo apt install python3-venv
+    python3 -m venv venv-sauth
+    source venv-sauth/bin/activate
+    pip install sauth
+    sauth abc 123
+    ```
+
 ## OSI modeli ve güvenlik
 
 ![OSI modeli ve güvenlik](images/B03-OSI_ve_Guvenlik.jpg)  
