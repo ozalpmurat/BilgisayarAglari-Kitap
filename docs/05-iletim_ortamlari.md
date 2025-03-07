@@ -147,6 +147,8 @@ SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağ
 ![Fiber ve bakır SFP](images/B05-fiber_SFP_bakir_ve_fiber.png)  
 *Görsel kaynağı: <https://www.qsfptek.com/qt-news/sfp-module-introduction-sfp-meaning-fiber-sfp-and-copper-sfp/>*
 
+### Ekleme ve test işlemleri
+
 ![Füzyon cihazı](images/B05-Fuzyon_01.jpg)
 *Fiberoptik kablo ek (füzyon) işlemi. Görsel kaynağı: <https://www.tehencom.com/fiber-optic-fusion-splicers/fujikura-42s-standard>*
   

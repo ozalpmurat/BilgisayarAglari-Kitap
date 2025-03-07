@@ -14,6 +14,7 @@
 *[NAT]: Network Address Translation (ağ adresi dönüşümü)
 *[IETF]: Internet Engineering Task Force (İnternet Mühendisliği Görev Grubu).İnternet protokollerini geliştiren ve standartlaştıran topluluk.
 *[LAN]: Local Area Network (yerel ağ)
+*[LAN]: Virtual Local Area Network (Sanal yerel ağ)
 *[WAN]: Wide Area Network (kurumdan dışarı doğru giden bağlantıların olduğu yer)
 *[DMZ]: Demilitarized Zone (savunmasız bölge anlamındadır. Genellikle, sunucuların olduğu bölgeyi ifade eder. İnternet'ten gelebilecek tehditlere karşı daha riskli bir durumda olduğu için bu isim kullanılır)
 *[XXX]: Bu yazıyı görüyorsanız, burayı düzenlemeyi unutmuşumdur. Geri besleme yapabilirsiniz :)
