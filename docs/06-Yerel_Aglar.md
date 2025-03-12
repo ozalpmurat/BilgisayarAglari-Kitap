@@ -42,9 +42,12 @@ veremez. Dolayısıyla -_teorik olarak_- MAC adresleri dünyada tektir (_uniq_).
 *Görsel kaynağı: https://uknowit.uwgb.edu/page.php?id=28810/
 
 ## ARP
+
 "Adres Çözümleme Protokolü" anlamındadır. İkinci katmanda çalışır. Ağdaki Bilgisayarların MAC adreslerini öğrenmek ve bu cihazdaki ARP tablosunu güncellemek en temel görevidir.
 
 Ağa yeni bağlanan cihaz IP adresi henüz olmadığından yayın mesajı göndererek IP adresi ister. Anahtarlarda tutulan IP ve MAC adreslerinin tablosuna "ARP tablosu" denir. ARP Tablosu dinamik olarak güncellenir ancak istenirse elle düzenleme ya da statik kayıt işlemi yapılabilir.
+
+Anahtarların MAC tablosu ve ARP tablosunu nasıl güncellediği aşağıdaki görselde görülmektedir.
 
 ![ARP nasıl çalışır](images/B06-ARP_Calismasi-yatay.png)  
 *Görsel kaynağı: https://community.fs.com/article/switch-mac-address-whats-it-and-how-does-it-work.html*
@@ -54,92 +57,98 @@ Ağa yeni bağlanan cihaz IP adresi henüz olmadığından yayın mesajı gönde
 
 
 ## Yayın Adresi (Broadcast Address)
+
 Tüm yerel ağı temsil eden adrese **yayın adresi** denir. Bu adrese gönderilen veri, ağdaki tüm cihazlara aynı anda ulaştırılır. İkinci veya üçüncü katmanda yayın mesajı gönderilebilir.
   
 İkinci katmanda yayın adresi göndermek için çerçevedeki hedef MAC adresi kısmında tüm bitler 1 yapılır. Dolayısıyla hedef adresi FF:FF:FF:FF:FF:FF olmuş olur.
 
+Üçüncü katmanda yayın mesajı gönderebilmek için, hedef IP adresi kısmına o ağın son (en büyük) IP adresi yazılmalıdır. Üçüncü katmandaki yayın mesajları, sonraki bölümde detaylı incelenecektir.
+
 ## Yayın Alanı
-Bilgisayarların doğrudan MAC adresleriyle haberleştikleri alandır. Bir yayın paketi gönderildiğinde, bunu alabilen tüm cihazlar aynı yayın alanındadır.
+
+Bir yayın paketi gönderildiğinde, bunu alabilen tüm cihazlar aynı yayın alanındadır. Yayın alanı içindeki bilgisayarlar ikinci katmanda MAC adresleriyle haberleşebilirler. **Bu bilgisayarlar aynı ağdadır**.
 
 !!! note "Yayın alanı, ağ geçidinde biter"
     Bir bilgisayar kendi yayın alanında olmayan başka bir bilgisayarla  haberleşmek için "ağ geçidinden" geçmek zorundadır.
 
-## Çarpışma Alanı
-Bir yayın alanı içerisinde bir veya birden fazla çarpışma alanı bulunabilir.Aynı çarpışma alanındaki bilgisayarlar birbirine gelen her paketi görürler,ancak sadece kendi mac adreslerine gelen her paketi alırlar. Çarpışma alanı aynı anda sadece bir pc tarafından kullanılabilir. İki PC aynı anda paket göndermek isterse çarpışma(collision) oluşur. Adını buradan alır.
+## Çarpışma (çakışma) Alanı
+
+Aynı çarpışma alanındaki bilgisayarlar birbirine gelen her paketi görürler, ancak sadece kendi MAC adreslerine gelen her paketi işleme alırlar. Bir yayın alanı içerisinde bir veya birden fazla çarpışma alanı bulunabilir. Çarpışma alanı aynı anda sadece bir PC tarafından kullanılabilir. İki PC aynı anda veri göndermek isterse çarpışma(collision) oluşur. Adını buradan alır.
 
 !!! note "Çarpışma alanı"
     Çarpışma alanı istenmeyen bir durumdur. HUB'lar çarpışma alanına sebep olur.
 
-<figure>
-<img src="images/soru_1" id="fig:lan_vlan_ornegi1"
-style="width:8cm;height:6cm" alt="Soru1" />
-<figcaption aria-hidden="true">Soru1</figcaption>
-</figure>
+### Örnek 1
 
-1)Kaç tane yayın alanı vardır? 2  
-2)Kaç tane çarpışma alanı vardır? 3  
-3)Her çarpışma alanında kaç tane bilgisayar vardır?  
-4)Her yayın alanında kaç tane bilgisayar vardır?  
-Birinci yayın alanında 3 tane  
-İkinci yayın alanında 8 tane  
-\*YAYIN ALANI:mecburen ağ geçidi kullanılır.  
-\*ÇARPIŞMA ALANI:Birbirlerinin verisini görecekler.
+Aşağıdaki soruları görsele göre cevaplayın:
 
-<figure>
-<img src="images/Soru2" id="fig:lan_vlan_ornegi"
-style="width:8cm;height:6cm" alt="Soru2" />
-<figcaption aria-hidden="true">Soru2</figcaption>
-</figure>
+1. Kaç tane yayın alanı vardır?
+2. Kaç tane çarpışma alanı vardır?
+3. Her çarpışma alanında kaç tane bilgisayar vardır?
+4. Her yayın alanında kaç tane bilgisayar vardır?
 
-A ile B aynı anda paket gönderebilir mi? Yaçarpışma olur ya da sıra  
-B ile C aynı anda paket gönderebilir mi?  
-B ile C aynı Pc gönderirse olur,ancak farklı olursa aralarındaki
-topolojileri bilmediğimiz için bilemeyiz.  
-C yayın mesajı gönderdiğinde tüm pc’lere gider mi?  
-Evet tüm Pclere gider.  
-B ile C aynı arasındaki trafiği F görür mü?  
-Normal zamanda göremez.Ancak örneğin aynalama gibi işlemerde
-görebilir.  
+![Yayın ve çarpışma alanı](images/B06-Yayin_Carpisma_Alani.png){width=500}
+
+### Örnek 2
+
+Aşağıdaki soruları görsele göre cevaplayın:
+
+1. A ile B aynı anda veri gönderebilir mi?
+1. B ile C aynı anda veri gönderebilir mi?
+1. C yayın mesajı gönderdiğinde tüm PC’lere gider mi?
+1. B ile C aynı arasındaki trafiği E görür mü?
+1. B ile C aynı arasındaki trafiği F görür mü?
+
+![Yayın ve çarpışma alanı](images/B06-Yayin_Carpisma_Alani_2.png)
+
+## Anahtarların Kapasitesi
+
 Anahtar üzerinde pc’lerin haricinde dış dünya ile iletişim kurmak için
-bağlantı yapılan porta "upink" poru denir. Anahtarın bilgisayara
-bağlanan normal portlarına(bakır portlara 45 port) "giriş portu"
-denir.Genel olarak 100mb/s-1000mb/s olurken "uplink portları" genellikle
-daha kapasiteli olur. Anahtarları birbirinden ayıran bir diğer özellikte
-"demir gücü kapasitesi"anahtarın aynı anda çevirebileceği trafik
-miktarına "switchfabric" ya da "through put"denir.
+bağlantı yapılan porta "**uplink**" portu denir. Anahtarın bilgisayara
+bağlanan normal portlarına "**access port**" denir. Bazı anahtarların tüm portları aynı kapasitede iken, bazı anahtarlarda ise uplink portları daha yüksek kapasiteli olur.
+
+Anahtarın aynı anda çevirebileceği trafik miktarına "**backplane kapasitesi**" ya da "**anahtarlama kapasitesi** (switching capacity)" denir.
+
+Bir anahtarın veri iletim performansını belirleyen en önemli faktörlerden biri de "**throughput**" olup, anahtarın belirli bir süre içinde iletebileceği maksimum veri miktarını ifade eder.
 
 ## Ağ Geçidi (gateway)
+
 Bir ağdaki bilgisayarlar, kendi ağı dışındaki ağlara gidebilmek için ağ geçidinden geçmek zorundadır. Başka bir deyişle; "ağ geçidi, bir ağın dışarı açılan kapısıdır". Sıradan bir PC, 3.katman(L3) anahtar, yönlendirici veya özel üretilmiş donanımlar ağ geçidi görevi yapabilir. Hatta cep telefonumuzun internet bağlantısını bilgisayarımıza paylaştırdığımızda, cep telefonumuz, bilgisayar için bir "ağ geçidi" olmaktadır.
 
 Bazı ağ geçitleri, üzerindeki ağ arayüzüne(interface) bağlı olarak ethernet, Frame Relay, ATM, PPPoE gibi protokolleri kullanılabilme özelliğine sahip olduğundan bazı kaynaklarda _protokol çevirici_ olarak adlandırılır.
 
-Önceden bahsedildiği gibi, anahtarlar çarpışma alanını geçirmezler ancak yayın trafiğini geçirirler. Bünyesinde çok fazla anahtar (çok faza bilgisayar) bulunan yerel ağlarda yayın paketlerin çokluğu, ağı hantallaştırabilir. Bu nedenle LAN’ları birden fazla alt ağlara bölmek performansı arttıracaktır.
+Önceden bahsedildiği gibi, anahtarlar çarpışma alanını geçirmezler ancak yayın trafiğini geçirirler. İçerisinde çok faza bilgisayar bulunan yerel ağlarda yayın paketlerin çokluğu, ağı hantallaştırabilir. Bu nedenle LAN’ları birden fazla alt ağlara bölmek performansı arttıracaktır.
 
 **Örnek yayın mesajları:**  
-- IPV4 İIPV6 mesajları  
-- Komşuluk mesajları  
-- Donanım keşif mesajları  
-- Ip alma (DHCP)mesajları  
-- Virüs (solucan) gibi kötü yazılımlar  
 
-## Alt Ağa Bölme Yöntemleri 
+- IPV4 - IPV6 keşif mesajları
+- Komşuluk mesajları
+- Donanım keşif mesajları
+- IP alma (DHCP)mesajları
+- Virüs (solucan) gibi kötü yazılımlar
+
+## Alt Ağa Bölme Yöntemleri
+
 **Klasik yöntem**de her bir ağ için bir fiziksel bir ağ geçidi kullanılması zorunludur. Dolayısıyla cihazların ve iletim ortamlarının sınırları en önemli kısıtlardır.
 
 Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağlanarak ağ istenilen şekilde özelleştirilebilir.
 
-**Sanal ağ kullanmanın avantajları**
+**VLAN (Sanal ağ) kullanmanın avantajları**
+
 - Farklı anahtarlar üzerindeki bilgisayarlar aynı ağda olabilir.
 - Aynı anahtarda birden fazla farklı ağ (VLAN) olabilir.
 - Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
 
 ## Ağları bölmenin faydaları
+
 1. **İşletme Kolaylığı**: Ağlar küçük olduğunda sorunu çözmek
-    kolaylaşır. Ağ isimleri, IP grupları ve kullanım yerleri eşleştirilerek hiyerarşik sistemler oluşturulabilir. 
-2. **PC sayısını azaltmak**: Her bir ağdaki pc sayısını azaltarak yayın
+    kolaylaşır. Ağ isimleri, IP grupları ve kullanım yerleri eşleştirilerek hiyerarşik sistemler oluşturulabilir.
+2. **PC sayısını azaltmak**: Her bir ağdaki PC sayısını azaltarak yayın
     alanını daraltmak, fazlalık yayın mesajlarını azaltmak ve performansı arttırmak
-3. **Güvenlik**: Birbirine erişimi kısıtlamaması gereken ağlar arasında
+3. **Güvenlik**: Birbirine erişimi kısıtlanması gereken ağlar arasında
     erişim denetim listeleri (Access Control List ~ ACL) oluşturularak
     erişim kısıtlanabilir.
+
 ---
 
 **Esneklik**: Eğer ağı VLAN ile bölersek; farklı coğrafyadaki bilgisayarlar aynı VLAN'da olabilir ya da aynı anahtar üzerinde birden fazla farklı VLAN olabilir.
@@ -152,6 +161,7 @@ style="width:8cm;height:6cm" alt="LAN-VLAN" />
 </figure>
 
 ## VLAN Anahtarlar
+
 Üzerinde sanal ağlar tanımlanabilen anahtarlardır. Aynı zamanda ayarlanabilir anahtarlardır. Bu nedenle yönetilebilir anahtarlar da denmektedir. VLAN anahtarın üzerindeki portlar gruplandırılarak birden çok sanal ağ oluşturulabilir.
 ![VLAN Anahtar](images/B06-VLAN_Anahtar.png)  
 *Görsel kaynağı: https://www.practicalnetworking.net/stand-alone/routing-between-vlans/*
@@ -175,6 +185,7 @@ bir anahtar kullanılmalıdır.
 *Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches
 
 ## IEEE 8021.Q VLAN protokolü
+
 **Dot1q** olarak ta bilinir. Ethernet protokolü ilk tasarlandığında VLAN ihtiyacı yoktu. 1998 yılında yayınlanan 802.1q protokolü ile Ethernet protokolü VLAN farkındalığı kazandı.
 ![IEEE 802.1](images/B06-Dot1q_frame.png)  
 *Görsel kaynağı: https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/*
@@ -188,6 +199,7 @@ bir anahtar kullanılmalıdır.
 Cisco firması `trunk/access` sözcüklerini kullanırken diğer üreticiler genellikle `tagged/untagged` sözcüklerini tercih etmektedir.
 
 ## Anahtar Kullanım Mimarisi
+
 ![Anahtar Mimarisi](images/B06-AnahtarMimarisi.png)  
 *Görsel kaynağı: https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/*
 
