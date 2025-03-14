@@ -217,7 +217,7 @@ Aslında uygulama seviyesi sadece 7. katmandır. Ancak 5 ve 6 yaygın
 kullanılmadığından ve farklı uygulamalar arasında standart olmadığından
 bu derste üçünü tek başlıkta inceliyoruz.
 
-Uygulama programları genellikle 7. katmanda ulaşmakta ve genellikle
+Uygulama programları genellikle 7. katmanda çalışmakta ve genellikle
 doğruden 4. katman ile iletişime geçmektedir. Oturum ve sunum gibi işlemler yapılacaksa da genellikle uygulama içerisinde yapılıp 4. katmana aktarılmaktadır.
 
 #### Yaygın kullanılan bazı servisler
@@ -237,7 +237,7 @@ Bilgisayar ağları kapsamında **Servis** (hizmet) kavramı, ağ üzerinde beli
 ## OSI modelini anlamak için kullanılabilecek uygulamalar
 
 - **ping** (hping): Karşı uç ile aramızda 3. katmanda bağlantı var mı? Paketler kaç milisaniyede gidip geliyor? Büyük paketler ve küçük paketler ağdan aynı şekilde gidebiliyor mu?
-- **traceroute (tracert)**: Uzzktaki bir sisteme IP üserinden hangi rotadan gittiğimizi gösterir. ICMP kapalı olan sistemlerde `TCP Trace` denenebilir.
+- **traceroute (tracert)**: Uzaktaki bir sisteme IP üserinden hangi rotadan gittiğimizi gösterir. ICMP kapalı olan sistemlerde `TCP Trace` denenebilir.
 - **Telnet**: Ağlarda yönetim ve kontrol amaçlı kullanılır. Ağ cihazlarının genellikle tamamı telnet ile yönetimi destekler. Bunun dışında, 2 cihaz arasında 4. katmanda bağlantı (erişebilirlik) kontrolü yapmak için de kullanılır. Örneğin SMTP veya HTTP gibi protokoller, Telnet ile çalıştırılabilir.
 - **netstat** Bilgisayarımızda açık olan portları ve aktif ağ bağlantılarımızı gösterir. Linux'ta `sudo netstat -antulp` şeklinde en güzel çıktıyı verir.
 - **nmap** (zenmap): TCP ve UDP port taraması yapar. 0-65536 arası tüm portlar ya da belirli portlar taranabilir. Script taraması sayesinde zafiyet taraması bile yapabilir. Çok güçlü bir araçtır.
