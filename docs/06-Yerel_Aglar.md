@@ -29,7 +29,7 @@ Yerel ağlarda haberleşmeyi sağlayan ethernet çerçevesinde(frame) 48
 bitlik adres kullanılır. MAC adresi 16’lık sayı sisteminde 12 tane
 karakter ile gösterilir.
 ![MAC adresi](images/B06-MAC_AdresiNedir.png)  
-*Görsel kaynağı: https://tecadmin.net/media-access-control-address/*
+*Görsel kaynağı: <https://tecadmin.net/media-access-control-address/>*
 
 İlk 6 karakter (ilk 24 bit) üretici kodunu (OUI), son 6 karakter ise seri
 numarasını belirtir. Bir üretici aynı MAC adresini birden fazla karta
@@ -39,7 +39,7 @@ veremez. Dolayısıyla -_teorik olarak_- MAC adresleri dünyada tektir (_uniq_).
     Birden fazla aynı MAC adresi aynı ağ üzerinde (LAN / VLAN) olmamalıdır.
 
 ![Mac adresi öğrenme](images/B06-MAC_adresi_Windows.png)  
-*Görsel kaynağı: https://uknowit.uwgb.edu/page.php?id=28810/
+*Görsel kaynağı: <https://uknowit.uwgb.edu/page.php?id=28810/>
 
 ## ARP
 
@@ -50,7 +50,7 @@ Ağa yeni bağlanan cihaz IP adresi henüz olmadığından yayın mesajı gönde
 Anahtarların MAC tablosu ve ARP tablosunu nasıl güncellediği aşağıdaki görselde görülmektedir.
 
 ![ARP nasıl çalışır](images/B06-ARP_Calismasi-yatay.png)  
-*Görsel kaynağı: https://community.fs.com/article/switch-mac-address-whats-it-and-how-does-it-work.html*
+*Görsel kaynağı: <https://community.fs.com/article/switch-mac-address-whats-it-and-how-does-it-work.html>*
 
 !!! Question "Soru"
     ARP tablosunda "statik kayıt ekleme özelliği" ne işe yarar?
@@ -127,18 +127,6 @@ Bazı ağ geçitleri, üzerindeki ağ arayüzüne(interface) bağlı olarak ethe
 - IP alma (DHCP)mesajları
 - Virüs (solucan) gibi kötü yazılımlar
 
-## Alt Ağa Bölme Yöntemleri
-
-**Klasik yöntem**de her bir ağ için bir fiziksel bir ağ geçidi kullanılması zorunludur. Dolayısıyla cihazların ve iletim ortamlarının sınırları en önemli kısıtlardır.
-
-Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağlanarak ağ istenilen şekilde özelleştirilebilir.
-
-**VLAN (Sanal ağ) kullanmanın avantajları**
-
-- Farklı anahtarlar üzerindeki bilgisayarlar aynı ağda olabilir.
-- Aynı anahtarda birden fazla farklı ağ (VLAN) olabilir.
-- Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
-
 ## Ağları bölmenin faydaları
 
 1. **İşletme Kolaylığı**: Ağlar küçük olduğunda sorunu çözmek
@@ -149,94 +137,98 @@ Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağl
     erişim denetim listeleri (Access Control List ~ ACL) oluşturularak
     erişim kısıtlanabilir.
 
----
+## Alt Ağa Bölme Yöntemleri
 
-**Esneklik**: Eğer ağı VLAN ile bölersek; farklı coğrafyadaki bilgisayarlar aynı VLAN'da olabilir ya da aynı anahtar üzerinde birden fazla farklı VLAN olabilir.
+**Klasik yöntem**de her bir ağ için bir fiziksel bir ağ geçidi kullanılması zorunludur. Dolayısıyla cihazların ve iletim ortamlarının sınırları en önemli kısıtlardır.
 
+Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağlanarak ağ istenilen şekilde özelleştirilebilir.
 
-<figure>
-<img src="images/Vlanlar" id="fig:lan_vlan_sorusu"
-style="width:8cm;height:6cm" alt="LAN-VLAN" />
-<figcaption aria-hidden="true">LAN-VLAN</figcaption>
-</figure>
+![IEEE 802.1](images/B06-geleneksel_vs_vlan_bolme.png)
+*Görsel kaynağı: <https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/>*
+
+**VLAN (Sanal ağ) kullanmanın avantajları**
+
+- Farklı anahtarlar üzerindeki bilgisayarlar aynı ağda olabilir.
+- Aynı anahtarda birden fazla farklı ağ (VLAN) olabilir.
+- Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
+
+![VLAN'lar ve yönlendirme](B06-vlan_bolme_ve_yonlendirme.png)
 
 ## VLAN Anahtarlar
 
 Üzerinde sanal ağlar tanımlanabilen anahtarlardır. Aynı zamanda ayarlanabilir anahtarlardır. Bu nedenle yönetilebilir anahtarlar da denmektedir. VLAN anahtarın üzerindeki portlar gruplandırılarak birden çok sanal ağ oluşturulabilir.
 ![VLAN Anahtar](images/B06-VLAN_Anahtar.png)  
-*Görsel kaynağı: https://www.practicalnetworking.net/stand-alone/routing-between-vlans/*
+*Görsel kaynağı: <https://www.practicalnetworking.net/stand-alone/routing-between-vlans/>*
 
 Her bir sanal anahtar, ayrı bir ağ gibi çalıştırılabilir. Bu sanal ağlara "VLAN" (Virtual LAN ~ Sanal Ağ) denir. Her bir VLAN’ın kendine özel VLAN-ID  isminde bir tanımlayıcı numarası olur. Anahtarların fiziksel portları, VLAN ID’ler ile eşleştirilerek ağlar düzenlenir.
 
 !!! info
     Aynı VLAN numarasına sahip portlar aynı sanal ağa aittir.
 
-Bazı durumlarda VLAN yapılandırılması portlardan ve fiziksel bağlantılardan bağımsız olarak yapılabilir. Örneğin PC’nin MAC adreslerine göre ya da kullanıcı kimlik doğrulama yöntemine göre (parola, parmak izi, vb.) VLAN ataması yapılabilir. VLAN anahtarlar üzerinde birden fazla sanal ağ oluşturulursa bu alt ağlar arasında trafiğin yönlendirilmesi gerekmektedir. Bu yönlendirme işlemi anahtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak mümkündür.
+Bazı durumlarda VLAN yapılandırılması portlardan ve fiziksel bağlantılardan bağımsız olarak yapılabilir. Örneğin PC’nin MAC adreslerine göre, protokole göre (IP telefon gibi), kullanıcı kimlik doğrulama yöntemine göre (parola, parmak izi, vb.) VLAN ataması yapılabilir. VLAN anahtarlar üzerinde birden fazla sanal ağ oluşturulursa bu alt ağlar arasında trafiğin yönlendirilmesi gerekmektedir. Bu yönlendirme işlemi anahtarın kendi üzerinde veya ayrı bir yönlendirici cihazla yapmak mümkündür.
 
 ![VLAN arası yönlendirme](images/B06-InterVLAN_Routing.png)  
-*Görsel kaynağı: https://www.youtube.com/watch?v=SPloaasxkMQ*
+*Görsel kaynağı: <https://www.youtube.com/watch?v=SPloaasxkMQ>*
 
 ![L2 veya L3 anahtar tercihi](images/B06-L2veyaL3_Anahtar.png)  
-*Görsel kaynağı: https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html*
+*Görsel kaynağı: <https://www.qsfptek.com/qt-news/how-to-choose-best-aggregation-switch.html>*
 
 Anahtar üzerinde yönlendirme yapılacaksa 3 katmanda(L3) çakıştırılacak
 bir anahtar kullanılmalıdır.
 ![2. ve 3. katman anahtarlar](images/B06-Anahtar_L2_L3.png)  
-*Görsel kaynağı: https://planetechusa.com/layer-2-vs-layer-3-switches
+*Görsel kaynağı: <https://planetechusa.com/layer-2-vs-layer-3-switches>
 
 ## IEEE 8021.Q VLAN protokolü
 
 **Dot1q** olarak ta bilinir. Ethernet protokolü ilk tasarlandığında VLAN ihtiyacı yoktu. 1998 yılında yayınlanan 802.1q protokolü ile Ethernet protokolü VLAN farkındalığı kazandı.
 ![IEEE 802.1](images/B06-Dot1q_frame.png)  
-*Görsel kaynağı: https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/*
+*Görsel kaynağı: <https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/>*
 
 **trunk (tagged) port:** Anahtarın herhangi bir portundan birden fazla VLAN taşınması gerekiyorsa o port trunk olarak yapılandırılmalıdır. Aynı zamanda bu bağlantıya da "trunk" denir. Genellikle iki anahtar arasında kullanılır ancak ihtiyaca göre 1 bilgisayara bile trunk bağlantı verilebilir. Anahtarlar, bu portta gelen-giden trafiklere bakarak başlık bilgisindeki trafiğin ilgili VLAN'a gitmesini sağlar.
 
 **acces (untagged) port:** Bu portta VLAN etiketleri olmaz. Anahtar üzerinde config yapılarak, bu porttan gelen-giden tüm trafiğin belirli bir VLAN'a gitmesi sağlanır.
 ![Trunk ve Access portlar](images/B06-trunk_access.png)  
-*Görsel kaynağı: https://networklessons.com/switching/802-1q-encapsulation-explained*
+*Görsel kaynağı: <https://networklessons.com/switching/802-1q-encapsulation-explained>*
 
 Cisco firması `trunk/access` sözcüklerini kullanırken diğer üreticiler genellikle `tagged/untagged` sözcüklerini tercih etmektedir.
 
 ## Anahtar Kullanım Mimarisi
 
 ![Anahtar Mimarisi](images/B06-AnahtarMimarisi.png)  
-*Görsel kaynağı: https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/*
+*Görsel kaynağı: <https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/>*
 
 1. **OMURGA(CORE)**  
-Üçüncü katman veya daha üstü anahtar kullanılır.Genellikle tüm Vlanlar
-burda oluşturulur.Ağın tüm yönlendirme yükü bunun üzerindedir.Bu nedenle
+Üçüncü katman veya daha üstü anahtar kullanılır.Genellikle tüm VLANlar
+burada oluşturulur.Ağın tüm yönlendirme yükü bunun üzerindedir.Bu nedenle
 genellikle yedekli kullanır.Performansı çok fazladır.Binalar arası
 bağlantıyı sağlamak için kullanılır.Bu nedenle çok sayıda fiberoptik
 port sergilerler.Modüler yapıdadırlar,yani port sayıları ve türleri
-modüler halinde takılıp çıkartılabilir.Modülerin takıldığı yere "şase"
+modüler halinde takılıp çıkartılabilir. Modüllerin takıldığı yere "şase"
 denir.Fiziksel olarak çok yer kaplarlar ve pahalıdırlar.  
 ![Alt text](images/B06-AnahtarOmurga.png)  
-*Görsel kaynağı: https://thenetworkinstallers.com/blog/fiber-optic-installation-process/*
+*Görsel kaynağı: <https://thenetworkinstallers.com/blog/fiber-optic-installation-process/>*
 
 2. **Dağıtım(Distrubution)Katmanı**  
 Omurga anahtarında bağlı olan ve binaların içerisinde küçük bir omurga
-gibi düşünebileceğimiz anahtarlardır.Omurga anahtarına göre daha
+gibi düşünebileceğimiz anahtarlardır. Omurga anahtarına göre daha
 ucuzdur.L2 veya L3 olabilir.  
 
 3. **KENAR**  
-Son kullanıcı cihazlarının bağlandığı anahtarlardır.Bu nedenle
+Son kullanıcı cihazlarının bağlandığı anahtarlardır. Bu nedenle
 özel görevleri olabilir.  
-İhtiyaca göre :  
-802.1x(Kimlik Doğrulama)  
-PoE(802.3aaf) Enerji göndermek için kullanılır.  
-Captive Portal
+İhtiyaca göre:
+
+- 802.1x(Kimlik Doğrulama)  
+- PoE(802.3aaf) Enerji göndermek için kullanılır.  
+- Güvenlik (port-security, DHCP koruması, vb.)
 
 ![Anahtar türleri karşılaştırması](images/B06-Core_Dist_Access.png)  
-*Görsel kaynağı: https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/*
+*Görsel kaynağı: <https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/>*
 
 **Örnek:**  
 20 portlu bir VLAN anahtar 4 portlu bir ağ geçidine
-bağlanabiliyorAşağıdaki durumları yorumlayınız. 
+bağlanıyor. Aşağıdaki durumları yorumlayınız.
 
-1)Her portun port sayısı 5’er tanedir.  
-Böyle bir zorunluluk yoktu.̊  
-2)Bir valan anahtar üzerine doğrudan bağlanacak PC sayısı 16’dır  
-16 tane de olabilir daha fazla da olabilir.  
-3)Her vlana atanmış portlar ardışık olmak zorundadır  
-Öyle bir şey yok.Esneklik özelliği vardır .
+1. Her VLAN'daki port sayısı 5’er tanedir.
+1. Bu VLAN anahtar üzerine doğrudan bağlanacak PC sayısı 16’dır.
+1. Her VLAN'a atanmış portlar ardışık olmak zorundadır.
