@@ -2,9 +2,8 @@
 
 ## Ethernet Protokolü
 
-İlk kez "INTEL VE XEROX" tarafından geliştirilmiştir.Daha sonra
-IEEE(Institue of Electrical and Electronical Enginner) tarafından 802.3
-ismi ile standartlaştırılmıştır.
+İlk kez Intel ve Xerox firmaları tarafından geliştirilmiştir. Daha sonra
+IEEE (Institue of Electrical and Electronical Engineering) tarafından 802.3 ismi ile standartlaştırılmıştır.
 
 **İsimlendirmeler**
 
@@ -31,9 +30,10 @@ karakter ile gösterilir.
 ![MAC adresi](images/B06-MAC_AdresiNedir.png)  
 *Görsel kaynağı: <https://tecadmin.net/media-access-control-address/>*
 
-İlk 6 karakter (ilk 24 bit) üretici kodunu (OUI), son 6 karakter ise seri
-numarasını belirtir. Bir üretici aynı MAC adresini birden fazla karta
-veremez. Dolayısıyla -_teorik olarak_- MAC adresleri dünyada tektir (_uniq_). 
+İlk 6 karakter (ilk 24 bit) üretici kodunu (OUI), son 6 karakter ise seri numarasını belirtir. Bir üretici aynı MAC adresini birden fazla karta veremez. Dolayısıyla -_teorik olarak_- MAC adresleri dünyada tektir (_uniq_).
+
+!!! note "GSM ile benzerlik"
+    Telefon sistemindeki IMEI numarası ile GSM numarası arasındaki ilişkinin benzeri, MAC adresi ile IP adresi arasında da vardır.
 
 !!! warning "Dikkat"
     Birden fazla aynı MAC adresi aynı ağ üzerinde (LAN / VLAN) olmamalıdır.
@@ -152,7 +152,7 @@ Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağl
 - Aynı anahtarda birden fazla farklı ağ (VLAN) olabilir.
 - Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
 
-![VLAN'lar ve yönlendirme](B06-vlan_bolme_ve_yonlendirme.png)
+![VLAN'lar ve yönlendirme](B06-vlan_bolme_ve_yonlendirme.png)  
 *Görsel kaynağı: <https://www.ws.afnog.org/afnog2011/sie/250-vlans/vlans.pdf>*
 
 ## VLAN Anahtarlar
@@ -226,9 +226,8 @@ Son kullanıcı cihazlarının bağlandığı anahtarlardır. Bu nedenle
 ![Anahtar türleri karşılaştırması](images/B06-Core_Dist_Access.png)  
 *Görsel kaynağı: <https://blog.router-switch.com/2014/04/network-design-with-examples-core-and-distribution/>*
 
-**Örnek:**  
-20 portlu bir VLAN anahtar 4 portlu bir ağ geçidine
-bağlanıyor. Aşağıdaki durumları yorumlayınız.
+### Örnek 3
+20 portlu bir VLAN anahtar, 4 portlu bir ağ geçidine bağlanıyor. Aşağıdaki durumları yorumlayınız.
 
 1. Her VLAN'daki port sayısı 5’er tanedir.
 1. Bu VLAN anahtar üzerine doğrudan bağlanacak PC sayısı 16’dır.
