@@ -144,7 +144,7 @@ Bazı ağ geçitleri, üzerindeki ağ arayüzüne(interface) bağlı olarak ethe
 Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağlanarak ağ istenilen şekilde özelleştirilebilir.
 
 ![IEEE 802.1](images/B06-geleneksel_vs_vlan_bolme.png)
-*Görsel kaynağı: <https://www.ictshore.com/free-ccna-course/vlans-configuration-cisco-switch/>*
+*Görsel kaynağı: <https://www.ws.afnog.org/afnog2011/sie/250-vlans/vlans.pdf>*
 
 **VLAN (Sanal ağ) kullanmanın avantajları**
 
@@ -153,6 +153,7 @@ Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağl
 - Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
 
 ![VLAN'lar ve yönlendirme](B06-vlan_bolme_ve_yonlendirme.png)
+*Görsel kaynağı: <https://www.ws.afnog.org/afnog2011/sie/250-vlans/vlans.pdf>*
 
 ## VLAN Anahtarlar
 
