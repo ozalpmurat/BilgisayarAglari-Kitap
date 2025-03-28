@@ -160,3 +160,6 @@ SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağ
 
 ![OTDR cihazı](images/B05-OTDR.jpg)
 *F/O kablo testleri "OTDR" isimli cihaz ile yapılır. Görsel: <https://en.wikipedia.org/wiki/Optical_time-domain_reflectometer>*
+
+![OTDR Sonuçları](images/B05-OTDR_Sonuclari.webp)
+*OTDR sonuçları. Görsel: <https://www.baudcom.com.cn/blog/what-is-otdr>*

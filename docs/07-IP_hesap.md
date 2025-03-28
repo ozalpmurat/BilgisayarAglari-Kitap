@@ -1,8 +1,10 @@
 # İnternet'in Protokolü: IP
+
 Bu bölümdeki içeriği anlattığım bir video var. Alt ağlara bölme konusuna kadar anlatmıştım. İsteyenler videodan da faydalanabilir: [https://www.youtube.com/embed/e9-lU0aXz1g](https://www.youtube.com/embed/e9-lU0aXz1g)
 ![type:video](https://www.youtube.com/embed/e9-lU0aXz1g)
 
 ## Genel Bilgiler
+
 ![](images/B07-IP_Version.png){width="300"}   
 
 IPv4 adresleri tükendiği için, artık IPv6 adresleri dağıtılmaktadır. Uzunca bir süre daha ikisini birlikte kullanmak zorundayız.
@@ -15,6 +17,7 @@ IPv4 adresleme sisteminde $2^{32}$ IP adresi kullanılabilirken, IPv6 adreslemes
 **Bu ders içerisinde IP ifadesi her kullanıldığında, IPv4 anlaşılmalıdır.** Bu ders açısından ikisi arasındaki en önemli fark; birisinin 32, diğerinin ise 128 bit olmasıdır. IP hesaplamaları tamamen aynıdır. Hesap mantığını anlamak için v4 hesapları -*kısa olduğu için*- daha iyi olacaktır. Sonrasında aynı hesapları v6'da da yapabilirsiniz.
 
 ### IANA: IP Dağıtan Kuruluş
+
 https://www.iana.org/ web sitesinde faaliyetleri hakkında bilgi alınabilir.
 
 ![IANA](images/B07-IANA1.png)  
@@ -29,6 +32,7 @@ IANA elindeki tüm IPv4 adresleri 2011'de bitti.
 *Görsel kaynağı: https://en.wikipedia.org/wiki/IPv4_address_exhaustion*
 
 ### IP Sınıfları
+
 IP'nin ilk tasarlandığı sıralarda ortaya çıkmış bir kavramdır.
 Kurumlarda IP adresleri tahsis edilirken ihtiyaca göre optimal sayıda
 IP  adresi verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıfı olanlar, en küçük IP sınıfı da C sınıfı olanlardır.
@@ -50,7 +54,9 @@ IP  adresi verebilmek için tasarlanmıştır. En büyük IP sınıfı A sınıf
 
 !!! warn "IP sınıflarının günümüzdeki anlamı"
     İlk başta IP adresleri dağıtılırken kolaylık olsun diye tasarlanmış olan IP sınıfları günümüzde bu anlamda kullanılmamaktadır. BŞEÜ'de 16M IP adresi yoktur. SAÜ'de de C sınıfından (256) daha fazla IP adresi vardır. Örneklerden sadece ODTÜ'nünki gerçekten B sınıfı olarak (~65K) tahsis edilmiştir.
+
 ## Rezerve IP Adresleri
+
 IETF ve IANA tarafından, özel amaçlar için kullanılmak üzere farklı adres blokları ayrılmıştır. En temel olarak; ==özel== ve ==genel== IP adresleri şeklinde bir ayrım yapılmıştır. İç ağda özel IP adresine sahip olan bilgisayarlar, İnternet'e çıkarken genel IP adresi kullanırlar.
 
 Bunların dışında da farklı amaçlarla ayrılmış adres aralıkları bulunmaktadır. Aşağıda ayrılmış olan bu adresler kısaca açıklanmıştır.
@@ -80,6 +86,7 @@ IPv4 için, `127.0.0.0/8` A sınıfı adres bloğunun tamamı loopback için ayr
 **Link-local adresler**: DHCP vasıtasıyla otomatik IP almak üzere yapılandırılmış ağlarda, bir IP adresi alamayan bilgisayarlar bu bloktan kendi kendine bir IP adresi verirler. Eğer bir bilgisayarda `169.254.X.X` şeklinde bir IP adresi görürseniz, "_bu bilgisayar IP alamamış_" denir. Eğer DHCP sisteminde bir sorun olursa, link-local adresler sayesinde aynı ağdaki (LAN) bilgisayarlar kendileri arasında haberleşebilirler.
 
 ### NAT (Network Address Translation)
+
 ![NAT](images/B07-NAT_Tablosu.png)  
 *Görsel kaynağı: https://onlinecomputertips.com/support-categories/networking/601-network-address-translation-nat/*
 
@@ -91,6 +98,7 @@ Bir IP adresinin, diğer ağlara giderken farklı bir adrese dönüştürülmesi
     Yalnızca 1 public IP adresi olan bir kurumun ağında çok sayıda bilgisayar internet'e çıkıyor olsun. Bu örneği, evin arka bahçe kapısında tek terlik bulunmasına benzetebiliriz. Bahçede işi olan kişi terliği giyer, işini halledince terliği çıkarıp eve girer. Sonra başkası aynı terliği kullanır. Bahçeyi gören komşular hep aynı terlikleri görürler ama o terlikleri kullanan kişi değişmiş olur.
 
 ## IP Adresi ve Hesaplamaları
+
 32 bit uzunluğa sahip olan IP adresi 2 temel bileşene sahiptir:
 
 1.  Ağ tanımlayıcı
@@ -114,6 +122,7 @@ IP adresleri 32 bitin sekizerli olarak gruplandırılması ve onluk (decimal) ol
 *4 bit ile 2^4=16 tane farklı adres kullanılabilir*
 
 ### Host ve Network Kısımlarının Ayrıştırılması
+
 Bir IP adresinde soldan itibaren ilk X tane bit ağ tanımlayıcısıdır. Geri kalan Y tane bit te host tanımlayıcısıdır. Bu durumda $X+Y=32$ olur.
 
 ![](images/B07_IP_Adresi_Host_ve_Net_ID.png)  
@@ -160,7 +169,12 @@ Host sayısı = $2^2-2=2$ tane
 *Örnek /30 ağ kullanım şekli: Dummy Network*  
 *Görsel kaynağı: https://www.computernetworkingnotes.com/ccna-study-guide/contiguous-and-discontiguous-networks-explained.html*
 
+### Ağ hesapları neden yapılıyor?
+
+![Ag hesapları amacı iş akışı](images/B07-AgHesaplariAmaci.png)  
+
 ### Ağ Maskesi (Netmask)
+
 "Alt ağ maskesi" de denir Ağın kaçıncı bitten bölündüğü belirtir. IP adresi gibi 32 bitten oluşur. İkilik sistemde soldan itibaren `1`'lerle başlar, sonra `0`'larla devam eder. 1'den 0'a geçilen nokta, ağın bölündüğü kısımdır. Gündelik hayatta kolay olması için, onluk sistemde kullanılır.
 
 Ağ maskesinin temel görevleri:
@@ -170,7 +184,7 @@ Ağ maskesinin temel görevleri:
 1. Ağın nerede başladığı (ağ adresi) hesabında kullanmak
 
 **Örnek bazı maskeler:**
-![](images/B07-Ornek_Maskeler.png){width="600"}  
+![Örnek maskeler](images/B07-Ornek_Maskeler.png){width="600"}  
 
 ![Maskeleme](images/B07-maskeleme.png){width="400"}  
 *Görsel kaynağı: https://www.bestpickreports.com/blog/post/6-painting-hacks-with-tape/*
@@ -197,6 +211,7 @@ Ağ maskesine alternatif olarak CIDR Notasyonu kullanılmaktadır. Bu gösterim 
 - `10.9.8.0` ve `255.255.255.128` ise `10.9.8.0/25` şeklinde gösterilir. (`128` ikilik tabanda `10000000` şeklinde gösterildiğinden soldan itibaren 25 tane `1`, 7 tane de `0` vardır.)
 
 ### Ağ adresi
+
 Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa (mantıksal `VE` işlemi) çıkan sonuç **ağın adresi**ni verir. Bu sayede, ağın nerede başladığı bulunmuş olur.
 
 ![Maskeleme](images/B07-maskeleme2.png)  
@@ -204,14 +219,16 @@ Ağ maskesi herhangi bir IP adresi ile ikilik sistemde çarpılırsa (mantıksal
 
 **Örnek:**  IP adresi `192.168.1.75` olsun. Alt ağ maskesi de `255.255.255.0` olsun. Bu ağın ağ adresini bulalım.
 
-![](images/B07-Ornek-Ag_Adresi_Bulma.png){width="500"}  
+![Ağ adresi bulma](images/B07-Ornek-Ag_Adresi_Bulma.png){width="500"}  
 
 ### Ağ adresi ve yayın adresinin pratik hesabı
+
 IP adresinin nereden bölündüğünü biliyorsak; **IP adresinde** bu bitten sonrası `1` yapılırsa, `yayın adresi`ni buluruz. Aynı bitleri `0` yaptığımızda ise `ağ adresi`ni buluruz.
 
-![](images/B07-Ornek-Kolay_Hesap.png){width="500"}  
+![Kolay hesap](images/B07-Ornek-Kolay_Hesap.png){width="500"}  
 
 ### IP hesaplarında formüller ve özet
+
 1. **IP (v4) adresleri $32$ bitten oluşur**. Bu bitler sekizer gruplu (oktet) olarak yazılır ve okunur. Örnek: `10.170.265.44`. IP adresinin her oktetinde 8 bit bulunduğundan, hiç bir oktet 255'ten büyük olamaz. Yani az önce verdiğim IP adresi, bozuk bir IP adresidir.
 1. IP adresindeki $32$ bitin soldan itibaren $M$ tanesi ağı tanımlar. geri kalan $N$ tanesi de ($N=32-M$) hostları tanımlar. Bu iki bileşeni birbirinden ayırmanın iki yolu vardır:
     * **CIDR** gösteriminde bölü işareti ( "/" ) kullanılır. örnek: `10.5.0.100/16`
@@ -227,7 +244,6 @@ IP adresinin nereden bölündüğünü biliyorsak; **IP adresinde** bu bitten so
 1. Bir ağın **yayın adresi**ni bulmak için;
     * IP adresinde bölü'den sonraki bitlerin tamamı 1 yapılır. Sonra 10'luk sisteme çevrilir.
 1. $/N$ şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar $/(N-1)$ olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, `/20` şeklinde bir ağı ikiye bölersek iki tane `/21` ağ oluşur. Benzer şekilde, $/N$ şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani `/20` şeklindeki ağ dörde bölünürse elimizde 4 tane `/22` ağ oluşur.
-
 
 ## Alt Ağlara Bölme
 
@@ -306,6 +322,7 @@ yapılabilir.
 ---
 
 ### Örnek-3: Büyük ağları bölme
+
 !!! question "Büyük ağları bölme"
     192.168.1.100/16 ağını 8 alt ağa bölün. İlk ve son alt ağlar için şunları hesaplayın:  
     - Ağ adresi  
