@@ -243,7 +243,7 @@ IP adresinin nereden bölündüğünü biliyorsak; **IP adresinde** bu bitten so
     * IP adresinde bölü'den sonraki bitlerin tamamı 0 yapılır. Sonra 10'luk sisteme çevrilir.
 1. Bir ağın **yayın adresi**ni bulmak için;
     * IP adresinde bölü'den sonraki bitlerin tamamı 1 yapılır. Sonra 10'luk sisteme çevrilir.
-1. $/N$ şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar $/(N-1)$ olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, `/20` şeklinde bir ağı ikiye bölersek iki tane `/21` ağ oluşur. Benzer şekilde, $/N$ şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani `/20` şeklindeki ağ dörde bölünürse elimizde 4 tane `/22` ağ oluşur.
+1. $/N$ şeklinde verilen bir ağı 2 alt ağa bölersek, yeni ağlar $/(N+1)$ olmuş olur. Yani bölü işareti 1 bit sağa kaymış olur. Örneğin, `/20` şeklinde bir ağı ikiye bölersek iki tane `/21` ağ oluşur. Benzer şekilde, $/N$ şeklindeki bir ağı dörde bölersek, 2 bit kaydırmalıyız. Yani `/20` şeklindeki ağ dörde bölünürse elimizde 4 tane `/22` ağ oluşur.
 
 ## Alt Ağlara Bölme
 
