@@ -47,3 +47,4 @@
 - Ağ izleme işlemleri için basit betikler (Bash, Python)
 - API ile izleme sistemlerine entegrasyon (anahtarlar da API destekliyor artık). HP Aruba CX OS işletim sistemi VM. 
 - Webhook, alert script örnekleri
+- DevOps araçları (Ansible gibi)
