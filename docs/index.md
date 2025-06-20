@@ -35,3 +35,6 @@ Web içerikleri her güncellendiğinde, PDF sürümü de otomatik olarak oluştu
 # Daha fazla bilgi
 
 Siteyi yaparken şuradaki dokümanı uyguladım: [https://github.com/ldeluigi/markdown-docs](https://github.com/ldeluigi/markdown-docs) **mkdocs** kullanılarak oluşturulmuştur. 
+
+!!! note "Projenin github adresi"
+    [https://github.com/ozalpmurat/BilgisayarAglari-Kitap](https://github.com/ozalpmurat/BilgisayarAglari-Kitap)
