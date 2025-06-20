@@ -16,11 +16,11 @@ Bunun için önce bir Python Virtual Environment oluşturun ki kuracağımız k�
 python -m venv env
 cd env
 source bin/activate
-git checkout https://github.com/ozalpmurat/BilgisayarAglari-Kitap.git
+git clone https://github.com/ozalpmurat/BilgisayarAglari-Kitap.git
 cd BilgisayarAglari-Kitap
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-mkdocs build
+mkdocs build # Eğer PDF olarak ta çıktı lazımsa, başına ekle: ENABLE_PDF_EXPORT=1
 mkdocs serve
 ```
 Üsttekileri yapınca aşağıdaki gibi bir ekran geliyor. Son satırda yazan adresten web sitesini görüntüleyebilirsiniz.

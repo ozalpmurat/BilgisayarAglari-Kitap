@@ -171,7 +171,10 @@ Host sayısı = $2^2-2=2$ tane
 
 ### Ağ hesapları neden yapılıyor?
 
+Eğer iki bilgisayar aynı ağda ise doğrudan 2. katmanda (MAC adresleri ile) haberleşebilirler. Farklı ağlarda iseler mutlaka kendi ağ geçitlerine gitmeleri gerekir.
+
 ![Ag hesapları amacı iş akışı](images/B07-AgHesaplariAmaci.png)  
+*A ile B aynı ağda mı? Sorusunun cevabını arıyoruz*
 
 ### Ağ Maskesi (Netmask)
 
