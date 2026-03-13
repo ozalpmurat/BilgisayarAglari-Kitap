@@ -46,10 +46,11 @@ markdown_extensions:
       title: SAYFA İÇİ BAŞLIKLAR
       permalink_title: Bu başlığa link vermek için kullanabilirsiniz.
 
-extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-#  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+extra_javascript: []
+  # Polyfill ve MathJax kaldırıldı - mkdocs-material zaten gerekli JS'i sağlıyor
+  # - https://polyfill.io/v3/polyfill.min.js?features=es6
+  # - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
 
 plugins:
   - search:
