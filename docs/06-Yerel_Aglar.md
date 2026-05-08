@@ -7,6 +7,9 @@ IEEE (Institue of Electrical and Electronical Engineering) tarafından 802.3 ism
 
 **İsimlendirmeler**
 
+![X-Base isimlendirme standardı](images/B06-X-Base_isimlendirme.png)
+*Görsel kaynağı: <https://www.itprc.com/overview-of-ethernet-history/>*
+
 - 10 Base 2: 10 sayısı 10 Mb/s’yi ifade eder. "Base" sözcüğü temel
 bandı ifade eder. En sondaki kablo türüdür. 2 olduğunda ince (thin)
 koaksiyel kablo ile ~200 metre sınırını belirtir.
@@ -96,8 +99,8 @@ Aşağıdaki soruları görsele göre cevaplayın:
 1. A ile B aynı anda veri gönderebilir mi?
 1. B ile C aynı anda veri gönderebilir mi?
 1. C yayın mesajı gönderdiğinde tüm PC’lere gider mi?
-1. B ile C aynı arasındaki trafiği E görür mü?
-1. B ile C aynı arasındaki trafiği F görür mü?
+1. B ile C arasındaki trafiği E görür mü?
+1. B ile C arasındaki trafiği F görür mü?
 
 ![Yayın ve çarpışma alanı](images/B06-Yayin_Carpisma_Alani_2.png)
 

@@ -56,12 +56,11 @@ UTP kablolar kadar ekonomik ve işlevsel olmamasıdır. Bilgisayar ağlarında d
 ![RJ-45 konnektör](images/B02-RJ45-Konnektor.png){ width="800" }  
 *Görsel kaynağı: <https://www.electricalvolt.com/how-to-crimp-rj45-connector/>*
 
-Bükümlü çift CAT5 VE CAT6 Kabloları sonlandırmak için RJ-45 adı verilen
-konnektörler kullanılır. Bu kablolar iki farklı iki şekilde
-sonlandırılabilir.**568-A,568-B**  
-Kablonun iki ucunun aynı standartlarla sonlandırılmasına **düz (Straight
-kablo)** denir. İki ucunda iki farklı standartta sonlandırılma yapılırsa
-**çapraz(cross-over)kablo** adı verilir.
+![Bina kablolaması](images/B05-Bina_kablolama.png)
+*Görsel kaynağı: <https://docs.oracle.com/cd/E81005_01/doc.10/e81016/c_network_structured_cabling_examples.htm#MICRS-StructuredCablingExamples-228C804A>*
+
+8 telli bükümlü çift kabloları sonlandırmak için RJ-45 adı verilen konnektörler kullanılır. Bu kablolar iki farklı şekilde sonlandırılabilir: **568-A** ve **568-B**. Kablonun iki ucunun aynı standartlarla sonlandırılmasına **düz (straight) kablo** denir. İki ucunda iki farklı standartta sonlandırılma yapılırsa
+**çapraz (cross-over) kablo** adı verilir.
 
 ### Ethernet Kablosunda Pin Dizilimi
 
@@ -140,6 +139,9 @@ Işık ileten tüpün çapına göre; Single Mod(SM) ve Multi Mod(MM) olmak üze
 Fiberoptik kablodan gelen ışık sinyallerinin bakır yerel ağlarda kullanılabilmesi için elektriksel sinyallere dönüştürülmesini sağlar. Günümüzde, SFP adı verilen küçük tipte çeviriciler kullanılmaktadır.   
 ![SFP, switch ve fiber sonlandırma kutusu](images/B05-fiber-sfp_switch.png)  
 *Görsel kaynağı: <https://salepubsm.live/product_details/37305281.html/>*
+
+![SFP modül](images/B05-SFP_modul.png)  
+*Görsel kaynağı: <https://www.istockphoto.com/tr/foto%C4%9Fraf/fiber-optik-yama-kablosu-ve-veri-merkezinde-ge%C3%A7i%C5%9F-yapmak-i%C3%A7in-ba%C4%9Fl%C4%B1-a%C4%9F-kablosu-gm872042874-243594050>*
 
 SFP'ler, switch'lere takılarak kullanılır. Kullanılan çeviriciye göre bağlantının bant genişliği belirlenir. Fiberoptik çeviriciler için kullanılan diğer isimler şöyle sıralanabilir:
 
