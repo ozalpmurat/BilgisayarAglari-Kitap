@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ## Architecture
 
 ### Deployment
-The site is built and deployed by a **single** workflow: [`.github/workflows/DeployGitHubPages.yml`](.github/workflows/DeployGitHubPages.yml). On every push to `main`/`master` it runs `mkdocs build`, uploads the `site/` directory as a Pages artifact and deploys it to GitHub Pages.
+The site is built and deployed by a **single** workflow: [`.github/workflows/DeployGitHubPages.yml`](.github/workflows/DeployGitHubPages.yml). On every push to `main`/`master` that touches `docs/**`, `includes/**`, `requirements.txt` or `mkdocs.yml`, it runs `mkdocs build`, uploads the `site/` directory as a Pages artifact and deploys it to GitHub Pages. Actions are pinned to their current major versions (`checkout@v7`, `setup-python@v7`, `configure-pages@v6`, `upload-pages-artifact@v5`, `deploy-pages@v5`).
 
 [`Github/Workflows/`](Github/Workflows) holds two older workflows (`mkdocs-deploy-GithubPages01/02.yml`). They are **not** in `.github/workflows/`, so GitHub never runs them; treat them as history, not as configuration.
 
@@ -105,7 +105,7 @@ The site uses Google Analytics with property ID: `G-QTZXBE6Z2Z`
 3. **Images**: link them as `images/<file>` from a chapter in `docs/`; a `B*` prefix alone is not enough, and a wrong path fails silently as a broken image (build only warns).
 4. **PDF filename encoding**: Contains Turkish characters (`BilgisayarAglari-MuratÖzalp.pdf`)
 5. **Material theme sidebar**: Disabled (`include_sidebar: false`)
-6. **Mermaid**: `pymdownx.superfences` wraps ` ```mermaid ` code in `<div class="mermaid">`, but no Mermaid JavaScript is loaded (the tags in `mkdocs.yml` are commented out), so the diagram stays as raw text. Adding a working script tag is required before relying on Mermaid.
+6. **Mermaid**: works out of the box. Material loads `https://unpkg.com/mermaid@11/dist/mermaid.min.js` at runtime and renders every `.mermaid` block into a **closed shadow root**, so the diagram is invisible to `curl`, text extraction and the HTML source (you only see `<pre class="mermaid">`). Check it in a real browser. The PDF does **not** run JavaScript, so Mermaid blocks stay as raw code there.
 7. **Math**: MathJax 3 is loaded from jsDelivr; the `polyfill.io` script is commented out.
 8. **Harmless build warnings**: `No translations could be found for the locale 'tr'` and `Template skipped: 'sitemap.html' not found in theme directories`.
-9. **Old action versions**: the workflow pins Node 20-era actions (`checkout@v4`, `setup-python@v4`, `configure-pages@v3`, `deploy-pages@v4`, `upload-artifact@v4`); GitHub currently forces them onto Node 24 and prints a deprecation warning.
+9. **Workflow triggers**: the deploy runs only when `docs/**`, `includes/**`, `requirements.txt` or `mkdocs.yml` change. A commit that only touches `AGENTS.md` or the workflow file does not deploy — use *Run workflow* (workflow_dispatch) to test it.
