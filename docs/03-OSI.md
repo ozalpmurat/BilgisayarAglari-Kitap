@@ -108,11 +108,27 @@ yöntemini (ikinci katman protokolünü) kullanması gerekir.
 ![PPPoE](images/B03-Modem-PPPoE.png)
 *Görsel kaynağı: [https://www.alfanett.com.tr/modem.html](https://www.alfanett.com.tr/modem.html)*
 
-### LAN ve WAN nedir?
+### LAN, MAN, WAN ve PAN nedir?
 
+- **PAN**: Personal Area Network (kişisel alan ağı). Tek bir kişinin kendi etrafındaki, genellikle birkaç metreyle sınırlı mini ağlardır. Telefon ile Bluetooth kulaklık eşleşmesi, akıllı saat, kablosuz fare/klavye ya da USB ile bağlanan çevre birimleri bu kapsamdadır.
 - **LAN**: Local Area Network (yerel alan ağı). Kendi arazisi (binası) içerisinde, kimseden izin almaya gerek kalmadan kablolama yapılan ağlara LAN denir. Örneğin üniversite kampüsü ya da aynı binanın birkaç katını kullanan şirketler gibi.
+- **MAN**: Metropolitan Area Network (şehirsel alan ağı). Bir şehri ya da aynı şehirdeki birden fazla yerleşkeyi kapsayan ağlardır; kampüsler arası fiber hatlar, şehir içi Metro Ethernet bağlantıları gibi. Kapsamı daha iyi anlamak için akıllı şehir uygulamalarını (trafik ışıklarının merkezden kontrolü, parklarda akıllı sulama sistemleri vb.) ya da MOBESE olarak bilinen, Emniyet Müdürlüğünün şehir genelindeki kamera sistemlerini düşünebilirsiniz.
 - **WAN**: Wide Area Network (geniş alan ağı). Kurumların kendi arazisinin (binasının) dışında olan bir yer ile kurulan ağlardır. Sokağın karşısındaki binaya kablo çekemeyiz. Eğer karşılıklı iki binada iletişim kurulması gerekiyorsa, ISP (Internet Service Provider ~ internet servis sağlayıcı) firmadan hizmet satın almak gerekir.
-- **Fark ne?**: LAN'da istediğimiz kablolama türü ve istediğimiz protokolü kullanabiliriz. Hiç bir kısıtlama olmadan ağa bağlanabiliriz. WAN'da ise servis sağlayıcının sunduğu hizmetlerden ve onun kurallarına uyarak bağlanabiliriz.
+
+**Fark ne?** LAN'da istediğimiz kablolama türünü ve istediğimiz protokolü kullanabiliriz; hiçbir kısıtlama olmadan ağa bağlanabiliriz. WAN'da ise servis sağlayıcının sunduğu hizmetlerden ve onun kurallarına uyarak bağlanırız.
+
+Pratikte ayrım şöyle yapılır: Fiziksel olarak kablo ya da kablosuz ağ kurmak için kimseden izin almak zorunda olmadığınız bir ağda LAN teknolojileri kullanılır. Sistemlerinizi birbirine ya da İnternet'e bağlamak için bir servis sağlayıcıdan hizmet satın alıyorsanız buna genellikle WAN denir. Evinizin içinde kimseden izin almadan kablo çekebilirsiniz: evde kullandığınız modemin size bakan tarafı LAN, dışarı bakan tarafı WAN olur.
+
+Günümüzde MAN ise ayrı bir sınıf olarak çok anlamlı değildir; ağlar genellikle LAN/WAN sınıflandırması ile ele alınır.
+
+*Farklı ağ türlerinin özet karşılaştırması:*
+
+| Ağ türü | Kapsam | Tipik sahibi | Örnek | Yaygın teknoloji |
+| ------- | ------ | ------------ | ----- | ---------------- |
+| PAN | Birkaç metre (kişisel alan) | Kişinin kendisi | Telefon–kulaklık, akıllı saat, kablosuz fare | Bluetooth, USB, NFC |
+| LAN | Bina / kampüs | Kurumun kendisi (kendi kablolaması) | Ofis, okul laboratuvarı | Ethernet (802.3), Wi-Fi (802.11) |
+| MAN | Şehir / yerleşkeler arası | ISP, belediye veya kamu kurumları | Şehir içi fiber, Metro Ethernet, MOBESE kameraları | Fiber, Metro Ethernet, MPLS |
+| WAN | Şehir, ülke, kıtalar arası | ISP'ler ve telekom operatörleri | Şube–merkez bağlantısı, İnternet | Metro Ethernet, MPLS, PPPoE, fiber |
 
 ### Anahtarlama Türleri
 

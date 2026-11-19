@@ -16,6 +16,9 @@
 *[LAN]: Local Area Network (yerel ağ)
 *[VLAN]: Virtual Local Area Network (Sanal yerel ağ)
 *[WAN]: Wide Area Network (kurumdan dışarı doğru giden bağlantıların olduğu yer)
+*[PAN]: Personal Area Network (kişisel alan ağı)
+*[MAN]: Metropolitan Area Network (şehirsel alan ağı; günümüzde WAN kapsamında değerlendirilir)
+*[MOBESE]: Mobil Elektronik Sistem Entegrasyonu (şehir geneli güvenlik kamera sistemi)
 *[DMZ]: Demilitarized Zone (savunmasız bölge anlamındadır. Genellikle, sunucuların olduğu bölgeyi ifade eder. İnternet'ten gelebilecek tehditlere karşı daha riskli bir durumda olduğu için bu isim kullanılır)
 *[XXX]: Bu yazıyı görüyorsanız, burayı düzenlemeyi unutmuşumdur. Geri besleme yapabilirsiniz :)
 *[xDSL]: ADSL, VDSL, SHDSL, vb. modemlerin genel ismi.
