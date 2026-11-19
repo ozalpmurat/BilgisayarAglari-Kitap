@@ -155,7 +155,7 @@ Bir **VLAN yapısı**nda ise fiziksel bir müdahale olmadan, hatta uzaktan bağl
 - Aynı anahtarda birden fazla farklı ağ (VLAN) olabilir.
 - Ağlarda değişiklik yapmak için fiziksel değişiklik yapmaya gerek yoktur. Uzaktan dahi kolayca yapılabilir.
 
-![VLAN'lar ve yönlendirme](B06-vlan_bolme_ve_yonlendirme.png)  
+![VLAN'lar ve yönlendirme](images/B06-vlan_bolme_ve_yonlendirme.png)  
 *Görsel kaynağı: <https://www.ws.afnog.org/afnog2011/sie/250-vlans/vlans.pdf>*
 
 ## VLAN Anahtarlar

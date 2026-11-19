@@ -5,7 +5,8 @@ This document contains non-obvious information about the Bilgisayar Ağları (Co
 ## Build & Development Commands
 
 ```bash
-# Local development server with live reload
+# Local development server with live reload (a ready virtualenv lives in ./env)
+source env/bin/activate
 mkdocs serve
 
 # Build static site
@@ -20,29 +21,29 @@ pip install -r requirements.txt
 
 ## Architecture
 
-### Dual Deployment Strategy
-The project uses **two separate GitHub Actions workflows** for deployment:
+### Deployment
+The site is built and deployed by a **single** workflow: [`.github/workflows/DeployGitHubPages.yml`](.github/workflows/DeployGitHubPages.yml). On every push to `main`/`master` it runs `mkdocs build`, uploads the `site/` directory as a Pages artifact and deploys it to GitHub Pages.
 
-1. **[`mkdocs-deploy-GithubPages01.yml`](Github/Workflows/mkdocs-deploy-GithubPages01.yml)** - Uses `ldeluigi/markdown-docs` generator, simpler but no PDF support
-2. **[`mkdocs-deploy-GithubPages02.yml`](Github/Workflows/mkdocs-deploy-GithubPages02.yml)** - Uses standard `mkdocs build` with PDF generation and automatic PDF upload to GitHub Releases
+[`Github/Workflows/`](Github/Workflows) holds two older workflows (`mkdocs-deploy-GithubPages01/02.yml`). They are **not** in `.github/workflows/`, so GitHub never runs them; treat them as history, not as configuration.
 
 ### PDF Export Pipeline
-- Enabled via `ENABLE_PDF_EXPORT=1` environment variable
+- Enabled via `ENABLE_PDF_EXPORT=1` environment variable (set in the workflow, so every CI build also produces a PDF)
 - Output: `site/BilgisayarAglari-MuratÖzalp.pdf`
-- Generated during CI/CD and automatically uploaded as a release asset
+- Published **with the site**, not attached to a GitHub Release: the release-upload step is commented out in the workflow, and `docs/index.md` + `README.md` link to the PDF served from GitHub Pages
 - Cover includes "Bilecik Şeyh Edebali Üniversitesi" branding
+- A very large image can break PDF generation; keep big diagrams reasonably sized
 
 ## Key Plugins & Extensions
 
 ### Enabled Plugins
-- `mkdocs-material` - Material theme with Turkish localization
+- `mkdocs-material` - Material theme, configured with `locale: tr` (no Turkish translation bundle exists)
 - `mkdocs-video` - Video embedding support
 - `mkdocs-with-pdf` - PDF generation (conditional)
 - `mkdocs-print-site-plugin` - Print-friendly site generation
 - `mkdocs_pymdownx_material_extras` - Additional Material theme features
 
 ### Custom Markdown Extensions
-- **Math support**: `pymdownx.arithmatex` (generic mode, block tag: `pre`)
+- **Math support**: `pymdownx.arithmatex` (generic mode; `block_tag` stays at its default)
 - **Mermaid diagrams**: `pymdownx.superfences` configured for Mermaid
 - **Auto-abbreviations**: `includes/abbreviations.md` auto-appended via `pymdownx.snippets`
 
@@ -55,8 +56,8 @@ These are configured but commented out in [`mkdocs.yml`](mkdocs.yml):
 ## Localization
 
 ### Turkish Configuration
-- **Timezone**: `Europe/Istanbul` (set in GitHub Actions)
-- **Locale**: `tr` (Turkish)
+- **Theme locale**: `tr` (Material has no `tr` translation bundle, so `mkdocs build` always warns `No translations could be found for the locale 'tr'`; it is harmless)
+- **Timezone**: not set in CI; the runner is UTC, so timestamps in the generated PDF are UTC
 - **Search**: Turkish language (`search.lang: tr`)
 - **Site**: Turkish content ("Bilgisayar Ağları Ders Notları")
 
@@ -64,11 +65,11 @@ These are configured but commented out in [`mkdocs.yml`](mkdocs.yml):
 
 ### Abbreviation System
 The [`includes/abbreviations.md`](includes/abbreviations.md) file provides auto-expanding abbreviations. Notably:
-- `[XXX]` - Special marker indicating unfinished sections needing review
-- All networking terms (OSI, CIA, LAN, VLAN, WAN, NAT, etc.)
+- `[XXX]` - Special marker indicating unfinished sections needing review (the abbreviation is defined, but currently no page uses it)
+- All networking terms (OSI, CIA, LAN, MAN, PAN, VLAN, WAN, NAT, MOBESE, etc.)
 
-### Custom CSS
-The [`css/extra.css`](css/extra.css) file provides hover-reveal anchor links for all headings - anchors become visible only on hover.
+### No custom CSS
+Heading permalinks (`¶`) are rendered by the theme itself and already appear on hover, so no `extra_css` is configured. `docs_dir` is `docs/`, therefore a stylesheet must live inside `docs/` to be copied into the build.
 
 ### Live Reload Watching
 The `watch` configuration in [`mkdocs.yml`](mkdocs.yml:9) monitors the `includes/` directory for changes during development.
@@ -89,9 +90,9 @@ The `watch` configuration in [`mkdocs.yml`](mkdocs.yml:9) monitors the `includes
 
 | Variable | Purpose |
 |----------|---------|
-| `ENABLE_PDF_EXPORT` | Enables PDF generation (set in workflow) |
-| `TZ` / `timezone` | Europe/Istanbul for consistent timestamps |
-| `locale` | Turkish locale settings |
+| `ENABLE_PDF_EXPORT` | Enables PDF generation; the workflow sets it to `1`, it is unset locally by default |
+
+No `TZ` or `locale` variables are set in CI. The Turkish locale comes from `theme.locale: tr` in `mkdocs.yml`.
 
 ## Google Analytics
 
@@ -99,8 +100,12 @@ The site uses Google Analytics with property ID: `G-QTZXBE6Z2Z`
 
 ## Known Quirks
 
-1. **Dual workflow execution**: Both workflows trigger on push to `main`, but only one should run to avoid conflicts (concurrency group: `pages`)
-2. **PDF filename encoding**: Contains Turkish characters (`BilgisayarAglari-MuratÖzalp.pdf`)
-3. **Material theme sidebar**: Disabled (`include_sidebar: false`)
-4. **Mermaid loading**: CDN JavaScript for Mermaid is commented out - relies on browser polyfill for ES6 features
-5. **MathJax fallback**: Uses `polyfill.io` as JavaScript polyfill, MathJax 3 for math rendering
+1. **No `nav`**: page order comes from the numeric filename prefix (`02-`, `03-`, …) and each file name also becomes its URL. Renaming a chapter changes both.
+2. **Keep `docs/` clean**: every `.md` file under `docs/` is built as a page. A leftover file such as `10-... copy.md` shows up as `/10-Yerel_Aglarda_Guvenlik%20copy/`.
+3. **Images**: link them as `images/<file>` from a chapter in `docs/`; a `B*` prefix alone is not enough, and a wrong path fails silently as a broken image (build only warns).
+4. **PDF filename encoding**: Contains Turkish characters (`BilgisayarAglari-MuratÖzalp.pdf`)
+5. **Material theme sidebar**: Disabled (`include_sidebar: false`)
+6. **Mermaid**: `pymdownx.superfences` wraps ` ```mermaid ` code in `<div class="mermaid">`, but no Mermaid JavaScript is loaded (the tags in `mkdocs.yml` are commented out), so the diagram stays as raw text. Adding a working script tag is required before relying on Mermaid.
+7. **Math**: MathJax 3 is loaded from jsDelivr; the `polyfill.io` script is commented out.
+8. **Harmless build warnings**: `No translations could be found for the locale 'tr'` and `Template skipped: 'sitemap.html' not found in theme directories`.
+9. **Old action versions**: the workflow pins Node 20-era actions (`checkout@v4`, `setup-python@v4`, `configure-pages@v3`, `deploy-pages@v4`, `upload-artifact@v4`); GitHub currently forces them onto Node 24 and prints a deprecation warning.
